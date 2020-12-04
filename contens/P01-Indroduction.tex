@@ -1,0 +1,43 @@
+
+\begin{abstract}
+    En este documento formularemos el problema de \emph{Selective Harmonic Elimination pulse-width modulation}(SHE-PWM) como el problema de control óptimo, con el fin de encontrar soluciones de ondas cuadradas sin prefijar el número de ángulos de conmunatación. Esta nueva perspectiva nos permite realizar un análisis sobre la continuidad de soluciones.
+\end{abstract}
+\tableofcontents
+
+\section{Introducción} 
+
+El problema \emph{Selective Harmonic Elimination}(SHE)  es un método de modulación que permite generar señales escalón\footnote{Cabe remarcar que las señales escalón de las que hablamos son funciones discontinuas definidas en el intervalo $[0,2\pi]$ y que solo pueden tomar valores en un conjunto de valores finito y pequeño. Como por ejemplo las señales escalón bi-nivel serán las funciones que solo pueden tomar los valores $\{-1,1\}$ }
+con un espectro harmónico deseado.  
+%
+Es decir, dados algunos coeficientes de Fourier, el problema SHE busca la forma de onda escalón $\{f(\tau) | \tau \in (0,2\pi] \}$ cuyos coeficientes de Fourier sean los requeridos. 
+%
+En este contexto si el número cambios de la función escalón es prefijado el problema \emph{SHE} se puede formular como un problema de optimización donde las variables a optimizar son las localizaciones de conmutación y donde la función de coste es la distancia euclidea entre coeficientes de la función buscada y los coeficientes dados. 
+\newline 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+Aunque el problema \emph{SHE} con número de ángulos de conmutación prefijado es fácilmente resoluble  existen varias dificultades en su aplicación en tiempo real. 
+%
+No es posible calcular los ángulos de conmutación mediante una optimización a tiempo real es por ello que se precalculan las soluciones para distintos valores de coeficientes de Fourier objetivos.
+%
+Cuando una solución no precalculada es requerida se realizan interpolaciones con ayuda de las demás soluciones para obtenerla. 
+%
+Sin embargo es conocido que el espacio de soluciones en los ángulos de conmutación es discontinuo con respecto a una variación continua de coeficientes de Fourier objetivo. Este es motivo por la que la interpolación de soluciones es compleja y en algunas ocasiones imposible.
+\newline
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%
+La naturaleza sobre la aparición y el desvanecimineto de las soluciones mediante una  variación continua de los coeficientes de Fourier, es desconocida. Por medio del cálculo \emph{offline} de las soluciones se sabe que mientras más ángulos de conmutación es considerado más grande es la región continua de soluciones.
+%
+Esto nos indíca que el número de ángulos de conmutación necesarios a lo largo de una región del espacio de soluciones podría cambiar de manera que esta formulación es poco flexible para una descripción continua de las soluciones.
+\newline
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%
+En este documento presentaremos el problema SHE como un problema de control óptimo, donde la variable de optimización es la señal $f(\tau)$ definida en todo el intervalo $[0,2\pi]$.
+%
+Asi pues describiremos como en el problema SHE los coeficientes de Fourier de la función $f(\tau)$ se pueden ver como el estado final de un sistema controlado por $f(\tau)$. 
+%
+De manera que la optimización se realiza entre todas las posibles funciones que cumplan $|f(\tau)|<1$ que puedan controlar el estado final a los coeficientes de Fourier deseados.  Luego mostraremos como diseñar un problema de control de manera que la solución sea una función escalón. Por último, mostraremos soluciónes del problema \emph{SHE} mediante la formulación del control óptimo viendo como esta metodología es versátil ante la variación del número de conmutaciones.
+%
+

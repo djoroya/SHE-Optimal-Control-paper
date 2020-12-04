@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.11.9)  26 NOV 2020 08:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.11.9)  4 DEC 2020 17:10
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/Users/djoroya/Documents/GitHub/CONVADP---SHE/T1.4.2-Tecnicas-de-control-optimo-SHE-PWM/docs/D0002-OptimalControlOpenLoop/main.tex
-(/Users/djoroya/Documents/GitHub/CONVADP---SHE/T1.4.2-Tecnicas-de-control-optimo-SHE-PWM/docs/D0002-OptimalControlOpenLoop/main.tex
+**/Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/main.tex
+(/Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/main.tex
 LaTeX2e <2020-02-02> patch level 5
 L3 programming layer <2020-03-06> (/usr/local/texlive/2020/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
@@ -26,7 +26,7 @@ File: size10.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
 \@input{settings.aux}
 \openout2 = `settings.aux'.
 
-(/Users/djoroya/Documents/GitHub/CONVADP---SHE/T1.4.2-Tecnicas-de-control-optimo-SHE-PWM/docs/D0002-OptimalControlOpenLoop/settings.tex (/usr/local/texlive/2020/texmf-dist/tex/latex/graphics/graphicx.sty
+(/Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/settings.tex (/usr/local/texlive/2020/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
  (/usr/local/texlive/2020/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
@@ -347,7 +347,10 @@ Package caption Info: hyperref package is loaded.
 Package: subcaption 2020/01/22 v1.3d Sub-captions (AR)
 \c@subfigure=\count289
 \c@subtable=\count290
-) (/Users/djoroya/Documents/GitHub/CONVADP---SHE/T1.4.2-Tecnicas-de-control-optimo-SHE-PWM/docs/D0002-OptimalControlOpenLoop/main.aux
+) (/Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/main.aux
+
+LaTeX Warning: Label `SHEp' multiply defined.
+
 
 LaTeX Warning: Label `ode' multiply defined.
 
@@ -456,7 +459,7 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 8.
 LaTeX Info: Redefining \pageref on input line 8.
 LaTeX Info: Redefining \nameref on input line 8.
- (/Users/djoroya/Documents/GitHub/CONVADP---SHE/T1.4.2-Tecnicas-de-control-optimo-SHE-PWM/docs/D0002-OptimalControlOpenLoop/main.out) (/Users/djoroya/Documents/GitHub/CONVADP---SHE/T1.4.2-Tecnicas-de-control-optimo-SHE-PWM/docs/D0002-OptimalControlOpenLoop/main.out)
+ (/Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/main.out) (/Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/main.out)
 \@outlinefile=\write3
 \openout3 = `main.out'.
 
@@ -469,13 +472,37 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 LaTeX Font Info:    Trying to load font information for U+msb on input line 11.
  (/usr/local/texlive/2020/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) (/Users/djoroya/Documents/GitHub/CONVADP---SHE/T1.4.2-Tecnicas-de-control-optimo-SHE-PWM/docs/D0002-OptimalControlOpenLoop/contens/P00/P00-Indroduction.tex [1
+) (/Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/contens/P01-Indroduction.tex (/Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/main.toc)
+\tf@toc=\write4
+\openout4 = `main.toc'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 9--16
+
+ []
+
+[1
 
 
 
 {/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Package hyperref Info: bookmark level for unknown problem defaults to 0 on input line 63.
- [2]
+Underfull \hbox (badness 10000) in paragraph at lines 19--28
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 30--35
+
+ []
+
+) (/Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/contens/P02-RelatedWork.tex
+Underfull \hbox (badness 10000) in paragraph at lines 3--5
+
+ []
+
+[2]
+Package hyperref Info: bookmark level for unknown problem defaults to 0 on input line 26.
+ [3]) (/Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/contens/P03-SHE-as-system.tex
 Package epstopdf Info: Source file: <img/sys.eps>
 (epstopdf)                    date: 2020-11-24 10:40:55
 (epstopdf)                    size: 46829 bytes
@@ -483,12 +510,12 @@ Package epstopdf Info: Source file: <img/sys.eps>
 (epstopdf)                    date: 2020-11-24 10:40:57
 (epstopdf)                    size: 20134 bytes
 (epstopdf)             Command: <repstopdf --outfile=img/sys-eps-converted-to.pdf img/sys.eps>
-(epstopdf)             \includegraphics on input line 102.
+(epstopdf)             \includegraphics on input line 67.
 Package epstopdf Info: Output file is already uptodate.
-<img/sys-eps-converted-to.pdf, id=79, 503.8825pt x 386.44376pt>
+<img/sys-eps-converted-to.pdf, id=132, 503.8825pt x 386.44376pt>
 File: img/sys-eps-converted-to.pdf Graphic file (type pdf)
 <use img/sys-eps-converted-to.pdf>
-Package pdftex.def Info: img/sys-eps-converted-to.pdf  used on input line 102.
+Package pdftex.def Info: img/sys-eps-converted-to.pdf  used on input line 67.
 (pdftex.def)             Requested size: 204.2548pt x 156.65038pt.
 Package epstopdf Info: Source file: <img/con.eps>
 (epstopdf)                    date: 2020-11-24 10:40:55
@@ -497,24 +524,24 @@ Package epstopdf Info: Source file: <img/con.eps>
 (epstopdf)                    date: 2020-11-24 10:40:57
 (epstopdf)                    size: 16618 bytes
 (epstopdf)             Command: <repstopdf --outfile=img/con-eps-converted-to.pdf img/con.eps>
-(epstopdf)             \includegraphics on input line 109.
+(epstopdf)             \includegraphics on input line 74.
 Package epstopdf Info: Output file is already uptodate.
-<img/con-eps-converted-to.pdf, id=80, 498.86375pt x 392.46625pt>
+<img/con-eps-converted-to.pdf, id=133, 498.86375pt x 392.46625pt>
 File: img/con-eps-converted-to.pdf Graphic file (type pdf)
 <use img/con-eps-converted-to.pdf>
-Package pdftex.def Info: img/con-eps-converted-to.pdf  used on input line 109.
+Package pdftex.def Info: img/con-eps-converted-to.pdf  used on input line 74.
 (pdftex.def)             Requested size: 204.2548pt x 160.69061pt.
-) (/Users/djoroya/Documents/GitHub/CONVADP---SHE/T1.4.2-Tecnicas-de-control-optimo-SHE-PWM/docs/D0002-OptimalControlOpenLoop/contens/P01/P01-02-Problem-Statement.tex
+) (/Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/contens/P04-Problem-Statement.tex [4]
 Underfull \hbox (badness 10000) in paragraph at lines 12--14
 
  []
 
-[3 </Users/djoroya/Documents/GitHub/CONVADP---SHE/T1.4.2-Tecnicas-de-control-optimo-SHE-PWM/docs/D0002-OptimalControlOpenLoop/img/sys-eps-converted-to.pdf> </Users/djoroya/Documents/GitHub/CONVADP---SHE/T1.4.2-Tecnicas-de-control-optimo-SHE-PWM/docs/D0002-OptimalControlOpenLoop/img/con-eps-converted-to.pdf>]
+[5 </Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/sys-eps-converted-to.pdf> </Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/con-eps-converted-to.pdf>]
 Underfull \hbox (badness 10000) in paragraph at lines 57--61
 
  []
 
-[4]
+[6]
 Underfull \hbox (badness 10000) in paragraph at lines 85--87
 
  []
@@ -528,22 +555,22 @@ Package epstopdf Info: Source file: <img/bang-bang.eps>
 (epstopdf)             Command: <repstopdf --outfile=img/bang-bang-eps-converted-to.pdf img/bang-bang.eps>
 (epstopdf)             \includegraphics on input line 90.
 Package epstopdf Info: Output file is already uptodate.
-<img/bang-bang-eps-converted-to.pdf, id=111, 493.845pt x 391.4625pt>
+<img/bang-bang-eps-converted-to.pdf, id=177, 493.845pt x 391.4625pt>
 File: img/bang-bang-eps-converted-to.pdf Graphic file (type pdf)
 <use img/bang-bang-eps-converted-to.pdf>
 Package pdftex.def Info: img/bang-bang-eps-converted-to.pdf  used on input line 90.
 (pdftex.def)             Requested size: 246.92189pt x 195.73076pt.
-[5 </Users/djoroya/Documents/GitHub/CONVADP---SHE/T1.4.2-Tecnicas-de-control-optimo-SHE-PWM/docs/D0002-OptimalControlOpenLoop/img/bang-bang-eps-converted-to.pdf>]
+[7 </Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/bang-bang-eps-converted-to.pdf>]
 Underfull \hbox (badness 10000) in paragraph at lines 123--125
 
  []
 
-) (/Users/djoroya/Documents/GitHub/CONVADP---SHE/T1.4.2-Tecnicas-de-control-optimo-SHE-PWM/docs/D0002-OptimalControlOpenLoop/contens/P01/P01-03-NumericalResults.tex [6]
+) (/Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/contens/P05-OCP-MultiNivel.tex) (/Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/contens/P06-NumericalResults.tex [8]
 Overfull \hbox (5.6274pt too wide) in paragraph at lines 15--16
 []\OT1/cmr/m/n/10 Dados dos con-jun-tos de n^^Sumeros
  []
 
-[7]
+[9]
 Package epstopdf Info: Source file: <img/ex01-con.eps>
 (epstopdf)                    date: 2020-11-25 13:03:51
 (epstopdf)                    size: 86882 bytes
@@ -553,7 +580,7 @@ Package epstopdf Info: Source file: <img/ex01-con.eps>
 (epstopdf)             Command: <repstopdf --outfile=img/ex01-con-eps-converted-to.pdf img/ex01-con.eps>
 (epstopdf)             \includegraphics on input line 68.
 Package epstopdf Info: Output file is already uptodate.
-<img/ex01-con-eps-converted-to.pdf, id=158, 457.71pt x 375.4025pt>
+<img/ex01-con-eps-converted-to.pdf, id=222, 457.71pt x 375.4025pt>
 File: img/ex01-con-eps-converted-to.pdf Graphic file (type pdf)
 <use img/ex01-con-eps-converted-to.pdf>
 Package pdftex.def Info: img/ex01-con-eps-converted-to.pdf  used on input line 68.
@@ -567,7 +594,7 @@ Package epstopdf Info: Source file: <img/ex01-dyn.eps>
 (epstopdf)             Command: <repstopdf --outfile=img/ex01-dyn-eps-converted-to.pdf img/ex01-dyn.eps>
 (epstopdf)             \includegraphics on input line 74.
 Package epstopdf Info: Output file is already uptodate.
-<img/ex01-dyn-eps-converted-to.pdf, id=159, 469.755pt x 375.4025pt>
+<img/ex01-dyn-eps-converted-to.pdf, id=223, 469.755pt x 375.4025pt>
 File: img/ex01-dyn-eps-converted-to.pdf Graphic file (type pdf)
 <use img/ex01-dyn-eps-converted-to.pdf>
 Package pdftex.def Info: img/ex01-dyn-eps-converted-to.pdf  used on input line 74.
@@ -581,7 +608,7 @@ Package epstopdf Info: Source file: <img/EX01_surf_2LVL.eps>
 (epstopdf)             Command: <repstopdf --outfile=img/EX01_surf_2LVL-eps-converted-to.pdf img/EX01_surf_2LVL.eps>
 (epstopdf)             \includegraphics on input line 96.
 Package epstopdf Info: Output file is already uptodate.
-<img/EX01_surf_2LVL-eps-converted-to.pdf, id=160, 1012.78375pt x 362.35374pt>
+<img/EX01_surf_2LVL-eps-converted-to.pdf, id=224, 1012.78375pt x 362.35374pt>
 File: img/EX01_surf_2LVL-eps-converted-to.pdf Graphic file (type pdf)
 <use img/EX01_surf_2LVL-eps-converted-to.pdf>
 Package pdftex.def Info: img/EX01_surf_2LVL-eps-converted-to.pdf  used on input line 96.
@@ -600,7 +627,7 @@ Package epstopdf Info: Source file: <img/EX01_2LVL.eps>
 (epstopdf)             Command: <repstopdf --outfile=img/EX01_2LVL-eps-converted-to.pdf img/EX01_2LVL.eps>
 (epstopdf)             \includegraphics on input line 102.
 Package epstopdf Info: Output file is already uptodate.
-<img/EX01_2LVL-eps-converted-to.pdf, id=161, 353.32pt x 264.99pt>
+<img/EX01_2LVL-eps-converted-to.pdf, id=225, 353.32pt x 264.99pt>
 File: img/EX01_2LVL-eps-converted-to.pdf Graphic file (type pdf)
 <use img/EX01_2LVL-eps-converted-to.pdf>
 Package pdftex.def Info: img/EX01_2LVL-eps-converted-to.pdf  used on input line 102.
@@ -614,7 +641,7 @@ Package epstopdf Info: Source file: <img/EX01_surf_3LVL.eps>
 (epstopdf)             Command: <repstopdf --outfile=img/EX01_surf_3LVL-eps-converted-to.pdf img/EX01_surf_3LVL.eps>
 (epstopdf)             \includegraphics on input line 120.
 Package epstopdf Info: Output file is already uptodate.
-<img/EX01_surf_3LVL-eps-converted-to.pdf, id=163, 1012.78375pt x 362.35374pt>
+<img/EX01_surf_3LVL-eps-converted-to.pdf, id=227, 1012.78375pt x 362.35374pt>
 File: img/EX01_surf_3LVL-eps-converted-to.pdf Graphic file (type pdf)
 <use img/EX01_surf_3LVL-eps-converted-to.pdf>
 Package pdftex.def Info: img/EX01_surf_3LVL-eps-converted-to.pdf  used on input line 120.
@@ -633,7 +660,7 @@ Package epstopdf Info: Source file: <img/EX01_3LVL.eps>
 (epstopdf)             Command: <repstopdf --outfile=img/EX01_3LVL-eps-converted-to.pdf img/EX01_3LVL.eps>
 (epstopdf)             \includegraphics on input line 126.
 Package epstopdf Info: Output file is already uptodate.
-<img/EX01_3LVL-eps-converted-to.pdf, id=164, 355.3275pt x 265.99374pt>
+<img/EX01_3LVL-eps-converted-to.pdf, id=228, 355.3275pt x 265.99374pt>
 File: img/EX01_3LVL-eps-converted-to.pdf Graphic file (type pdf)
 <use img/EX01_3LVL-eps-converted-to.pdf>
 Package pdftex.def Info: img/EX01_3LVL-eps-converted-to.pdf  used on input line 126.
@@ -652,7 +679,7 @@ Package epstopdf Info: Source file: <img/EX00_surf_2LVL.eps>
 (epstopdf)             Command: <repstopdf --outfile=img/EX00_surf_2LVL-eps-converted-to.pdf img/EX00_surf_2LVL.eps>
 (epstopdf)             \includegraphics on input line 150.
 Package epstopdf Info: Output file is already uptodate.
-<img/EX00_surf_2LVL-eps-converted-to.pdf, id=166, 563.10374pt x 422.57875pt>
+<img/EX00_surf_2LVL-eps-converted-to.pdf, id=230, 563.10374pt x 422.57875pt>
 File: img/EX00_surf_2LVL-eps-converted-to.pdf Graphic file (type pdf)
 <use img/EX00_surf_2LVL-eps-converted-to.pdf>
 Package pdftex.def Info: img/EX00_surf_2LVL-eps-converted-to.pdf  used on input line 150.
@@ -666,7 +693,7 @@ Package epstopdf Info: Source file: <img/alphabeta.eps>
 (epstopdf)             Command: <repstopdf --outfile=img/alphabeta-eps-converted-to.pdf img/alphabeta.eps>
 (epstopdf)             \includegraphics on input line 160.
 Package epstopdf Info: Output file is already uptodate.
-<img/alphabeta-eps-converted-to.pdf, id=167, 563.10374pt x 422.57875pt>
+<img/alphabeta-eps-converted-to.pdf, id=231, 563.10374pt x 422.57875pt>
 File: img/alphabeta-eps-converted-to.pdf Graphic file (type pdf)
 <use img/alphabeta-eps-converted-to.pdf>
 Package pdftex.def Info: img/alphabeta-eps-converted-to.pdf  used on input line 160.
@@ -693,47 +720,47 @@ Package epstopdf Info: Source file: <img/alphabeta_error.eps>
 (epstopdf)             Command: <repstopdf --outfile=img/alphabeta_error-eps-converted-to.pdf img/alphabeta_error.eps>
 (epstopdf)             \includegraphics on input line 179.
 Package epstopdf Info: Output file is already uptodate.
-<img/alphabeta_error-eps-converted-to.pdf, id=168, 467.7475pt x 404.51125pt>
+<img/alphabeta_error-eps-converted-to.pdf, id=232, 467.7475pt x 404.51125pt>
 File: img/alphabeta_error-eps-converted-to.pdf Graphic file (type pdf)
 <use img/alphabeta_error-eps-converted-to.pdf>
 Package pdftex.def Info: img/alphabeta_error-eps-converted-to.pdf  used on input line 179.
 (pdftex.def)             Requested size: 187.09567pt x 161.80162pt.
-) (/Users/djoroya/Documents/GitHub/CONVADP---SHE/T1.4.2-Tecnicas-de-control-optimo-SHE-PWM/docs/D0002-OptimalControlOpenLoop/contens/P01/P01-04-Conclusions.tex [8] [9 </Users/djoroya/Documents/GitHub/CONVADP---SHE/T1.4.2-Tecnicas-de-control-optimo-SHE-PWM/docs/D0002-OptimalControlOpenLoop/img/ex01-con-eps-converted-to.pdf> </Users/djoroya/Documents/GitHub/CONVADP---SHE/T1.4.2-Tecnicas-de-control-optimo-SHE-PWM/docs/D0002-OptimalControlOpenLoop/img/ex01-dyn-eps-converted-to.pdf>] [10 </Users/djoroya/Documents/GitHub/CONVADP---SHE/T1.4.2-Tecnicas-de-control-optimo-SHE-PWM/docs/D0002-OptimalControlOpenLoop/img/EX01_surf_2LVL-eps-converted-to.pdf> </Users/djoroya/Documents/GitHub/CONVADP---SHE/T1.4.2-Tecnicas-de-control-optimo-SHE-PWM/docs/D0002-OptimalControlOpenLoop/img/EX01_2LVL-eps-converted-to.pdf>] [11 </Users/djoroya/Documents/GitHub/CONVADP---SHE/T1.4.2-Tecnicas-de-control-optimo-SHE-PWM/docs/D0002-OptimalControlOpenLoop/img/EX01_surf_3LVL-eps-converted-to.pdf> </Users/djoroya/Documents/GitHub/CONVADP---SHE/T1.4.2-Tecnicas-de-control-optimo-SHE-PWM/docs/D0002-OptimalControlOpenLoop/img/EX01_3LVL-eps-converted-to.pdf>])
-Overfull \hbox (0.49503pt too wide) in paragraph at lines 6--18
+) (/Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/contens/P07-Conclusions.tex)
+Overfull \hbox (0.49503pt too wide) in paragraph at lines 6--20
 []\OT1/cmr/m/n/10 Este plan-tamiento del prob-lema SHE en-laza la teor^^S^^Pa de con-trol con la elim-i-naci^^Son de harm^^Sonicos.
  []
 
-(/Users/djoroya/Documents/GitHub/CONVADP---SHE/T1.4.2-Tecnicas-de-control-optimo-SHE-PWM/docs/D0002-OptimalControlOpenLoop/main.bbl)
-\tf@thm=\write4
-\openout4 = `main.thm'.
+(/Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/main.bbl [10] [11 </Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/ex01-con-eps-converted-to.pdf> </Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/ex01-dyn-eps-converted-to.pdf>] [12 </Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/EX01_surf_2LVL-eps-converted-to.pdf> </Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/EX01_2LVL-eps-converted-to.pdf>] [13 </Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/EX01_surf_3LVL-eps-converted-to.pdf> </Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/EX01_3LVL-eps-converted-to.pdf>])
+\tf@thm=\write5
+\openout5 = `main.thm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 23.
- [12 </Users/djoroya/Documents/GitHub/CONVADP---SHE/T1.4.2-Tecnicas-de-control-optimo-SHE-PWM/docs/D0002-OptimalControlOpenLoop/img/EX00_surf_2LVL-eps-converted-to.pdf>] [13 </Users/djoroya/Documents/GitHub/CONVADP---SHE/T1.4.2-Tecnicas-de-control-optimo-SHE-PWM/docs/D0002-OptimalControlOpenLoop/img/alphabeta-eps-converted-to.pdf>] [14 </Users/djoroya/Documents/GitHub/CONVADP---SHE/T1.4.2-Tecnicas-de-control-optimo-SHE-PWM/docs/D0002-OptimalControlOpenLoop/img/alphabeta_error-eps-converted-to.pdf>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 23.
- (/Users/djoroya/Documents/GitHub/CONVADP---SHE/T1.4.2-Tecnicas-de-control-optimo-SHE-PWM/docs/D0002-OptimalControlOpenLoop/main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 23.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 23.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 24.
+ [14 </Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/EX00_surf_2LVL-eps-converted-to.pdf>] [15 </Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/alphabeta-eps-converted-to.pdf>] [16 </Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/alphabeta_error-eps-converted-to.pdf>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 24.
+ (/Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/main.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 24.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 24.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 7944F4218F95DD2864C517A3C85D05D3;664.
+(rerunfilecheck)             Checksum: CF6264F87A158921A87E14AD91884267;1273.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 23.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 24.
  ) 
 Here is how much of TeX's memory you used:
- 9783 strings out of 480608
- 159678 string characters out of 5903630
- 526154 words of memory out of 5000000
- 25380 multiletter control sequences out of 15000+600000
+ 9821 strings out of 480608
+ 159092 string characters out of 5903630
+ 527118 words of memory out of 5000000
+ 25392 multiletter control sequences out of 15000+600000
  548628 words of font info for 83 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 46i,15n,46p,842b,655s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib9.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on /Users/djoroya/Documents/GitHub/CONVADP---SHE/T1.4.2-Tecnicas-de-control-optimo-SHE-PWM/docs/D0002-OptimalControlOpenLoop/main.pdf (14 pages, 612505 bytes).
+ 46i,19n,46p,863b,655s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib9.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
+Output written on /Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/main.pdf (16 pages, 661687 bytes).
 PDF statistics:
- 359 PDF objects out of 1000 (max. 8388607)
- 279 compressed objects within 3 object streams
- 67 named destinations out of 1000 (max. 500000)
- 133 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 442 PDF objects out of 1000 (max. 8388607)
+ 354 compressed objects within 4 object streams
+ 83 named destinations out of 1000 (max. 500000)
+ 189 words of extra memory for PDF output out of 10000 (max. 10000000)
 

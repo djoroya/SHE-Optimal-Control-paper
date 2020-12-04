@@ -1,9 +1,16 @@
-\contentsline {section}{\numberline {1}Introduction}{1}{section.1}%
-\contentsline {section}{\numberline {2}Selective Harmonic Elimination as dynamical system}{2}{section.2}%
-\contentsline {section}{\numberline {3}Formulación del problema control óptimo}{3}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Condiciones para la obtención de controles \emph {bang-bang}}{4}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}OC SHE de dos niveles con simetría de cuarto de onda}{5}{subsection.3.2}%
-\contentsline {section}{\numberline {4}Experimentos numéricos}{7}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Numerical solution of OCP-SHE}{7}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Resultados}{8}{subsection.4.2}%
-\contentsline {section}{\numberline {5}Conclusiones}{10}{section.5}%
+\contentsline {section}{\numberline {1}Introducción}{2}{section.1}%
+\contentsline {section}{\numberline {2}Formulaciones clásicas}{2}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Formulación clásica para dos y tres niveles}{3}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Formulación clásica para multi-nivel}{3}{subsection.2.2}%
+\contentsline {section}{\numberline {3}Selective Harmonic Elimination as dynamical system}{4}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Notación}{4}{subsection.3.1}%
+\contentsline {section}{\numberline {4}Control óptimo para SHE de dos y tres niveles}{5}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Condiciones para la obtención de controles \emph {bang-bang}}{6}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}OC SHE de dos niveles con simetría de cuarto de onda}{7}{subsection.4.2}%
+\contentsline {section}{\numberline {5}Control óptimo para SHE multi-nivel}{8}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Condiciones de Optimialidad para obtención de control digital}{8}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}OC SHE multi-nivel con simetría de cuarto de onda}{8}{subsection.5.2}%
+\contentsline {section}{\numberline {6}Experimentos numéricos}{8}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Numerical solution of OCP-SHE}{9}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Resultados}{9}{subsection.6.2}%
+\contentsline {section}{\numberline {7}Conclusiones}{10}{section.7}%

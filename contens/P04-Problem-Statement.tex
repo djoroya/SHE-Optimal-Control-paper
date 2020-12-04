@@ -1,5 +1,5 @@
 
-\section{Formulación del problema control óptimo}
+\section{Control óptimo para SHE de dos y tres niveles}
 
 Dado que el problema SHE es equivalente a controla un sistema dinámico desde el origen de coordenadas a un punto concreto, podemos formular el siguiente problema de control:
 \begin{problem}[OCP para SHE en media onda]\label{OCP1}
@@ -9,7 +9,7 @@ Dado que el problema SHE es equivalente a controla un sistema dinámico desde el
         + \epsilon \int_0^{\pi} \mathcal{L}(f) d\tau \Bigg] 
     \end{gather}
 
-    donde  $\bm{\alpha}(\tau) \in \mathbb{R}^{N_a} \times [0,\pi]$, $\bm{\beta}(\tau) \in \mathbb{R}^{N_b}  \times [0,\pi]$,  $||.||$ es la norma euclidea y $\epsilon$ es un parámetro pequeño que penaliza el funcional de coste con el término $\mathcal{L}(f):\mathbb{R} \rightarrow \mathbb{R}$. 
+    donde  $\bm{\alpha} \in \mathbb{R}^{N_a} \times [0,\pi]$, $\bm{\beta} \in \mathbb{R}^{N_b}  \times [0,\pi]$,  $||.||$ es la norma euclidea y $\epsilon$ es un parámetro pequeño que penaliza el funcional de coste con el término $\mathcal{L}(f):\mathbb{R} \rightarrow \mathbb{R}$. 
     \newline
 
     De esta forma podemos escribir el siguiente problema de control óptimo:
@@ -54,7 +54,7 @@ Donde  hemos llamado $G(\bm{p}^\alpha,\bm{p}^\beta,\tau)$ a:
         \Bigg]
     \end{gather}
 
-y además donde hemos introducido las variables $\bm{p}^\alpha(\tau) \in \mathbb{R}^{N_a} \times [0,\pi]$ y $\bm{p}^\beta(\tau) \in \mathbb{R}^{N_b}  \times [0,\pi]$ son los estados adjuntos correspondientes a los estados $\bm{\alpha}$ y $\bm{\beta}$ respectivamente.  
+y además donde hemos introducido las variables $\bm{p}^\alpha \in \mathbb{R}^{N_a} \times [0,\pi]$ y $\bm{p}^\beta \in \mathbb{R}^{N_b}  \times [0,\pi]$ son los estados adjuntos correspondientes a los estados $\bm{\alpha}$ y $\bm{\beta}$ respectivamente.  
 %
 Aunque el valor exacto de los coestados es necesario para obtener el control óptimo, las condiciones necesarias para obtener controles \emph{bang-bang} son independientes del valor de estos. Por esta razón, suponemos que el valor de los coestados óptimos $\bm{p}_*^\alpha$ y $\bm{p}_*^\beta$ son conocidos.
 \newline 
