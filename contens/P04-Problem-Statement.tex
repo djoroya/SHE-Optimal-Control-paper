@@ -1,146 +1,109 @@
 
-\section{Control óptimo para SHE de dos y tres niveles}
+\section{Optimal Control for SHE}
 
-Dado que el problema SHE es equivalente a controla un sistema dinámico desde el origen de coordenadas a un punto concreto, podemos formular el siguiente problema de control:
-\begin{problem}[OCP para SHE en media onda]\label{OCP1}
-    Dados dos conjuntos de números impares $\mathcal{E}_a$ and $\mathcal{E}_b$ con cardinalidades $|\mathcal{E}_a| = N_a$ y  $|\mathcal{E}_b| = N_b$ respectivamente, dados los vectores objetivos $\bm{a}_T  \in \mathbb{R}^{N_a}$ y $\bm{b}_T  \in \mathbb{R}^{N_b}$, buscamos la función  $f(\tau ) \ | \ \tau \in (0,\pi)$ que minimiza el siguiente funcional de coste:
-        \begin{gather}
-        J[f(\tau)] = \Bigg[ || \bm{a}_T - \bm{\alpha}(T)||^2 + || \bm{b}_T - \bm{\beta}(T)||^2 
-        + \epsilon \int_0^{\pi} \mathcal{L}(f) d\tau \Bigg] 
-    \end{gather}
+Since the SHE problem is equivalent to controlling a dynamic system from the origin of coordinates to a specific point, we must formulate a control problem that solves this task but also complies with the restrictions on the values that the control can take. It is necessary to set a finite subset $ \mathcal {U} $ of the interval $ [- 1,1] $, the optimal control is such that it can only take the values allowed in the discretization. In other words, the control problem is:
 
-    donde  $\bm{\alpha} \in \mathbb{R}^{N_a} \times [0,\pi]$, $\bm{\beta} \in \mathbb{R}^{N_b}  \times [0,\pi]$,  $||.||$ es la norma euclidea y $\epsilon$ es un parámetro pequeño que penaliza el funcional de coste con el término $\mathcal{L}(f):\mathbb{R} \rightarrow \mathbb{R}$. 
-    \newline
-
-    De esta forma podemos escribir el siguiente problema de control óptimo:
+\begin{problem}[OCP for SHE]\label{OCP1}
+    Given two sets of odd numbers $ \mathcal {E} _a $ and $ \mathcal {E} _b $ and given the target vector $ \bm {x} _T \in \mathbb {R} ^ {N_a + N_b} $, also given a set $ \mathcal {U} $ of admissible controls, we look for the function $ u (\tau) \ | \ \tau \in [0, \pi) $ such that:
+    %
     \begin{gather}
-        \min_{|f(\tau) |<1} J[f(\tau)] \\
+        \min_{u(\tau) \in \mathcal{U}}         
+         \Bigg[ \frac{1}{2}|| \bm{x}(\pi) - \bm{x}_T  ||^2 \Bigg]  \\
         \notag \text{suject to: } \\
-        \notag \forall i \in \mathcal{E}_a\ \ 
         \begin{cases}
-            \dot{\alpha}_i(\tau) = (2/\pi) \cos(i\tau) f(\tau) & \tau \in [0,\pi]\label{dyn}\\
-            \alpha_i(0) = 0
-        \end{cases} \\
-        \notag \forall j \in \mathcal{E}_b\ \ 
+            \dot{\bm{x}}(\tau) = \bm{\mathcal{D}}(\tau) u(\tau)  & \tau \in [0,\pi)\\
+            \bm{x}(0) = {0}
+        \end{cases}
+    \end{gather}
+\end{problem}
+%
+The solution of this control problem is complex due to the restriction on the admissible control values.
+%
+In order to obtain a problem that can be solved by classical control theory we can formulate the following control problem:
+
+\begin{problem}[Regularized OCP for SHE]\label{OCP1}
+    Given two sets of odd numbers $ \mathcal {E} _a $ and $ \mathcal {E} _b $ and given the target vector $ \bm {x} _T \in \mathbb {R} ^ {N_a + N_b} $, we look for the function $ |u (\tau)|<1 \ | \ \tau \in [0, \pi) $ such that:
+
+    \begin{gather}
+        \min_{|u(\tau) |<1}         
+         \Bigg[ \frac{1}{2}|| \bm{x}(\pi) - \bm{x}_T  ||^2  
+        + \epsilon \int_0^{\pi} \mathcal{L}(u(\tau)) d\tau \Bigg]  \\
+        \notag \text{suject to: } \\
         \begin{cases}
-            \dot{\beta}_j(\tau) = (2/\pi) \sin(j\tau) f(\tau) & \tau \in [0,\pi]\label{dyn}\\
-            \beta_j(0) = 0
-        \end{cases} 
+            \dot{\bm{x}}(\tau) = \bm{\mathcal{D}}(\tau) u(\tau)  & \tau \in [0,\pi)\\
+            \bm{x}(0) = {0}
+        \end{cases}
     \end{gather}
 \end{problem}
 
-En el problema de SHE de dos niveles se busca una función $\{f(\tau) \ |  \tau \in [0,\pi] \}$  que solo pueda tomar los valores $\{-1,1\}$, sin embargo el problema (\ref{OCP1}) definido para un término de penelización $\mathcal{L}(f)$ arbitrario puede tomar valores en todo el intervalo $[-1,1]$. 
+Where we will choose $ \mathcal {L}: \mathbb {R} \rightarrow \mathbb {R} $ such that the optimal control $ u^* $ only takes values in the discretization $ \mathcal {U} $ of the interval $ [- 1.1] $. Furthermore, the parameter $ \epsilon $ should be small so that the solution minimizes the distance from the final state and the target.
 %
-En teoría de control los controles que toma solo los valores extremos del intervalo son conocidos como controles \emph{bang-bang}. A continuación estudiaremos las condiciones que debe cumplir el término $\mathcal{L}(f)$ para que nuestro control óptimo sea una función escalón.
+Next we will study the optimality conditions of the problem, for a general $ \mathcal {L} $ function, and then specify how $ \mathcal {L} $ should be so that the optimal control $ u ^ * $ only takes the allowed values in $ \mathcal {U} $.
 
-\subsection{Condiciones  para la obtención de controles \emph{bang-bang}}
-A continuación estudiaremos las condiciones de optimilidad del problema con el fin de encontrar condiciones en el término $\mathcal{L}(f)$ que nos de el comportamiento \emph{bang-bang} en el control óptimo. 
-%
-Para ello utilizaremos el principio de máximo de Pontryagin \cite{pontryagin2018mathematical}, el cual formula varias condiciones de optimilidad para los problemas de control óptimo. 
-%
-Esta condiciones se formulan a través de un objeto llamado Hamiltoniano, que  en este caso se puede escribir como:
+\subsection{Optimality conditions}
 
-
+To write the optimility conditions of the problem we will use the principle of the Pontryagin minimum. For them it is necessary to define the Hamiltonian of the system, which in this case is:
 \begin{gather}\label{hamil}
-    H(f,\bm{p}^\alpha(\tau),\bm{p}^\beta(\tau),\tau) = \epsilon \mathcal{L}(f) + 
-    G(\bm{p}^\alpha(\tau),\bm{p}^\beta(\tau),\tau) f(\tau)
+    H(u,\bm{p},\tau) = 
+    \epsilon \mathcal{L}(u) + 
+    [\bm{p}^T(\tau) \cdot \bm{\mathcal{D}}(\tau)]
+    u(\tau)
 \end{gather}
 
-Donde  hemos llamado $G(\bm{p}^\alpha,\bm{p}^\beta,\tau)$ a:
+Where the variable $ \bm{p} (\tau) $ called attached state is introduced, which is associated with the restriction imposed by the system. From the Hamiltonian, the following optimality conditions can be written:
+\begin{enumerate}
+
+    \item \textbf{Final condition of the adjoint}: This optimiality condition is obtained from the final cost of the control problem in this case $ \Psi (\bm{x}) = \frac {1}{2} \| \bm{x} (\pi) - \bm{x}_T \|^2 $.
     \begin{gather}
-        G(\bm{p}^\alpha,\bm{p}^\beta,\tau) = \frac{2}{\pi} \Bigg[ 
-            \sum_{i \in \mathcal{E}_a} p^\alpha_i \cos(i\tau)+ 
-            \sum_{j \in \mathcal{E}_b} p^\beta_j \sin(j\tau) 
-        \Bigg]
+        \bm{p}(\pi) = \nabla_{\bm{x}} \Psi(\bm{x}) =  (\bm{x} (\pi) - \bm{x}_T)
     \end{gather}
-
-y además donde hemos introducido las variables $\bm{p}^\alpha \in \mathbb{R}^{N_a} \times [0,\pi]$ y $\bm{p}^\beta \in \mathbb{R}^{N_b}  \times [0,\pi]$ son los estados adjuntos correspondientes a los estados $\bm{\alpha}$ y $\bm{\beta}$ respectivamente.  
+    \item \textbf{Adjoint evolution equation}:
+    \begin{gather}
+        \dot{\bm{p}}(\tau) = -\nabla_x H(u(\tau),\bm{p}(\tau),\tau) = 0
+    \end{gather}
+    From where it can be deduced that $ \bm {p} (\tau) = \text {cte} $ so that $ \bm {p} (\tau) = \bm {x} (\pi) - \bm { x} _T \ | \ \forall \tau \in [0, \pi) $ so from now on we will refer to it simply as $ \bm {p} $, noting that it is invariant in time.
+    \item \textbf{Optimal control shape}: We known that $ u^* = \argmin_{|u|<1} H(\tau,\bm{p}^*,u)$, so in this case we can write:
+    \begin{gather}
+        u^*(\tau) = \argmin_{|u|<1}  \Big[   \epsilon \mathcal{L}(u(\tau)) + 
+        [{\bm{p}^*}^T \cdot \bm{\mathcal{D}}(\tau)]
+        u(\tau) \Big]
+    \end{gather}
+    Therefore, this optimality condition reduces to the optimization of a function in a variable within the interval $ [- 1,1] $. We need note that the value of $[{\bm{p}^*}^T \cdot \bm{\mathcal{D}}(\tau)]$ is unknow but we know that this value can change the sign. So we need design the $\mathcal{L}$ to the optimal control $u^*$ must be a some element of $\mathcal{U}$ for every value of $[{\bm{p}^*}^T \cdot \bm{\mathcal{D}}(\tau)]$. For this study, we build a function $H^*: [-1,1] \rightarrow \mathbb{R}$ such that:
+    \begin{gather}
+        H^*(u) = \epsilon \mathcal{L}(u) + mu  |  \forall m \in \mathbb{R}
+    \end{gather}
+    If we found a function $\mathcal{L}$ such that its minimums in interval $[-1,1]$ are in $\mathcal{U}$ the solutions of regularized optimal control are in $\mathcal{U}$.
+\end{enumerate}
 %
-Aunque el valor exacto de los coestados es necesario para obtener el control óptimo, las condiciones necesarias para obtener controles \emph{bang-bang} son independientes del valor de estos. Por esta razón, suponemos que el valor de los coestados óptimos $\bm{p}_*^\alpha$ y $\bm{p}_*^\beta$ son conocidos.
-\newline 
-
-Por otra parte, utilizando otra condición del principio del máximo:
+\subsection{Conditions for bi-level and tri-level controls}
+%
+Since we need the optimal control $ u ^ * $ to be \emph {bang-bang}, we must design $ H ^ * (u) $ so that its minimum is at the extremes of the interval $ [- 1,1] $ .
+%
+In the case of a variable (this case) we can only achieve this behavior if there is no minimum within the interval.
+%
+One way to ensure this behavior is to take the function $ H ^ * (u) $ concave, by choosing the term $ \mathcal {L} (u) $.
+%
+This is because the concavity of the term $ \mathcal {L} (u) $ determines the concavity of the Hamiltonian $ H ^ * (u) $ thanks to the fact that the second derivative of $ H ^ * (u) $ is proportional to the second derivative of the penalty term, that is:
 \begin{gather}
-    H(\tau,\bm{p}_*^\alpha,\bm{p}^\beta_*,f_*) \leq H(\tau,\bm{p}_*^\alpha,\bm{p}^\beta_*,f)
-\end{gather}
-podemos obtener la forma del control óptimo cuando los co-estados óptimos $\bm{p}_*^\alpha$ y $\bm{p}_*^\beta$ además de la variable temporal $\tau$ están fijas. 
-%
-Entonces el problema se reduce la minimización de una función $H^*(f) = H(\tau,\bm{p}_*^\alpha,\bm{p}^\beta_*,f)$ en una variable $f$ dentro del intervalo $[-1,1]$.
-%
-Dado que necesitamos que el control óptimo $f^*$ sea \emph{bang-bang}, debemos diseñar  $H^*(f)$ de manera que su mímino esté en los extremos del intervalo $[-1,1]$.
-%
-En el caso de una variable (este caso) solo podemos conseguir este comportamiento si no existe ningún mínimo dentro del intervalo. Una manera de asegurar este comportamiento es tomando la función $H^*(f)$ concava, mediante la elección el término $\mathcal{L}(f)$. 
-%
-Eso se debe a que la concavidad de el término $\mathcal{L}(f)$ determina la concavidad del Hamiltoniano $H^*(f)$ gracias a que la derivada segunda de $H^*(f)$ es proporcional al la derivada segunda del término de penalización, es decir:
-\begin{gather}
-    \frac{d^2{H^*}^2}{df^2} = \epsilon \frac{d^2\mathcal{L}(f)}{df^2} 
+    \frac{d^2{H^*}}{du^2} = \epsilon \frac{d^2\mathcal{L}}{du^2} 
 \end{gather}
 
-De esta manera siempre que elijamos un término de penalización tal que:
+In this way whenever we choose a penalty term such that:
 
 \begin{gather}
-    \frac{d^2L[f]}{df^2} \leq 0 
+    \frac{d^2\mathcal{L}}{du^2} \leq 0 
 \end{gather}
 
-obtendremos un función $H^*(f)$ cóncava dentro de un intervalo convexo dando lugar a un control óptimo $f^*$  \emph{bang-bang}. Podemos ver una ilustración de este comportamiento en la figura (\ref{bang-bang}).
+we will obtain a concave $ H ^ * (u) $ function within a convex interval giving rise to an optimal control $ u ^ * $ \ emph {bang-bang}. We can see an illustration of this behavior in the figure (\ref {bang-bang}).
 \newline
 
 \begin{figure}[!ht]
     \centering
     \includegraphics[scale=0.5]{img/bang-bang.eps}
-    \caption{Ilustración sobre el comportamiento de la función $H^*(f)$ para distintos términos de penalización $\mathcal{L}(f)$. El problema de minimización de $H^*(f)$ con respecto a $f$ para las distintas curvas presentadas en la figura siempre tiene minimos en los extremos del intervalo $[-1,1]$ de manera que el control óptimo en los tres casos, será \emph{bang-bang}.}
+    \caption{Ilustración sobre el comportamiento de la función $H^*(u)$ para distintos términos de penalización $\mathcal{L}(u)$. El problema de minimización de $H^*(u)$ con respecto a $f$ para las distintas curvas presentadas en la figura siempre tiene minimos en los extremos del intervalo $[-1,1]$ de manera que el control óptimo en los tres casos, será \emph{bang-bang}.}
     \label{bang-bang}
 \end{figure}
 
+\subsection{Condiciones  para la obtención de controles multi-nivel}
 
-\subsection{OC SHE de dos niveles con simetría de cuarto de onda} 
-
-Consideraremos un caso concreto del problema presentado en la sección anterior. Este es problema de SHE con simetría de cuarto de onda, es decir consideramos que la función $f(\tau)$ cumple la siguiente expresión:
-\begin{gather}
-    f(\tau + \pi/2)   = f(\tau)    \ | \ \tau \in (0,\pi/2)
-\end{gather}
-
-Esta expresión nos permite simplificar la expresión para los coeficientes de Fourier (\ref{an}) and (\ref{bn}) de la siguiente manera:
-\begin{align}
-    a_i = & \  0 \ \ | \  \ \forall i \in \mathbb{Z} \\
-    b_j = &  \frac{4}{\pi} \int_0^{\pi/2} f(\tau ) \sin(j\tau)d\tau \ | \ \forall j \ odd
-\end{align}
-
-Entonces  $f(\tau) \ | \ \tau \in (0,\pi/2)$ puede ser escrita como:
-\begin{gather}
-    f(\tau ) = \sum_{j \ odd}^\infty  b_j \sin(j \tau) \\
-    b_j = \frac{4}{\pi}\int_0^{\pi/2} f(\tau ) \sin(j\tau)d\tau \ \ | \ \ j \ odd \label{bn_odd}
-\end{gather}
-
-En este contexto podemos definir el siguiente problema de control de manera análoga que en la subsección anterior:
-\begin{problem}[OCP para SHE en cuarto de onda]\label{OCP_bn}
-    Dado un conjunto de número impares $\mathcal{E}_b$ con cardinalidad $|\mathcal{E}_b| = N_b$ y dado un vector objetivo $\bm{b}_T  \in \mathbb{R}^{N_b}$, buscamos la función $f(\tau ) \ | \ \tau \in (0,\pi/2)$ tal que  $f(\tau)$ minimize el siguiente funcional de coste:
-
-        \begin{gather}
-        J[f(\tau)] = \Bigg[ || \bm{b}_T - \bm{\beta}(T)||^2 + \epsilon \int_0^{\pi/2} \mathcal{L}(f(\tau)) d\tau \Bigg] 
-    \end{gather}
-
-    donde $ \bm{\beta}(\tau) \in \mathbb{R}^{N_b} \times [0,\pi/2] $,  $||.||$ es la norma euclidea y $\epsilon$ es un parámetro de penalización para el término $\mathcal{L}(f)$.
-    \newline
-
-    Entonces el problema de control se puede escribir como:
-    \begin{gather}
-        \min_{|f(\tau) |<1} J[f(\tau)] \\
-        \notag \text{suject to: } \\
-        \notag \forall j \in \mathcal{E}_b \
-        \begin{cases}
-            \dot{\beta_j}(\tau) = (4/\pi) \sin(j\tau) f(\tau) & \tau \in [0,\pi/2]\label{dyn}\\
-            \beta_j(0) = 0
-        \end{cases} 
-    \end{gather}
-\end{problem}
-
-En este caso el problema de control tiene el siguiente Hamiltoniano:
-\begin{gather}
-    H(f,\bm{p}_\beta,\tau) = \epsilon  \mathcal{L}(f)+ 
-    \frac{4f}{\pi} \Bigg[ 
-        \sum_{j \in \mathcal{E}_b} p^\beta_j \sin(j\tau) 
-    \Bigg]
-\end{gather}
-
-Podemos ver que el Hamiltoniano tiene la misma estructura que (\ref{hamil}), por lo que de la misma forma la elección de un término de penalización $\mathcal{L}(f)$ concavo nos produce un Hamiltoniano $H^*(f)$ cóncavo y por tanto un control óptimo $f^*$ \emph{bang-bang}.
+Dado que necestiamos que existan mínimos de la función $H^*(u)$ en el interior del intervalo $[-1,1]$ la función $\mathcal{L}$ no podrá ser convexa. Además si queremos que los minimimos para cualquier valor de $m \in \mathbb{R}$ solo tome valores finitos esta función de ser no diferenciable. De manera que un variación infinitesimal de $m$ mantenga constante el mínimo de $\mathcal{L}(u)$. Proponemos una función $\mathcal{L}$ como una aproximación afin tomando como vértices los puntos pertenecientes al conjunto $\mathcal{U}$.

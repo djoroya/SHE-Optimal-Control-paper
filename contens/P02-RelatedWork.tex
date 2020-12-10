@@ -1,52 +1,72 @@
-\section{Formulaciones clásicas}
+\section{Classical approach}
 
-A continuación mencionaremos trabajos relacionados con el problema SHE mencionando su fortalezas y limitaciones con el fin de enfatisar las ventajas de considerar el problema SHE como un problema de control. Entonces como hemos mencionado el problema SHE es típicamente formulado como problema de óptimización sobre las localizaciones de los ángulos de conmutación, sin embargo en el caso en el que la función escalón pueda tomar más de dos niveles no solo deberemos indicar en que lugar se realiza la conmutación sino también qué forma de onda estamos siguiendo. Es por ello que las formulaciones de convertidores de dos y tres niveles están claramente diferenciadas por lo que continuaremos su descripción en secciones separadas.
-\newline 
-
-El problema \emph{Selective Harmonic Elimination}(SHE) consiste en la búsqueda de una función $f(\tau )$ definida en el intervalo $[0,2\pi]$, fijados unos pocos coeficientes de Fourier. Esta función $f(\tau)$ solo podrá tomar dos posibles valores $\{-1,1\}$.
-%
-Nos centraremos en concreto en las funciones $f(\tau)$ con simetría de media onda, es decir funciones tal que $f(\tau) = -f(\tau + \pi)$, por lo que la descripción de la función $f(\tau)$ queda determinada con sus valores en el intervalo $\tau \in [0,\pi]$. De esta forma, nos referiremos a una función $\{ f(\tau)  | \tau \in [0,\pi] \}$ cuyo desarrollo en serie de Fourier se puede escribir como:
-
+Next, we will mention the classic formulation of the SHE problem, mentioning its strengths and limitations in order to emphasize the advantages of considering it as a control problem. It is known that the description of the function $ u (\tau) $ is determined with its values in the interval $ \tau \in [0, \pi) $. In this way, we will refer to a function $ \{u (\tau) | \tau \in [0, \pi) \} $ whose Fourier series expansion can be written as:
 \begin{gather}
-    f(\tau ) = \sum_{i \in odd} a_i \cos(i\tau)+ \sum_{j \in odd}  b_j \sin(j \tau) 
+    u(\tau ) = \sum_{i \in odd} a_i \cos(i\tau)+ \sum_{j \in odd}  b_j \sin(j \tau) 
+\end{gather}
+Wher $a_i$ and $b_j$  are:
+\begin{gather}
+    a_i = \frac{2}{\pi} \int_0^\pi u(\tau ) \cos(i \tau)d\tau \ | \ \forall i \ odd \label{an}\\
+    b_j = \frac{2}{\pi} \int_0^\pi u(\tau)  \sin(j \tau) d\tau \ | \ \forall j \ odd \label{bn}
 \end{gather}
 
-Donde $a_i$ y $b_j$  son:
+So the SHE problem can be formulated more precisely as:
+
+\begin{problem}[SHE]\label{SHEp}
+    Given two sets of odd numbers $ \mathcal{E} _a $ and $ \mathcal{E} _b $ with cardinalities $ | \mathcal{E} _a | = N_a $ y $ | \mathcal{E} _b | = N_b $ respectively, 
+    %
+    and given the target vectors $ \bm {a} _T \in \mathbb {R}^{N_a} $ and $ \bm {b} _T \in \mathbb {R} ^ {N_b} $, we look for a function $ \{u (\tau) \ | \ \tau \in [0, \pi) \} $ such that $ u (\tau) $ can only take the values within $ \mathcal{U} $ a finite subset of the interval $ [- 1,1] $. 
+    %
+    Also whose Fourier coefficients satisfy: $ a_i = (\bm {a} _T) _i \ | \ \forall i \in \mathcal{E} _a $ y $ b_j = (\bm {b} _T) _j \ | \ \forall j \in \mathcal{E} _b $.
+\end{problem}
+
+So in order to solve this problem through the classical formulation we need in addition to the elements of this statement a waveform that they can optimize.
+
+\begin{defi}[Switching locations]
+    Given a function $ u: [0, \pi] \rightarrow \mathcal{U} $ the switching locations are the values of $ \tau $ where the function $u(\tau)$ changes its value discontinuously. We will denote the commutation angles as $ \bm {\phi} = \{\phi_0, \phi_1, \dots, \phi_M, \phi_ {M + 1} \} $ where we have taken $ \phi_0 = 0 $ and $ \phi_ {M + 1} = \pi $,\end{defi}
+
+\begin{defi}[Waveform]
+    Given $ \mathcal {U} $ a finite subset of $ [- 1,1] $ we will call a waveform a finite set $ S = \{s_1, s_2, s_3, \dots, s_ {M + 1} \} $ elements of  $ \mathcal {U} $ with repetition.
+\end{defi}
+
+
+Then a waveform $ S $ indicates the values that the function will take and in what order within the interval $ [0, \pi) $, while the switching locations $ \bm {\phi} $ indicates the switching locations. Considering these two elements we can rewrite the Fourier coefficients as:
 \begin{gather}
-    a_i = \frac{2}{\pi} \int_0^\pi f(\tau ) \cos(i \tau)d\tau \ | \ \forall i \ odd \label{an}\\
-    b_j = \frac{2}{\pi} \int_0^\pi f(\tau)  \sin(j \tau) d\tau \ | \ \forall j \ odd \label{bn}
+    a_i = \frac{2}{\pi} \int_0^\pi u(\tau ) \cos(i \tau)d\tau  = \frac{2}{\pi} \sum_{k =  1}^{M+1} 
+    \int_{\phi_{k-1}}^{\phi_{k}} s_k  \cos(i\tau)d\tau = \frac{2}{i\pi} \sum_{k=1}^{M+1} s_k \sin(i\tau) \Big|_{\phi_{k-1}}^{\phi_k} 
+\end{gather}
+\begin{gather}
+    b_j = \frac{2}{\pi} \int_0^\pi u(\tau ) \sin(j \tau)d\tau =
+    \frac{2}{\pi} \sum_{k =1}^{M+1} 
+    \int_{\phi_{k-1}}^{\phi_{k}} s_k \sin(j\tau)d\tau = 
+    \frac{2}{j\pi} \sum_{k=1}^{M+1} 
+    s_k \cos(j\tau) \Big|_{\phi_{k-1}}^{\phi_k} 
+\end{gather}
+So that:
+\begin{gather}
+    a_i(\bm{\phi}) = +\frac{2}{i\pi}  \sum_{k=1}^{M+1} s_k \Big[ \sin(i\phi_k) -\sin(i\phi_{k-1})\Big] \\
+    b_j(\bm{\phi}) = -\frac{2}{j\pi}  \sum_{k=1}^{M+1} s_k \Big[ \cos(j\phi_k) -\cos(j\phi_{k-1})\Big]
 \end{gather}
 
-A continuación introduciremos los problemas SHE para dos niveles, tres niveles y multi-nivel explicando la metodología que se suele aplicar para la solución de estos casos.
 
-
-\subsection{Formulación clásica para dos y tres niveles}
-Entonces podemos formular el problema SHE para dos niveles de la siguiente manera:
-
-\begin{problem}[SHE para dos niveles]\label{SHEp}
-    Dado dos conjuntos de números impares $\mathcal{E}_a$ y $\mathcal{E}_b$ con cardinalidades $|\mathcal{E}_a| = N_a$ y  $|\mathcal{E}_b| = N_b$ respectivamente, y dado los vectores objetivo $\bm{a}_T  \in \mathbb{R}^{N_a}$ y $\bm{b}_T  \in \mathbb{R}^{N_b}$, buscamos una función  $\{f(\tau ) \ | \ \tau \in (0,\pi)\}$ tal que $f(\tau)$ solo pueda tomar los valores  $\{-1,1\}$ y cuyos coeficientes de Fourier satisfagan: $ a_i = (\bm{a}_T)_i \ | \ \forall i \in \mathcal{E}_a$ y  $b_j = (\bm{b}_T)_j \ \forall \ | \  j \in \mathcal{E}_b$. 
+\begin{problem}[optimization for SHE]
+    Then given a waveform $ S $ we look for the locations of change by means of the following minimization problem:
+        \begin{gather} 
+        \min_{\bm{\phi} \in [0,\pi]^{M} }  \Bigg[
+        \sum_{i \in \mathcal{E}_a} \| a_T^i - a_i(\bm{\phi}) \|^2 +
+        \sum_{j \in \mathcal{E}_b} \| b_T^j - b_j(\bm{\phi}) \|^2 \Bigg]
+        \\
+        \notag \text{suject to:}
+        \\
+        0 <\phi_1 < \phi_2 < \dots < \phi_{M-1} < \phi_{M} < \pi  
+    \end{gather}
 \end{problem}
+There are well differentiated special cases in the SHE literature. These are:
+\begin{itemize}
+    \item Forma de onda binivel. Si consideramos una forma de onda tal que $ S = \{+1,-1,+1,\dots\} $, entonces podemos llamar a problema SHE asociado como SHE de dos niveles.
 
+    \item Forma de onda trinivel. Si consideramos una forma de onda tal que $ S = \{+1,0,+1,0,\dots\} $, entonces podemos llamar a problema SHE asociado como SHE de dos niveles.
 
-Además en el caso en el que  consideremos que  $\{f(\tau) | \tau \in [0,\pi]\}$ puede tomar valores en el conjunto conjunto $\{1,0\}$ obtenemos tres niveles en la función definida en el intervalo total $[0,2\pi]$. Esto se debe a la simetría de media onda. De esta manera podemos formular el problema de tres niveles de manera equivalente como:
-
-\begin{problem}[SHE para tres niveles]\label{SHEp}
-    Dado dos conjuntos de números impares $\mathcal{E}_a$ y $\mathcal{E}_b$ con cardinalidades $|\mathcal{E}_a| = N_a$ y  $|\mathcal{E}_b| = N_b$ respectivamente, 
-    %
-    y dado los vectores objetivo $\bm{a}_T  \in \mathbb{R}^{N_a}$ y $\bm{b}_T  \in \mathbb{R}^{N_b}$, 
-    %
-    buscamos una función  $\{f(\tau ) \ | \ \tau \in (0,\pi)\}$ tal que $f(\tau)$ solo pueda tomar los valores  $\{0,1\}$ y cuyos coeficientes de Fourier satisfagan: $ a_i = (\bm{a}_T)_i \ | \ \forall i \in \mathcal{E}_a$ y  $b_j = (\bm{b}_T)_j \ \forall \ | \  j \in \mathcal{E}_b$. 
-\end{problem}
-
-
-\subsection{Formulación clásica para multi-nivel}
-
-Por último, existe la posibilidad de considerar un conjunto  discreto como posibles valores que pueda tomar la función $f(\tau)$ de esta manera si llamamos $\Omega_f$ al conjunto de valores discretos que puede tomar $f(\tau)$ podemos definir el problema de SHE multi-nivel de la siguiente manera.
-
-\begin{problem}[SHE  multi-nivel]\label{SHEp_2LVL}
-    Dado dos conjuntos de números impares $\mathcal{E}_a$ y $\mathcal{E}_b$ con cardinalidades $|\mathcal{E}_a| = N_a$ y  $|\mathcal{E}_b| = N_b$ respectivamente, y dado los vectores objetivo $\bm{a}_T  \in \mathbb{R}^{N_a}$ y $\bm{b}_T  \in \mathbb{R}^{N_b}$, buscamos una función  $\{f(\tau ) \ | \ \tau \in (0,\pi)\}$ tal que $f(\tau)$ solo pueda tomar los valores en una discretización $\Omega_f$ del intervalo $[-1,1]$ y cuyos coeficientes de Fourier satisfagan: $ a_i = (\bm{a}_T)_i \ | \ \forall i \in \mathcal{E}_a$ y  $b_j = (\bm{b}_T)_j \ \forall \ | \  j \in \mathcal{E}_b$. 
-\end{problem}
-
-
+\end{itemize}
 
 

@@ -1,16 +1,11 @@
 \BOOKMARK [1][-]{section.1}{Introducci\363n}{}% 1
-\BOOKMARK [1][-]{section.2}{Formulaciones cl\341sicas}{}% 2
-\BOOKMARK [2][-]{subsection.2.1}{Formulaci\363n cl\341sica para dos y tres niveles}{section.2}% 3
-\BOOKMARK [2][-]{subsection.2.2}{Formulaci\363n cl\341sica para multi-nivel}{section.2}% 4
-\BOOKMARK [1][-]{section.3}{Selective Harmonic Elimination as dynamical system}{}% 5
-\BOOKMARK [2][-]{subsection.3.1}{Notaci\363n}{section.3}% 6
-\BOOKMARK [1][-]{section.4}{Control \363ptimo para SHE de dos y tres niveles}{}% 7
-\BOOKMARK [2][-]{subsection.4.1}{Condiciones para la obtenci\363n de controles bang-bang}{section.4}% 8
-\BOOKMARK [2][-]{subsection.4.2}{OC SHE de dos niveles con simetr\355a de cuarto de onda}{section.4}% 9
-\BOOKMARK [1][-]{section.5}{Control \363ptimo para SHE multi-nivel}{}% 10
-\BOOKMARK [2][-]{subsection.5.1}{Condiciones de Optimialidad para obtenci\363n de control digital}{section.5}% 11
-\BOOKMARK [2][-]{subsection.5.2}{OC SHE multi-nivel con simetr\355a de cuarto de onda}{section.5}% 12
-\BOOKMARK [1][-]{section.6}{Experimentos num\351ricos}{}% 13
-\BOOKMARK [2][-]{subsection.6.1}{Numerical solution of OCP-SHE}{section.6}% 14
-\BOOKMARK [2][-]{subsection.6.2}{Resultados}{section.6}% 15
-\BOOKMARK [1][-]{section.7}{Conclusiones}{}% 16
+\BOOKMARK [1][-]{section.2}{Classical approach}{}% 2
+\BOOKMARK [1][-]{section.3}{Selective Harmonic Elimination as dynamical system}{}% 3
+\BOOKMARK [1][-]{section.4}{Optimal Control for SHE}{}% 4
+\BOOKMARK [2][-]{subsection.4.1}{Optimality conditions}{section.4}% 5
+\BOOKMARK [2][-]{subsection.4.2}{Conditions for bi-level and tri-level controls}{section.4}% 6
+\BOOKMARK [2][-]{subsection.4.3}{Condiciones para la obtenci\363n de controles multi-nivel}{section.4}% 7
+\BOOKMARK [1][-]{section.5}{Experimentos num\351ricos}{}% 8
+\BOOKMARK [2][-]{subsection.5.1}{Numerical solution of OCP-SHE}{section.5}% 9
+\BOOKMARK [2][-]{subsection.5.2}{Resultados}{section.5}% 10
+\BOOKMARK [1][-]{section.6}{Conclusiones}{}% 11

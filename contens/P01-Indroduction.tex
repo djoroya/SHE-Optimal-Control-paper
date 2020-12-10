@@ -6,38 +6,49 @@
 
 \section{Introducción} 
 
-El problema \emph{Selective Harmonic Elimination}(SHE)  es un método de modulación que permite generar señales escalón\footnote{Cabe remarcar que las señales escalón de las que hablamos son funciones discontinuas definidas en el intervalo $[0,2\pi]$ y que solo pueden tomar valores en un conjunto de valores finito y pequeño. Como por ejemplo las señales escalón bi-nivel serán las funciones que solo pueden tomar los valores $\{-1,1\}$ }
-con un espectro harmónico deseado.  
+The \emph{Selective Harmonic Elimination} (SHE) problem is a modulation method that allows you to generate step signals\footnote{It should be noted that the step signals we are talking about are discontinuous functions defined in the interval $ [0,2 \pi] $ and that they can only take values in a small and finite set of values.}.
+with a desired harmonic spectrum.
 %
-Es decir, dados algunos coeficientes de Fourier, el problema SHE busca la forma de onda escalón $\{f(\tau) | \tau \in (0,2\pi] \}$ cuyos coeficientes de Fourier sean los requeridos. 
+That is, given some Fourier coefficients, the SHE problem looks for the step waveform $ \{u (\tau) | \tau \in (0,2 \pi] \} $ whose Fourier coefficients are as required.
 %
-En este contexto si el número cambios de la función escalón es prefijado el problema \emph{SHE} se puede formular como un problema de optimización donde las variables a optimizar son las localizaciones de conmutación y donde la función de coste es la distancia euclidea entre coeficientes de la función buscada y los coeficientes dados. 
+In general, half-wave symmetry, that is $ u (\tau + \pi) = - u (\tau) $, is required so in this work we will focus on this case.
+%
+In this context, if the waveform and number of switching are fixed, the problem SHE can be formulated as an optimization problem where the variables to be optimized are the switching locations.
+%
+Then we look for the switching locations that minimize the Euclidean distance between coefficients of the sought function and the given coefficients.
 \newline 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-Aunque el problema \emph{SHE} con número de ángulos de conmutación prefijado es fácilmente resoluble  existen varias dificultades en su aplicación en tiempo real. 
+Although the problem SHE given a preset waveform is easily solvable, there are several difficulties in its application.
 %
-No es posible calcular los ángulos de conmutación mediante una optimización a tiempo real es por ello que se precalculan las soluciones para distintos valores de coeficientes de Fourier objetivos.
+It is not possible to calculate the switching locations by means of a real-time optimization, which is why the solutions for different values of objective Fourier coefficients are pre-calculated.
 %
-Cuando una solución no precalculada es requerida se realizan interpolaciones con ayuda de las demás soluciones para obtenerla. 
+When a non-precalculated solution is required, interpolations are carried out with the help of the other solutions to obtain it.
 %
-Sin embargo es conocido que el espacio de soluciones en los ángulos de conmutación es discontinuo con respecto a una variación continua de coeficientes de Fourier objetivo. Este es motivo por la que la interpolación de soluciones es compleja y en algunas ocasiones imposible.
+However, it is known that the space of solutions at the commutation angles is discontinuous with respect to a continuous variation of objective Fourier coefficients.
+%
+This is the reason why the interpolation of solutions is complex and sometimes impossible.
 \newline
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %
-La naturaleza sobre la aparición y el desvanecimineto de las soluciones mediante una  variación continua de los coeficientes de Fourier, es desconocida. Por medio del cálculo \emph{offline} de las soluciones se sabe que mientras más ángulos de conmutación es considerado más grande es la región continua de soluciones.
+The nature of the appearance and fading of solutions through a continuous variation of the Fourier coefficients is unknown.
 %
-Esto nos indíca que el número de ángulos de conmutación necesarios a lo largo de una región del espacio de soluciones podría cambiar de manera que esta formulación es poco flexible para una descripción continua de las soluciones.
+By calculating of the solutions it is known that the more switching locations are considered, the larger the continuous region of solutions.
+%
+This tells us that the number of switching locations required along a region of the solution space could change so that this formulation is not very flexible for a continuous description of the solutions.
 \newline
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %
-En este documento presentaremos el problema SHE como un problema de control óptimo, donde la variable de optimización es la señal $f(\tau)$ definida en todo el intervalo $[0,2\pi]$.
+In this document we will present the SHE problem as an optimal control problem, where the optimization variable is the signal $ u (\tau) $ defined in the entire interval $ [0,2 \pi) $.
 %
-Asi pues describiremos como en el problema SHE los coeficientes de Fourier de la función $f(\tau)$ se pueden ver como el estado final de un sistema controlado por $f(\tau)$. 
+Thus we will describe how in the problem of the Fourier coefficients of the function $ u (\tau) $ they can be seen as the final state of a system controlled by $ u (\tau) $.
 %
-De manera que la optimización se realiza entre todas las posibles funciones que cumplan $|f(\tau)|<1$ que puedan controlar el estado final a los coeficientes de Fourier deseados.  Luego mostraremos como diseñar un problema de control de manera que la solución sea una función escalón. Por último, mostraremos soluciónes del problema \emph{SHE} mediante la formulación del control óptimo viendo como esta metodología es versátil ante la variación del número de conmutaciones.
+So the optimization is performed among all the possible functions that satisfy $ | u (\tau) | <1 $ that can control the final state at the desired Fourier coefficients.
 %
+Then we will show how to design a control problem so that the solution is a step function.
+%
+Finally, we will show solutions to the SHE problem by formulating the optimal control, seeing how this methodology is versatile in the face of the variation in the number of commutations.%
 
