@@ -1,45 +1,87 @@
 
 \begin{abstract}
-    En este documento formularemos el problema de \emph{Selective Harmonic Elimination pulse-width modulation}(SHE-PWM) como el problema de control óptimo, con el fin de encontrar soluciones de ondas cuadradas sin prefijar el número de ángulos de conmunatación. Esta nueva perspectiva nos permite realizar un análisis sobre la continuidad de soluciones.
+    En este documento formularemos el problema de \emph{Selective Harmonic Elimination pulse-width modulation}(SHE-PWM) como el problema de control óptimo, con el fin de encontrar soluciones de ondas cuadradas sin prefijar el número de ángulos de conmutación. 
+    %
+    Esta nueva perspectiva nos permite realizar un análisis sobre la continuidad de soluciones.
+    %
+    %In this document, we formulate the Selective Harmonic Elimination as a optimal control problem.
 \end{abstract}
 \tableofcontents
 
-\section{Introducción} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-The \emph{Selective Harmonic Elimination} (SHE) problem is a modulation method that allows you to generate step signals\footnote{It should be noted that the step signals we are talking about are discontinuous functions defined in the interval $ [0,2 \pi] $ and that they can only take values in a small and finite set of values.}.
-with a desired harmonic spectrum.
+\section{Introducción} 
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% DEFINICIÓN DEL PROBLEMA %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Selective Harmonic Elimination (SHE) es una metodología de modulación de señal que permite generar señales escalón con el espectro armónico deseado. 
 %
-That is, given some Fourier coefficients, the SHE problem looks for the step waveform $ \{u (\tau) | \tau \in (0,2 \pi] \} $ whose Fourier coefficients are as required.
+Es decir, nos permite generar una función $u(\tau)$ definida en $[0,2\pi)$ cuyos valores en todo el intervalo solo puedan estar contenida en un conjunto  finito de valores reales y que además, tenga ciertos coeficientes de Fourier deseados. 
 %
-In general, half-wave symmetry, that is $ u (\tau + \pi) = - u (\tau) $, is required so in this work we will focus on this case.
+Llamaremos al conjunto de posibles valores como $\mathcal{U}$. 
 %
-In this context, if the waveform and number of switching are fixed, the problem SHE can be formulated as an optimization problem where the variables to be optimized are the switching locations.
+Por otro lado, cabe mencionar que debido a la aplicación real de esta metodología es requerida la simetría de media onda, de manera que se debe cumplir que: $u(\tau + \pi) = -u(\tau)$.
 %
-Then we look for the switching locations that minimize the Euclidean distance between coefficients of the sought function and the given coefficients.
+Debido a esto en este documento consideraremos este caso, de manera que la función $f(\tau)$ queda determinada por sus valores en el intervalo $[0,\pi)$. 
+% 
+Por otra parte, dependiendo de la cardinalidad del conjunto $\mathcal{U}$ el problema SHE recibe distintos nombres. 
+%
+Por ejemplo si consideramos un conjunto admisible como $\mathcal{U} = \{-1,1\}$, entonces el problema es llamado como SHE de dos niveles haciendo referencia a que la función $u(\tau)$ solo puede tomar dos valores. 
+%  
+De la misma forma si el conjunto admisible es $\mathcal{U} = \{-1,0,1\}$ el problema es llamado SHE trinivel. 
+%
 \newline 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-Although the problem SHE given a preset waveform is easily solvable, there are several difficulties in its application.
-%
-It is not possible to calculate the switching locations by means of a real-time optimization, which is why the solutions for different values of objective Fourier coefficients are pre-calculated.
-%
-When a non-precalculated solution is required, interpolations are carried out with the help of the other solutions to obtain it.
-%
-However, it is known that the space of solutions at the commutation angles is discontinuous with respect to a continuous variation of objective Fourier coefficients.
-%
-This is the reason why the interpolation of solutions is complex and sometimes impossible.
-\newline
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%% METODOLOGÍA CLÁSICA %%
+%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
+Podemos plantear este problema como  la búsqueda de una secuencia $S$ de números contenidos en $\mathcal{U}$ que nos defina qué valores tomará la función $u(\tau)$ y en que orden.
 %
+De manera que dada la secuencia $S$ podemos centrarnos en buscar las localizaciones concretas donde se producen los cambios de valor de la función.
+%
+Esta es la metodología clásica que se ha seguido desde el introducción de la metodología SHE.
+%
+La búsqueda de las localización dada la secuencia $S$ se puede abordar como un problema de minimización donde las variables son las localizaciones de cambio mientras que el funcional de coste es la suma de la diferencia al cuadrado de los coeficientes de Fourier obtenidos y los deseados.
+%
+Sin embargo, la búsqueda de la secuencia/s óptima/s no es evidente, este es un problema de combinatoria de los elementos de $\mathcal{U}$. 
+%
+Dado que \emph{a priori} no conocemos la cardinalidad de la secuencia $\mathcal{S}$, es decir el número de cambios necesarios,  el problema parece tener solo la solución de fijar el número de cambios de contar todas las posibles combinaciones para luego resolver un problema de optimización asociada a cada uno de ellas. 
+%  
+El número de posibles secuencias depende de las cardinalidades es:  $|\mathcal{U}|^{|S|}$, por lo que la complejidad de la búsqueda escala rápidamente con el tamaño de la secuencia.
+\newline 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% PROBLEMAS METODOLOGÍA CLÁSICA %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Aún así actualmente se puede resolver el problema planteado con un tiempo de computo aceptable, sin embargo el problema de esta metodología reside en su aplicación de tiempo real.
+%
+La metodología SHE deberá responder a tiempo real para distintos coeficientes de Fourier objetivo con una latencia de $GHz$. 
+%
+Esto hace imposible la resolución a tiempo real por lo que es necesario el pre-calcular soluciones para que luego puedan ser interpoladas.
+%
+Sin embargo es bien conocido que fijado una secuencia $S$ la continuidad de las localizaciones de cambio con respecto a una variación continua de los coeficientes de Fourier objetivo es caótica. 
+%
+En la mayoría de los casos no se puede encontrar una solución continua para un intervalo largo, si no que es necesario cambiar la forma de onda $S$ según vamos tomando regiones de soluciones.
+\newline
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% PROBLEMAS METODOLOGÍA CLÁSICA %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 The nature of the appearance and fading of solutions through a continuous variation of the Fourier coefficients is unknown.
 %
 By calculating of the solutions it is known that the more switching locations are considered, the larger the continuous region of solutions.
 %
 This tells us that the number of switching locations required along a region of the solution space could change so that this formulation is not very flexible for a continuous description of the solutions.
 \newline
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %
 In this document we will present the SHE problem as an optimal control problem, where the optimization variable is the signal $ u (\tau) $ defined in the entire interval $ [0,2 \pi) $.
