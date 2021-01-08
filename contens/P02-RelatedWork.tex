@@ -17,18 +17,18 @@ So the SHE problem can be formulated more precisely as:
     %
     and given the target vectors $ \bm {a} _T \in \mathbb {R}^{N_a} $ and $ \bm {b} _T \in \mathbb {R} ^ {N_b} $, we look for a function $ \{u (\tau) \ | \ \tau \in [0, \pi) \} $ such that $ u (\tau) $ can only take the values within $ \mathcal{U} $ a finite subset of the interval $ [- 1,1] $. 
     %
-    Also whose Fourier coefficients satisfy: $ a_i = (\bm {a} _T) _i \ | \ \forall i \in \mathcal{E} _a $ y $ b_j = (\bm {b} _T) _j \ | \ \forall j \in \mathcal{E} _b $.
+    Also whose Fourier coefficients satisfy: $ a_i = (\bm {a} _T) _i \ | \ \forall i \in \mathcal{E} _a $ and $ b_j = (\bm {b} _T) _j \ | \ \forall j \in \mathcal{E} _b $.
 \end{problem}
 
-So in order to solve this problem through the classical formulation we need in addition to the elements of this statement a waveform that they can optimize.
+Dadod que la función $u(\tau)$ es una función definida a trozos, la aproximación clásica trata utilizar esta propiedad para simplificar el problema. De manera que, la función de $u(\tau)$ puede ser descrita mediante los ángulos de cambio y los valores constantes que tomar en cada sección. A continuación definimos estos dos elementos: 
 
-\begin{defi}[Switching locations]
-    Given a function $ u: [0, \pi] \rightarrow \mathcal{U} $ the switching locations are the values of $ \tau $ where the function $u(\tau)$ changes its value discontinuously. We will denote the commutation angles as $ \bm {\phi} = \{\phi_0, \phi_1, \dots, \phi_M, \phi_ {M + 1} \} $ where we have taken $ \phi_0 = 0 $ and $ \phi_ {M + 1} = \pi $,\end{defi}
+\begin{definition}[Switching angles]
+    Given a function $ u: [0, \pi] \rightarrow \mathcal{U} $ the switching locations are the values of $ \tau $ where the function $u(\tau)$ changes its value discontinuously. We will denote the commutation angles as $ \bm {\phi} = \{\phi_0, \phi_1, \dots, \phi_M, \phi_ {M + 1} \} $ where we have taken $ \phi_0 = 0 $ and $ \phi_ {M + 1} = \pi $,
+\end{definition}
 
-\begin{defi}[Waveform]
+\begin{definition}[Waveform]
     Given $ \mathcal {U} $ a finite subset of $ [- 1,1] $ we will call a waveform a finite set $ S = \{s_1, s_2, s_3, \dots, s_ {M + 1} \} $ elements of  $ \mathcal {U} $ with repetition.
-\end{defi}
-
+\end{definition}
 
 Then a waveform $ S $ indicates the values that the function will take and in what order within the interval $ [0, \pi) $, while the switching locations $ \bm {\phi} $ indicates the switching locations. Considering these two elements we can rewrite the Fourier coefficients as:
 \begin{gather}
@@ -48,7 +48,7 @@ So that:
     b_j(\bm{\phi}) = -\frac{2}{j\pi}  \sum_{k=1}^{M+1} s_k \Big[ \cos(j\phi_k) -\cos(j\phi_{k-1})\Big]
 \end{gather}
 
-
+De esta manera podemos reformular el problema (\ref{SHEp}) de la siguiente manera:
 \begin{problem}[optimization for SHE]
     Then given a waveform $ S $ we look for the locations of change by means of the following minimization problem:
         \begin{gather} 
@@ -61,12 +61,15 @@ So that:
         0 <\phi_1 < \phi_2 < \dots < \phi_{M-1} < \phi_{M} < \pi  
     \end{gather}
 \end{problem}
-There are well differentiated special cases in the SHE literature. These are:
-\begin{itemize}
-    \item Forma de onda binivel. Si consideramos una forma de onda tal que $ S = \{+1,-1,+1,\dots\} $, entonces podemos llamar a problema SHE asociado como SHE de dos niveles.
 
-    \item Forma de onda trinivel. Si consideramos una forma de onda tal que $ S = \{+1,0,+1,0,\dots\} $, entonces podemos llamar a problema SHE asociado como SHE de dos niveles.
+De manera, que el problema SHE es un problema de minimización con restricciones que puede resolverse mediante técnicas conocidas. Dado que es un problema con múltiples mínimos se deberá resolver mediante optimizadores globales lo que puede hacer costosa la búsqueda.
 
-\end{itemize}
+% There are well differentiated special cases in the SHE literature. These are:
+% \begin{itemize}
+%     \item Forma de onda binivel. Si consideramos una forma de onda tal que $ S = \{+1,-1,+1,\dots\} $, entonces podemos llamar a problema SHE asociado como SHE de dos niveles.
+
+%     \item Forma de onda trinivel. Si consideramos una forma de onda tal que $ S = \{+1,0,+1,0,\dots\} $, entonces podemos llamar a problema SHE asociado como SHE de dos niveles.
+
+% \end{itemize}
 
 

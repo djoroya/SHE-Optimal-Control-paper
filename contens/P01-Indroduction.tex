@@ -1,6 +1,6 @@
 
 \begin{abstract}
-    En este documento formularemos el problema de \emph{Selective Harmonic Elimination pulse-width modulation}(SHE-PWM) como el problema de control óptimo, con el fin de encontrar soluciones de ondas cuadradas sin prefijar el número de ángulos de conmutación. 
+    En este documento formularemos el problema de \emph{Selective Harmonic Elimination pulse-width modulation}(SHE) como el problema de control óptimo, con el fin de encontrar soluciones de ondas cuadradas sin prefijar el número de ángulos de conmutación. 
     %
     Esta nueva perspectiva nos permite realizar un análisis sobre la continuidad de soluciones.
     %
@@ -14,23 +14,17 @@
  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% DEFINICIÓN DEL PROBLEMA %%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 
-Selective Harmonic Elimination (SHE) es una metodología de modulación de señal que permite generar señales escalón con el espectro armónico deseado. 
+Selective Harmonic Elimination (SHE) \cite{Rodriguez2002} es una metodología de modulación de señal que permite generar señales escalón con el espectro armónico deseado. 
 %
-Es decir, nos permite generar una función $u(\tau)$ definida en $[0,2\pi)$ cuyos valores en todo el intervalo solo puedan estar contenida en un conjunto  finito de valores reales y que además, tenga ciertos coeficientes de Fourier deseados. 
+Es decir, nos permite generar una función $u(\tau)$ definida en $[0,2\pi)$ cuyos valores en todo el intervalo solo puedan estar contenida en un conjunto  finito de valores reales $\mathcal{U}$, y que además, tenga ciertos coeficientes de Fourier objetivo. 
 %
-Llamaremos al conjunto de posibles valores como $\mathcal{U}$. 
-%
-Por otro lado, cabe mencionar que debido a la aplicación real de esta metodología es requerida la simetría de media onda, de manera que se debe cumplir que: $u(\tau + \pi) = -u(\tau)$.
-%
-Debido a esto en este documento consideraremos este caso, de manera que la función $f(\tau)$ queda determinada por sus valores en el intervalo $[0,\pi)$. 
+Nos centraremos a funciones que cumplan simetría de media onda, es decir: $u(\tau + \pi) = -u(\tau) \ | \ \forall \tau \in [0,\pi)$. De esta manera la función $u(\tau)$ queda determinada por sus valores en el intervalo $[0,\pi)$. 
 % 
-Por otra parte, dependiendo de la cardinalidad del conjunto $\mathcal{U}$ el problema SHE recibe distintos nombres. 
+%En la literatura, dependiendo de la cardinalidad del conjunto $\mathcal{U}$ el problema SHE recibe distintos nombres. 
 %
-Por ejemplo si consideramos un conjunto admisible como $\mathcal{U} = \{-1,1\}$, entonces el problema es llamado como SHE de dos niveles haciendo referencia a que la función $u(\tau)$ solo puede tomar dos valores. 
-%  
-De la misma forma si el conjunto admisible es $\mathcal{U} = \{-1,0,1\}$ el problema es llamado SHE trinivel. 
+%De esta manera, si consideramos el conjunto admisible como $\mathcal{U} = \{-1,1\}$, entonces el problema es llamado como SHE de dos niveles \cite{Konstantinou2010}, mientras que si el conjunto admisible es $\mathcal{U} = \{-1,0,1\}$ el problema es llamado SHE tri-nivel. 
 %
 \newline 
 
@@ -39,52 +33,47 @@ De la misma forma si el conjunto admisible es $\mathcal{U} = \{-1,0,1\}$ el prob
 %%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-Podemos plantear este problema como  la búsqueda de una secuencia $S$ de números contenidos en $\mathcal{U}$ que nos defina qué valores tomará la función $u(\tau)$ y en que orden.
+Por lo general este problema se plantea como la búsqueda de una secuencia $S$ de números contenidos en $\mathcal{U}$ que nos defina qué valores tomará la función $u(\tau)$ y en que orden \cite{Konstantinou2010}.
 %
 De manera que dada la secuencia $S$ podemos centrarnos en buscar las localizaciones concretas donde se producen los cambios de valor de la función.
 %
-Esta es la metodología clásica que se ha seguido desde el introducción de la metodología SHE.
+Por otra parte, las localizaciones de cambio dado la forma de onda $\mathcal{S}$ son llamados ángulos de conmutación \cite{Yang2015,Konstantinou2010,Sun1996}; de modo que procederemos a llamarlos de  la misma manera.
 %
-La búsqueda de las localización dada la secuencia $S$ se puede abordar como un problema de minimización donde las variables son las localizaciones de cambio mientras que el funcional de coste es la suma de la diferencia al cuadrado de los coeficientes de Fourier obtenidos y los deseados.
-%
-Sin embargo, la búsqueda de la secuencia/s óptima/s no es evidente, este es un problema de combinatoria de los elementos de $\mathcal{U}$. 
-%
-Dado que \emph{a priori} no conocemos la cardinalidad de la secuencia $\mathcal{S}$, es decir el número de cambios necesarios,  el problema parece tener solo la solución de fijar el número de cambios de contar todas las posibles combinaciones para luego resolver un problema de optimización asociada a cada uno de ellas. 
-%  
-El número de posibles secuencias depende de las cardinalidades es:  $|\mathcal{U}|^{|S|}$, por lo que la complejidad de la búsqueda escala rápidamente con el tamaño de la secuencia.
+La búsqueda de las localizaciones dada la secuencia $S$ se puede abordar como un problema de minimización donde las variables son ángulos de conmutación mientras que el funcional de coste es la suma de la diferencia al cuadrado de los coeficientes de Fourier obtenidos y los deseados.
 \newline 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% PROBLEMAS METODOLOGÍA CLÁSICA %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-Aún así actualmente se puede resolver el problema planteado con un tiempo de computo aceptable, sin embargo el problema de esta metodología reside en su aplicación de tiempo real.
+La búsqueda de la secuencia óptima no es evidente, este es un problema de combinatoria de los elementos de $\mathcal{U}$. 
 %
-La metodología SHE deberá responder a tiempo real para distintos coeficientes de Fourier objetivo con una latencia de $GHz$. 
+Dado que \emph{a priori} no conocemos la cardinalidad de la secuencia $\mathcal{S}$, es decir el número de cambios necesarios,  el problema parece tener solo la solución de fijar el número de cambios de contar todas las posibles combinaciones para luego resolver un problema de optimización asociada a cada uno de ellas. 
+%  
+Teniendo en cuenta que el número de posibles secuencias depende de las cardinalidades del conjunto de admisible $\mathcal{U}$ y de la secuencia $S$, de la siguiente manera:  $|\mathcal{U}|^{|S|}$; es evidente que la complejidad de la búsqueda escala rápidamente con el tamaño de la secuencia.
+% 
+Este problema ha sido estudiado y abordado en \cite{Yang2015}, donde mediante tranformaciones algebráicas logran transformar el problema a un sistema de polinomos que contiene todas las posibles formas de ondas para un número fijo elementos de la secuencia $S$ y para un conjunto $\mathcal{U}$, sin embargo el número de posibles conmutaciones es prefijado. 
 %
-Esto hace imposible la resolución a tiempo real por lo que es necesario el pre-calcular soluciones para que luego puedan ser interpoladas.
-%
-Sin embargo es bien conocido que fijado una secuencia $S$ la continuidad de las localizaciones de cambio con respecto a una variación continua de los coeficientes de Fourier objetivo es caótica. 
-%
-En la mayoría de los casos no se puede encontrar una solución continua para un intervalo largo, si no que es necesario cambiar la forma de onda $S$ según vamos tomando regiones de soluciones.
 \newline
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% PROBLEMAS METODOLOGÍA CLÁSICA %%
+%% PROBLEMA DE LA INTERPOLACIÓN  %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-The nature of the appearance and fading of solutions through a continuous variation of the Fourier coefficients is unknown.
 %
-By calculating of the solutions it is known that the more switching locations are considered, the larger the continuous region of solutions.
+Por otra parte, es importante notar que la metodología SHE deberá responder a tiempo real para distintos coeficientes de Fourier objetivo con una latencia de $GHz$. 
 %
-This tells us that the number of switching locations required along a region of the solution space could change so that this formulation is not very flexible for a continuous description of the solutions.
+Esto hace imposible la obtención de soluciones a tiempo real mediante optimización, por lo que es necesario el pre-calcular soluciones para que luego puedan ser interpoladas.
+%
+Sin embargo es bien conocido que fijado una secuencia $S$ la continuidad de las localizaciones de cambio con respecto a una variación continua de los coeficientes de Fourier objetivo es compleja. 
+%
+En la mayoría de los casos no se puede encontrar una solución continua para un intervalo largo, si no que es necesario cambiar la forma de onda $S$ según vamos tomando regiones de soluciones \cite{Yang2015,Yang2017}. 
+% 
+Esto hace complejo la interpolación de soluciones y la búsqueda de estas.
 \newline
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %
-In this document we will present the SHE problem as an optimal control problem, where the optimization variable is the signal $ u (\tau) $ defined in the entire interval $ [0,2 \pi) $.
+In this document we will present the SHE problem as an optimal control problem, where the optimization variable is the signal $ u (\tau) $ defined in the entire interval $ [0,\pi) $.
 %
 Thus we will describe how in the problem of the Fourier coefficients of the function $ u (\tau) $ they can be seen as the final state of a system controlled by $ u (\tau) $.
 %
@@ -92,5 +81,6 @@ So the optimization is performed among all the possible functions that satisfy $
 %
 Then we will show how to design a control problem so that the solution is a step function.
 %
-Finally, we will show solutions to the SHE problem by formulating the optimal control, seeing how this methodology is versatile in the face of the variation in the number of commutations.%
+\newline
 
+Estructuraremos este documento de la siguiente manera: en la sección (1) Presentaremos la aproximación clasica de problema introduciendo conceptos básicos y el problema de optimización mostrando sus ventajas y desventajas; en la sección (2) Presentaremos el problema -she como un sistema dinámico de control; en la sección (3) Presentaremos el problema de control óptimo que nos permite obtener soluciones al problema; en la sección (4) Presentaremos experimentos numéricos para distintos niveles; y por último en la sección (5) mostraremos las conclusiones. 
