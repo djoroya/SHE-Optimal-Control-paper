@@ -1,8 +1,8 @@
 
 \begin{abstract}
-    En este documento formularemos el problema de \emph{Selective Harmonic Elimination pulse-width modulation}(SHE) como el problema de control óptimo, con el fin de encontrar soluciones de ondas cuadradas sin prefijar el número de ángulos de conmutación. 
+    El problema de \emph{Selective Harmonic Elimination pulse-width modulation}(SHE) es planteado como el problema de control óptimo, con el fin de encontrar soluciones de ondas escalón sin prefijar el número de ángulos de conmutación. De esta manera, la metodología de control óptimo es capaz de encontar la forma de onda óptima y de encontrar la localizaciones de los ángulos de conmutación, incluso sin prefijar el número de conmutaciones. Este es un nuevo enfoque para el problema SHE en concreto y para los sistemas de control con un conjunto finito de controles admisibles en general.
     %
-    Esta nueva perspectiva nos permite realizar un análisis sobre la continuidad de soluciones.
+    
     %
     %In this document, we formulate the Selective Harmonic Elimination as a optimal control problem.
 \end{abstract}
@@ -20,13 +20,23 @@ Selective Harmonic Elimination (SHE) \cite{Rodriguez2002} es una metodología de
 %
 Es decir, nos permite generar una función $u(\tau)$ definida en $[0,2\pi)$ cuyos valores en todo el intervalo solo puedan estar contenida en un conjunto  finito de valores reales $\mathcal{U}$, y que además, tenga ciertos coeficientes de Fourier objetivo. 
 %
-Nos centraremos a funciones que cumplan simetría de media onda, es decir: $u(\tau + \pi) = -u(\tau) \ | \ \forall \tau \in [0,\pi)$. De esta manera la función $u(\tau)$ queda determinada por sus valores en el intervalo $[0,\pi)$. 
-% 
-%En la literatura, dependiendo de la cardinalidad del conjunto $\mathcal{U}$ el problema SHE recibe distintos nombres. 
-%
-%De esta manera, si consideramos el conjunto admisible como $\mathcal{U} = \{-1,1\}$, entonces el problema es llamado como SHE de dos niveles \cite{Konstantinou2010}, mientras que si el conjunto admisible es $\mathcal{U} = \{-1,0,1\}$ el problema es llamado SHE tri-nivel. 
-%
-\newline 
+Debido a su aplicación en los convertidores de potencia, nos centraremos a funciones que cumplan simetría de media onda, es decir: $u(\tau + \pi) = -u(\tau) \ | \ \forall \tau \in [0,\pi)$. De esta manera la función $u(\tau)$ queda determinada por sus valores en el intervalo $[0,\pi)$ y su desarrollo en serie de Fourier se puede escribir como:
+\begin{gather}
+    u(\tau ) = \sum_{i \in odd} a_i \cos(i\tau)+ \sum_{j \in odd}  b_j \sin(j \tau) 
+\end{gather}
+Where $a_i$ and $b_j$  are:
+\begin{gather}
+    a_i = \frac{2}{\pi} \int_0^\pi u(\tau ) \cos(i \tau)d\tau \ | \ \forall i \ odd \label{an}\\
+    b_j = \frac{2}{\pi} \int_0^\pi u(\tau)  \sin(j \tau) d\tau \ | \ \forall j \ odd \label{bn}
+\end{gather}
+So the SHE problem can be formulated more precisely as:
+\begin{problem}[SHE]\label{SHEp}
+    Given two sets of odd numbers $ \mathcal{E} _a $ and $ \mathcal{E} _b $ with cardinalities $ | \mathcal{E} _a | = N_a $ y $ | \mathcal{E} _b | = N_b $ respectively, 
+    %
+    and given the target vectors $ \bm {a} _T \in \mathbb {R}^{N_a} $ and $ \bm {b} _T \in \mathbb {R} ^ {N_b} $, we look for a function $ \{u (\tau) \ | \ \tau \in [0, \pi) \} $ such that $ u (\tau) $ can only take the values within $ \mathcal{U} $ a finite subset of the interval $ [- 1,1] $. 
+    %
+    Also whose Fourier coefficients satisfy: $ a_i = (\bm {a} _T) _i \ | \ \forall i \in \mathcal{E} _a $ and $ b_j = (\bm {b} _T) _j \ | \ \forall j \in \mathcal{E} _b $.
+\end{problem}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
 %% METODOLOGÍA CLÁSICA %%
@@ -46,8 +56,6 @@ La búsqueda de las localizaciones dada la secuencia $S$ se puede abordar como u
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% PROBLEMAS METODOLOGÍA CLÁSICA %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-La búsqueda de la secuencia óptima no es evidente, este es un problema de combinatoria de los elementos de $\mathcal{U}$. 
-%
 Dado que \emph{a priori} no conocemos la cardinalidad de la secuencia $\mathcal{S}$, es decir el número de cambios necesarios,  el problema parece tener solo la solución de fijar el número de cambios de contar todas las posibles combinaciones para luego resolver un problema de optimización asociada a cada uno de ellas. 
 %  
 Teniendo en cuenta que el número de posibles secuencias depende de las cardinalidades del conjunto de admisible $\mathcal{U}$ y de la secuencia $S$, de la siguiente manera:  $|\mathcal{U}|^{|S|}$; es evidente que la complejidad de la búsqueda escala rápidamente con el tamaño de la secuencia.
@@ -60,7 +68,7 @@ Este problema ha sido estudiado y abordado en \cite{Yang2015}, donde mediante tr
 %% PROBLEMA DE LA INTERPOLACIÓN  %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-Por otra parte, es importante notar que la metodología SHE deberá responder a tiempo real para distintos coeficientes de Fourier objetivo con una latencia de $GHz$. 
+Por otra parte, es importante mencionar que la metodología SHE ha sido desarrollada para responder a tiempo real para distintos coeficientes de Fourier objetivo con una latencia de $KHz$. 
 %
 Esto hace imposible la obtención de soluciones a tiempo real mediante optimización, por lo que es necesario el pre-calcular soluciones para que luego puedan ser interpoladas.
 %

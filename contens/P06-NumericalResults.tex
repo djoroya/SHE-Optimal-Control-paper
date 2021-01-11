@@ -1,9 +1,10 @@
-\section{Experimentos numéricos}
+\section{Numerical simulations}
 
+En esta sección mostraremos algunos ejemplo resolviendo el problema de control óptimo mediante el método directo y la herramienta de optimización no lineal bajo constrain: CasADi \cite{Andersson2019}.
 %
-\subsection{Smooth approxiation of piecewise linear penalization}
+\subsection{Smooth approximation of piecewise linear penalization}
 
-Con el fin de utilizar softwre de optimización para resolver el problema de control óptimo planteado aproximaremos penalización lineal a trozos mediante con ayuda de función escalón de Heaviside $h$ y su aproximación suave $h^\eta$ definida de la siguiente manera: 
+Con el fin de utilizar softwre de optimización para resolver el problema de control óptimo planteado aproximaremos penalización lineal a trozos mediante con ayuda de función escalón de Heaviside $h:\mathbb{R} \rightarrow \mathbb{R}$ y su aproximación suave $h^\eta:\mathbb{R} \rightarrow \mathbb{R}$ definida de la siguiente manera: 
 \begin{gather}
     h(x) = \begin{cases}
         1 & \text{ if } x \geq 0 \\
@@ -15,7 +16,7 @@ Con el fin de utilizar softwre de optimización para resolver el problema de con
         \eta \rightarrow \infty
     \end{cases}
 \end{gather}
-Con ayuda de $h$ definimos la función ventana suave como 
+Con ayuda de la función $h$ definimos la función ventana suave $\Pi_{a,b}^\eta:\mathbb{R} \rightarrow \mathbb{R}$ como:
 \begin{gather}
     \Pi_{[a,b]}^\eta(x) = - 1 + h^\eta(x-a) + h^\eta(-x+b) 
 \end{gather}
@@ -23,30 +24,28 @@ De manera simplificada:
 \begin{gather}
     \Pi_{[a,b]}^\eta(x) = \frac{\tanh[\eta( x -a)] + \tanh[\eta (b-x)]}{2}
 \end{gather}
-Para ello primero escribiremos (\ref{PLP}) como:
+De esta menera podemos escribir la versión  suave de (\ref{PLP}):
 \begin{gather}
     \mathcal{L}^\eta(u) = \sum_{k = 1}^{N_u-1} \big[ (u_{k+1}+u_{k}) (u-u_k) + u_k^2 \big] \Pi^\eta_{[u_k,u_{k+1}]}(u)
 \end{gather}
-
 De manera que cuando $\eta \rightarrow \infty$ entonces $\mathcal{L}^\eta \rightarrow \mathcal{L}$
 
-\subsection{Numerical solution of OCP-SHE}
+\subsection{Direct method  for  OCP-SHE}
 
 To solve the optimal control problem (\ref{OCP2}), we use a direct method. 
 If we consider a partition $\mathcal{P} = \{\tau_0,\tau_1,\dots,\tau_{T}\}$ of interval $[0,T]$ , we can represent a function $\{ u(\tau) \ | \ \tau \in [0,T]\}$ as a vector $\bm{f} \in \mathbb{R}^{T}$ where component $f_t = u(\tau_t)$. Then the optimal control problem (\ref{OCP1}) can be written as optimization problem with variable $\bm{f} \in \mathbb{R}^{T}$. This problem is a nonlinear programming, for this we use CasADi software to solve. Entonces, dado una partición del intervalo $[0,\pi)$ podemos reformular el problema (\ref{OCP1}) como el siguiente problema en tiempo discreto:
 
 \begin{problem}[OCP numérico]
-    Dados dos conjuntos de números impares $\mathcal{E}_a$ and $\mathcal{E}_b$ con cardinalidades $|\mathcal{E}_a| = N_a$ y  $|\mathcal{E}_b| = N_b$ respectivamente , dados los vectores objetivos $\bm{a}_T  \in \mathbb{R}^{N_a}$ y $\bm{b}_T  \in \mathbb{R}^{N_b}$ y una  partition $\mathcal{P} = \{\tau_0,\tau_1,\dots,\tau_{T}\}$ of interval $[0,\pi)$. We search a vector $\bm{f} \in \mathbb{R}^{T}$ that minimize the following function:
+    Dados dos conjuntos de números impares $\mathcal{E}_a$ and $\mathcal{E}_b$ con cardinalidades $|\mathcal{E}_a| = N_a$ y  $|\mathcal{E}_b| = N_b$ respectivamente, dados los vectores objetivos $\bm{a}_T  \in \mathbb{R}^{N_a}$, de manera que $\bm{x}_0 = [\bm{a}_T,\bm{b}_T]^T$; y $\bm{b}_T  \in \mathbb{R}^{N_b}$ y una  partition $\mathcal{P} = \{\tau_0,\tau_1,\dots,\tau_{T}\}$ of interval $[0,\pi)$. We search a vector $\bm{u} \in \mathbb{R}^{T}$ that minimize the following function:
     \begin{gather}
-        \min_{\bm{f} \in \mathbb{R}^{T} } 
+        \min_{\bm{u} \in \mathbb{R}^{T} } 
         \Bigg[ 
-        || \bm{x}^{T}|| ^2
+        || \bm{x}^{T}||^2
         + \epsilon  \sum_{t=0}^{T-1} \mathcal{L}^\eta(u_{t}) \Delta\tau_t  \Bigg]  \\
         \notag \text{suject to: } \\
-        \notag i \in \mathcal{E}_a \ \ 
-        \begin{cases}
+        \forall \tau \in \mathcal{P} \begin{cases}
             \bm{x}^{t+1} = \bm{x}^{t} - \Delta \tau_t \bm{\mathcal{D}}(\tau_t)u_t \\
-            \bm{x}^0 = \bm{x}_T
+            \bm{x}^0 = \bm{x}_0
         \end{cases} 
     \end{gather}
 \end{problem}

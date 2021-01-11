@@ -11,7 +11,7 @@ Since the SHE problem is equivalent to controlling a dynamic system from the ori
         \notag \text{suject to: } \\
         \begin{cases}
             \dot{\bm{x}}(\tau) = -\bm{\mathcal{D}}(\tau) u(\tau)  & \tau \in [0,\pi)\\
-            \bm{x}(0) = \bm{x}_T
+            \bm{x}(0) = \bm{x}_0
         \end{cases}
     \end{gather}
 \end{problem}
@@ -30,7 +30,7 @@ In order to obtain a problem that can be solved by classical control theory we c
         \notag \text{suject to: } \\
         \begin{cases}
             \dot{\bm{x}}(\tau) = -\bm{\mathcal{D}}(\tau) u(\tau)  & \tau \in [0,\pi)\\
-            \bm{x}(0) = \bm{x}_T
+            \bm{x}(0) = \bm{x}_0
         \end{cases}
     \end{gather}
 \end{problem}
@@ -38,7 +38,7 @@ Where we will choose $ \mathcal {L}: \mathbb {R} \rightarrow \mathbb {R} $ such 
 %
 Next we will study the optimality conditions of the problem, for a general $ \mathcal {L} $ function, and then specify how $ \mathcal {L} $ should be so that the optimal control $ u ^ * $ only takes the allowed values in $ \mathcal {U} $.
 
-\subsection{Optimality conditions of problem (\ref{OCP2})}
+\subsection{Optimality conditions}
 
 To write the optimility conditions of the problem we will use the principle of the Pontryagin minimum \cite[Chapter~2.7]{bryson1975applied}. For them it is necessary to define the Hamiltonian of the system, which in this case is:
 \begin{gather}\label{hamil}
@@ -47,7 +47,17 @@ To write the optimility conditions of the problem we will use the principle of t
     [\bm{p}^T(\tau) \cdot \bm{\mathcal{D}}(\tau)]
     u(\tau)
 \end{gather}
-Where the variable $ \bm{p} (\tau) $ called adjoint state is introduced, which is associated with the restriction imposed by the system. Este tiene la misma dimensión del estado, de manera que $\bm{p} \in \mathbb{R}^{N_a + N_b}$. From the Hamiltonian, the following optimality conditions can be written:
+Where the variable $ \bm{p} (\tau) $ called adjoint state is introduced, which is associated with the restriction imposed by the system. Este tiene la misma dimensión del estado, de manera que 
+\begin{gather}
+        \bm{x}(\tau) = \begin{bmatrix}
+            \bm{\alpha}(\tau) \\  \bm{\beta}(\tau)
+        \end{bmatrix}   \Leftrightarrow
+        \bm{p}(\tau) = \begin{bmatrix}
+        \bm{p}^\alpha(\tau) \\ \bm{p}^\beta(\tau)
+                \end{bmatrix}
+\end{gather}
+A continuación enumeraremos las condiciones de optimalidad provenientes del prinicio de mínimo de Pontryagin.
+
 \begin{enumerate}
 
     \item \textbf{Final condition of the adjoint}: This optimiality condition is obtained from the cost in the final time $\tau = \pi$ of the control problem in this case $ \Psi (\bm{x}) = \frac {1}{2} \| \bm{x} (\pi) - \bm{x}_T \|^2 $.
@@ -59,7 +69,7 @@ Where the variable $ \bm{p} (\tau) $ called adjoint state is introduced, which i
     \begin{gather}
         \dot{\bm{p}}(\tau) = -\nabla_x H(u(\tau),\bm{p}(\tau),\tau) = 0
     \end{gather}
-    From where it can be deduced that $ \bm {p} (\tau) = \text {cte} $ so that $ \bm {p} (\tau) = \bm {x} (\pi) - \bm { x} _T \ | \ \forall \tau \in [0, \pi) $ so from now on we will refer to it simply as $ \bm {p} $, noting that it is invariant in time.
+    From where it can be deduced that $ \bm {p} (\tau)$ is a constant so that $ \bm {p} (\tau) = \bm {x} (\pi) - \bm { x} _T \ | \ \forall \tau \in [0, \pi) $ so from now on we will refer to it simply as $ \bm {p} $, noting that it is invariant in time.
     \item \textbf{Optimal control shape}: We known that $ u^* = \argmin_{|u|<1} H(\tau,\bm{p}^*,u)$, so in this case we can write:
     \begin{gather}
         u^*(\tau) = \argmin_{|u|<1}  \Big[   \epsilon \mathcal{L}(u(\tau)) -
@@ -67,38 +77,26 @@ Where the variable $ \bm{p} (\tau) $ called adjoint state is introduced, which i
         u(\tau) \Big]
     \end{gather}
     Therefore, this optimality condition reduces to the optimization of a function in a variable within the interval $ [- 1,1] $. 
-
 \end{enumerate}
 %
+Es importante recordar que 
+    \begin{gather}
+        [{\bm{p}^*}^T \cdot \bm{\mathcal{D}}(\tau)] = \sum_{i \in \mathcal{E}_a} p^*_\alpha \cos(i\tau) + \sum_{j \in \mathcal{E}_b} p^*_\beta \sin(j\tau) \ | \ \forall \tau \in [0,\pi)
+    \end{gather}
+we build a function $\mathcal{H}_m: [-1,1] \rightarrow \mathbb{R}$ such that:
+\begin{gather}
+    \mathcal{H}_m(u) = \epsilon \mathcal{L}(u) - mu  |  \forall m \in \mathbb{R}
+\end{gather}
+Donde hemos remplazado el término $[{\bm{p}^*}^T \cdot \bm{\mathcal{D}}(\tau)]$ por un parámetro $m$ que puede variar en todo la recta real. Es decir, el problema para diseñar un problema de control óptimo que solo pueda tomar valores en $\mathcal{U}$ se reduce a diseñar una función unidimensional  com parámertro $m$ cuyos mínimos sean los elementos de $\mathcal{U}$ para cualquier valor de $m$. 
 \subsection{Piecewise linear penalization}
 
 En esta subsección presentaremos como diseñar el término de penalización $\mathcal{L}(u)$ para que el control óptimo en cualquier caso este contenida en $\mathcal{U}$. 
-
-\begin{definition}
-    we build a function $\mathcal{H}_m: [-1,1] \rightarrow \mathbb{R}$ such that:
-    \begin{gather}
-        \mathcal{H}_m(u) = \epsilon \mathcal{L}(u) - mu  |  \forall m \in \mathbb{R}
-    \end{gather}
-\end{definition}
-
-Donde hemos remplazado el término $[{\bm{p}^*}^T \cdot \bm{\mathcal{D}}(\tau)]$ por un parámetro $m$ que puede variar en todo la recta real. Es decir, el problema para diseñar un problema de control óptimo que solo pueda tomar valores en $\mathcal{U}$ se reduce a diseñar una función unidimensional  com parámertro $m$ cuyos mínimos sean los elementos de $\mathcal{U}$ para cualquier valor de $m$. 
-
 % \begin{proposition}
 %     Consideremos que tenemos un conjunto de elementos $\mathcal{U} = \{u_1,u_2,\dots,u_{N_u}\}$, además consideraremos una función de penalización $\mathcal{L}(u)$ que define la función $\mathcal{H}_m(u)$. Entonces si los puntos $\{u_k,\mathcal{L}(u_k)\}_{k=1}^{N_u}$ son la envolvente convexa de ellos mismos entonces los mínimos de $\mathcal{H}_m(u)$ son los elementos de $\mathcal{U}$.
 % \end{proposition}
 %
-De manera más concreta podemos elegir la interpolación afín de una parábola  $\mathcal{L}:[-1,1] \rightarrow \mathbb{R}$ como término de penalización. Es decir: 
+De manera más concreta podemos elegir la interpolación afín de una parábola  $\mathcal{L}:[-1,1] \rightarrow \mathbb{R}$ como término de penalización. Es decir:  
 \begin{gather}\label{PLP}
-    {\mathcal{L}(u)} = \begin{cases}
-        \bigg[ \frac{(u_{k+1}^2-u_{k}^2)}{(u_{k+1}-u_{k})} (u-u_k) + u_k^2 \bigg] & \text{if}  u \in [u_k,u_{k+1}[ \\
-        1 & \text{if} \ u = u_{N_u} 
-    \end{cases} \\
-    \notag \forall k \in \{1,\dots,N_u-1\}
-\end{gather}
-
-%
-Esto se puede simplificar de manera que 
-\begin{gather}
     {\mathcal{L}(u)} = \begin{cases}
         \big[ (u_{k+1}+u_{k}) (u-u_k) + u_k^2 \big] & \text{if}  u \in [u_k,u_{k+1}[ \\
         1 & \text{if} \ u = u_{N_u} 
@@ -141,7 +139,7 @@ Entonces dado $m\in \mathbb{R}$ busamos $u \in [-1,1]$ que minimiza $\mathcal{H}
     \begin{gather}
         \argmin_{|u| < 1} \mathcal{H}_m(u) = u_1
     \end{gather} 
-    \item \textbf{Case 2: $m = \epsilon(u_{k+1}+u_k) $}:  Teniendo en cuenta que $\forall k \in \{2,\dots,N_u-1\}$.
+    \item \textbf{Case 2: $m = \epsilon(u_{k+1}+u_k) $}:  Teniendo en cuenta que $\forall k \in \{1,\dots,N_u-1\}$.
     \begin{gather}
         \argmin_{|u| < 1} \mathcal{H}_m(u) = [u_k,u_{k+1}[ 
     \end{gather} 

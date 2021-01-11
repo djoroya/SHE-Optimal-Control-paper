@@ -2,10 +2,10 @@
 \BOOKMARK [1][-]{section.2}{Classical approach}{}% 2
 \BOOKMARK [1][-]{section.3}{Selective Harmonic Elimination as dynamical system}{}% 3
 \BOOKMARK [1][-]{section.4}{Optimal Control for SHE}{}% 4
-\BOOKMARK [2][-]{subsection.4.1}{Optimality conditions of problem \(4.2\)}{section.4}% 5
+\BOOKMARK [2][-]{subsection.4.1}{Optimality conditions}{section.4}% 5
 \BOOKMARK [2][-]{subsection.4.2}{Piecewise linear penalization}{section.4}% 6
-\BOOKMARK [1][-]{section.5}{Experimentos num\351ricos}{}% 7
-\BOOKMARK [2][-]{subsection.5.1}{Smooth approxiation of piecewise linear penalization}{section.5}% 8
-\BOOKMARK [2][-]{subsection.5.2}{Numerical solution of OCP-SHE}{section.5}% 9
+\BOOKMARK [1][-]{section.5}{Numerical simulations}{}% 7
+\BOOKMARK [2][-]{subsection.5.1}{Smooth approximation of piecewise linear penalization}{section.5}% 8
+\BOOKMARK [2][-]{subsection.5.2}{Direct method for OCP-SHE}{section.5}% 9
 \BOOKMARK [2][-]{subsection.5.3}{Resultados}{section.5}% 10
 \BOOKMARK [1][-]{section.6}{Conclusiones}{}% 11

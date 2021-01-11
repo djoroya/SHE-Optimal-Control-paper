@@ -15,6 +15,7 @@ We will use the fundamental theorem of differential calculus to rewrite the expr
         \dot{\alpha_i}(\tau) & = \frac{2}{\pi}u(\tau)\cos(i\tau) \\  
         \alpha_i(0) & = 0       
     \end{cases}
+    \hspace{1em} \forall i \ odd
 \end{gather}
 
 \begin{gather}
@@ -24,6 +25,7 @@ We will use the fundamental theorem of differential calculus to rewrite the expr
         \dot{\beta}_j(\tau) & = \frac{2}{\pi}u(\tau)\sin(j\tau) \\  
         \beta_j(0) & = 0       
     \end{cases}
+    \hspace{1em} \forall j \ odd
 \end{gather}
 
 The evolution of the dynamical systems $ \alpha_i (\tau) $ and $ \beta_j (\tau) $ from the time $ \tau = 0 $ to $ \tau = \pi $ gives us the coefficients $ a_i $ y $ b_j $.
@@ -75,7 +77,7 @@ Compressing the notation even more we can call the total state of the system $ \
     \bm{x}(\tau) = \begin{bmatrix}
         \bm{\alpha}(\tau) \\  \bm{\beta}(\tau)
     \end{bmatrix} \hspace{2em}
-    \bm{x}_T = \begin{bmatrix}
+    \bm{x}_0 = \begin{bmatrix}
         \bm{a}_T \\  \bm{b}_T
     \end{bmatrix} \hspace{2em}
     \bm{\mathcal{D}}(\tau) = \begin{bmatrix}
@@ -91,31 +93,14 @@ So for a pair of sets $ \mathcal {E} _a $ and $ \mathcal {E} _b $ we have the fo
         \bm{x}(0) = {0}
     \end{cases}
 \end{gather}
-Then we look for a function $ u (\tau) $ such that it leads the dynamical system to the point $ \bm {x} _T $, that is, the final state $ \bm {x} (\pi) $ is $ \bm {x}_T $. Debido a que en la teoría de control es más típico llevar el sistema dinámico al origen de coordenadas desde una condición de initical no nula, realizaremos el siguiente cambio de variables: $\bm{x}'(\tau) = \bm{x}(\tau) - \bm{x}_T$. Haciendo un abuso de notación $\bm{x}'(\tau) \rightarrow \bm{x}(\tau)$  nuestro sistema dinámico se puede escribir como:
+Then we look for a function $ u (\tau) $ such that it leads the dynamical system to the point $ \bm {x} _T $, that is, the final state $ \bm {x} (\pi) $ is $ \bm {x}_0 $. Debido a que en la teoría de control es más típico llevar el sistema dinámico al origen de coordenadas desde una condición de initical no nula, realizaremos el siguiente cambio de variables: $\bm{x}'(\tau) = \bm{x}(\tau) - \bm{x}_0$. Haciendo un abuso de notación $\bm{x}'(\tau) \rightarrow \bm{x}(\tau)$  nuestro sistema dinámico se puede escribir como:
 
 \begin{gather}
     \begin{cases}
         \dot{\bm{x}}(\tau) = -\bm{\mathcal{D}}(\tau) u(\tau)  & \tau \in [0,\pi)\\
-        \bm{x}(0) = \bm{x}_T
+        \bm{x}(0) = \bm{x}_0
     \end{cases}
 \end{gather}
 
 De manera que si el sistema dinámico en tiempo $\tau = \pi$ se encuentra en el origen de coordenadas, entonces los coeficientes de Fourier del control que $u(\tau)$ que le ha llevado allí son los los asociados a la condición inicial $\bm{x}_T$. 
-% \begin{figure}
-%     \centering
-%     \begin{subfigure}[b]{0.475\textwidth}
-%         \centering
-%         \includegraphics[width=\textwidth]{img/sys.eps}
-%         \caption{Dynamical System}
-%         \label{fig:sys}
-%     \end{subfigure}
-%     \hfill
-%     \begin{subfigure}[b]{0.475\textwidth}
-%         \centering
-%         \includegraphics[width=\textwidth]{img/con.eps}
-%         \caption{Control}
-%         \label{fig:con}
-%     \end{subfigure}
-%     \caption{Mostramos el problema SHE como un sistema dinámico cuando consideramos los coeficientes de Fourier $a_1$ y $b_1$. En la figura (a) podemos ver la evolución del sistema dinámico asociado a los coeficientes de Fourier $a_1$ y $b_1$. Por otro lado, en la figura (b) podemos ver el control $u(\tau)$ que genera la trayectoria mostrada en (a).}
-%     \label{syscon}
-% \end{figure}
+

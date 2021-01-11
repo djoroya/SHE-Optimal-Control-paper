@@ -38,4 +38,11 @@ Arthur~Earl Bryson.
 \newblock {\em Applied optimal control: optimization, estimation and control}.
 \newblock CRC Press, 1975.
 
+\bibitem{Andersson2019}
+Joel A~E Andersson, Joris Gillis, Greg Horn, James~B Rawlings, and Moritz
+  Diehl.
+\newblock {CasADi} -- {A} software framework for nonlinear optimization and
+  optimal control.
+\newblock {\em Mathematical Programming Computation}, 11(1):1--36, 2019.
+
 \end{thebibliography}
