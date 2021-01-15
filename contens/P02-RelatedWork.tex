@@ -1,48 +1,40 @@
-\section{Classical approach}
+\section{Classical approach}\label{Section2}
 
-
-
-La aproximación clásica utiliza que la función $u(\tau)$ es una función definida a trozos, la aproximación clásica trata utilizar esta propiedad para simplificar el problema. De manera que, la función de $u(\tau)$ puede ser descrita mediante los ángulos de cambio y los valores constantes que tomar en cada sección. A continuación definimos estos dos elementos: 
+The classical approximation uses the piece-wise definition of the function $u(\tau)$ and tries to exploit this information to simplify the problem.  In this definition, $u(\tau)$ can be fully characterized by the switching angles and the constant values it may assume. We define these two concepts as follows.
 
 \begin{definition}[Switching angles]
-    Given a function $ u: [0, \pi] \rightarrow \mathcal{U} $ the switching locations are the values of $ \tau $ where the function $u(\tau)$ changes its value discontinuously. We will denote the commutation angles as $ \bm {\phi} = \{\phi_0, \phi_1, \dots, \phi_M, \phi_ {M + 1} \} $ where we have taken $ \phi_0 = 0 $ and $ \phi_ {M + 1} = \pi $,
+Given a function $u:[0,\pi] \rightarrow \mathcal{U}$, the switching locations are the values of $\tau\in[0,\pi]$ where $u(\tau)$ changes its value discontinuously. We will denote the commutation angles as $\bm{\phi} = \{\phi_0,\phi_1,\dots,\phi_M,\phi_{M+1}\}$, where we have taken $\phi_0 = 0$ and $\phi_{M+1} = \pi$.
 \end{definition}
 
 \begin{definition}[Waveform]
-    Given $ \mathcal {U} $ a finite subset of $ [- 1,1] $ we will call a waveform a finite set $ S = \{s_1, s_2, s_3, \dots, s_ {M + 1} \} $ elements of  $ \mathcal {U} $ with repetition.
+Given $\mathcal U$ a finite subset of $[-1,1]$, we will call a waveform a finite set $S = \{s_1,s_2,s_3,\dots,s_{M+1}\}$ of elements of $\mathcal {U}$ with repetition.
 \end{definition}
 
-Then a waveform $ S $ indicates the values that the function will take and in what order within the interval $ [0, \pi) $, while the switching locations $ \bm {\phi} $ indicates the switching locations. Considering these two elements we can rewrite the Fourier coefficients as:
+Then a waveform $S$ indicates the values that the function will take and in which order they will appear within the interval $[0,\pi) $, while $\bm{\phi}$ indicates the switching locations. Considering these two elements, we can rewrite the Fourier coefficients as
 \begin{gather}
-    a_i = \frac{2}{\pi} \int_0^\pi u(\tau ) \cos(i \tau)d\tau  = \frac{2}{\pi} \sum_{k =  1}^{M+1} 
-    \int_{\phi_{k-1}}^{\phi_{k}} s_k  \cos(i\tau)d\tau = \frac{2}{i\pi} \sum_{k=1}^{M+1} s_k \sin(i\tau) \Big|_{\phi_{k-1}}^{\phi_k} 
+    a_i = \frac{2}{\pi} \int_0^\pi u(\tau) \cos(i \tau)d\tau  = \frac{2}{\pi} \sum_{k=1}^{M+1} 
+    \int_{\phi_{k-1}}^{\phi_{k}} s_k \cos(i\tau)d\tau = \frac{2}{i\pi} \sum_{k=1}^{M+1} s_k \sin(i\tau)\,\Big|_{\phi_{k-1}}^{\phi_k} 
 \end{gather}
 \begin{gather}
-    b_j = \frac{2}{\pi} \int_0^\pi u(\tau ) \sin(j \tau)d\tau =
-    \frac{2}{\pi} \sum_{k =1}^{M+1} 
-    \int_{\phi_{k-1}}^{\phi_{k}} s_k \sin(j\tau)d\tau = 
-    \frac{2}{j\pi} \sum_{k=1}^{M+1} 
-    s_k \cos(j\tau) \Big|_{\phi_{k-1}}^{\phi_k} 
+    b_j = \frac{2}{\pi} \int_0^\pi u(\tau ) \sin(j \tau)d\tau = \frac{2}{\pi} \sum_{k =1}^{M+1} \int_{\phi_{k-1}}^{\phi_{k}} s_k \sin(j\tau)d\tau = 
+    -\frac{2}{j\pi} \sum_{k=1}^{M+1} s_k \cos(j\tau)\, \Big|_{\phi_{k-1}}^{\phi_k} 
 \end{gather}
-So that:
+Hence
 \begin{gather}
-    a_i(\bm{\phi}) = +\frac{2}{i\pi}  \sum_{k=1}^{M+1} s_k \Big[ \sin(i\phi_k) -\sin(i\phi_{k-1})\Big] \\
-    b_j(\bm{\phi}) = -\frac{2}{j\pi}  \sum_{k=1}^{M+1} s_k \Big[ \cos(j\phi_k) -\cos(j\phi_{k-1})\Big]
+    a_i(\bm{\phi}) = \frac{2}{i\pi} \sum_{k=1}^{M+1} s_k \Big[\sin(i\phi_k) -\sin(i\phi_{k-1})\Big], 
+    \\
+    b_j(\bm{\phi}) = -\frac{2}{j\pi} \sum_{k=1}^{M+1} s_k \Big[\cos(j\phi_k) -\cos(j\phi_{k-1})\Big].
 \end{gather}
-
-De esta manera podemos reformular el problema (\ref{SHEp}) de la siguiente manera:
+In this way, we can reformulate Problem \ref{SHEp} as follows.
 \begin{problem}[optimization for SHE]
-    Then given a waveform $ S $ we look for the switching angles $\bm{\phi}$ by means of the following minimization problem:
-        \begin{gather} 
-        \min_{\bm{\phi} \in [0,\pi]^{M} }  \Bigg[
-        \sum_{i \in \mathcal{E}_a} \| a_T^i - a_i(\bm{\phi}) \|^2 +
-        \sum_{j \in \mathcal{E}_b} \| b_T^j - b_j(\bm{\phi}) \|^2 \Bigg]
-        \\
-        \notag \text{suject to:}
-        \\
-        0 <\phi_1 < \phi_2 < \dots < \phi_{M-1} < \phi_{M} < \pi  
-    \end{gather}
+Given a waveform $S$, we look for the switching angles $\bm{\phi}$ by means of the following minimization problem:
+\begin{gather} 
+	\min_{\bm{\phi} \in [0,\pi]^{M}} \Bigg[\sum_{i\in\mathcal{E}_a} \|a_T^i - a_i(\bm{\phi})\|^2 + \sum_{j\in \mathcal{E}_b} \|b_T^j - b_j(\bm{\phi})\|^2 \Bigg]
+    \\
+    \notag \text{subject to:}
+    \\
+    0 <\phi_1 < \phi_2 < \dots < \phi_{M-1} < \phi_{M} < \pi  
+\end{gather}
 \end{problem}
 
-De manera, que el problema SHE es un problema de minimización con restricciones que puede resolverse mediante técnicas conocidas. Dado que es un problema con múltiples mínimos se deberá resolver mediante optimizadores globales. Además de esto dado que la elección de forma de onda es arbitraria deberemos proceder de la misma manera para cada posible forma de onda. 
-
+In this formulation, the SHE problem converts in a minimization problem with restrictions which can be solved by well-known techniques. Since the problem has several minimizers, we shall solve it employing global optimizers. Furthermore, since the choice of the waveform is arbitrary, we shall proceed in the same way for each possible waveform. 

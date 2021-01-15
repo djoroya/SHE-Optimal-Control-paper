@@ -1,13 +1,8 @@
+\section{Selective Harmonic Elimination as dynamical system}\label{Section3}
 
-\section{Selective Harmonic Elimination as dynamical system}
+Inspired by the continuous nature of the optimization variable $u(\tau)$, we propose in this document the formulation from the optimal control. In this way we avoid the choice of the waveform, so that the optimization problem chooses the most convenient one in each case. So we look for $u (\tau)\in \mathcal{U}$, $\tau \in [0,\pi)]$, that has the desired Fourier coefficients.
 
-%
-
-
-Inspired by the continuous nature of the optimization variable $ u (\tau) $ we propose in this document the formulation from the optimal control. In this way we avoid the choice of the waveform, so that the optimization problem chooses the most convenient in each case. So we look for $ \{u (\tau) \in \mathcal{U} \ | \ \forall \tau \in [0, \pi)] \} $ that has the desired Fourier coefficients.
-%
-We will use the fundamental theorem of differential calculus to rewrite the expression of the Fourier coefficients (\ref {an}) and (\ref {bn}) as the evolution of a dynamical system. That is to say:
-
+We will use the fundamental theorem of differential calculus to rewrite the expression of the Fourier coefficients \eqref{an} and \eqref{bn} as the evolution of a dynamical system. That is to say
 \begin{gather}
     \alpha_i(\tau) = \frac{2}{\pi}\int_0^\tau u(\tau) \cos(i\tau)d\tau 
     \Rightarrow
@@ -15,7 +10,7 @@ We will use the fundamental theorem of differential calculus to rewrite the expr
         \dot{\alpha_i}(\tau) & = \frac{2}{\pi}u(\tau)\cos(i\tau) \\  
         \alpha_i(0) & = 0       
     \end{cases}
-    \hspace{1em} \forall i \ odd
+    \quad\textrm{ for all } i \textrm{ odd }
 \end{gather}
 
 \begin{gather}
@@ -25,15 +20,15 @@ We will use the fundamental theorem of differential calculus to rewrite the expr
         \dot{\beta}_j(\tau) & = \frac{2}{\pi}u(\tau)\sin(j\tau) \\  
         \beta_j(0) & = 0       
     \end{cases}
-    \hspace{1em} \forall j \ odd
+    \quad\textrm{ for all } j \textrm{ odd }
 \end{gather}
 
-The evolution of the dynamical systems $ \alpha_i (\tau) $ and $ \beta_j (\tau) $ from the time $ \tau = 0 $ to $ \tau = \pi $ gives us the coefficients $ a_i $ y $ b_j $.
-%
+The evolution of the dynamical systems $\alpha_i(\tau)$ and $\beta_j(\tau) $ from the time $\tau = 0 $ to $\tau = \pi$ gives us the coefficients $a_i$ and $b_j$.
+
 We introduce notation to refer to vectors $\bm{\alpha} = \{\alpha_i\}_{i\in\mathcal{E}_a}$ and $\bm{\beta} = \{\beta_j\}_{j\in\mathcal{E}_b}$.
-%
-In this way, the general SHE problem (\ref{SHEp}) can be formulated as a control problem of a dynamic system where $ \bm{\alpha} (\tau) $ and $ \bm{\beta} (\tau ) $ are the states of the system and where $ u (\tau) $ is the control variable, and whose objective will be to bring the states from the origin of coordinates to the objective vectors $ \bm{a} _T $ and $ \bm{b} _T $ in time $ \tau = \pi $.
-%
+
+In this way, the general SHE problem \eqref{SHEp} can be formulated as a control problem for a dynamical system where $\bm{\alpha}(\tau)$ and $\bm{\beta}(\tau)$ are the states and $u(\tau)$ is the control variable, and whose objective will be to bring the states from the origin to the objective vectors $\bm{a}_T$ and $\bm{b}_T $ in time $\tau = \pi$.
+
 In order to obtain a compact expression of the problem that simplifies our understanding of it, we will introduce notation.
 %
 So if we consider a problem with sets of odd numbers:

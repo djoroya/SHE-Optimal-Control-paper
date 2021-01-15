@@ -16,79 +16,61 @@
 %% DEFINICIÓN DEL PROBLEMA %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 
-Selective Harmonic Elimination (SHE) \cite{Rodriguez2002} es una metodología de modulación de señal que permite generar señales escalón con el espectro armónico deseado. 
-%
-Es decir, nos permite generar una función $u(\tau)$ definida en $[0,2\pi)$ cuyos valores en todo el intervalo solo puedan estar contenida en un conjunto  finito de valores reales $\mathcal{U}$, y que además, tenga ciertos coeficientes de Fourier objetivo. 
-%
-Debido a su aplicación en los convertidores de potencia, nos centraremos a funciones que cumplan simetría de media onda, es decir: $u(\tau + \pi) = -u(\tau) \ | \ \forall \tau \in [0,\pi)$. De esta manera la función $u(\tau)$ queda determinada por sus valores en el intervalo $[0,\pi)$ y su desarrollo en serie de Fourier se puede escribir como:
+Selective Harmonic Elimination (SHE) \cite{Rodriguez2002} is a well-known methodology allowing to generate signals in the form of a step function with a desired harmonic spectrum. 
+
+In broad terms, this means to obtain a function $u(\tau)$ defined on $[0,2\pi)$ whose values in the whole interval can only belong to a finite set of real numbers $\mathcal{U}$ and which, in addition to that, has certain predetermined Fourier coefficients. 
+
+Due to the application in power converters, we will focus on functions with half-wave symmetry, i. e. $u(\tau + \pi) = -u(\tau)$ for all $\tau \in [0,\pi)$. In this way, the function $u(\tau)$ is determined by its values in the interval $[0,\pi)$ and its Fourier series expansion takes the form
 \begin{gather}
-    u(\tau ) = \sum_{i \in odd} a_i \cos(i\tau)+ \sum_{j \in odd}  b_j \sin(j \tau) 
+    u(\tau ) = \sum_{\underset{i\, odd}{i \in \mathbb{N}}} a_i \cos(i\tau)+ \sum_{\underset{j\, odd}{j \in \mathbb{N}}}  b_j \sin(j \tau), 
 \end{gather}
-Where $a_i$ and $b_j$  are:
+where the coefficients $a_i$ and $b_j$ are given by
 \begin{gather}
-    a_i = \frac{2}{\pi} \int_0^\pi u(\tau ) \cos(i \tau)d\tau \ | \ \forall i \ odd \label{an}\\
-    b_j = \frac{2}{\pi} \int_0^\pi u(\tau)  \sin(j \tau) d\tau \ | \ \forall j \ odd \label{bn}
+    a_i = \frac{2}{\pi} \int_0^\pi u(\tau ) \cos(i \tau)\,d\tau, \label{an}
+    \\
+    b_j = \frac{2}{\pi} \int_0^\pi u(\tau)  \sin(j \tau)\,d\tau. \label{bn}
 \end{gather}
-So the SHE problem can be formulated more precisely as:
+In view of this, the SHE problem can be formulated as:
 \begin{problem}[SHE]\label{SHEp}
-    Given two sets of odd numbers $ \mathcal{E} _a $ and $ \mathcal{E} _b $ with cardinalities $ | \mathcal{E} _a | = N_a $ y $ | \mathcal{E} _b | = N_b $ respectively, 
-    %
-    and given the target vectors $ \bm {a} _T \in \mathbb {R}^{N_a} $ and $ \bm {b} _T \in \mathbb {R} ^ {N_b} $, we look for a function $ \{u (\tau) \ | \ \tau \in [0, \pi) \} $ such that $ u (\tau) $ can only take the values within $ \mathcal{U} $ a finite subset of the interval $ [- 1,1] $. 
-    %
-    Also whose Fourier coefficients satisfy: $ a_i = (\bm {a} _T) _i \ | \ \forall i \in \mathcal{E} _a $ and $ b_j = (\bm {b} _T) _j \ | \ \forall j \in \mathcal{E} _b $.
+Given two sets of odd numbers $\mathcal{E} _a $ and $\mathcal{E} _b $ with cardinalities $|\mathcal{E}_a| = N_a $ and $ |\mathcal{E} _b| = N_b$ respectively, and given the target vectors $\bm{a}_T \in \mathbb{R}^{N_a}$ and $\bm{b}_T \in \mathbb{R}^{N_b} $, we look for a function $u(\tau)$, $\tau \in [0,\pi)$, such that $u(\tau) $ can only take values within $\mathcal{U}$ a finite subset of the interval $[-1,1]$ and whose Fourier coefficients satisfy: 
+\begin{align*}
+	& a_i = (\bm{a}_T)_i, \quad\textrm{ for all } i \in \mathcal{E}_a,
+	\\
+	& b_j = (\bm {b}_T)_j, \quad\textrm{ for all } j \in \mathcal{E}_b.
+\end{align*}
 \end{problem}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
 %% METODOLOGÍA CLÁSICA %%
 %%%%%%%%%%%%%%%%%%%%%%%%%
 
+Roughly speaking, this problem can be understood as finding a sequence $S\subset \mathcal{U}$ defining the values that the function $u(\tau)$ will assume and in which order they will appear (see \cite{Konstantinou2010}).
 
-Por lo general este problema se plantea como la búsqueda de una secuencia $S$ de números contenidos en $\mathcal{U}$ que nos defina qué valores tomará la función $u(\tau)$ y en que orden \cite{Konstantinou2010}.
-%
-De manera que dada la secuencia $S$ podemos centrarnos en buscar las localizaciones concretas donde se producen los cambios de valor de la función.
-%
-Por otra parte, las localizaciones de cambio dado la forma de onda $\mathcal{S}$ son llamados ángulos de conmutación \cite{Yang2015,Konstantinou2010,Sun1996}; de modo que procederemos a llamarlos de  la misma manera.
-%
-La búsqueda de las localizaciones dada la secuencia $S$ se puede abordar como un problema de minimización donde las variables son ángulos de conmutación mientras que el funcional de coste es la suma de la diferencia al cuadrado de los coeficientes de Fourier obtenidos y los deseados.
-\newline 
+In this way, given the sequence $S$ we can focus in finding the exact locations where the function $u(\tau)$ changes its values.
 
+Following the terminology introduced in the SHE literature (\cite{Yang2015,Konstantinou2010,Sun1996}), we will refer to these locations of the changes in the values of the waveform $\mathcal{S}$ as \textit{switching angles}.
+
+To finding of the switching angles given the sequence $S$ can be addressed as a minimization problem where the variables are the angles while the cost functional is the Euclidean distance between the obtained Fourier coefficients and the desired ones.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% PROBLEMAS METODOLOGÍA CLÁSICA %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Dado que \emph{a priori} no conocemos la cardinalidad de la secuencia $\mathcal{S}$, es decir el número de cambios necesarios,  el problema parece tener solo la solución de fijar el número de cambios de contar todas las posibles combinaciones para luego resolver un problema de optimización asociada a cada uno de ellas. 
-%  
-Teniendo en cuenta que el número de posibles secuencias depende de las cardinalidades del conjunto de admisible $\mathcal{U}$ y de la secuencia $S$, de la siguiente manera:  $|\mathcal{U}|^{|S|}$; es evidente que la complejidad de la búsqueda escala rápidamente con el tamaño de la secuencia.
-% 
-Este problema ha sido estudiado y abordado en \cite{Yang2015}, donde mediante tranformaciones algebráicas logran transformar el problema a un sistema de polinomos que contiene todas las posibles formas de ondas para un número fijo elementos de la secuencia $S$ y para un conjunto $\mathcal{U}$, sin embargo el número de posibles conmutaciones es prefijado. 
-%
-\newline
+Since the cardinality of $S$ is not known a priori, meaning that we do not know how many switches will be necessary, it appears that the only solution to the SHE problem consists in fix the number of changes and counting all the possible combinations, to later solve an optimization problem for each one of them.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% PROBLEMA DE LA INTERPOLACIÓN  %%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-Por otra parte, es importante mencionar que la metodología SHE ha sido desarrollada para responder a tiempo real para distintos coeficientes de Fourier objetivo con una latencia de $KHz$. 
-%
-Esto hace imposible la obtención de soluciones a tiempo real mediante optimización, por lo que es necesario el pre-calcular soluciones para que luego puedan ser interpoladas.
-%
-Sin embargo es bien conocido que fijado una secuencia $S$ la continuidad de las localizaciones de cambio con respecto a una variación continua de los coeficientes de Fourier objetivo es compleja. 
-%
-En la mayoría de los casos no se puede encontrar una solución continua para un intervalo largo, si no que es necesario cambiar la forma de onda $S$ según vamos tomando regiones de soluciones \cite{Yang2015,Yang2017}. 
-% 
-Esto hace complejo la interpolación de soluciones y la búsqueda de estas.
-\newline
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Taking into account that the number of possible sequences $S$ is given by $|\mathcal{U}|^{|S|}$, it is evident that the complexity of the above approach increases rapidly with the cardinality of $S$.
+ 
+This problem has been studied in \cite{Yang2015} where, through appropriate algebraic transformations, the authors are able to convert the SHE problem into a polynomial system whose solutions' set contains all the possible waveforms for a given set $\mathcal{U}$ and number of elements in the sequence $S$ which, however, is predetermined. 
 
-%
-In this document we will present the SHE problem as an optimal control problem, where the optimization variable is the signal $ u (\tau) $ defined in the entire interval $ [0,\pi) $.
-%
-Thus we will describe how in the problem of the Fourier coefficients of the function $ u (\tau) $ they can be seen as the final state of a system controlled by $ u (\tau) $.
-%
-So the optimization is performed among all the possible functions that satisfy $ | u (\tau) | <1 $ that can control the final state at the desired Fourier coefficients.
-%
-Then we will show how to design a control problem so that the solution is a step function.
-%
-\newline
+On the other hand, we shall also mention that the SHE methodology has been developed to provide in real-time different target Fourier coefficients con with a $KHz$ latency. 
 
-Estructuraremos este documento de la siguiente manera: en la sección (1) Presentaremos la aproximación clasica de problema introduciendo conceptos básicos y el problema de optimización mostrando sus ventajas y desventajas; en la sección (2) Presentaremos el problema -she como un sistema dinámico de control; en la sección (3) Presentaremos el problema de control óptimo que nos permite obtener soluciones al problema; en la sección (4) Presentaremos experimentos numéricos para distintos niveles; y por último en la sección (5) mostraremos las conclusiones. 
+This makes impossible to find real-time solutions by optimization, making then necessary to pre-determine solutions that can later be interpolated.
+
+Nevertheless, it is well-known that, fixed a sequence $S$, the continuity of the switching locations with respect to a continuous variation of the target Fourier coefficients may be quite cumbersome. 
+
+In the majority of the cases, it is impossible to find a continuous solution in a large interval, an it is necessary to change the waveform $S$ while moving across different solution regions (\cite{Yang2015,Yang2017}). This makes difficult the interpolation of solutions and their finding.
+
+In this document, we will present the SHE problem as an optimal control one, where the optimization variable is the signal $u(\tau)$ defined in the entire interval $[0,\pi)$. 
+
+In particular, we will describe how the Fourier coefficients of the function $u(\tau)$ can be seen as the final state of a system controlled by $u (\tau)$. Hence, the optimization is performed among all the possible functions that satisfy $|u(\tau)|<1 $ and can control the final state at the desired Fourier coefficients. Then we will show how to design a control problem so that the solution is a step function.
+
+The present document is organized as follows. In Section \ref{Section2}, we will present the classical formulations of the SHE problem os an optimization one, introducing some seminal concept and discussing its advantages and disadvantages. In Section \ref{Section3}, we will formulate the SHE problem as a controlled dynamical system. In Section \ref{Section4}, we will present the optimal control problem allowing us to obtain the solutions to the SHE problem. In Section \ref{Section5}, we will present our numerical experiments. Finally, in Section \ref{Section6}, we will gather the conclusions of our study. 
