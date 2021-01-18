@@ -1,11 +1,16 @@
 \begin{thebibliography}{1}
 
-\bibitem{Rodriguez2002}
-Jos{\'{e}} Rodr{\'{i}}guez, Jih~Sheng Lai, and Fang~Zheng Peng.
-\newblock {Multilevel inverters: A survey of topologies, controls, and
-  applications}.
-\newblock {\em IEEE Transactions on Industrial Electronics}, 49(4):724--738,
-  2002.
+\bibitem{Andersson2019}
+Joel A~E Andersson, Joris Gillis, Greg Horn, James~B Rawlings, and Moritz
+  Diehl.
+\newblock {CasADi} -- {A} software framework for nonlinear optimization and
+  optimal control.
+\newblock {\em Mathematical Programming Computation}, 11(1):1--36, 2019.
+
+\bibitem{bryson1975applied}
+Arthur~Earl Bryson.
+\newblock {\em Applied optimal control: optimization, estimation and control}.
+\newblock CRC Press, 1975.
 
 \bibitem{Konstantinou2010}
 Georgios~S. Konstantinou and Vassilios~G. Agelidis.
@@ -14,12 +19,12 @@ Georgios~S. Konstantinou and Vassilios~G. Agelidis.
 \newblock {\em Proceedings of the IEEE International Conference on Industrial
   Technology}, pages 696--701, 2010.
 
-\bibitem{Yang2015}
-Kehu Yang, Zhibao Yuan, Ruyi Yuan, Wensheng Yu, Jiaxin Yuan, and Jin Wang.
-\newblock {A Groebner Bases Theory-Based Method for Selective Harmonic
-  Elimination}.
-\newblock {\em IEEE Transactions on Power Electronics}, 30(12):6581--6592,
-  2015.
+\bibitem{Rodriguez2002}
+Jos{\'{e}} Rodr{\'{i}}guez, Jih~Sheng Lai, and Fang~Zheng Peng.
+\newblock {Multilevel inverters: A survey of topologies, controls, and
+  applications}.
+\newblock {\em IEEE Transactions on Industrial Electronics}, 49(4):724--738,
+  2002.
 
 \bibitem{Sun1996}
 Jian Sun, Stephan Beineke, and Horst Grotstollen.
@@ -27,22 +32,17 @@ Jian Sun, Stephan Beineke, and Horst Grotstollen.
   equations}.
 \newblock {\em IEEE Transactions on Power Electronics}, 11(4):612--621, 1996.
 
+\bibitem{Yang2015}
+Kehu Yang, Zhibao Yuan, Ruyi Yuan, Wensheng Yu, Jiaxin Yuan, and Jin Wang.
+\newblock {A Groebner Bases Theory-Based Method for Selective Harmonic
+  Elimination}.
+\newblock {\em IEEE Transactions on Power Electronics}, 30(12):6581--6592,
+  2015.
+
 \bibitem{Yang2017}
 Kehu Yang, Qi~Zhang, Jianjun Zhang, Ruyi Yuan, Qiang Guan, Wensheng Yu, and Jin
   Wang.
 \newblock {Unified Selective Harmonic Elimination for Multilevel Converters}.
 \newblock {\em IEEE Transactions on Power Electronics}, 32(2):1579--1590, 2017.
-
-\bibitem{bryson1975applied}
-Arthur~Earl Bryson.
-\newblock {\em Applied optimal control: optimization, estimation and control}.
-\newblock CRC Press, 1975.
-
-\bibitem{Andersson2019}
-Joel A~E Andersson, Joris Gillis, Greg Horn, James~B Rawlings, and Moritz
-  Diehl.
-\newblock {CasADi} -- {A} software framework for nonlinear optimization and
-  optimal control.
-\newblock {\em Mathematical Programming Computation}, 11(1):1--36, 2019.
 
 \end{thebibliography}

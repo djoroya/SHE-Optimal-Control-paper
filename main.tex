@@ -1,31 +1,105 @@
-\documentclass[preprint,10pt]{article}
+% autosam.tex
+% Annotated sample file for the preparation of LaTeX files
+% for the final versions of papers submitted to or accepted for 
+% publication in AUTOMATICA.
+
+% See also the Information for Authors.
+
+% Make sure that the zip file that you send contains all the 
+% files, including the files for the figures and the bib file.
+
+% Output produced with the elsart style file does not imitate the
+% AUTOMATICA style. The style file is generic for all Elsevier
+% journals and the output is laid out for easy copy editing. The
+% final document is produced from the source file in the
+% AUTOMATICA style at Elsevier.
+
+% You may use the style file autart.cls to obtain a two-column 
+% document (see below) that more or less imitates the printed 
+% Automatica style. This may helpful to improve the formatting 
+% of the equations, tables and figures, and also serves to check 
+% whether the paper satisfies the length requirements.
+
+% Please note: Authors must not create their own macros.
+
+% For further information regarding the preparation of LaTeX files 
+% for Elsevier, please refer to the "Full Instructions to Authors" 
+% from Elsevier's anonymous ftp server on ftp.elsevier.nl in the
+% directory pub/styles, or from the internet (CTAN sites) on
+% ftp.shsu.edu, ftp.dante.de and ftp.tex.ac.uk in the directory
+% tex-archive/macros/latex/contrib/supported/elsevier.
+
+
+%\documentclass{elsart}               % The use of LaTeX2e is preferred.
+
+\documentclass[twocolumn]{autart}    % Enable this line and disable the 
+                                     % preceding line to obtain a two-column 
+                                     % document whose style resembles the
+                                     % printed Automatica style.
+
+
+\usepackage{graphicx}          % Include this line if your 
+                               % document contains figures,
+%\usepackage[dvips]{epsfig}    % or this line, depending on which
+                               % you prefer.
 
 \include{settings}
-
-\title{Selective Harmonic Elimination: a control theory approach}
-\author{Jesús Oroya \\ Chair of Computational Mathematics}
-
-\author{Umberto Biccari \thanks{Chair of Computational Mathematics, Fundación Deusto, Avenida de las Universidades 24, 48007 Bilbao, Basque Country, Spain.}\,\,\thanks{Facultad de Ingenier\'{\i}a, Universidad de Deusto, Avenida de las Universidades 24, 48007 Bilbao, Basque Country, Spain.}
-	\and 
-	Carlos Esteve $\phantom{i}^{\ast}$\thanks{Departamento de Matemáticas, Universidad Autónoma de Madrid, 28049 Madrid, Spain. $\newline$ Emails: \texttt{umberto.biccari@deusto.es, carlos.esteve@uam.es, djoroya@deusto.es}}
-	\and
-	Deyviss Jes\'us Oroya Villalta $\phantom{i}^{\dagger}$
-}
-\date{}
-
 \begin{document}
 
-\maketitle
+\begin{frontmatter}
+%\runtitle{Insert a suggested running title}  % Running title for regular 
+                                              % papers but only if the title  
+                                              % is over 5 words. Running title 
+                                              % is not shown in output.
+
+\title{Selective Harmonic Elimination via Optimal Control} % Title, preferably not more 
+                                                % than 10 words.
+
+\thanks[footnoteinfo]{This paper was not presented at any IFAC 
+meeting.}
+
+
+\author[CCM,UAM]{Umberto Biccari }\ead{umberto.biccari@deusto.es},    % Add the 
+\author[CCM]{Carlos Esteve}\ead{carlos.esteve@uam.es},               % e-mail address 
+\author[UAM]{Jes\'us Oroya}\ead{djoroya@deusto.es}  % (ead) as shown
+\address[CCM]{Chair of Computational Mathematics, Fundación Deusto, Avenida de las Universidades 24, 48007 Bilbao, Basque Country, Spain.}  % Please supply                                              
+\address[UAM]{Departamento de Matemáticas, Universidad Autónoma de Madrid, 28049 Madrid, Spain. }  % Please supply                                              
+
+          
+\begin{keyword}                           % Five to ten keywords,  
+Selective Harmonic Elimination; Finite Set Control, Piecewise Linear function.               % chosen from the IFAC 
+\end{keyword}                             % keyword list or with the 
+                                          % help of the Automatica 
+                                          % keyword wizard
+
+
+\begin{abstract}                          % Abstract of not more than 200 words.
+El problema de \emph{Selective Harmonic Elimination pulse-width modulation}(SHE) es planteado como el problema de control óptimo, con el fin de encontrar soluciones de ondas escalón sin prefijar el número de ángulos de conmutación. De esta manera, la metodología de control óptimo es capaz de encontar la forma de onda óptima y de encontrar la localizaciones de los ángulos de conmutación, incluso sin prefijar el número de conmutaciones. Este es un nuevo enfoque para el problema SHE en concreto y para los sistemas de control con un conjunto finito de controles admisibles en general.
+
+\end{abstract}
+
+\end{frontmatter}
+
+
 
 \input{contens/P01-Indroduction}
 \input{contens/P02-RelatedWork}
 \input{contens/P03-SHE-as-system}
 \input{contens/P04-Problem-Statement}
-%\input{contens/P05-OCP-MultiNivel}
 \input{contens/P06-NumericalResults}
 \input{contens/P07-Conclusions}
+
+\begin{ack}                               % Place acknowledgements
+Partially supported by the Roman Senate.  % here.
+\end{ack}
  
-\bibliographystyle{unsrt}
-\bibliography{bib}
- 
+\bibliographystyle{plain}        % Include this if you use bibtex 
+\bibliography{bib}           % and a bib file to produce the 
+                                 % bibliography (preferred). The
+                                 % correct style is generated by
+                                 % Elsevier at the time of printing.
+
+
+
+
 \end{document}

@@ -1,6 +1,7 @@
 \section{Optimal Control for SHE}\label{Section4}
 
 Since the SHE problem is equivalent to controlling a dynamic system from the origin of coordinates to a specific point, we must formulate a control problem that solves this task but also complies with the restrictions on the values that the control can take. It is necessary to set a finite subset $ \mathcal {U} $ of the interval $ [- 1,1] $, the optimal control is such that it can only take the values allowed in the discretization. In other words, the control problem is:
+\newline
 \begin{problem}[OCP for SHE]\label{OCP1}
     Given two sets of odd numbers $ \mathcal {E} _a $ and $ \mathcal {E} _b $ and given the target vector $ \bm {x} _T \in \mathbb {R} ^ {N_a + N_b} $, also given a set $ \mathcal {U} $ of admissible controls, we look for the function $ u (\tau) \ | \ \tau \in [0, \pi) $ such that:
     %
@@ -9,7 +10,7 @@ Since the SHE problem is equivalent to controlling a dynamic system from the ori
          \frac{1}{2}|| \bm{x}(\pi)  ||^2   \\
         \notag \text{suject to: } \\
         \begin{cases}
-            \dot{\bm{x}}(\tau) = -\bm{\mathcal{D}}(\tau) u(\tau)  & \tau \in [0,\pi)\\
+            \dot{\bm{x}}(\tau) = -\big(\frac{2}{\pi}\big)\bm{\mathcal{D}}(\tau) u(\tau)  & \tau \in [0,\pi)\\
             \bm{x}(0) = \bm{x}_0
         \end{cases}
     \end{gather}
@@ -18,7 +19,7 @@ Since the SHE problem is equivalent to controlling a dynamic system from the ori
 The solution of this control problem is complex due to the restriction on the admissible control values.
 %
 In order to obtain a problem that can be solved by classical control theory we can formulate the following control problem:
-
+\newline
 \begin{problem}[Regularized OCP for SHE]\label{OCP2}
     Given two sets of odd numbers $ \mathcal {E} _a $ and $ \mathcal {E} _b $ and given the target vector $ \bm {x} _T \in \mathbb {R} ^ {N_a + N_b} $, we look for the function $ |u (\tau)|<1 \ | \ \tau \in [0, \pi) $ such that:
 
@@ -28,7 +29,7 @@ In order to obtain a problem that can be solved by classical control theory we c
         + \epsilon \int_0^{\pi} \mathcal{L}(u(\tau)) d\tau \Bigg]  \\
         \notag \text{suject to: } \\
         \begin{cases}
-            \dot{\bm{x}}(\tau) = -\bm{\mathcal{D}}(\tau) u(\tau)  & \tau \in [0,\pi)\\
+            \dot{\bm{x}}(\tau) = -\big(\frac{2}{\pi}\big)\bm{\mathcal{D}}(\tau) u(\tau)  & \tau \in [0,\pi)\\
             \bm{x}(0) = \bm{x}_0
         \end{cases}
     \end{gather}
@@ -43,7 +44,7 @@ To write the optimility conditions of the problem we will use the principle of t
 \begin{gather}\label{hamil}
     H(u,\bm{p},\tau) = 
     \epsilon \mathcal{L}(u) -
-    [\bm{p}^T(\tau) \cdot \bm{\mathcal{D}}(\tau)]
+    \bigg(\frac{2}{\pi}\bigg)[\bm{p}^T(\tau) \cdot \bm{\mathcal{D}}(\tau)]
     u(\tau)
 \end{gather}
 Where the variable $ \bm{p} (\tau) $ called adjoint state is introduced, which is associated with the restriction imposed by the system. Este tiene la misma dimensión del estado, de manera que 
@@ -69,9 +70,9 @@ A continuación enumeraremos las condiciones de optimalidad provenientes del pri
         \dot{\bm{p}}(\tau) = -\nabla_x H(u(\tau),\bm{p}(\tau),\tau) = 0
     \end{gather}
     From where it can be deduced that $ \bm {p} (\tau)$ is a constant so that $ \bm {p} (\tau) = \bm {x} (\pi) - \bm { x} _T \ | \ \forall \tau \in [0, \pi) $ so from now on we will refer to it simply as $ \bm {p} $, noting that it is invariant in time.
-    \item \textbf{Optimal control shape}: We known that $ u^* = \argmin_{|u|<1} H(\tau,\bm{p}^*,u)$, so in this case we can write:
+    \item \textbf{Optimal  Waveform}: We known that $ u^* = \argmin_{|u|<1} H(\tau,\bm{p}^*,u)$, so in this case we can write:
     \begin{gather}
-        u^*(\tau) = \argmin_{|u|<1}  \Big[   \epsilon \mathcal{L}(u(\tau)) -
+        u^*(\tau) = \argmin_{|u|<1}  \Big[   \epsilon \mathcal{L}(u(\tau)) - \Big(\frac{2}{\pi}\Big)
         [{\bm{p}^*}^T \cdot \bm{\mathcal{D}}(\tau)]
         u(\tau) \Big]
     \end{gather}
@@ -80,13 +81,13 @@ A continuación enumeraremos las condiciones de optimalidad provenientes del pri
 %
 Es importante recordar que 
     \begin{gather}
-        [{\bm{p}^*}^T \cdot \bm{\mathcal{D}}(\tau)] = \sum_{i \in \mathcal{E}_a} p^*_\alpha \cos(i\tau) + \sum_{j \in \mathcal{E}_b} p^*_\beta \sin(j\tau) \ | \ \forall \tau \in [0,\pi)
+        [{\bm{p}^*}^T \cdot \bm{\mathcal{D}}(\tau)] = \sum_{i \in \mathcal{E}_a} p^*_\alpha \cos(i\tau) + \sum_{j \in \mathcal{E}_b} p^*_\beta \sin(j\tau) 
     \end{gather}
 we build a function $\mathcal{H}_m: [-1,1] \rightarrow \mathbb{R}$ such that:
 \begin{gather}
     \mathcal{H}_m(u) = \epsilon \mathcal{L}(u) - mu  |  \forall m \in \mathbb{R}
 \end{gather}
-Donde hemos remplazado el término $[{\bm{p}^*}^T \cdot \bm{\mathcal{D}}(\tau)]$ por un parámetro $m$ que puede variar en todo la recta real. Es decir, el problema para diseñar un problema de control óptimo que solo pueda tomar valores en $\mathcal{U}$ se reduce a diseñar una función unidimensional  com parámertro $m$ cuyos mínimos sean los elementos de $\mathcal{U}$ para cualquier valor de $m$. 
+Donde hemos remplazado el término $(2/\pi)[{\bm{p}^*}^T \cdot \bm{\mathcal{D}}(\tau)]$ por un parámetro $m$ que puede variar en todo la recta real. Es decir, el problema para diseñar un problema de control óptimo que solo pueda tomar valores en $\mathcal{U}$ se reduce a diseñar una función unidimensional  com parámertro $m$ cuyos mínimos sean los elementos de $\mathcal{U}$ para cualquier valor de $m$. 
 \subsection{Piecewise linear penalization}
 
 En esta subsección presentaremos como diseñar el término de penalización $\mathcal{L}(u)$ para que el control óptimo en cualquier caso este contenida en $\mathcal{U}$. 
@@ -103,34 +104,24 @@ De manera más concreta podemos elegir la interpolación afín de una parábola 
     \notag \forall k \in \{1,\dots,N_u-1\}
 \end{gather}
 %
-Entonces el Hamiltoniano queda como:
-\begin{gather}
-    {\mathcal{H}_m(u)} = \begin{cases}
-        \epsilon\big[ (u_{k+1}+u_{k}) (u-u_k) + u_k^2 \big] -mu & \text{if}  u \in [u_k,u_{k+1}[ \\
-        \epsilon-mu & \text{if} \ u = u_{N_u} 
-    \end{cases} \\
-    \notag \forall k \in \{1,\dots,N_u-1\}
-\end{gather}
-
-
-%
 De manera que para calcular el mínimo de $\mathcal{H}_m(u)$ deberemos considerar que esta función no es diferenciable por lo que la condicion de optimizalidad no puede realizarse con la difereciación típica sino con la subdiferencial.
 
-Entonces calulremos la subdiferecial $\partial \mathcal{H}_m$ todo 
+Entonces calulremos la subdiferecial $\partial \mathcal{L}$ todo 
 \begin{gather}
-    \partial \mathcal{H}_m(u) = \begin{cases}
-         \{\epsilon(u_1 + u_2) - m \}   & \text{if} \ u = u_1 \\
-         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-         \{\epsilon(u_k + u_{k+1})-m\}  & \text{if} \ u \in \ ]u_k,u_{k+1}[ \hspace{1.1em} \dagger\\
-         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-         [\epsilon(u_k+u_{k-1})-m \ , \ \epsilon(u_{k+1}+u_k)-m] & \text{if} \ u = u_k \hspace{4.em} \dagger \dagger \\
-         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-         \{\epsilon(u_{N_u} + u_{N_u-1}) - m \} & \text{if} \ u = u_{N_u} 
-    \end{cases} \\
-    \notag \dagger \ \forall k \in \{1,\dots,N_u-1\} \hspace{4em}
-    \dagger \dagger \ \forall k \in \{2,\dots,N_u-1\}
+        \partial\mathcal{L}= \begin{cases}
+            \{u_1 + u_2  \}   & \text{if} \ u = u_1 \\
+            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+            \{u_k + u_{k+1}\}  & \text{if} \ u \in \ ]u_k,u_{k+1}[ \hspace{0.9em} \dagger\\
+            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+            [u_k+u_{k-1} ,  u_{k+1}+u_k] & \text{if} \ u = u_k \hspace{3.9em} \ddagger \\
+            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+            \{u_{N_u} + u_{N_u-1}  \} & \text{if} \ u = u_{N_u} 
+       \end{cases} \\
+       \notag \dagger \ \forall k \in \{1,\dots,N_u-1\} \hspace{1em}
+       \notag \ddagger  \ \forall k \in \{2,\dots,N_u-1\}
 \end{gather} 
 
+De manera que $\partial H_m = \epsilon\partial \mathcal{L} - m$.
 Entonces dado $m\in \mathbb{R}$ busamos $u \in [-1,1]$ que minimiza $\mathcal{H}_m(u)$. Es necesario comprobar que cero perteneca al subdiferecial $\partial \mathcal{H}_m(u)$
 
 \begin{itemize}

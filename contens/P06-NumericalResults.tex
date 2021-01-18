@@ -34,9 +34,9 @@ De manera que cuando $\eta \rightarrow \infty$ entonces $\mathcal{L}^\eta \right
 
 To solve the optimal control problem (\ref{OCP2}), we use a direct method. 
 If we consider a partition $\mathcal{P} = \{\tau_0,\tau_1,\dots,\tau_{T}\}$ of interval $[0,T]$ , we can represent a function $\{ u(\tau) \ | \ \tau \in [0,T]\}$ as a vector $\bm{f} \in \mathbb{R}^{T}$ where component $f_t = u(\tau_t)$. Then the optimal control problem (\ref{OCP1}) can be written as optimization problem with variable $\bm{f} \in \mathbb{R}^{T}$. This problem is a nonlinear programming, for this we use CasADi software to solve. Entonces, dado una partición del intervalo $[0,\pi)$ podemos reformular el problema (\ref{OCP1}) como el siguiente problema en tiempo discreto:
-
+\newline
 \begin{problem}[OCP numérico]
-    Dados dos conjuntos de números impares $\mathcal{E}_a$ and $\mathcal{E}_b$ con cardinalidades $|\mathcal{E}_a| = N_a$ y  $|\mathcal{E}_b| = N_b$ respectivamente, dados los vectores objetivos $\bm{a}_T  \in \mathbb{R}^{N_a}$, de manera que $\bm{x}_0 = [\bm{a}_T,\bm{b}_T]^T$; y $\bm{b}_T  \in \mathbb{R}^{N_b}$ y una  partition $\mathcal{P} = \{\tau_0,\tau_1,\dots,\tau_{T}\}$ of interval $[0,\pi)$. We search a vector $\bm{u} \in \mathbb{R}^{T}$ that minimize the following function:
+    Dados dos conjuntos de números impares $\mathcal{E}_a$ and $\mathcal{E}_b$ con cardinalidades $|\mathcal{E}_a| = N_a$ y  $|\mathcal{E}_b| = N_b$ respectivamente, dados los vectores objetivos $\bm{a}_T  \in \mathbb{R}^{N_a}$, de manera que $\bm{x}_0 = [\bm{a}_T,\bm{b}_T]^T$; y $\bm{b}_T  \in \mathbb{R}^{N_b}$ y una  partition $\mathcal{P}_\tau = \{\tau_0,\tau_1,\dots,\tau_{T}\}$ of interval $[0,\pi)$. We search a vector $\bm{u} \in \mathbb{R}^{T}$ that minimize the following function:
     \begin{gather}
         \min_{\bm{u} \in \mathbb{R}^{T} } 
         \Bigg[ 
@@ -44,7 +44,7 @@ If we consider a partition $\mathcal{P} = \{\tau_0,\tau_1,\dots,\tau_{T}\}$ of i
         + \epsilon  \sum_{t=0}^{T-1} \mathcal{L}^\eta(u_{t}) \Delta\tau_t  \Bigg]  \\
         \notag \text{suject to: } \\
         \forall \tau \in \mathcal{P} \begin{cases}
-            \bm{x}^{t+1} = \bm{x}^{t} - \Delta \tau_t \bm{\mathcal{D}}(\tau_t)u_t \\
+            \bm{x}^{t+1} = \bm{x}^{t} - (2/\pi)\Delta \tau_t \bm{\mathcal{D}}(\tau_t)u_t \\
             \bm{x}^0 = \bm{x}_0
         \end{cases} 
     \end{gather}
