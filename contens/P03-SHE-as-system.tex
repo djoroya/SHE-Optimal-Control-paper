@@ -87,7 +87,7 @@ So for a pair of sets $ \mathcal {E} _a $ and $ \mathcal {E} _b $ we have the fo
 \end{equation}
 Then we look for a function $ u (\tau) $ such that it leads the dynamical system to the point $ \bm {x} _T $, that is, the final state $ \bm {x} (\pi) $ is $ \bm {x}_0 $. Debido a que en la teoría de control es más típico llevar el sistema dinámico al origen de coordenadas desde una condición de initical no nula, realizaremos el siguiente cambio de variables: $\bm{x}'(\tau) = \bm{x}(\tau) - \bm{x}_0$. Haciendo un abuso de notación $\bm{x}'(\tau) \rightarrow \bm{x}(\tau)$  nuestro sistema dinámico se puede escribir como:
 
-\begin{equation}
+\begin{equation}\label{sys}
     \begin{cases}
         \dot{\bm{x}}(\tau) = -\big(\frac{2}{\pi}\big)\bm{\mathcal{D}}(\tau) u(\tau)  & \tau \in [0,\pi)\\
         \bm{x}(0) = \bm{x}_0
@@ -95,4 +95,7 @@ Then we look for a function $ u (\tau) $ such that it leads the dynamical system
 \end{equation}
 
 De manera que si el sistema dinámico en tiempo $\tau = \pi$ se encuentra en el origen de coordenadas, entonces los coeficientes de Fourier del control que $u(\tau)$ que le ha llevado allí son los los asociados a la condición inicial $\bm{x}_T$. 
-
+\newline 
+\begin{remark}[Simetría de cuarto de onda]
+    En la literatura de \emph{SHE} se distingen claramente el problema con simetría de cuarto de onda y el problema con simetría de media onda (el caso presentado en este documento). Si quisieramos formular el problema de cuarto de onda, simplemente deberíamos modificar el sistema \ref{sys} demanera que elemininariamos los estados $\alpha_j(\tau)$ y la integración de $\tau \in (0,\pi/2]$.
+\end{remark}

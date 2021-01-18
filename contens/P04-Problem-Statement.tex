@@ -22,7 +22,6 @@ In order to obtain a problem that can be solved by classical control theory we c
 \newline
 \begin{problem}[Regularized OCP for SHE]\label{OCP2}
     Given two sets of odd numbers $ \mathcal {E} _a $ and $ \mathcal {E} _b $ and given the target vector $ \bm {x} _T \in \mathbb {R} ^ {N_a + N_b} $, we look for the function $ |u (\tau)|<1 \ | \ \tau \in [0, \pi) $ such that:
-
     \begin{gather}
         \min_{|u(\tau) |<1}         
          \Bigg[ \frac{1}{2}|| \bm{x}(\pi)  ||^2  
@@ -106,9 +105,9 @@ De manera más concreta podemos elegir la interpolación afín de una parábola 
 %
 De manera que para calcular el mínimo de $\mathcal{H}_m(u)$ deberemos considerar que esta función no es diferenciable por lo que la condicion de optimizalidad no puede realizarse con la difereciación típica sino con la subdiferencial.
 
-Entonces calulremos la subdiferecial $\partial \mathcal{L}$ todo 
+Entonces calulremos la subdiferecial $\partial \mathcal{L}(u)$ todo 
 \begin{gather}
-        \partial\mathcal{L}= \begin{cases}
+        \partial\mathcal{L}(u)= \begin{cases}
             \{u_1 + u_2  \}   & \text{if} \ u = u_1 \\
             %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
             \{u_k + u_{k+1}\}  & \text{if} \ u \in \ ]u_k,u_{k+1}[ \hspace{0.9em} \dagger\\
