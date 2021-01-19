@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.18)  18 JAN 2021 17:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.18)  19 JAN 2021 16:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -293,6 +293,7 @@ File: pd1enc.def 2018/02/06 v6.86b Hyperref: PDFDocEncoding definition (HO)
 (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/hyperref.cfg
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
+Package hyperref Info: Option `colorlinks' set `true' on input line 4383.
 Package hyperref Info: Hyper figures OFF on input line 4509.
 Package hyperref Info: Link nesting OFF on input line 4514.
 Package hyperref Info: Hyper index ON on input line 4517.
@@ -315,7 +316,7 @@ Package hyperref Info: Hyper figures OFF on input line 6369.
 Package hyperref Info: Link nesting OFF on input line 6374.
 Package hyperref Info: Hyper index ON on input line 6377.
 Package hyperref Info: backreferencing OFF on input line 6384.
-Package hyperref Info: Link coloring OFF on input line 6389.
+Package hyperref Info: Link coloring ON on input line 6387.
 Package hyperref Info: Link coloring with OCG OFF on input line 6394.
 Package hyperref Info: PDF/A mode OFF on input line 6399.
 LaTeX Info: Redefining \ref on input line 6439.
@@ -338,6 +339,7 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip55
 )
+(/usr/share/texlive/texmf-dist/tex/latex/breakcites/breakcites.sty)
 \c@problem=\count129
 \c@definition=\count130
 \c@remark=\count131
@@ -412,7 +414,7 @@ e
 Package hyperref Warning: Height of page (\paperheight) is invalid (0.0pt),
 (hyperref)                using 11in.
 
-Package hyperref Info: Link coloring OFF on input line 16.
+Package hyperref Info: Link coloring ON on input line 16.
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 
@@ -471,27 +473,30 @@ Missing character: There is no Ã in font cmr9!
 Missing character: There is no º in font cmr9!
 \c@sv@footnote=\count139
 
-(./contens/P01-Indroduction.tex
+(./contens/P01-Indroduction.tex) (./contens/P02-RelatedWork.tex [1{/var/lib/tex
+mf/fonts/map/pdftex/updmap/pdftex.map}
+
+
+
+]
 Package hyperref Info: bookmark level for unknown problem defaults to 0 on inpu
-t line 22.
- [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+t line 25.
 
 
+LaTeX Warning: Reference `' on page 2 undefined on input line 35.
 
-]) (./contens/P02-RelatedWork.tex
-Underfull \hbox (badness 10000) in paragraph at lines 3--5
+
+Underfull \hbox (badness 10000) in paragraph at lines 56--58
 
  []
 
 Package hyperref Info: bookmark level for unknown definition defaults to 0 on i
-nput line 6.
+nput line 59.
 
-Underfull \hbox (badness 1033) in paragraph at lines 11--12
-[]\OT1/cmr/m/it/10 Given $\OMS/cmsy/m/n/10 U$ \OT1/cmr/m/it/10 a fi-nite sub-
- []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 36--37
+ [2]
+Underfull \hbox (badness 10000) in paragraph at lines 89--90
 []\OT1/cmr/m/it/10 Given a
  []
 
@@ -499,14 +504,12 @@ Missing character: There is no Ã in font cmr10!
 Missing character: There is no ³ in font cmr10!
 Missing character: There is no Ã in font cmr10!
 Missing character: There is no ³ in font cmr10!
-) (./contens/P03-SHE-as-system.tex [2]
+) (./contens/P03-SHE-as-system.tex
 Overfull \hbox (13.89323pt too wide) detected at line 20
 []
  []
 
-
-Underfull \vbox (badness 1281) has occurred while \output is active []
-
+[3]
 Package hyperref Info: bookmark level for unknown remark defaults to 0 on input
  line 99.
 
@@ -514,7 +517,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 100--101
 []\OT1/cmr/m/it/10 In the
  []
 
-) (./contens/P04-Problem-Statement.tex [3]
+) (./contens/P04-Problem-Statement.tex
 Underfull \hbox (badness 10000) in paragraph at lines 24--25
 []\OT1/cmr/m/it/10 Given
  []
@@ -530,15 +533,15 @@ Overfull \hbox (3.12424pt too wide) detected at line 77
 []
  []
 
-Missing character: There is no Â in font cmr10!
-Missing character: There is no   in font cmr10!
-Missing character: There is no Â in font cmr10!
-Missing character: There is no   in font cmr10!
-Missing character: There is no Â in font cmr10!
-Missing character: There is no   in font cmr10!
-Missing character: There is no Â in font cmr10!
-Missing character: There is no   in font cmr10!
 [4]
+Missing character: There is no Â in font cmr10!
+Missing character: There is no   in font cmr10!
+Missing character: There is no Â in font cmr10!
+Missing character: There is no   in font cmr10!
+Missing character: There is no Â in font cmr10!
+Missing character: There is no   in font cmr10!
+Missing character: There is no Â in font cmr10!
+Missing character: There is no   in font cmr10!
 Missing character: There is no Â in font cmr10!
 Missing character: There is no   in font cmr10!
 Missing character: There is no Â in font cmr10!
@@ -548,9 +551,9 @@ Overfull \hbox (3.81294pt too wide) detected at line 18
 []
  []
 
-
+[5]
 Underfull \hbox (badness 3407) in paragraph at lines 33--40
-[]\OT1/cmr/m/n/10 To solve the op-ti-mal con-trol prob-lem (4.2), we
+[]\OT1/cmr/m/n/10 To solve the op-ti-mal con-trol prob-lem ([][]4.2[][]), we
  []
 
 
@@ -558,7 +561,6 @@ Underfull \hbox (badness 2376) in paragraph at lines 33--40
 \OT1/cmr/m/n/10 use a di-rect method. If we con-sider a par-ti-tion
  []
 
-[5]
 
 LaTeX Warning: Reference `ex01' on page 6 undefined on input line 60.
 
@@ -578,7 +580,12 @@ Underfull \hbox (badness 1769) in paragraph at lines 99--106
 \OT1/cmr/m/n/10 thanks to the op-ti-mal con-trol for-mu-la-tion of
  []
 
-) (./contens/P07-Conclusions.tex) (./main.bbl [6]) [7
+) (./contens/P07-Conclusions.tex) (./main.bbl [6]
+Underfull \hbox (badness 5036) in paragraph at lines 28--33
+[]\OT1/cmr/m/n/8 Konstantinou, G. S. and
+ []
+
+) [7
 
 ]
 \tf@thm=\write4
@@ -590,7 +597,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 72.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 72.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 72.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 3AA61F0D7A9C993FBF28A64E1A2E9CFF;852.
+(rerunfilecheck)             Checksum: 3FC00893FEBB7B534EEA4F0E1D12A4B6;861.
 
 
 LaTeX Warning: There were undefined references.
@@ -598,13 +605,13 @@ LaTeX Warning: There were undefined references.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 72.
  ) 
 Here is how much of TeX's memory you used:
- 7420 strings out of 492982
- 102346 string characters out of 6134895
- 206060 words of memory out of 5000000
- 10793 multiletter control sequences out of 15000+600000
+ 7434 strings out of 492982
+ 102701 string characters out of 6134895
+ 207557 words of memory out of 5000000
+ 10801 multiletter control sequences out of 15000+600000
  23761 words of font info for 94 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 32i,19n,37p,678b,444s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 32i,19n,37p,1166b,432s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb></u
 sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/sha
 re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/tex
@@ -631,10 +638,10 @@ fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></u
 sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on main.pdf (7 pages, 353092 bytes).
+Output written on main.pdf (7 pages, 357754 bytes).
 PDF statistics:
- 276 PDF objects out of 1000 (max. 8388607)
- 236 compressed objects within 3 object streams
- 75 named destinations out of 1000 (max. 500000)
+ 314 PDF objects out of 1000 (max. 8388607)
+ 274 compressed objects within 3 object streams
+ 77 named destinations out of 1000 (max. 500000)
  105 words of extra memory for PDF output out of 10000 (max. 10000000)
 

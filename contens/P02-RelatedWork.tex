@@ -1,4 +1,57 @@
-\section{Classical SHE approach}\label{Section2}
+\section{Mathematical formulation of SHE}\label{Section2}
+
+This section is devoted to the mathematical formulation of the SHE problem. 
+
+Given $\mathcal U = \{u_\ell\}_{\ell=1}^L\subset [-1,1]$ a finite set of real numbers, our objective is to design a function $u(\tau):[0,2\pi)\to\mathcal U$ with the property that some of its Fourier coefficients are determined a priori. 
+
+Due to the application in power converters, we will focus here on functions with \textit{half-wave symmetry}, i. e. 
+\begin{align*}
+	u(\tau + \pi) = -u(\tau)\quad \mbox{for all}\; \tau \in [0,\pi).
+\end{align*}
+In this way, $u$ is fully determined by its values in the interval $[0,\pi)$, and its Fourier series expansion only involves the odd terms and takes the form
+\begin{equation}
+	u(\tau ) = \sum_{\underset{i\, odd}{i \in \mathbb{N}}} a_i \cos(i\tau)+ \sum_{\underset{j\, odd}{j \in \mathbb{N}}}  b_j \sin(j \tau), 
+\end{equation}
+where the coefficients $a_i$ and $b_j$ are given by
+\begin{equation} \label{an}
+	\begin{aligned}
+		a_i = \frac{2}{\pi} \int_0^\pi u(\tau ) \cos(i \tau)\,d\tau, 
+		\\
+		b_j = \frac{2}{\pi} \int_0^\pi u(\tau)  \sin(j \tau)\,d\tau.
+	\end{aligned}
+\end{equation}
+The SHE problem can then be formulated as follows:
+\newline
+\begin{problem}[SHE]\label{SHEp}
+Let $\mathcal{U} = \{u_\ell\}_{\ell=1}^L\subset [-1,1]$ and let $\mathcal{E} _a $ and $\mathcal{E} _b $ be two sets of odd numbers with cardinalities $|\mathcal{E}_a| = N_a $ and $ |\mathcal{E} _b| = N_b$, respectively. Given the vectors $\bm{a}_T \in \mathbb{R}^{N_a}$ and $\bm{b}_T \in \mathbb{R}^{N_b} $, we look for $u:\in [0,\pi)\to\mathcal{U}$ such that 
+\begin{gather}
+	\notag a_i = (\bm{a}_T)_i, \quad\textrm{ for all } i \in \mathcal{E}_a,
+	\\
+	\notag b_j = (\bm {b}_T)_j, \quad\textrm{ for all } j \in \mathcal{E}_b,
+\end{gather}
+with $\{a_i\}_{i\in\mathcal E_a}$ and $\{b_j\}_{j\in\mathcal E_b}$ given by \eqref{an}.
+\end{problem}
+
+Figure \ref{} shows an example of a function $u$ solution of the SHE problem. Notice that the values of $u(\tau)\in\mathcal U$ can be repeated. With this observation in mind, Problem \ref{SHEp} can be understood as finding a multi-set $\mathcal S = \{s_k\}_{k=1}^K$ with $s_k\in\mathcal U$ (to which we shall refer as the \textit{wave-form}, see Definition \ref{def:waveform}) defining the values that the function $u(\tau)$ will assume and in which order they will appear (see \cite{Konstantinou2010}). In this way, given $\mathcal S$ we can focus in finding the exact locations where the function $u(\tau)$ changes its values. Following the terminology introduced in the SHE literature (\cite{Yang2015,Konstantinou2010,Sun1996}), we will refer to these locations of the changes in the values of the waveform $\mathcal{S}$ as \textit{switching angles}. To find the switching angles given the multi-set $\mathcal S$ can be cast as a minimization problem where the variables are the angles while the cost functional is the Euclidean distance between the obtained Fourier coefficients and the desired ones.
+
+Since the cardinality of $\mathcal S$ is not known a priori, meaning that we do not know how many switches will be necessary, it appears that the only solution to the SHE problem consists in fix the number of changes and counting all the possible combinations, to later solve an optimization problem for each one of them.
+%
+Taking into account that the number of possible multi-set $S$ is given by $|\mathcal{U}|^{|\mathcal S|}$, it is evident that the complexity of the above approach increases rapidly.
+%
+This problem has been studied in \cite{Yang2015} where, through appropriate algebraic transformations, the authors are able to convert the SHE problem into a polynomial system whose solutions' set contains all the possible waveforms for a given set $\mathcal{U}$ and number of elements in the sequence $\mathcal S$ which, however, is predetermined. 
+%
+
+On the other hand, we shall also mention that the SHE methodology has been developed to provide in real-time different target Fourier coefficients con with a $KHz$ latency. 
+%
+This makes impossible to find real-time solutions by optimization, making then necessary to pre-determine solutions that can later be interpolated.
+%
+Nevertheless, it is well-known that, fixed a sequence $S$, the continuity of the switching locations with respect to a continuous variation of the target Fourier coefficients may be quite cumbersome. 
+%
+In the majority of the cases, it is impossible to find a continuous solution in a large interval, an it is necessary to change the waveform $S$ while moving across different solution regions (\cite{Yang2015,Yang2017}). This makes difficult the interpolation of solutions and their finding.
+
+In this document, we will present the SHE problem as an optimal control one, where the optimization variable is the signal $u(\tau)$ defined in the entire interval $[0,\pi)$. 
+%
+In particular, we will describe how the Fourier coefficients of the function $u(\tau)$ can be seen as the final state of a system controlled by $u (\tau)$. Hence, the optimization is performed among all the possible functions that satisfy $|u(\tau)|<1 $ and can control the final state at the desired Fourier coefficients. Then we will show how to design a control problem so that the solution is a step function.
 
 In the classical SHE approach, the piece-wise definition of the function $u(\tau)$ is exploited to simplify the problem. In this formulation, $u(\tau)$ can be fully characterized by the switching angles and the constant values it may assume. We define these two concepts as follows.
 \newline
@@ -7,7 +60,7 @@ In the classical SHE approach, the piece-wise definition of the function $u(\tau
 Given a function $u:[0,\pi] \rightarrow \mathcal{U}$, the switching locations are the values of $\tau\in[0,\pi]$ where $u(\tau)$ changes its value discontinuously. We will denote the commutation angles as $\bm{\phi} = \{\phi_0,\phi_1,\dots,\phi_M,\phi_{M+1}\}$, where we have taken $\phi_0 = 0$ and $\phi_{M+1} = \pi$.
 \end{definition}
 
-\begin{definition}[Waveform]
+\begin{definition}[Wave-form]\label{def:waveform}
 Given $\mathcal U$ a finite subset of $[-1,1]$, we will call a waveform a finite set $S = \{s_1,s_2,s_3,\dots,s_{M+1}\}$ of elements of $\mathcal {U}$ with repetition.
 \end{definition}
 
