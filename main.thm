@@ -1,8 +1,8 @@
-\contentsline {problem}{{Problem}{1.{1}}{SHE}}{1}%
-\contentsline {definition}{{Definition}{2.{1}}{Switching angles}}{2}%
-\contentsline {definition}{{Definition}{2.{2}}{Waveform}}{2}%
-\contentsline {problem}{{Problem}{2.{1}}{Optimization for SHE}}{2}%
-\contentsline {remark}{{Remark}{3.{1}}{Simetría de cuarto de onda}}{3}%
-\contentsline {problem}{{Problem}{4.{1}}{OCP for SHE}}{3}%
-\contentsline {problem}{{Problem}{4.{2}}{Regularized OCP for SHE}}{4}%
-\contentsline {problem}{{Problem}{5.{1}}{OCP numérico}}{6}%
+\contentsline {problem}{{Problem}{1.{1}}{SHE}}{1}{problem.1.1}
+\contentsline {definition}{{Definition}{2.{1}}{Switching angles}}{2}{definition.2.1}
+\contentsline {definition}{{Definition}{2.{2}}{Waveform}}{2}{definition.2.2}
+\contentsline {problem}{{Problem}{2.{1}}{Optimization for SHE}}{2}{problem.2.1}
+\contentsline {remark}{{Remark}{3.{1}}{Quarter-wave symmetry}}{3}{remark.3.1}
+\contentsline {problem}{{Problem}{4.{1}}{OCP for SHE}}{4}{problem.4.1}
+\contentsline {problem}{{Problem}{4.{2}}{Regularized OCP for SHE}}{4}{problem.4.2}
+\contentsline {problem}{{Problem}{5.{1}}{Numerical OCP}}{5}{problem.5.1}

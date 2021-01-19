@@ -46,7 +46,7 @@ To write the optimility conditions of the problem we will use the principle of t
     \bigg(\frac{2}{\pi}\bigg)[\bm{p}^T(\tau) \cdot \bm{\mathcal{D}}(\tau)]
     u(\tau)
 \end{gather}
-Where the variable $ \bm{p} (\tau) $ called adjoint state is introduced, which is associated with the restriction imposed by the system. Este tiene la misma dimensión del estado, de manera que 
+Where the variable $ \bm{p} (\tau) $ called adjoint state is introduced, which is associated with the restriction imposed by the system. This has the same dimension of the state vector, so that
 \begin{gather}
         \bm{x}(\tau) = \begin{bmatrix}
             \bm{\alpha}(\tau) \\  \bm{\beta}(\tau)
@@ -55,7 +55,7 @@ Where the variable $ \bm{p} (\tau) $ called adjoint state is introduced, which i
         \bm{p}^\alpha(\tau) \\ \bm{p}^\beta(\tau)
                 \end{bmatrix}
 \end{gather}
-A continuación enumeraremos las condiciones de optimalidad provenientes del prinicio de mínimo de Pontryagin.
+In what follows, we will enumerate the optimality conditions arising from the Pontryagin principle.
 
 \begin{enumerate}
 
@@ -78,23 +78,21 @@ A continuación enumeraremos las condiciones de optimalidad provenientes del pri
     Therefore, this optimality condition reduces to the optimization of a function in a variable within the interval $ [- 1,1] $. 
 \end{enumerate}
 %
-Es importante recordar que 
-    \begin{gather}
-        [{\bm{p}^*}^T \cdot \bm{\mathcal{D}}(\tau)] = \sum_{i \in \mathcal{E}_a} p^*_\alpha \cos(i\tau) + \sum_{j \in \mathcal{E}_b} p^*_\beta \sin(j\tau) 
-    \end{gather}
+It is important to recall that
+\begin{gather}
+	[{\bm{p}^*}^T \cdot \bm{\mathcal{D}}(\tau)] = \sum_{i \in \mathcal{E}_a} p^*_\alpha \cos(i\tau) + \sum_{j \in \mathcal{E}_b} p^*_\beta \sin(j\tau) 
+\end{gather}
 we build a function $\mathcal{H}_m: [-1,1] \rightarrow \mathbb{R}$ such that:
 \begin{gather}
     \mathcal{H}_m(u) = \epsilon \mathcal{L}(u) - mu  |  \forall m \in \mathbb{R}
 \end{gather}
-Donde hemos remplazado el término $(2/\pi)[{\bm{p}^*}^T \cdot \bm{\mathcal{D}}(\tau)]$ por un parámetro $m$ que puede variar en todo la recta real. Es decir, el problema para diseñar un problema de control óptimo que solo pueda tomar valores en $\mathcal{U}$ se reduce a diseñar una función unidimensional  com parámertro $m$ cuyos mínimos sean los elementos de $\mathcal{U}$ para cualquier valor de $m$. 
+where we replaced the term $(2/\pi)[{\bm{p}^*}^T \cdot \bm{\mathcal{D}}(\tau)]$ with a parameter $m$ which may assume all real values. In other words, the problem of designing an optimal control which may only take real values in $\mathcal{U}$ is reduced to construct a one-dimensional function with parameter $m$ whose minima are the elements in $\mathcal{U}$ for all values of $m$. 
+
 \subsection{Piecewise linear penalization}
 
-En esta subsección presentaremos como diseñar el término de penalización $\mathcal{L}(u)$ para que el control óptimo en cualquier caso este contenida en $\mathcal{U}$. 
-% \begin{proposition}
-%     Consideremos que tenemos un conjunto de elementos $\mathcal{U} = \{u_1,u_2,\dots,u_{N_u}\}$, además consideraremos una función de penalización $\mathcal{L}(u)$ que define la función $\mathcal{H}_m(u)$. Entonces si los puntos $\{u_k,\mathcal{L}(u_k)\}_{k=1}^{N_u}$ son la envolvente convexa de ellos mismos entonces los mínimos de $\mathcal{H}_m(u)$ son los elementos de $\mathcal{U}$.
-% \end{proposition}
-%
-De manera más concreta podemos elegir la interpolación afín de una parábola  $\mathcal{L}:[-1,1] \rightarrow \mathbb{R}$ como término de penalización. Es decir:  
+In this section, we discuss how to design the penalization term $\mathcal{L}(u)$ so that the optimal control is always contained in $\mathcal{U}$. 
+
+In more detail, we can choose the affine interpolation of a parabola $\mathcal{L}:[-1,1] \rightarrow \mathbb{R}$ as a penalization term. That is
 \begin{gather}\label{PLP}
     {\mathcal{L}(u)} = \begin{cases}
         \big[ (u_{k+1}+u_{k}) (u-u_k) + u_k^2 \big] & \text{if}  u \in [u_k,u_{k+1}[ \\
@@ -103,9 +101,7 @@ De manera más concreta podemos elegir la interpolación afín de una parábola 
     \notag \forall k \in \{1,\dots,N_u-1\}
 \end{gather}
 %
-De manera que para calcular el mínimo de $\mathcal{H}_m(u)$ deberemos considerar que esta función no es diferenciable por lo que la condicion de optimizalidad no puede realizarse con la difereciación típica sino con la subdiferencial.
-
-Entonces calulremos la subdiferecial $\partial \mathcal{L}(u)$ todo 
+Nevertheless, to compute the minimum of $\mathcal{H}_m(u)$, we shall take into account that this function is not differentiable and the optimality condition then requires to work with the subdifferential $\partial\mathcal{L}(u)$, which given by
 \begin{gather}
         \partial\mathcal{L}(u)= \begin{cases}
             \{u_1 + u_2  \}   & \text{if} \ u = u_1 \\
@@ -120,19 +116,18 @@ Entonces calulremos la subdiferecial $\partial \mathcal{L}(u)$ todo
        \notag \ddagger  \ \forall k \in \{2,\dots,N_u-1\}
 \end{gather} 
 
-De manera que $\partial H_m = \epsilon\partial \mathcal{L} - m$.
-Entonces dado $m\in \mathbb{R}$ busamos $u \in [-1,1]$ que minimiza $\mathcal{H}_m(u)$. Es necesario comprobar que cero perteneca al subdiferecial $\partial \mathcal{H}_m(u)$
+Hence, we have $\partial H_m = \epsilon\partial \mathcal{L} - m$. This means that, given $m\in \mathbb{R}$, we look for $u \in [-1,1]$ minimizing $\mathcal{H}_m(u)$. It is then necessary to determine whether zero belongs to $\partial \mathcal{H}_m(u)$.
 
 \begin{itemize}
-    \item \textbf{Case 1: $m \leq \epsilon(u_1+u_2)$}: Dado que $m$ es menor que el menor de todos los subdiferenciales entonces el cero no se encuentra dentro de ninguna de los intervalos definidos para la subdiferencial. De manera que el mínimo esta en un extremo
+    \item \textbf{Case 1: $m \leq \epsilon(u_1+u_2)$}: since $m$ is less than the  minimum of all subdifferentials, then zero does not belong to any of the intervals we defined. Hence, the minimum is in one of the extrema
     \begin{gather}
         \argmin_{|u| < 1} \mathcal{H}_m(u) = u_1
     \end{gather} 
-    \item \textbf{Case 2: $m = \epsilon(u_{k+1}+u_k) $}:  Teniendo en cuenta que $\forall k \in \{1,\dots,N_u-1\}$.
+    \item \textbf{Case 2: $m = \epsilon(u_{k+1}+u_k) $}: taking into account that $\forall k \in \{1,\dots,N_u-1\}$,
     \begin{gather}
         \argmin_{|u| < 1} \mathcal{H}_m(u) = [u_k,u_{k+1}[ 
     \end{gather} 
-    \item \textbf{Case 3: $\epsilon(u_k+u_{k-1})<m<\epsilon(u_{k+1}+u_k)$} : Teniendo en cuenta que $\forall k \in \{2,\dots,N_u-1\}$.
+    \item \textbf{Case 3: $\epsilon(u_k+u_{k-1})<m<\epsilon(u_{k+1}+u_k)$}: taking into account that $\forall k \in \{2,\dots,N_u-1\}$,
     \begin{gather}
         \argmin_{|u| < 1} \mathcal{H}_m(u) = u_k
     \end{gather}
@@ -142,4 +137,4 @@ Entonces dado $m\in \mathbb{R}$ busamos $u \in [-1,1]$ que minimiza $\mathcal{H}
     \end{gather} 
 \end{itemize}
 
-Es decir solo cuando  $m = \epsilon(u_{k+1}+u_k)$ los mínimos del Hamiltoniano esta dentro de un intervalo, para otros valores de $m$ los mínimos del Hamiltoniano están contenidos en $\mathcal{U}$. Así que ante una variación continua de $m$ el caso 2 solo ocurrirá de manera puntal. Recordando en el problema de control óptimo $m(\tau) = [\bm{p}^T(\tau) \cdot \bm{\mathcal{D}}(\tau)]$, podemos notar que el caso 2 corresponde a los instantes $\tau$ de cambio de valor.
+In other words, only when $m = \epsilon(u_{k+1}+u_k)$ the minima of the Hamiltonian belong to an interval. For all the other values of $m\in\mathbb{R}$, these minima are contained in $\mathcal{U}$. So that under a continuous variation of $m$, Case 2 can only occur pointwise. Recalling the optimal control problem $m(\tau) = [\bm{p}^T(\tau) \cdot \bm{\mathcal{D}}(\tau)]$, we can notice that Case 2 corresponds to the instants $\tau$ of change of value.

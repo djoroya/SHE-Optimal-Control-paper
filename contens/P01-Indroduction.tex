@@ -1,14 +1,10 @@
 
-\section{Introducción} 
+\section{Introduction and motivations} 
  
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% DEFINICIÓN DEL PROBLEMA %%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-
 Selective Harmonic Elimination (SHE) \cite{Rodriguez2002} is a well-known methodology allowing to generate signals in the form of a step function with a desired harmonic spectrum. 
-%
+
 In broad terms, this means to obtain a function $u(\tau)$ defined on $[0,2\pi)$ whose values in the whole interval can only belong to a finite set of real numbers $\mathcal{U}$ and which, in addition to that, has certain predetermined Fourier coefficients. 
-%
+
 Due to the application in power converters, we will focus on functions with half-wave symmetry, i. e. $u(\tau + \pi) = -u(\tau)$ for all $\tau \in [0,\pi)$. In this way, the function $u(\tau)$ is determined by its values in the interval $[0,\pi)$ and its Fourier series expansion takes the form
 \begin{equation}
     u(\tau ) = \sum_{\underset{i\, odd}{i \in \mathbb{N}}} a_i \cos(i\tau)+ \sum_{\underset{j\, odd}{j \in \mathbb{N}}}  b_j \sin(j \tau), 
@@ -24,21 +20,17 @@ where the coefficients $a_i$ and $b_j$ are given by
 In view of this, the SHE problem can be formulated as:
 \newline
 \begin{problem}[SHE]\label{SHEp}
-Given two sets of odd numbers $\mathcal{E} _a $ and $\mathcal{E} _b $ with cardinalities $|\mathcal{E}_a| = N_a $ and $ |\mathcal{E} _b| = N_b$ respectively, and given the target vectors $\bm{a}_T \in \mathbb{R}^{N_a}$ and $\bm{b}_T \in \mathbb{R}^{N_b} $, we look for a function $u(\tau)$, $\tau \in [0,\pi)$, such that $u(\tau) $ can only take values within $\mathcal{U}$ a finite subset of the interval $[-1,1]$ and whose Fourier coefficients satisfy: 
+Let $\mathcal{U} = \{u_k\}_{k=1}^K$ be a finite subset of the interval $[-1,1]$ and let $\mathcal{E} _a $ and $\mathcal{E} _b $ be two sets of odd numbers with cardinalities $|\mathcal{E}_a| = N_a $ and $ |\mathcal{E} _b| = N_b$, respectively. Given the target vectors $\bm{a}_T \in \mathbb{R}^{N_a}$ and $\bm{b}_T \in \mathbb{R}^{N_b} $, we look for a function $u(\tau)$, $\tau \in [0,\pi)$, such that $u(\tau)$ can only take values within $\mathcal{U}$ and whose Fourier coefficients satisfy: 
 \begin{gather}
 	\notag a_i = (\bm{a}_T)_i, \quad\textrm{ for all } i \in \mathcal{E}_a,
 	\\
 	\notag b_j = (\bm {b}_T)_j, \quad\textrm{ for all } j \in \mathcal{E}_b.
 \end{gather}
 \end{problem}
+
+Roughly speaking, this problem can be understood as finding a multi-set $\mathcal S = \{s_k\}_{k=1}^{\widehat K}$ with $s_k\in\mathcal U$, defining the values that the function $u(\tau)$ will assume and in which order they will appear (see \cite{Konstantinou2010}).
 %
-%%%%%%%%%%%%%%%%%%%%%%%%%
-%% METODOLOGÍA CLÁSICA %%
-%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-Roughly speaking, this problem can be understood as finding a sequence $S\subset \mathcal{U}$ defining the values that the function $u(\tau)$ will assume and in which order they will appear (see \cite{Konstantinou2010}).
-%
-In this way, given the sequence $S$ we can focus in finding the exact locations where the function $u(\tau)$ changes its values.
+In this way, given the sequence $\mathcal S$ we can focus in finding the exact locations where the function $u(\tau)$ changes its values.
 %
 Following the terminology introduced in the SHE literature (\cite{Yang2015,Konstantinou2010,Sun1996}), we will refer to these locations of the changes in the values of the waveform $\mathcal{S}$ as \textit{switching angles}.
 %
