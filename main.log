@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.18)  19 JAN 2021 16:32
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.18)  20 JAN 2021 16:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -480,60 +480,37 @@ mf/fonts/map/pdftex/updmap/pdftex.map}
 
 ]
 Package hyperref Info: bookmark level for unknown problem defaults to 0 on inpu
-t line 25.
+t line 27.
 
 
-LaTeX Warning: Reference `' on page 2 undefined on input line 35.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 56--58
-
- []
+LaTeX Warning: Reference `' on page 2 undefined on input line 37.
 
 Package hyperref Info: bookmark level for unknown definition defaults to 0 on i
-nput line 59.
+nput line 43.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \hbox (badness 2205) in paragraph at lines 64--67
+\OT1/cmr/m/n/10 dis-tance be-tween the ob-tained Fourier co-ef-fi-cients
+ []
 
- [2]
-Underfull \hbox (badness 10000) in paragraph at lines 89--90
+
+Underfull \hbox (badness 10000) in paragraph at lines 68--69
 []\OT1/cmr/m/it/10 Given a
  []
 
+[2]
 Missing character: There is no Ã in font cmr10!
 Missing character: There is no ³ in font cmr10!
 Missing character: There is no Ã in font cmr10!
 Missing character: There is no ³ in font cmr10!
-) (./contens/P03-SHE-as-system.tex
-Overfull \hbox (13.89323pt too wide) detected at line 20
-[]
- []
-
-[3]
+) (./contens/P03-SHE-as-system.tex [3]
 Package hyperref Info: bookmark level for unknown remark defaults to 0 on input
- line 99.
+ line 95.
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--101
-[]\OT1/cmr/m/it/10 In the
+Underfull \hbox (badness 6110) in paragraph at lines 96--97
+[]\OT1/cmr/m/it/10 We shall
  []
 
-) (./contens/P04-Problem-Statement.tex
-Underfull \hbox (badness 10000) in paragraph at lines 24--25
-[]\OT1/cmr/m/it/10 Given
- []
-
-
-Underfull \hbox (badness 1496) in paragraph at lines 72--73
-[]\OT1/cmr/bx/n/10 Optimal Wave-form\OT1/cmr/m/n/10 : We known that $\OML/cmm/m
-/it/10 u[] \OT1/cmr/m/n/10 =
- []
-
-
-Overfull \hbox (3.12424pt too wide) detected at line 77
-[]
- []
-
-[4]
+) (./contens/P04-Problem-Statement.tex [4]
 Missing character: There is no Â in font cmr10!
 Missing character: There is no   in font cmr10!
 Missing character: There is no Â in font cmr10!
@@ -546,29 +523,30 @@ Missing character: There is no Â in font cmr10!
 Missing character: There is no   in font cmr10!
 Missing character: There is no Â in font cmr10!
 Missing character: There is no   in font cmr10!
-) (./contens/P06-NumericalResults.tex
+ [5])
+(./contens/P06-NumericalResults.tex
 Overfull \hbox (3.81294pt too wide) detected at line 18
 []
  []
 
-[5]
-Underfull \hbox (badness 3407) in paragraph at lines 33--40
-[]\OT1/cmr/m/n/10 To solve the op-ti-mal con-trol prob-lem ([][]4.2[][]), we
- []
+
+LaTeX Warning: Reference `OCP2' on page 6 undefined on input line 33.
 
 
-Underfull \hbox (badness 2376) in paragraph at lines 33--40
-\OT1/cmr/m/n/10 use a di-rect method. If we con-sider a par-ti-tion
- []
+LaTeX Warning: Reference `OCP1' on page 6 undefined on input line 37.
+
+
+LaTeX Warning: Reference `OCP1' on page 6 undefined on input line 39.
 
 
 LaTeX Warning: Reference `ex01' on page 6 undefined on input line 60.
 
+[6]
 
-LaTeX Warning: Reference `ex3LVL' on page 6 undefined on input line 90.
+LaTeX Warning: Reference `ex3LVL' on page 7 undefined on input line 90.
 
 
-LaTeX Warning: Reference `disco' on page 6 undefined on input line 105.
+LaTeX Warning: Reference `disco' on page 7 undefined on input line 105.
 
 
 Underfull \hbox (badness 6412) in paragraph at lines 99--106
@@ -580,14 +558,12 @@ Underfull \hbox (badness 1769) in paragraph at lines 99--106
 \OT1/cmr/m/n/10 thanks to the op-ti-mal con-trol for-mu-la-tion of
  []
 
-) (./contens/P07-Conclusions.tex) (./main.bbl [6]
+) (./contens/P07-Conclusions.tex) (./main.bbl
 Underfull \hbox (badness 5036) in paragraph at lines 28--33
 []\OT1/cmr/m/n/8 Konstantinou, G. S. and
  []
 
-) [7
-
-]
+) [7]
 \tf@thm=\write4
 \openout4 = `main.thm'.
 
@@ -597,7 +573,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 72.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 72.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 72.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 3FC00893FEBB7B534EEA4F0E1D12A4B6;861.
+(rerunfilecheck)             Checksum: CE8638573B2867C9DAA4BB6622532E1D;836.
 
 
 LaTeX Warning: There were undefined references.
@@ -605,13 +581,13 @@ LaTeX Warning: There were undefined references.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 72.
  ) 
 Here is how much of TeX's memory you used:
- 7434 strings out of 492982
- 102701 string characters out of 6134895
- 207557 words of memory out of 5000000
- 10801 multiletter control sequences out of 15000+600000
+ 7436 strings out of 492982
+ 102761 string characters out of 6134895
+ 205950 words of memory out of 5000000
+ 10811 multiletter control sequences out of 15000+600000
  23761 words of font info for 94 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 32i,19n,37p,1166b,432s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 32i,19n,37p,642b,401s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb></u
 sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/sha
 re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/tex
@@ -638,10 +614,10 @@ fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></u
 sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on main.pdf (7 pages, 357754 bytes).
+Output written on main.pdf (7 pages, 363334 bytes).
 PDF statistics:
- 314 PDF objects out of 1000 (max. 8388607)
- 274 compressed objects within 3 object streams
- 77 named destinations out of 1000 (max. 500000)
+ 320 PDF objects out of 1000 (max. 8388607)
+ 280 compressed objects within 3 object streams
+ 69 named destinations out of 1000 (max. 500000)
  105 words of extra memory for PDF output out of 10000 (max. 10000000)
 

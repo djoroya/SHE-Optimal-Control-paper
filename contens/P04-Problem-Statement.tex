@@ -1,82 +1,69 @@
-\section{Optimal Control for SHE}\label{Section4}
+\section{Optimal control for SHE}\label{Section4}
 
-Since the SHE problem is equivalent to controlling a dynamic system from the origin of coordinates to a specific point, we must formulate a control problem that solves this task but also complies with the restrictions on the values that the control can take. It is necessary to set a finite subset $ \mathcal {U} $ of the interval $ [- 1,1] $, the optimal control is such that it can only take the values allowed in the discretization. In other words, the control problem is:
+As we anticipated in Section \ref{Section3}, the SHE problem is equivalent to controlling a dynamical system associated with the Fourier coefficients \eqref{eq:an}. In this section, we present a rigorous formulation of this mentioned control problem and we analyze some relevant properties. 
 \newline
-\begin{problem}[OCP for SHE]\label{OCP1}
-    Given two sets of odd numbers $ \mathcal {E} _a $ and $ \mathcal {E} _b $ and given the target vector $ \bm {x} _T \in \mathbb {R} ^ {N_a + N_b} $, also given a set $ \mathcal {U} $ of admissible controls, we look for the function $ u (\tau) \ | \ \tau \in [0, \pi) $ such that:
-    %
-    \begin{gather}
-        \min_{u(\tau) \in \mathcal{U}}         
-         \frac{1}{2}|| \bm{x}(\pi)  ||^2   \\
-        \notag \text{suject to: } \\
-        \begin{cases}
-            \dot{\bm{x}}(\tau) = -\big(\frac{2}{\pi}\big)\bm{\mathcal{D}}(\tau) u(\tau)  & \tau \in [0,\pi)\\
+\begin{problem}[OCP for SHE]\label{pb:OCP1}
+Let $\mathcal U$ be defined as in \eqref{eq:Udef}. Given two sets of odd numbers $\mathcal {E}_a $ and $\mathcal {E}_b $ with cardinality $N_a$ and $N_b$, respectively, and given the target vector $\bm{x}_T\in \mathbb{R}^{N_a+N_b}$, we look for the function $u(\tau):[0,\pi)\to \mathcal U$ solution of the optimal control problem  
+\begin{align*}
+	&\min_{u \in \mathcal{U}}\;\frac 12 \|\bm{x}(\pi)\|^2_{\mathbb{R}^{N_a+N_b}}
+	\\
+    &\notag \text{subject to: }\quad \begin{cases}
+            \displaystyle \dot{\bm{x}}(\tau) = -\frac 2\pi\bm{\mathcal{D}}(\tau) u(\tau),  & \tau \in [0,\pi)\\[6pt]
             \bm{x}(0) = \bm{x}_0
-        \end{cases}
-    \end{gather}
+    \end{cases}
+    \end{align*}
 \end{problem}
-%
-The solution of this control problem is complex due to the restriction on the admissible control values.
-%
-In order to obtain a problem that can be solved by classical control theory we can formulate the following control problem:
+The solution of Problem \ref{pb:OCP1} may be quite complex to be obtained, due to the restriction on the admissible control values. In order to bypass this difficulty, following a standard optimal control approach, we can formulate an equivalent minimization problem in which, instead of looking for $u\in\mathcal U$, we simply require that $|u|<1$ and we introduce a penalization term to ensure that $u$ is a piece-wise constant function. This alternative optimal control problem, which can be solved more easily by employing standard tools, reads as follows:
 \newline
-\begin{problem}[Regularized OCP for SHE]\label{OCP2}
-    Given two sets of odd numbers $ \mathcal {E} _a $ and $ \mathcal {E} _b $ and given the target vector $ \bm {x} _T \in \mathbb {R} ^ {N_a + N_b} $, we look for the function $ |u (\tau)|<1 \ | \ \tau \in [0, \pi) $ such that:
-    \begin{gather}
-        \min_{|u(\tau) |<1}         
-         \Bigg[ \frac{1}{2}|| \bm{x}(\pi)  ||^2  
-        + \epsilon \int_0^{\pi} \mathcal{L}(u(\tau)) d\tau \Bigg]  \\
-        \notag \text{suject to: } \\
-        \begin{cases}
-            \dot{\bm{x}}(\tau) = -\big(\frac{2}{\pi}\big)\bm{\mathcal{D}}(\tau) u(\tau)  & \tau \in [0,\pi)\\
-            \bm{x}(0) = \bm{x}_0
-        \end{cases}
-    \end{gather}
+\begin{problem}[Penalized OCP for SHE]\label{pb:OCP2}
+Given two sets of odd numbers $\mathcal E_a $ and $\mathcal E_b $ and the target vector $\bm{x}_T \in \mathbb {R}^{N_a + N_b}$, we look for the  function $u$ as the solution of:
+\begin{align*}
+	\min_{|u|<1} \Bigg[\frac 12 \|\bm{x}(\pi)\|^2_{\mathbb{R}^{N_a+N_b}} + \epsilon \int_0^{\pi} \mathcal{L}(u(\tau)) d\tau \Bigg]  
+\end{align*}
+under the dynamics given by \eqref{eq:CauchyReversed}.
 \end{problem}
+
 Where we will choose $ \mathcal {L}: \mathbb {R} \rightarrow \mathbb {R} $ such that the optimal control $ u^* $ only takes values in the discretization $ \mathcal {U} $ of the interval $ [- 1.1] $. Furthermore, the parameter $ \epsilon $ should be small so that the solution minimizes the distance from the final state and the target.
 %
 Next we will study the optimality conditions of the problem, for a general $ \mathcal {L} $ function, and then specify how $ \mathcal {L} $ should be so that the optimal control $ u ^ * $ only takes the allowed values in $ \mathcal {U} $.
 
 \subsection{Optimality conditions}
 
-To write the optimility conditions of the problem we will use the principle of the Pontryagin minimum \cite[Chapter~2.7]{bryson1975applied}. For them it is necessary to define the Hamiltonian of the system, which in this case is:
-\begin{gather}\label{hamil}
-    H(u,\bm{p},\tau) = 
-    \epsilon \mathcal{L}(u) -
-    \bigg(\frac{2}{\pi}\bigg)[\bm{p}^T(\tau) \cdot \bm{\mathcal{D}}(\tau)]
-    u(\tau)
-\end{gather}
-Where the variable $ \bm{p} (\tau) $ called adjoint state is introduced, which is associated with the restriction imposed by the system. This has the same dimension of the state vector, so that
+To write the optimality conditions of the problem we will use the Pontryagin minimum principle \cite[Chapter~2.7]{bryson1975applied}. With this purpose, it is necessary to first introduce define the Hamiltonian function 
+\begin{align*}\label{eq:hamil}
+    H(u,\bm{p},\tau) = \epsilon \mathcal{L}(u) - \frac 2\pi\left[\bm{p}^\top(\tau) \cdot \bm{\mathcal{D}}(\tau)\right]u(\tau),
+\end{align*}
+where $\bm{p}(\tau)$ is the so-called adjoint state, which is associated with the restriction imposed by the system. This vector has the same dimension of the state $\bm{x}$, so that
 \begin{gather}
-        \bm{x}(\tau) = \begin{bmatrix}
-            \bm{\alpha}(\tau) \\  \bm{\beta}(\tau)
-        \end{bmatrix}   \Leftrightarrow
-        \bm{p}(\tau) = \begin{bmatrix}
-        \bm{p}^\alpha(\tau) \\ \bm{p}^\beta(\tau)
-                \end{bmatrix}
+  \bm{x}(\tau) = \begin{bmatrix} \bm{\alpha}(\tau) \\ \bm{\beta}(\tau) \end{bmatrix} \Leftrightarrow 
+  \bm{p}(\tau) = \begin{bmatrix} \bm{p}^\alpha(\tau) \\ \bm{p}^\beta(\tau) \end{bmatrix}.
 \end{gather}
 In what follows, we will enumerate the optimality conditions arising from the Pontryagin principle.
-
-\begin{enumerate}
-
-    \item \textbf{Final condition of the adjoint}: This optimiality condition is obtained from the cost in the final time $\tau = \pi$ of the control problem in this case $ \Psi (\bm{x}) = \frac {1}{2} \| \bm{x} (\pi) - \bm{x}_T \|^2 $.
+\begin{itemize}
+    \item[1.] \textbf{Adjoint equation}: the ODE describing the evolution of the adjoint variable is given by 
     \begin{gather}
-        \bm{p}(\pi) = \nabla_{\bm{x}} \Psi(\bm{x}) =  (\bm{x} (\pi) - \bm{x}_T)
+    	\dot{\bm{p}}(\tau) = -\nabla_x H(u(\tau),\bm{p}(\tau),\tau) = 0.
     \end{gather}
-    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    \item \textbf{Adjoint evolution equation}: 
+    
+	\item[2.] \textbf{Final condition of the adjoint}: This optimiality condition is obtained from the cost in the final time $\tau = \pi$ of the control problem in this case $ \Psi (\bm{x}) = \frac {1}{2} \| \bm{x} (\pi) - \bm{x}_T \|^2 $.
     \begin{gather}
-        \dot{\bm{p}}(\tau) = -\nabla_x H(u(\tau),\bm{p}(\tau),\tau) = 0
+    	\bm{p}(\pi) = \nabla_{\bm{x}} \Psi(\bm{x}) =  (\bm{x} (\pi) - \bm{x}_T)
     \end{gather}
-    From where it can be deduced that $ \bm {p} (\tau)$ is a constant so that $ \bm {p} (\tau) = \bm {x} (\pi) - \bm { x} _T \ | \ \forall \tau \in [0, \pi) $ so from now on we will refer to it simply as $ \bm {p} $, noting that it is invariant in time.
-    \item \textbf{Optimal  Waveform}: We known that $ u^* = \argmin_{|u|<1} H(\tau,\bm{p}^*,u)$, so in this case we can write:
+    
+    \item[3.] \textbf{Optimal  Waveform}: We known that 
+    \begin{align*}
+    	u^* = \argmin_{|u|<1} H(\tau,\bm{p}^*,u),
+    \end{align*}
+	so that, in this case, we can write
     \begin{gather}
-        u^*(\tau) = \argmin_{|u|<1}  \Big[   \epsilon \mathcal{L}(u(\tau)) - \Big(\frac{2}{\pi}\Big)
-        [{\bm{p}^*}^T \cdot \bm{\mathcal{D}}(\tau)]
-        u(\tau) \Big]
+        u^*(\tau) = \argmin_{|u|<1}  \left[\epsilon \mathcal{L}(u(\tau)) - \frac 2\pi \left({\bm{p}^*}^\top \cdot \bm{\mathcal{D}}(\tau)\right) u(\tau) \right].
     \end{gather}
     Therefore, this optimality condition reduces to the optimization of a function in a variable within the interval $ [- 1,1] $. 
-\end{enumerate}
+\end{itemize}
+
+From where it can be deduced that $ \bm {p} (\tau)$ is a constant so that $ \bm {p} (\tau) = \bm {x} (\pi) - \bm { x} _T \ | \ \forall \tau \in [0, \pi) $ so from now on we will refer to it simply as $ \bm {p} $, noting that it is invariant in time. 
+
+
 %
 It is important to recall that
 \begin{gather}

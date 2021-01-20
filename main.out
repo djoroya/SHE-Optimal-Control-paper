@@ -1,7 +1,7 @@
 \BOOKMARK [1][-]{section.1}{Introduction and motivations}{}% 1
 \BOOKMARK [1][-]{section.2}{Mathematical formulation of SHE}{}% 2
-\BOOKMARK [1][-]{section.3}{Selective Harmonic Elimination as dynamical system}{}% 3
-\BOOKMARK [1][-]{section.4}{Optimal Control for SHE}{}% 4
+\BOOKMARK [1][-]{section.3}{SHE as a dynamical system}{}% 3
+\BOOKMARK [1][-]{section.4}{Optimal control for SHE}{}% 4
 \BOOKMARK [2][-]{subsection.4.1}{Optimality conditions}{section.4}% 5
 \BOOKMARK [2][-]{subsection.4.2}{Piecewise linear penalization}{section.4}% 6
 \BOOKMARK [1][-]{section.5}{Numerical simulations}{}% 7

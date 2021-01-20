@@ -1,38 +1,83 @@
 \section{Mathematical formulation of SHE}\label{Section2}
 
-This section is devoted to the mathematical formulation of the SHE problem. 
-
-Given $\mathcal U = \{u_\ell\}_{\ell=1}^L\subset [-1,1]$ a finite set of real numbers, our objective is to design a function $u(\tau):[0,2\pi)\to\mathcal U$ with the property that some of its Fourier coefficients are determined a priori. 
+This section is devoted to the mathematical formulation of the SHE problem. In what follows, we with the notation $\mathcal U$ we will always refer to a finite set of real numbers contained in the interval $[-1,1]$:
+\begin{align}\label{eq:Udef}
+	\mathcal U = \{u_\ell\}_{\ell=1}^L\subset [-1,1]
+\end{align}
+Our objective is to design a piece-wise constant function $u(\tau):[0,2\pi)\to\mathcal U$ such that some of its lower-order Fourier coefficients take specific values determined a priori. 
 
 Due to the application in power converters, we will focus here on functions with \textit{half-wave symmetry}, i. e. 
 \begin{align*}
 	u(\tau + \pi) = -u(\tau)\quad \mbox{for all}\; \tau \in [0,\pi).
 \end{align*}
-In this way, $u$ is fully determined by its values in the interval $[0,\pi)$, and its Fourier series expansion only involves the odd terms and takes the form
+In this way, $u$ is fully determined by its values in the interval $[0,\pi)$, and its Fourier series expansion only involves the odd terms taking the form
 \begin{equation}
 	u(\tau ) = \sum_{\underset{i\, odd}{i \in \mathbb{N}}} a_i \cos(i\tau)+ \sum_{\underset{j\, odd}{j \in \mathbb{N}}}  b_j \sin(j \tau), 
 \end{equation}
 where the coefficients $a_i$ and $b_j$ are given by
-\begin{equation} \label{an}
+\begin{equation} \label{eq:an}
 	\begin{aligned}
 		a_i = \frac{2}{\pi} \int_0^\pi u(\tau ) \cos(i \tau)\,d\tau, 
 		\\
 		b_j = \frac{2}{\pi} \int_0^\pi u(\tau)  \sin(j \tau)\,d\tau.
 	\end{aligned}
 \end{equation}
-The SHE problem can then be formulated as follows:
+We can then give a general formulation of the SHE problem as follows:
 \newline
 \begin{problem}[SHE]\label{SHEp}
-Let $\mathcal{U} = \{u_\ell\}_{\ell=1}^L\subset [-1,1]$ and let $\mathcal{E} _a $ and $\mathcal{E} _b $ be two sets of odd numbers with cardinalities $|\mathcal{E}_a| = N_a $ and $ |\mathcal{E} _b| = N_b$, respectively. Given the vectors $\bm{a}_T \in \mathbb{R}^{N_a}$ and $\bm{b}_T \in \mathbb{R}^{N_b} $, we look for $u:\in [0,\pi)\to\mathcal{U}$ such that 
+Let $\mathcal{U}$ be defined as in \eqref{eq:Udef} and let $\mathcal{E} _a $ and $\mathcal{E} _b $ be two sets of odd numbers with cardinalities $|\mathcal{E}_a| = N_a $ and $ |\mathcal{E} _b| = N_b$, respectively. Given the vectors $\bm{a}_T \in \mathbb{R}^{N_a}$ and $\bm{b}_T \in \mathbb{R}^{N_b} $, we look for $u:\in [0,\pi)\to\mathcal{U}$ such that 
 \begin{gather}
 	\notag a_i = (\bm{a}_T)_i, \quad\textrm{ for all } i \in \mathcal{E}_a,
 	\\
 	\notag b_j = (\bm {b}_T)_j, \quad\textrm{ for all } j \in \mathcal{E}_b,
 \end{gather}
-with $\{a_i\}_{i\in\mathcal E_a}$ and $\{b_j\}_{j\in\mathcal E_b}$ given by \eqref{an}.
+with $\{a_i\}_{i\in\mathcal E_a}$ and $\{b_j\}_{j\in\mathcal E_b}$ given by \eqref{eq:an}.
 \end{problem}
 
-Figure \ref{} shows an example of a function $u$ solution of the SHE problem. Notice that the values of $u(\tau)\in\mathcal U$ can be repeated. With this observation in mind, Problem \ref{SHEp} can be understood as finding a multi-set $\mathcal S = \{s_k\}_{k=1}^K$ with $s_k\in\mathcal U$ (to which we shall refer as the \textit{wave-form}, see Definition \ref{def:waveform}) defining the values that the function $u(\tau)$ will assume and in which order they will appear (see \cite{Konstantinou2010}). In this way, given $\mathcal S$ we can focus in finding the exact locations where the function $u(\tau)$ changes its values. Following the terminology introduced in the SHE literature (\cite{Yang2015,Konstantinou2010,Sun1996}), we will refer to these locations of the changes in the values of the waveform $\mathcal{S}$ as \textit{switching angles}. To find the switching angles given the multi-set $\mathcal S$ can be cast as a minimization problem where the variables are the angles while the cost functional is the Euclidean distance between the obtained Fourier coefficients and the desired ones.
+Figure \ref{} shows an example of a function $u$ solution of the SHE problem. 
+
+\textcolor{red}{Include here a picture of a possible solution $u$.}
+
+As we anticipated in Section \ref{Section1}, the control signal $u$ is fully characterized by its waveform and the switching angles, to which we give a precise definition as follows:
+\newline
+\begin{definition}[Wave-form]\label{def:waveform}
+Given a finite set of real numbers $\mathcal U$ defined as in \eqref{eq:Udef}, we will call a waveform any possible tuple $\mathcal S = (s_m)_{m=0}^{M+1}$ with $s_m\in \mathcal U$ for all $m=0,\ldots,M+1$.
+\end{definition}
+
+\begin{definition}[Switching angles]\label{def:switchingAngles}
+Given a finite set of real numbers $\mathcal U$ defined as in \eqref{eq:Udef} and a piece-wise constant function $u:[0,\pi) \rightarrow \mathcal{U}$, we shall refer as switching angles $\bm{\phi} = \{\phi_m\}_{m=0}^{M+1}\subset[0,\pi]$, with $\phi_0 = 0$ and $\phi_{M+1} = \pi$, to the points in the domain $[0,\pi)$ where $u$ changes its value. 
+\end{definition}
+
+In view of the above definitions, we can provide the following explicit expression for the function $u$:
+\begin{align}\label{eq:uExpl}
+	&u = \sum_{m=0}^{M+1} s_m\chi_{[\phi_m,\phi_{m+1}]}
+	\\
+	&s_m\in\mathcal S, \;\phi_m\in{\bm{\phi}}, \quad \mbox{for all } m=0,\ldots,M+1, \notag 
+\end{align}
+where we denoted by $\chi_{[\phi_m,\phi_{m+1}]}$ the characteristic function of the interval $[\phi_m,\phi_{m+1}]$.
+
+Besides, taking into account \eqref{eq:uExpl}, we can rewrite the Fourier coefficients \eqref{eq:an} as
+\begin{align*}
+	& a_i = a_i(\bm{\phi}) =  \frac{2}{i\pi} \sum_{k=1}^{M+1} s_k \Big[\sin(i\phi_k) -\sin(i\phi_{k-1})\Big]
+	\\
+	& b_j = b_j(\bm{\phi}) = \frac{2}{j\pi} \sum_{k=1}^{M+1} s_k \Big[\cos(j\phi_{k-1}) -\cos(j\phi_{k})\Big]
+\end{align*}
+Given a waveform $\mathcal S$, Problem \ref{SHEp} then reduces to find the switching locations $\bm{\phi}$ (see \cite{Yang2015,Konstantinou2010,Sun1996}). This can be cast as a minimization problem in the variables $\{\phi_m\}_{m=0}^{M+1}$, where the cost functional is the Euclidean distance between the obtained Fourier coefficients $\{a_i(\bm{\phi}),b_j(\bm{\phi})\}$ and the targets $(\bm{a},\bm{b})\in \mathbb{R}^{N_a}\times \mathbb{R}^{N_b}$.
+\newline
+\begin{problem}[Optimization for SHE]
+Given a waveform $\mathcal S$ and a step function $u$ in the form \eqref{eq:uExpl}, we look for the switching angles $\bm{\phi}$ by means of the following minimization problem:
+\begin{align}
+	&\min_{\bm{\phi} \in [0,\pi]^{M}} \left(\sum_{i\in\mathcal{E}_a} \|a_T^i - a_i(\bm{\phi})\|^2 + \sum_{j\in \mathcal{E}_b} \|b_T^j - b_j(\bm{\phi})\|^2\right)\notag 
+	\\[10pt]
+	&\mbox{subject to: } 0 = \phi_0 <\phi_1 < \ldots < \phi_{M} < \phi_{M+1} = \pi \notag 
+	\\
+\end{align}
+\end{problem}
+
+
+
+
+
 
 Since the cardinality of $\mathcal S$ is not known a priori, meaning that we do not know how many switches will be necessary, it appears that the only solution to the SHE problem consists in fix the number of changes and counting all the possible combinations, to later solve an optimization problem for each one of them.
 %
@@ -53,48 +98,8 @@ In this document, we will present the SHE problem as an optimal control one, whe
 %
 In particular, we will describe how the Fourier coefficients of the function $u(\tau)$ can be seen as the final state of a system controlled by $u (\tau)$. Hence, the optimization is performed among all the possible functions that satisfy $|u(\tau)|<1 $ and can control the final state at the desired Fourier coefficients. Then we will show how to design a control problem so that the solution is a step function.
 
-In the classical SHE approach, the piece-wise definition of the function $u(\tau)$ is exploited to simplify the problem. In this formulation, $u(\tau)$ can be fully characterized by the switching angles and the constant values it may assume. We define these two concepts as follows.
-\newline
-
-\begin{definition}[Switching angles]
-Given a function $u:[0,\pi] \rightarrow \mathcal{U}$, the switching locations are the values of $\tau\in[0,\pi]$ where $u(\tau)$ changes its value discontinuously. We will denote the commutation angles as $\bm{\phi} = \{\phi_0,\phi_1,\dots,\phi_M,\phi_{M+1}\}$, where we have taken $\phi_0 = 0$ and $\phi_{M+1} = \pi$.
-\end{definition}
-
-\begin{definition}[Wave-form]\label{def:waveform}
-Given $\mathcal U$ a finite subset of $[-1,1]$, we will call a waveform a finite set $S = \{s_1,s_2,s_3,\dots,s_{M+1}\}$ of elements of $\mathcal {U}$ with repetition.
-\end{definition}
-
-Then a waveform $S$ indicates the values that the function will take and in which order they will appear within the interval $[0,\pi) $, while $\bm{\phi}$ indicates the switching locations. Considering these two elements, we can rewrite the Fourier coefficients as
-% \begin{equation}
-%     a_i = \frac{2}{\pi} \int_0^\pi u(\tau) \cos(i \tau)d\tau  = \frac{2}{\pi} \sum_{k=1}^{M+1} 
-%     %\int_{\phi_{k-1}}^{\phi_{k}} s_k \cos(i\tau)d\tau = 
-%     \frac{2}{i\pi} \sum_{k=1}^{M+1} s_k \sin(i\tau)\,\Big|_{\phi_{k-1}}^{\phi_k} 
-% \end{equation}
-% \begin{equation}
-%     b_j = \frac{2}{\pi} \int_0^\pi u(\tau ) \sin(j \tau)d\tau = 
-%     %\frac{2}{\pi} \sum_{k =1}^{M+1} \int_{\phi_{k-1}}^{\phi_{k}} s_k \sin(j\tau)d\tau  
-%     -\frac{2}{j\pi} \sum_{k=1}^{M+1} s_k \cos(j\tau)\, \Big|_{\phi_{k-1}}^{\phi_k} 
-% \end{equation}
-% Hence
-\begin{equation}
-    \begin{aligned}
-        a_i(\bm{\phi}) & =  \frac{2}{i\pi} \sum_{k=1}^{M+1} s_k \Big[\sin(i\phi_k) -\sin(i\phi_{k-1})\Big]
-        \\
-        b_j(\bm{\phi}) & = \frac{2}{j\pi} \sum_{k=1}^{M+1} s_k \Big[\cos(j\phi_{k-1}) -\cos(j\phi_{k})\Big]
-    \end{aligned}
-\end{equation}
 In this way, we can reformulate Problem \ref{SHEp} as follows.
 \newline
-\begin{problem}[Optimization for SHE]
-Given a waveform $S$, we look for the switching angles $\bm{\phi}$ by means of the following minimization problem:
-    \begin{gather}
-        \min_{\bm{\phi} \in [0,\pi]^{M}} \sum_{i\in\mathcal{E}_a} \|a_T^i - a_i(\bm{\phi})\|^2 + \sum_{j\in \mathcal{E}_b} \|b_T^j - b_j(\bm{\phi})\|^2 
-        \\
-        \notag \text{subject to:}
-        \\
-        \notag 0 <\phi_1 < \phi_2 < \dots < \phi_{M-1} < \phi_{M} < \pi 
-    \end{gather}
-\end{problem}
 In this formulation, the SHE problem converts in a minimization problem with restrictions which can be solved by well-known techniques. Since the problem has several minimizers, we shall solve it employing global optimizers. Furthermore, since the choice of the waveform is arbitrary, we shall proceed in the same way for each possible waveform. 
 
 {\color{red}{
