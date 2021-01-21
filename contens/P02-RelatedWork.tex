@@ -32,10 +32,15 @@ Let $\mathcal{U}$ be defined as in \eqref{eq:Udef} and let $\mathcal{E} _a $ and
 	\notag b_j = (\bm {b}_T)_j, \quad\textrm{ for all } j \in \mathcal{E}_b,
 \end{gather}
 with $\{a_i\}_{i\in\mathcal E_a}$ and $\{b_j\}_{j\in\mathcal E_b}$ given by \eqref{eq:an}.
-\end{problem}
+\end{problem} 
 
 Figure \ref{} shows an example of a function $u$ solution of the SHE problem. 
 
+\begin{figure}
+	\centering
+	\includegraphics[scale=0.375]{img/fig01.eps} 
+	\caption{Posible solution of problem \ref{SHEp}, where we consider that $\mathcal{U} = \{-3,\dots,3\}$}. We show the switching angles $\bm{\phi}$ and the waveform $\mathcal{S}$
+\end{figure}
 \textcolor{red}{Include here a picture of a possible solution $u$.}
 
 As we anticipated in Section \ref{Section1}, the control signal $u$ is fully characterized by its waveform and the switching angles, to which we give a precise definition as follows:
@@ -43,7 +48,7 @@ As we anticipated in Section \ref{Section1}, the control signal $u$ is fully cha
 \begin{definition}[Wave-form]\label{def:waveform}
 Given a finite set of real numbers $\mathcal U$ defined as in \eqref{eq:Udef}, we will call a waveform any possible tuple $\mathcal S = (s_m)_{m=0}^{M+1}$ with $s_m\in \mathcal U$ for all $m=0,\ldots,M+1$.
 \end{definition}
-
+ 
 \begin{definition}[Switching angles]\label{def:switchingAngles}
 Given a finite set of real numbers $\mathcal U$ defined as in \eqref{eq:Udef} and a piece-wise constant function $u:[0,\pi) \rightarrow \mathcal{U}$, we shall refer as switching angles $\bm{\phi} = \{\phi_m\}_{m=0}^{M+1}\subset[0,\pi]$, with $\phi_0 = 0$ and $\phi_{M+1} = \pi$, to the points in the domain $[0,\pi)$ where $u$ changes its value. 
 \end{definition}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.11.9)  20 JAN 2021 23:13
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.11.9)  21 JAN 2021 17:43
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -422,69 +422,75 @@ Package hyperref Info: bookmark level for unknown problem defaults to 0 on input
 
 LaTeX Warning: Reference `' on page 2 undefined on input line 37.
 
-Package hyperref Info: bookmark level for unknown definition defaults to 0 on input line 43.
+Package epstopdf Info: Source file: <img/fig01.eps>
+(epstopdf)                    date: 2021-01-21 09:56:12
+(epstopdf)                    size: 60072 bytes
+(epstopdf)             Output file: <img/fig01-eps-converted-to.pdf>
+(epstopdf)                    date: 2021-01-21 09:56:13
+(epstopdf)                    size: 31437 bytes
+(epstopdf)             Command: <repstopdf --outfile=img/fig01-eps-converted-to.pdf img/fig01.eps>
+(epstopdf)             \includegraphics on input line 41.
+Package epstopdf Info: Output file is already uptodate.
+<img/fig01-eps-converted-to.pdf, id=92, 588.1975pt x 527.9725pt>
+File: img/fig01-eps-converted-to.pdf Graphic file (type pdf)
+<use img/fig01-eps-converted-to.pdf>
+Package pdftex.def Info: img/fig01-eps-converted-to.pdf  used on input line 41.
+(pdftex.def)             Requested size: 220.57352pt x 197.9892pt.
+Package hyperref Info: bookmark level for unknown definition defaults to 0 on input line 48.
 
-Underfull \hbox (badness 2205) in paragraph at lines 64--67
+Underfull \hbox (badness 2205) in paragraph at lines 69--72
 \OT1/cmr/m/n/10 dis-tance be-tween the ob-tained Fourier co-ef-fi-cients
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 68--69
+Underfull \hbox (badness 10000) in paragraph at lines 73--74
 []\OT1/cmr/m/it/10 Given a
  []
 
-[2]) (/Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/contens/P03-SHE-as-system.tex [3]
+[2 </Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/fig01-eps-converted-to.pdf>]) (/Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/contens/P03-SHE-as-system.tex [3]
 Package hyperref Info: bookmark level for unknown remark defaults to 0 on input line 95.
 
 Underfull \hbox (badness 6110) in paragraph at lines 96--97
 []\OT1/cmr/m/it/10 We shall
  []
 
-) (/Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/contens/P04-Problem-Statement.tex [4]
-Package hyperref Info: bookmark level for unknown proposition defaults to 0 on input line 83.
-
-Underfull \hbox (badness 10000) in paragraph at lines 85--87
+) (/Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/contens/P04-Problem-Statement.tex
+Underfull \hbox (badness 10000) in paragraph at lines 3--5
 
  []
 
+[4]
+Underfull \hbox (badness 10000) in paragraph at lines 75--77
+
+ []
+
+Package hyperref Info: bookmark level for unknown proposition defaults to 0 on input line 80.
 Package hyperref Info: bookmark level for unknown proof defaults to 0 on input line 89.
-[5]) (/Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/contens/P06-NumericalResults.tex
+[5]
+Package hyperref Info: bookmark level for unknown theorem defaults to 0 on input line 103.
+
+Underfull \hbox (badness 10000) in paragraph at lines 105--107
+
+ []
+
+) (/Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/contens/P06-NumericalResults.tex
 Overfull \hbox (3.81294pt too wide) detected at line 18
 []
  []
 
+[6]
 
-LaTeX Warning: Reference `OCP2' on page 6 undefined on input line 33.
-
-
-LaTeX Warning: Reference `OCP1' on page 6 undefined on input line 37.
+LaTeX Warning: Reference `OCP2' on page 7 undefined on input line 33.
 
 
-LaTeX Warning: Reference `OCP2' on page 6 undefined on input line 39.
+LaTeX Warning: Reference `OCP1' on page 7 undefined on input line 37.
+
+
+LaTeX Warning: Reference `OCP2' on page 7 undefined on input line 39.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 33--41
 
- []
-
-[6]
-
-LaTeX Warning: Reference `ex01' on page 7 undefined on input line 61.
-
-
-LaTeX Warning: Reference `ex3LVL' on page 7 undefined on input line 91.
-
-
-LaTeX Warning: Reference `disco' on page 7 undefined on input line 106.
-
-
-Underfull \hbox (badness 6412) in paragraph at lines 100--107
-[]\OT1/cmr/bx/n/10 Changes in the com-mu-ta-tions num-ber\OT1/cmr/m/n/10 :
- []
-
-
-Underfull \hbox (badness 1769) in paragraph at lines 100--107
-\OT1/cmr/m/n/10 thanks to the op-ti-mal con-trol for-mu-la-tion of
  []
 
 ) (/Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/contens/P07-Conclusions.tex) (/Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/main.bbl
@@ -492,9 +498,7 @@ Underfull \hbox (badness 5036) in paragraph at lines 28--33
 []\OT1/cmr/m/n/8 Konstantinou, G. S. and
  []
 
-[7]) [8
-
-]
+) [7]
 \tf@thm=\write4
 \openout4 = `main.thm'.
 
@@ -504,7 +508,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 72.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 72.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 72.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 773E41CEA836299AE049C88FFC3C46B2;933.
+(rerunfilecheck)             Checksum: BE0906BDC2093090F4B5A5303DAE3C4A;873.
 
 
 LaTeX Warning: There were undefined references.
@@ -512,18 +516,18 @@ LaTeX Warning: There were undefined references.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 72.
  ) 
 Here is how much of TeX's memory you used:
- 7897 strings out of 480608
- 115703 string characters out of 5903630
+ 7900 strings out of 480608
+ 115878 string characters out of 5903630
  392114 words of memory out of 5000000
- 23533 multiletter control sequences out of 15000+600000
+ 23536 multiletter control sequences out of 15000+600000
  552459 words of font info for 104 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 39i,19n,39p,829b,422s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl9.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on "/Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/main.pdf" (8 pages, 372955 bytes).
+ 39i,19n,39p,827b,415s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl9.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
+Output written on "/Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/main.pdf" (7 pages, 401737 bytes).
 PDF statistics:
- 338 PDF objects out of 1000 (max. 8388607)
- 296 compressed objects within 3 object streams
- 73 named destinations out of 1000 (max. 500000)
- 113 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 333 PDF objects out of 1000 (max. 8388607)
+ 291 compressed objects within 3 object streams
+ 70 named destinations out of 1000 (max. 500000)
+ 110 words of extra memory for PDF output out of 10000 (max. 10000000)
 

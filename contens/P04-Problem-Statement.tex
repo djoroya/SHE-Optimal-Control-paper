@@ -2,6 +2,8 @@
 
 As we anticipated in Section \ref{Section3}, the SHE problem is equivalent to controlling a dynamical system associated with the Fourier coefficients \eqref{eq:an}. In this section, we present a rigorous formulation of this mentioned control problem and we analyze some relevant properties. 
 \newline
+
+
 \begin{problem}[OCP for SHE]\label{pb:OCP1}
 Let $\mathcal U$ be defined as in \eqref{eq:Udef}. Given two sets of odd numbers $\mathcal {E}_a $ and $\mathcal {E}_b $ with cardinality $N_a$ and $N_b$, respectively, and given the target vector $\bm{x}_T\in \mathbb{R}^{N_a+N_b}$, we look for the function $u(\tau):[0,\pi)\to \mathcal U$ solution of the optimal control problem  
 \begin{align*}
@@ -13,7 +15,16 @@ Let $\mathcal U$ be defined as in \eqref{eq:Udef}. Given two sets of odd numbers
     \end{cases}
     \end{align*}
 \end{problem}
-The solution of Problem \ref{pb:OCP1} may be quite complex to be obtained, due to the restriction on the admissible control values. In order to bypass this difficulty, following a standard optimal control approach, we can formulate an equivalent minimization problem in which, instead of looking for $u\in\mathcal U$, we simply require that $|u|<1$ and we introduce a penalization term to ensure that $u$ is a piece-wise constant function. This alternative optimal control problem, which can be solved more easily by employing standard tools, reads as follows:
+The solution of Problem \ref{pb:OCP1} may be quite complex to be obtained, due to the restriction on the admissible control values. 
+
+
+\begin{definition}[Digital Control]
+    A control $u(\tau)$  is called digital if for each time $t\geq 0$ only take the values of finite set of real number $\mathcal{U}$.  
+\end{definition}
+
+
+
+In order to bypass this difficulty, following a standard optimal control approach, we can formulate an equivalent minimization problem in which, instead of looking for $u\in\mathcal U$, we simply require that $|u|<1$ and we introduce a penalization term to ensure that $u$ is a piece-wise constant function. This alternative optimal control problem, which can be solved more easily by employing standard tools, reads as follows:
 \newline
 \begin{problem}[Penalized OCP for SHE]\label{pb:OCP2}
 Given two sets of odd numbers $\mathcal E_a $ and $\mathcal E_b $ and the target vector $\bm{x}_T \in \mathbb {R}^{N_a + N_b}$, we look for the  function $u$ as the solution of:
@@ -61,33 +72,41 @@ In what follows, we will enumerate the optimality conditions arising from the Po
     Therefore, this optimality condition reduces to the optimization of a function in a variable within the interval $ [- 1,1] $. 
 \end{itemize}
 
-From where it can be deduced that $ \bm {p} (\tau)$ is a constant so that $ \bm {p} (\tau) = \bm {x} (\pi) - \bm { x} _T \ | \ \forall \tau \in [0, \pi) $ so from now on we will refer to it simply as $ \bm {p} $, noting that it is invariant in time. 
-
+From where it can be deduced that $ \bm {p} (\tau)$ is a constant so that $ \bm {p} (\tau) = \bm {x} (\pi) - \bm { x} _T \ | \ \forall \tau \in [0, \pi) $ so from now on we will refer to it simply as $ \bm {p} $, noting that it is invariant in time.
+\newline
 
 %
-It is important to recall that
+\begin{proposition}
+    Consideramos el problema de control \ref{pb:OCP2}, una función $\mathcal{H}_m:\mathbb{R}\rightarrow \mathbb{R}$ tal que:
+    \begin{gather}\label{Hm}
+        \mathcal{H}_m(u) = \epsilon \mathcal{L}(u) - mu  |  \forall m \in \mathbb{R}
+    \end{gather}
+    De manera que si el conjunto de todos los posibles mínimos de $\mathcal{H}_m \ | \ \forall m \in \mathbb{R} - \mathcal{M}$  es igual al conjunto $\mathcal{U}$ entonces la solución del problema \ref{pb:OCP2} es un control digital. Donde $\mathcal{M}$ es un conjunto finito de número reales donde el Hamiltoniano $\mathcal{H}_m$ podría tomar valores que no pertenezcan a $\mathcal{U}$.
+\end{proposition}
+
+\begin{proof}
+    %
+Es importante notar que la función $\mathcal{H}_m$ es el Hamiltoniano del sistema donde hemos remplazado el valor 
 \begin{gather}
 	[{\bm{p}^*}^T \cdot \bm{\mathcal{D}}(\tau)] = \sum_{i \in \mathcal{E}_a} p^*_\alpha \cos(i\tau) + \sum_{j \in \mathcal{E}_b} p^*_\beta \sin(j\tau) 
 \end{gather}
-we build a function $\mathcal{H}_m: [-1,1] \rightarrow \mathbb{R}$ such that:
-\begin{gather}\label{Hm}
-    \mathcal{H}_m(u) = \epsilon \mathcal{L}(u) - mu  |  \forall m \in \mathbb{R}
-\end{gather}
-where we replaced the term $(2/\pi)[{\bm{p}^*}^T \cdot \bm{\mathcal{D}}(\tau)]$ with a parameter $m$ which may assume all real values. In other words, the problem of designing an optimal control which may only take real values in $\mathcal{U}$ is reduced to construct a one-dimensional function with parameter $m$ whose minima are the elements in $\mathcal{U}$ for all values of $m$. 
+por el parámetro $m$. De manera que el Hamiltoniano evaluado en la trayectoria óptima varía de manera continua en todo el intervalo $\tau \in [0,\pi)]$. Entonces en el caso de que el $m = (2/\pi)[{\bm{p}^*}^T \cdot \bm{\mathcal{D}}(\tau)] \notin \mathcal{M}$, por hipótesis el mínimo de $H_m$ esta en $\mathcal{U}$. En el caso contrario, $m = (2/\pi)[{\bm{p}^*}^T \cdot \bm{\mathcal{D}}(\tau)] \in \mathcal{M}$  
+
+\end{proof}
+Where we replaced the term $(2/\pi)[{\bm{p}^*}^T \cdot \bm{\mathcal{D}}(\tau)]$ with a parameter $m$ which may assume all real values. The problem of designing an optimal control which may only take real values in $\mathcal{U}$ is reduced to construct a one-dimensional function with parameter $m$ whose minima are the elements in $\mathcal{U}$ for all values of $m$.
 
 \subsection{Sufficient conditions to obtain digital control}
 
 A continuación mostraremos que existen varias manera para diseñar un término de penalización que no de controles digitales.
 \newline
-\begin{proposition}
+\begin{theorem}
     Consideremos un conjunto finito $\mathcal{U}=\{u_l\}_{l=1}^L \subset [-1,1] $ ordenados de menor a mayor, un cojunto finito $\mathcal{Y} = \{y_l\}_{l=1}^L$ tal que la  secuencia $d\mathcal{Y} = \{y_l - y_{l+1}\}_{l=1}^{L-1}$ sea monótona y una función continua $\mathcal{L}:\mathbb{R} \rightarrow \mathbb{R}$ definida a trozos en los intervalos $\{ [u_l,u_{l+1})\}_{l=1}^L$ de manera que $\{y_l = \mathcal{L}(u_l)\}_{l=1}^L$. Si la funciones definidas entre cada intervalo $\{[u_l,u_{l+1}]\}_{l=1}^L$ son concavas, entonces la penalización $\mathcal{L}$ en el problema \ref{pb:OCP2} da lugar a un control que solo toma valores en $\mathcal{U}$.
-\end{proposition}
+\end{theorem}
 Para que el considerar que el control óptimo del problema solo toma valores digitales los minimos  \ref{Hm} para todo valor de $m$ de estar contenido en $\mathcal{U}$. A continuación la prueba
 \newline
 
 \begin{proof}
-    Dado que ...\\
-    $\hspace*{\fill}{\blacksquare}$
+    Teniendo en cuenta que la función 
 \end{proof}
 
 \subsection{Piecewise linear penalization}
