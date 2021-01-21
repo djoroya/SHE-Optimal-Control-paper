@@ -53,6 +53,54 @@ INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/ntheorem/ntheorem.sty
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/ntheorem/ntheorem.sty
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/base/ifthen.sty
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/base/ifthen.sty
+INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/hyperref/hyperref.sty
+INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/hyperref/hyperref.sty
+INPUT /usr/local/texlive/2020/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+INPUT /usr/local/texlive/2020/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+INPUT /usr/local/texlive/2020/texmf-dist/tex/generic/iftex/iftex.sty
+INPUT /usr/local/texlive/2020/texmf-dist/tex/generic/iftex/iftex.sty
+INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/pdftexcmds/pdftexcmds.sty
+INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/pdftexcmds/pdftexcmds.sty
+INPUT /usr/local/texlive/2020/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+INPUT /usr/local/texlive/2020/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+INPUT /usr/local/texlive/2020/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty
+INPUT /usr/local/texlive/2020/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty
+INPUT /usr/local/texlive/2020/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+INPUT /usr/local/texlive/2020/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+INPUT /usr/local/texlive/2020/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+INPUT /usr/local/texlive/2020/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/hycolor/hycolor.sty
+INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/hycolor/hycolor.sty
+INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty
+INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty
+INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/auxhook/auxhook.sty
+INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/auxhook/auxhook.sty
+INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/hyperref/pd1enc.def
+INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/hyperref/pd1enc.def
+INPUT /usr/local/texlive/2020/texmf-dist/tex/generic/intcalc/intcalc.sty
+INPUT /usr/local/texlive/2020/texmf-dist/tex/generic/intcalc/intcalc.sty
+INPUT /usr/local/texlive/2020/texmf-dist/tex/generic/etexcmds/etexcmds.sty
+INPUT /usr/local/texlive/2020/texmf-dist/tex/generic/etexcmds/etexcmds.sty
+INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/url/url.sty
+INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/url/url.sty
+INPUT /usr/local/texlive/2020/texmf-dist/tex/generic/bitset/bitset.sty
+INPUT /usr/local/texlive/2020/texmf-dist/tex/generic/bitset/bitset.sty
+INPUT /usr/local/texlive/2020/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
+INPUT /usr/local/texlive/2020/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
+INPUT /usr/local/texlive/2020/texmf-dist/tex/generic/atbegshi/atbegshi.sty
+INPUT /usr/local/texlive/2020/texmf-dist/tex/generic/atbegshi/atbegshi.sty
+INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/hyperref/hpdftex.def
+INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/hyperref/hpdftex.def
+INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/atveryend/atveryend.sty
+INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/atveryend/atveryend.sty
+INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+INPUT /usr/local/texlive/2020/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+INPUT /usr/local/texlive/2020/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/breakcites/breakcites.sty
+INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/breakcites/breakcites.sty
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/xcolor/xcolor.sty
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/xcolor/xcolor.sty
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/graphics-cfg/color.cfg
@@ -68,6 +116,20 @@ INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.st
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/hyperref/nameref.sty
+INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/hyperref/nameref.sty
+INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/refcount/refcount.sty
+INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/refcount/refcount.sty
+INPUT /usr/local/texlive/2020/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+INPUT /usr/local/texlive/2020/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/main.out
+INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/main.out
+INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/main.out
+INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/main.out
+OUTPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/main.pdf
+INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/main.out
+INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/main.out
+OUTPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/main.out
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmr17.tfm
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
@@ -141,19 +203,19 @@ INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmtt9.tfm
 INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/contens/P01-Indroduction.tex
 INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/contens/P01-Indroduction.tex
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmti10.tfm
-INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmti7.tfm
-INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmti7.tfm
+INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/contens/P02-RelatedWork.tex
+INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/contens/P02-RelatedWork.tex
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmsl9.tfm
-OUTPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/main.pdf
 INPUT /usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map
-INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/contens/P02-RelatedWork.tex
-INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/contens/P02-RelatedWork.tex
+INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmti7.tfm
+INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmti7.tfm
 INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/contens/P03-SHE-as-system.tex
 INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/contens/P03-SHE-as-system.tex
 INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/contens/P04-Problem-Statement.tex
 INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/contens/P04-Problem-Statement.tex
 INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/contens/P06-NumericalResults.tex
 INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/contens/P06-NumericalResults.tex
+INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmtt10.tfm
 INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/contens/P07-Conclusions.tex
 INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/contens/P07-Conclusions.tex
 INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/main.bbl
@@ -162,6 +224,8 @@ INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmr8.tfm
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmti8.tfm
 OUTPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/main.thm
 INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/main.aux
+INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/main.out
+INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/main.out
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
@@ -186,6 +250,8 @@ INPUT /usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pf
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb
+INPUT /usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb
+INPUT /usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb

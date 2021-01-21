@@ -48,7 +48,7 @@ In what follows, we will enumerate the optimality conditions arising from the Po
 	\item[2.] \textbf{Final condition of the adjoint}: This optimiality condition is obtained from the cost in the final time $\tau = \pi$ of the control problem in this case $ \Psi (\bm{x}) = \frac {1}{2} \| \bm{x} (\pi) - \bm{x}_T \|^2 $.
     \begin{gather}
     	\bm{p}(\pi) = \nabla_{\bm{x}} \Psi(\bm{x}) =  (\bm{x} (\pi) - \bm{x}_T)
-    \end{gather}
+    \end{gather} 
     
     \item[3.] \textbf{Optimal  Waveform}: We known that 
     \begin{align*}
@@ -70,10 +70,25 @@ It is important to recall that
 	[{\bm{p}^*}^T \cdot \bm{\mathcal{D}}(\tau)] = \sum_{i \in \mathcal{E}_a} p^*_\alpha \cos(i\tau) + \sum_{j \in \mathcal{E}_b} p^*_\beta \sin(j\tau) 
 \end{gather}
 we build a function $\mathcal{H}_m: [-1,1] \rightarrow \mathbb{R}$ such that:
-\begin{gather}
+\begin{gather}\label{Hm}
     \mathcal{H}_m(u) = \epsilon \mathcal{L}(u) - mu  |  \forall m \in \mathbb{R}
 \end{gather}
 where we replaced the term $(2/\pi)[{\bm{p}^*}^T \cdot \bm{\mathcal{D}}(\tau)]$ with a parameter $m$ which may assume all real values. In other words, the problem of designing an optimal control which may only take real values in $\mathcal{U}$ is reduced to construct a one-dimensional function with parameter $m$ whose minima are the elements in $\mathcal{U}$ for all values of $m$. 
+
+\subsection{Sufficient conditions to obtain digital control}
+
+A continuación mostraremos que existen varias manera para diseñar un término de penalización que no de controles digitales.
+\newline
+\begin{proposition}
+    Consideremos un conjunto finito $\mathcal{U}=\{u_l\}_{l=1}^L \subset [-1,1] $ ordenados de menor a mayor, un cojunto finito $\mathcal{Y} = \{y_l\}_{l=1}^L$ tal que la  secuencia $d\mathcal{Y} = \{y_l - y_{l+1}\}_{l=1}^{L-1}$ sea monótona y una función continua $\mathcal{L}:\mathbb{R} \rightarrow \mathbb{R}$ definida a trozos en los intervalos $\{ [u_l,u_{l+1})\}_{l=1}^L$ de manera que $\{y_l = \mathcal{L}(u_l)\}_{l=1}^L$. Si la funciones definidas entre cada intervalo $\{[u_l,u_{l+1}]\}_{l=1}^L$ son concavas, entonces la penalización $\mathcal{L}$ en el problema \ref{pb:OCP2} da lugar a un control que solo toma valores en $\mathcal{U}$.
+\end{proposition}
+Para que el considerar que el control óptimo del problema solo toma valores digitales los minimos  \ref{Hm} para todo valor de $m$ de estar contenido en $\mathcal{U}$. A continuación la prueba
+\newline
+
+\begin{proof}
+    Dado que ...\\
+    $\hspace*{\fill}{\blacksquare}$
+\end{proof}
 
 \subsection{Piecewise linear penalization}
 
