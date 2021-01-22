@@ -1,16 +1,18 @@
 \section{Mathematical formulation of SHE}\label{Section2}
 
-This section is devoted to the mathematical formulation of the SHE problem. In what follows, we with the notation $\mathcal U$ we will always refer to a finite set of real numbers contained in the interval $[-1,1]$:
+This section is devoted to the mathematical formulation of the SHE problem. In what follows, with the notation $\mathcal U$ we will always refer to a finite set of real numbers, contained in the interval $[-1,1]$
 \begin{align}\label{eq:Udef}
-	\mathcal U = \{u_\ell\}_{\ell=1}^L\subset [-1,1]
+	\mathcal U = \{u_\ell\}_{\ell=1}^L\subset [-1,1],
 \end{align}
-Our objective is to design a piece-wise constant function $u(\tau):[0,2\pi)\to\mathcal U$ such that some of its lower-order Fourier coefficients take specific values determined a priori. 
+with cardinality $|\mathcal U| = L$. 
 
-Due to the application in power converters, we will focus here on functions with \textit{half-wave symmetry}, i. e. 
+In broad terms, our objective is to design a piece-wise constant function $u(\tau):[0,2\pi)\to\mathcal U$ such that some of its lower-order Fourier coefficients take specific values determined a priori. 
+
+Due to the application in power converters, we will focus here on functions with \textit{half-wave symmetry}, i.e. 
 \begin{align*}
 	u(\tau + \pi) = -u(\tau)\quad \mbox{for all}\; \tau \in [0,\pi).
 \end{align*}
-In this way, $u$ is fully determined by its values in the interval $[0,\pi)$, and its Fourier series expansion only involves the odd terms taking the form
+In this way, $u$ is fully determined by its values in the interval $[0,\pi)$ and its Fourier series only involves the odd terms, thus taking the form
 \begin{equation}
 	u(\tau ) = \sum_{\underset{i\, odd}{i \in \mathbb{N}}} a_i \cos(i\tau)+ \sum_{\underset{j\, odd}{j \in \mathbb{N}}}  b_j \sin(j \tau), 
 \end{equation}
@@ -22,10 +24,10 @@ where the coefficients $a_i$ and $b_j$ are given by
 		b_j = \frac{2}{\pi} \int_0^\pi u(\tau)  \sin(j \tau)\,d\tau.
 	\end{aligned}
 \end{equation}
-We can then give a general formulation of the SHE problem as follows:
+Because of this half-wave symmetry, in what follows, we will always work with the restriction $u|_{[0,\pi)}$ which, with some abuse of notation, we shall still denote by $u$. We can then give a general formulation of the SHE problem as follows:
 \newline
 \begin{problem}[SHE]\label{SHEp}
-Let $\mathcal{U}$ be defined as in \eqref{eq:Udef} and let $\mathcal{E} _a $ and $\mathcal{E} _b $ be two sets of odd numbers with cardinalities $|\mathcal{E}_a| = N_a $ and $ |\mathcal{E} _b| = N_b$, respectively. Given the vectors $\bm{a}_T \in \mathbb{R}^{N_a}$ and $\bm{b}_T \in \mathbb{R}^{N_b} $, we look for $u:\in [0,\pi)\to\mathcal{U}$ such that 
+Let $\mathcal{E} _a $ and $\mathcal{E} _b $ be two sets of odd numbers with cardinalities $|\mathcal{E}_a| = N_a $ and $ |\mathcal{E} _b| = N_b$, respectively, and $\mathcal{U}$ be defined as in \eqref{eq:Udef}. Given the vectors $\bm{a}_T \in \mathbb{R}^{N_a}$ and $\bm{b}_T \in \mathbb{R}^{N_b} $, we look for a piece-wise constant function $u: [0,\pi)\to\mathcal{U}$ such that 
 \begin{gather}
 	\notag a_i = (\bm{a}_T)_i, \quad\textrm{ for all } i \in \mathcal{E}_a,
 	\\
@@ -34,26 +36,25 @@ Let $\mathcal{U}$ be defined as in \eqref{eq:Udef} and let $\mathcal{E} _a $ and
 with $\{a_i\}_{i\in\mathcal E_a}$ and $\{b_j\}_{j\in\mathcal E_b}$ given by \eqref{eq:an}.
 \end{problem} 
 
-Figure \ref{} shows an example of a function $u$ solution of the SHE problem. 
+Fig. \ref{fig:exampleSHE} shows an example of a function $u$ solution of the SHE problem. 
 
 \begin{figure}
 	\centering
-	\includegraphics[scale=0.375]{img/fig01.eps} 
-	\caption{Posible solution of problem \ref{SHEp}, where we consider that $\mathcal{U} = \{-3,\dots,3\}$}. We show the switching angles $\bm{\phi}$ and the waveform $\mathcal{S}$
+	\includegraphics[scale=0.35]{img/fig01.eps} 
+	\caption{Possible solution of Problem \ref{SHEp}, where we considered that $\mathcal{U} = \{-3,\dots,3\}$. We show the switching angles $\bm{\phi}$ and the waveform $\mathcal{S}$ (see Definitions \ref{def:waveform} and \ref{def:switchingAngles}).}\label{fig:exampleSHE}
 \end{figure}
-\textcolor{red}{Include here a picture of a possible solution $u$.}
 
-As we anticipated in Section \ref{Section1}, the control signal $u$ is fully characterized by its waveform and the switching angles, to which we give a precise definition as follows:
+As we anticipated in Section \ref{Section1}, the control signal $u$ is fully characterized by its waveform and the switching angles, to which we now give a precise definition.
 \newline
 \begin{definition}[Wave-form]\label{def:waveform}
-Given a finite set of real numbers $\mathcal U$ defined as in \eqref{eq:Udef}, we will call a waveform any possible tuple $\mathcal S = (s_m)_{m=0}^{M+1}$ with $s_m\in \mathcal U$ for all $m=0,\ldots,M+1$.
+Given the finite set $\mathcal U$ defined in \eqref{eq:Udef} and $M\in\mathbb{N}$, we will call a waveform any possible $(M+1)$-tuple $\mathcal S = (s_m)_{m=0}^{M+1}$ with $s_m\in \mathcal U$ for all $m=0,\ldots,M+1$.
 \end{definition}
  
 \begin{definition}[Switching angles]\label{def:switchingAngles}
-Given a finite set of real numbers $\mathcal U$ defined as in \eqref{eq:Udef} and a piece-wise constant function $u:[0,\pi) \rightarrow \mathcal{U}$, we shall refer as switching angles $\bm{\phi} = \{\phi_m\}_{m=0}^{M+1}\subset[0,\pi]$, with $\phi_0 = 0$ and $\phi_{M+1} = \pi$, to the points in the domain $[0,\pi)$ where $u$ changes its value. 
+Given the finite set $\mathcal U$ defined in \eqref{eq:Udef}, $M\in\mathbb{N}$ and a piece-wise constant function $u:[0,\pi) \rightarrow \mathcal{U}$, we shall refer as switching angles $\bm{\phi} = \{\phi_m\}_{m=0}^{M+1}\subset[0,\pi]$, with $\phi_0 = 0$ and $\phi_{M+1} = \pi$, to the points in the domain $[0,\pi)$ where $u$ changes its value. 
 \end{definition}
 
-In view of the above definitions, we can provide the following explicit expression for the function $u$:
+In view of the above definitions, we can provide the following explicit expression for $u$:
 \begin{align}\label{eq:uExpl}
 	&u = \sum_{m=0}^{M+1} s_m\chi_{[\phi_m,\phi_{m+1}]}
 	\\
@@ -61,7 +62,7 @@ In view of the above definitions, we can provide the following explicit expressi
 \end{align}
 where we denoted by $\chi_{[\phi_m,\phi_{m+1}]}$ the characteristic function of the interval $[\phi_m,\phi_{m+1}]$.
 
-Besides, taking into account \eqref{eq:uExpl}, we can rewrite the Fourier coefficients \eqref{eq:an} as
+Besides, taking into account \eqref{eq:uExpl}, a direct computation yields that the Fourier coefficients \eqref{eq:an} are given by
 \begin{align*}
 	& a_i = a_i(\bm{\phi}) =  \frac{2}{i\pi} \sum_{k=1}^{M+1} s_k \Big[\sin(i\phi_k) -\sin(i\phi_{k-1})\Big]
 	\\
@@ -79,14 +80,7 @@ Given a waveform $\mathcal S$ and a step function $u$ in the form \eqref{eq:uExp
 \end{align}
 \end{problem}
 
-
-
-
-
-
-Since the cardinality of $\mathcal S$ is not known a priori, meaning that we do not know how many switches will be necessary, it appears that the only solution to the SHE problem consists in fix the number of changes and counting all the possible combinations, to later solve an optimization problem for each one of them.
-%
-Taking into account that the number of possible multi-set $S$ is given by $|\mathcal{U}|^{|\mathcal S|}$, it is evident that the complexity of the above approach increases rapidly.
+Since the cardinality of $\mathcal S$ is not known a priori, meaning that we do not know how many switches will be necessary to reach the desired values of the Fourier coefficients, a common approach to solve the SHE problem consists in fixing the number of changes and generating all the possible combinations of elements of $\mathcal S$, to later solve an optimization problem for each one of them. Nevertheless, taking into account that the number of possible tuples $\mathcal S$ is given by $|\mathcal{U}|^{|\mathcal S|}$, it is evident that the complexity of the above approach increases rapidly.
 %
 This problem has been studied in \cite{Yang2015} where, through appropriate algebraic transformations, the authors are able to convert the SHE problem into a polynomial system whose solutions' set contains all the possible waveforms for a given set $\mathcal{U}$ and number of elements in the sequence $\mathcal S$ which, however, is predetermined. 
 %
