@@ -19,10 +19,10 @@ Let $\mathcal U$ be defined as in \eqref{eq:Udef}. Given two sets of odd numbers
 \end{problem}
 The solution of Problem \ref{pb:OCP1} may be quite complex to be obtained, due to the restriction on the admissible control values. 
 
-\begin{definition}[Digital control]
+\begin{definition}[Digital control of set $\mathcal{U}$]
 A control $u(\tau)$ is called digital if, for each time $\tau\geq 0$, it only takes values in the finite set of real number $\mathcal{U}$.  
 \end{definition}
-
+\textcolor{red}{¿Igual el nombre de la definicion debe depender de $\mathcal{U}$?, Es decir, `Digital control of set $\mathcal{U}$'}
 
 
 In order to bypass this difficulty, following a standard optimal control approach, we can formulate an equivalent minimization problem in which, instead of looking for $u\in\mathcal U$, we simply require that $|u|<1$ and we introduce a penalization term to ensure that $u$ is a piece-wise constant function (\textcolor{red}{digital control}). This alternative optimal control problem, which can be solved more easily by employing standard tools, reads as follows:
@@ -83,24 +83,43 @@ In what follows, we will enumerate the optimality conditions arising from the Po
     \end{gather}
     Therefore, this optimality condition reduces to the optimization of a function in a variable within the interval $ [- 1,1] $. 
 \end{itemize}
-%\newline
+\vspace{1em}
 \begin{proposition}
-    Consideramos el problema de control \ref{pb:OCP2}, una función $\mathcal{H}_m:\mathbb{R}\rightarrow \mathbb{R}$ tal que:
+    Consideramos el Problema \ref{pb:OCP2} a partir del cual definimos una función $\mathcal{H}_m:[-1,1]\rightarrow \mathbb{R}$ tal que:
     \begin{gather}\label{Hm}
         \mathcal{H}_m(u) = \epsilon \mathcal{L}(u) - mu  |  \forall m \in \mathbb{R}
     \end{gather}
-    De manera que si el conjunto de todos los posibles mínimos de $\mathcal{H}_m \ | \ \forall m \in \mathbb{R} - \mathcal{M}$  es igual al conjunto $\mathcal{U}$ entonces la solución del problema \ref{pb:OCP2} es un control digital. Donde $\mathcal{M}$ es un conjunto finito de número reales donde el Hamiltoniano $\mathcal{H}_m$ podría tomar valores que no pertenezcan a $\mathcal{U}$.
+    una función $\mathcal{G}:\mathbb{R} \rightarrow [-1,1]$ tal que:
+    \begin{gather}
+        \mathcal{G}(m) = \argmin_{u \in [-1,1]} \mathcal{H}_m(u)
+    \end{gather}
+    y  el conjunto $\mathcal{M}$ como:
+    \begin{gather}
+        \mathcal{M} = \{m \in \mathbb{R}\ | \ \mathcal{G}(m) \notin \mathcal{U} \}
+    \end{gather}
+    De manera que si el conjunto $\mathcal{M}$ es el conjunto vacio o un conjunto finito de elementos, entonces la solución del problema \ref{pb:OCP2} es un control digital del conjunto $\mathcal{U}$. 
 \end{proposition}
-
 \begin{proof}
-    %
 Es importante notar que la función $\mathcal{H}_m$ es el Hamiltoniano del sistema donde hemos remplazado el valor 
 \begin{gather}
 	[\bm{p}^* \cdot \bm{\mathcal{D}}(\tau)] = \sum_{i \in \mathcal{E}_a} p^*_\alpha \cos(i\tau) + \sum_{j \in \mathcal{E}_b} p^*_\beta \sin(j\tau) 
 \end{gather}
-por el parámetro $m$. De manera que el Hamiltoniano evaluado en la trayectoria óptima varía de manera continua en todo el intervalo $\tau \in [0,\pi)]$. Entonces en el caso de que el $m = (2/\pi)[\bm{p}^* \cdot \bm{\mathcal{D}}(\tau)] \notin \mathcal{M}$, por hipótesis el mínimo de $H_m$ esta en $\mathcal{U}$. En el caso contrario, $m = (2/\pi)[\bm{p}^* \cdot \bm{\mathcal{D}}(\tau)] \in \mathcal{M}$  
+por el parámetro $m$. De manera que el Hamiltoniano evaluado en la trayectoria óptima varía de manera continua en todo el intervalo $\tau \in [0,\pi)]$. Esta es la razón por la que el esutdio de $\mathcal{H}_m$ tiene implicaciones en el Problema \ref{pb:OCP2}
 
-\end{proof}
+En el caso que $\mathcal{M} = \{\emptyset\}$ por definición de $\mathcal{M}$ la imagen de $\mathcal{G}(m)$ es el conjunto $\mathcal{U}$ de manera que la solución del Problema \ref{pb:OCP2} es un control digital de $\mathcal{U}$.  
+
+Fuera del caso anterior, si suponemos que el conjunto $\mathcal{M}$ contiene algún subintervalo $\mathcal{I}_{\mathcal{M}} \subset[-1,1]$ podemos tomar    $m_1 \in \mathcal{I}_{\mathcal{M}}$ y $ m_2 = m_1 + \varepsilon \ / \ \varepsilon << 1$ de modo que se debe cumplir que $m_2 \in \mathcal{I}_{\mathcal{M}}$
+\begin{equation}
+    \begin{aligned}
+        \mathcal{G}(m_1) = & \argmin_{u\in[-1,1]} \ [\mathcal{H}_{m_1}(u)] & \in \mathcal{U}\\
+        \mathcal{G}(m_2) = & \argmin_{u\in[-1,1]} \ [\mathcal{H}_{m_1}(u) + \varepsilon u]   & \in \mathcal{U} 
+    \end{aligned}      
+\end{equation}
+
+¿Eso implica que $\mathcal{U}$ tentría algún subintervalo continuo de $[-1,1]$?
+$\hfill\blacksquare$.
+\end{proof} 
+
 Where we replaced the term $(2/\pi)[\bm{p}^* \cdot \bm{\mathcal{D}}(\tau)]$ with a parameter $m$ which may assume all real values. The problem of designing an optimal control which may only take real values in $\mathcal{U}$ is reduced to construct a one-dimensional function with parameter $m$ whose minima are the elements in $\mathcal{U}$ for all values of $m$.
 
 \subsection{Sufficient conditions to obtain digital control}
@@ -108,7 +127,7 @@ Where we replaced the term $(2/\pi)[\bm{p}^* \cdot \bm{\mathcal{D}}(\tau)]$ with
 In what follows, we will show that there are several ways of designing a penalization term $\mathcal L$ giving us digital controls.
 \newline
 \begin{theorem}
-Assume that the finite set $\mathcal{U}$ defined in \eqref{eq:Udef} is composed by elements in ascending order. Let $\mathcal{Y} = \{y_\ell\}_{\ell=1}^L$ be another finite set, with the same cardinality as $\mathcal U$, such that the sequence $d\mathcal{Y} = \{y_\ell - y_{\ell+1}\}_{\ell=1}^{L-1}$ is monotone. Let $\mathcal{L}:\mathbb{R} \rightarrow \mathbb{R}$ be a piece-wise continuous function en los intervalos $\{ [u_l,u_{l+1})\}_{l=1}^L$ de manera que $\{y_l = \mathcal{L}(u_l)\}_{l=1}^L$. Si la funciones definidas entre cada intervalo $\{[u_l,u_{l+1}]\}_{l=1}^L$ son concavas, entonces la penalización $\mathcal{L}$ en el problema \ref{pb:OCP2} da lugar a un control que solo toma valores en $\mathcal{U}$.
+Assume that the finite set $\mathcal{U}$ defined in \eqref{eq:Udef} is composed by elements in ascending order. Let $\mathcal{Y} = \{y_\ell\}_{\ell=1}^L$ be another finite set, with the same cardinality as $\mathcal U$, such that the $L-1$ tuple $d\mathcal{Y} = \{y_\ell - y_{\ell+1}\}_{\ell=1}^{L-1}$ is monotone. Let $\mathcal{L}:\mathbb{R} \rightarrow \mathbb{R}$ be a piece-wise continuous function en los intervalos $\{ [u_l,u_{l+1})\}_{l=1}^L$ de manera que $\{y_l = \mathcal{L}(u_l)\}_{l=1}^L$. Si la funciones definidas entre cada intervalo $\{[u_l,u_{l+1}]\}_{l=1}^L$ son concavas, entonces la penalización $\mathcal{L}$ en el problema \ref{pb:OCP2} da lugar a un control que solo toma valores en $\mathcal{U}$.
 \end{theorem}
 Para que el considerar que el control óptimo del problema solo toma valores digitales los minimos  \ref{Hm} para todo valor de $m$ de estar contenido en $\mathcal{U}$. A continuación la prueba
 \newline

@@ -6,7 +6,6 @@
 \usepackage{amssymb}
 \usepackage{ntheorem}
 
-
 \usepackage[colorlinks=true,citecolor=blue]{hyperref}
 \usepackage{breakcites}
 
@@ -21,7 +20,9 @@
 \newtheorem{remark}{Remark}[section]
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{proposition}{Proposition}[section]
-\newtheorem{proof}{Proof}[section]
+
+\theoremstyle{remark}
+\newtheorem*{proof}{\textit{Proof:}}
 
 \numberwithin{equation}{section}
 

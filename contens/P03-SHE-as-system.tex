@@ -86,6 +86,12 @@ Moreover, since most often control problems are designed to drive the state of a
 \end{equation}
 In this new configuration, the control function $u$ is now required to steer the solution of \eqref{eq:CauchyReversed} from the initial datum $\bm{x}_T$ to zero in time $\tau=\pi$. 
 
+\begin{figure}[ht!]
+	\centering
+	\includegraphics[scale=0.35]{img/fig02.eps}
+	\caption{Evolución del sistema dinámico con los conjuntos $\mathcal{E}_a = \{1,2\}$ y $\mathcal{E}_b = \{1,2\}$ considerando el control $u(\tau)$ presentado en la figura \ref{fig:exampleSHE}}
+\end{figure}
+
 We can then formulate the following control problem, which is equivalent to Problem \ref{SHEp}:
 \newline 
 \begin{problem}\label{SHEpControl}
@@ -102,3 +108,4 @@ In quarter-wave symmetry, the SHE problem simplifies, as the Fourier coefficient
 	a_i = 0, \quad\quad b_j = \frac{4}{\pi} \int_0^{\frac \pi4} u(\tau)  \sin(j \tau)\,d\tau.
 \end{align*}
 \end{remark}
+
