@@ -24,6 +24,8 @@ A control $u(\tau)$ is called digital if, for each time $\tau\geq 0$, it only ta
 \end{definition}
 \textcolor{red}{¿Igual el nombre de la definicion debe depender de $\mathcal{U}$?, Es decir, `Digital control of set $\mathcal{U}$'}
 
+\textcolor{red}{Falta caracterizar los instantes de instantes de tiempo donde $u(\tau) \notin \mathcal{U}$. Estos pueden existir pero el conjunto de estos puntos debe ser de medida nula}
+
 
 In order to bypass this difficulty, following a standard optimal control approach, we can formulate an equivalent minimization problem in which, instead of looking for $u\in\mathcal U$, we simply require that $|u|<1$ and we introduce a penalization term to ensure that $u$ is a piece-wise constant function (\textcolor{red}{digital control}). This alternative optimal control problem, which can be solved more easily by employing standard tools, reads as follows:
 \newline
@@ -32,7 +34,7 @@ Fix $\epsilon>0$. Given two sets of odd numbers $\mathcal E_a $ and $\mathcal E_
 \begin{align*}
 	&\min_{|u|<1} \Bigg[\Psi(\bm{x}) + \epsilon \int_0^{\pi} \mathcal{L}(u(\tau)) d\tau \Bigg]  
 	\\[5pt]
-	&\Psi(\bm{x}) = \frac 12 \|\bm{x}(\pi) - \bm{x}_T\|^2,
+	&\Psi(\bm{x}) = \frac 12 \|\bm{x}(\pi) \|^2,
 \end{align*}
 under the dynamics given by \eqref{eq:CauchyReversed}.
 \end{problem}
@@ -84,27 +86,61 @@ In what follows, we will enumerate the optimality conditions arising from the Po
     Therefore, this optimality condition reduces to the optimization of a function in a variable within the interval $ [- 1,1] $. 
 \end{itemize}
 \vspace{1em}
-\begin{proposition}
-    Consideramos el Problema \ref{pb:OCP2} a partir del cual definimos una función $\mathcal{H}_m:[-1,1]\rightarrow \mathbb{R}$ tal que:
+\begin{definition}
+    Dado el problema \ref{pb:OCP2} definimos una función $\mathcal{H}_m:[-1,1]\rightarrow \mathbb{R}$ tal que:
     \begin{gather}\label{Hm}
         \mathcal{H}_m(u) = \epsilon \mathcal{L}(u) - mu  |  \forall m \in \mathbb{R}
     \end{gather}
-    una función $\mathcal{G}:\mathbb{R} \rightarrow [-1,1]$ tal que:
-    \begin{gather}
-        \mathcal{G}(m) = \argmin_{u \in [-1,1]} \mathcal{H}_m(u)
-    \end{gather}
-    y  el conjunto $\mathcal{M}$ como:
-    \begin{gather}
-        \mathcal{M} = \{m \in \mathbb{R}\ | \ \mathcal{G}(m) \notin \mathcal{U} \}
-    \end{gather}
-    De manera que si el conjunto $\mathcal{M}$ es el conjunto vacio o un conjunto finito de elementos, entonces la solución del problema \ref{pb:OCP2} es un control digital del conjunto $\mathcal{U}$. 
-\end{proposition}
-\begin{proof}
+\end{definition}
 Es importante notar que la función $\mathcal{H}_m$ es el Hamiltoniano del sistema donde hemos remplazado el valor 
 \begin{gather}
 	[\bm{p}^* \cdot \bm{\mathcal{D}}(\tau)] = \sum_{i \in \mathcal{E}_a} p^*_\alpha \cos(i\tau) + \sum_{j \in \mathcal{E}_b} p^*_\beta \sin(j\tau) 
 \end{gather}
-por el parámetro $m$. De manera que el Hamiltoniano evaluado en la trayectoria óptima varía de manera continua en todo el intervalo $\tau \in [0,\pi)]$. Esta es la razón por la que el esutdio de $\mathcal{H}_m$ tiene implicaciones en el Problema \ref{pb:OCP2}
+por el parámetro $m$. De manera que el Hamiltoniano evaluado en la trayectoria óptima varía de manera continua en todo el intervalo $\tau \in [0,\pi)]$. 
+%
+Esta es la razón por la que el estudio de la función $\mathcal{H}_m$, una función uni-variable parametrizada por $m$ ,tiene implicaciones en el Problema \ref{pb:OCP2}.
+\newline
+
+\begin{definition}
+    Dado el Problema \ref{pb:OCP2}  definimos una función $\mathcal{G}:\mathbb{R} \rightarrow [-1,1]$ tal que:
+    \begin{gather}
+        \mathcal{G}(m) = \argmin_{u \in [-1,1]} \mathcal{H}_m(u)
+    \end{gather}
+\end{definition}
+\begin{definition}
+    Dado el Problema \ref{pb:OCP2} definimos el conjunto $\mathcal{M}$ como:
+    \begin{gather}
+        \mathcal{M} = \{m \in \mathbb{R}\ | \ \mathcal{G}(m) \notin \mathcal{U} \}
+    \end{gather}
+\end{definition}
+\subsection{Caso Binivel (Control Bang-Bang)}
+El caso binivel es el que tiene como conjunto admisible de controles $\mathcal{U}= \{-1,1\}$.
+\vspace{1em}
+
+\begin{proposition}
+    Dado el Problema \ref{pb:OCP2} con el conjunto admisible de control $\mathcal{U} = \{-1,1\}$. Si la función $\mathcal{L}$ es concava en el intervalo $[-1,1]$ del Problema \ref{pb:OCP2}, entonces la solución de problema es un control digital del conjunto $\mathcal{U} =  \{-1,1\}$
+\end{proposition}
+\begin{proof}
+    Si $\mathcal{L}$ es concava en el intervalo entonces $\mathcal{H}_m$ también lo es. De manera que $G(m)$ solo puede tomar los valores $\{-1,1\}$.
+\end{proof}
+\subsection{Caso Multi-nivel}
+Para el caso multi nivel deben existir $m$ para los cuales $H_m$ tenga un mínimo dentro del intervalo $[-1,1]$. Además este mínimo no puede variar de manera continua con un variación de $m$.
+\vspace{1em}
+\begin{proposition}
+    Si $\mathcal{L}$ es derivable entonces la solución del Problema \ref{pb:OCP2} no es un control digital.
+\end{proposition}
+\begin{proof}
+    Dado que $\mathcal{L}$ es derivable en todo el intervalo $[-1,1]$ también lo es $\mathcal{H}_m$. De manera que podemos derivar la función $\mathcal{H}_m$.
+    \begin{gather}
+        \frac{d \mathcal{H}_m}{du} = 0 \rightarrow
+        \frac{d \mathcal{L}}{du} = m
+    \end{gather}
+\end{proof}
+\vspace{1em}
+\begin{proposition}
+    Si la solución del Problema \ref{pb:OCP2} es un control digital, entonces $\mathcal{M}$ es el conjunto vacio o  un conjunto finito de elementos. 
+\end{proposition}
+\begin{proof}
 
 En el caso que $\mathcal{M} = \{\emptyset\}$ por definición de $\mathcal{M}$ la imagen de $\mathcal{G}(m)$ es el conjunto $\mathcal{U}$ de manera que la solución del Problema \ref{pb:OCP2} es un control digital de $\mathcal{U}$.  
 
@@ -120,9 +156,7 @@ Fuera del caso anterior, si suponemos que el conjunto $\mathcal{M}$ contiene alg
 $\hfill\blacksquare$.
 \end{proof} 
 
-Where we replaced the term $(2/\pi)[\bm{p}^* \cdot \bm{\mathcal{D}}(\tau)]$ with a parameter $m$ which may assume all real values. The problem of designing an optimal control which may only take real values in $\mathcal{U}$ is reduced to construct a one-dimensional function with parameter $m$ whose minima are the elements in $\mathcal{U}$ for all values of $m$.
 
-\subsection{Sufficient conditions to obtain digital control}
 
 In what follows, we will show that there are several ways of designing a penalization term $\mathcal L$ giving us digital controls.
 \newline
@@ -136,7 +170,7 @@ Para que el considerar que el control óptimo del problema solo toma valores dig
     Teniendo en cuenta que la función 
 \end{proof}
 
-\subsection{Piecewise linear penalization}
+\subsubsection{Piecewise linear penalization}
 
 In this section, we discuss how to design the penalization term $\mathcal{L}(u)$ so that the optimal control is always contained in $\mathcal{U}$. 
 

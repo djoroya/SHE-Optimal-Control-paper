@@ -72,16 +72,16 @@ so that \eqref{eq:CauchyVec} becomes
 		\bm{x}(0) = {0}
 	\end{cases}
 \end{align}
-and the target coefficients of the SHE problem will be given by $\bm{x}_T:=[\bm{a}_T,\bm{b}_T]^\top=\bm{x}(\pi)$.
+and the target coefficients of the SHE problem will be given by $\bm{x}_0:=[\bm{a}_T,\bm{b}_T]^\top=\bm{x}(\pi)$.
 
-Taking into account this new formulation, as we shall see in more detail in Section \ref{Section4}, Problem \ref{SHEp} can now be recast as a control one for the dynamical systems \eqref{eq:CauchyCompact}, in which we look for a control function $u(\tau)$ steering the state $\bm{x}(\tau)$ from the origin to the target $\bm{x}_T:=[\bm{a}_T,\bm{b}_T]^\top$ in time $\tau = \pi$.
+Taking into account this new formulation, as we shall see in more detail in Section \ref{Section4}, Problem \ref{SHEp} can now be recast as a control one for the dynamical systems \eqref{eq:CauchyCompact}, in which we look for a control function $u(\tau)$ steering the state $\bm{x}(\tau)$ from the origin to the target $\bm{x}_0:=[\bm{a}_T,\bm{b}_T]^\top$ in time $\tau = \pi$.
 
 Moreover, since most often control problems are designed to drive the state of a given dynamical system to an equilibrium configuration, for instance the zero state, we introduce the change of variables $\bm{x}(\tau)\mapsto \bm{x}_T - \bm{x}(\tau)$ which allows us to reverse the time in \eqref{eq:CauchyCompact}, thus obtaining 
 \begin{equation}\label{eq:CauchyReversed}
     \begin{cases}
         \displaystyle\dot{\bm{x}}(\tau) = -\frac 2\pi\bm{\mathcal{D}}(\tau)u(\tau),  & \tau \in [0,\pi)
         \\[6pt]
-        \bm{x}(0) = \bm{x}_T
+        \bm{x}(0) = \bm{x}_0
     \end{cases},
 \end{equation}
 In this new configuration, the control function $u$ is now required to steer the solution of \eqref{eq:CauchyReversed} from the initial datum $\bm{x}_T$ to zero in time $\tau=\pi$. 
@@ -97,7 +97,7 @@ We can then formulate the following control problem, which is equivalent to Prob
 \begin{problem}\label{SHEpControl}
 Let $\mathcal{U}$ be defined as in \eqref{eq:Udef} and let $\mathcal{E} _a $ and $\mathcal{E} _b $ be two sets of odd numbers with cardinalities $|\mathcal{E}_a| = N_a $ and $ |\mathcal{E} _b| = N_b$, respectively. Given the vectors $\bm{a}_T \in \mathbb{R}^{N_a}$ and $\bm{b}_T \in \mathbb{R}^{N_b} $, let us define $\bm{x}_T=[\bm{a}_T,\bm{b}_T]^\top \in \mathbb{R}^{N_a\times N_b}$. We look for $u:\in [0,\pi)\to\mathcal{U}$ such that the solution of \eqref{eq:CauchyReversed} with initial datum $\bm{x}(0)=\bm{x}_T$ satisfies $\bm{x}(\pi)=0$.
 \end{problem}
-$\newline$
+\vspace{1em}
 \begin{remark}[Quarter-wave symmetry]
 We shall mention that, in the SHE literature, it is usual to distinguish among the half-wave symmetry problem (addressed in the present paper) and the quarter-wave symmetry one in which
 \begin{align*}

@@ -7,8 +7,15 @@
 \contentsline {problem}{{Problem}{4.{1}}{OCP for SHE}}{5}{problem.4.1}%
 \contentsline {definition}{{Definition}{4.{1}}{Digital control of set $\mathcal {U}$}}{5}{definition.4.1}%
 \contentsline {problem}{{Problem}{4.{2}}{Penalized OCP for SHE}}{5}{problem.4.2}%
+\contentsline {definition}{{Definition}{4.{2}}{}}{6}{definition.4.2}%
+\contentsline {definition}{{Definition}{4.{3}}{}}{6}{definition.4.3}%
+\contentsline {definition}{{Definition}{4.{4}}{}}{6}{definition.4.4}%
 \contentsline {proposition}{{Proposition}{4.{1}}{}}{6}{proposition.4.1}%
 \contentsline {proof}{{\textit {Proof:}}{1}{}}{6}{proof.1}%
-\contentsline {theorem}{{Theorem}{4.{1}}{}}{6}{theorem.4.1}%
+\contentsline {proposition}{{Proposition}{4.{2}}{}}{6}{proposition.4.2}%
 \contentsline {proof}{{\textit {Proof:}}{2}{}}{6}{proof.2}%
-\contentsline {problem}{{Problem}{5.{1}}{Numerical OCP}}{7}{problem.5.1}%
+\contentsline {proposition}{{Proposition}{4.{3}}{}}{6}{proposition.4.3}%
+\contentsline {proof}{{\textit {Proof:}}{3}{}}{6}{proof.3}%
+\contentsline {theorem}{{Theorem}{4.{1}}{}}{6}{theorem.4.1}%
+\contentsline {proof}{{\textit {Proof:}}{4}{}}{6}{proof.4}%
+\contentsline {problem}{{Problem}{5.{1}}{Numerical OCP}}{8}{problem.5.1}%

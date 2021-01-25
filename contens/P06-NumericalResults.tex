@@ -30,16 +30,16 @@ So that, when $\eta \rightarrow \infty$, then $\mathcal{L}^\eta \rightarrow \mat
 
 \subsection{Direct method  for  OCP-SHE}
 
-To solve the optimal control problem (\ref{OCP2}), we use a direct method. 
+To solve the optimal control problem (\ref{pb:OCP2}), we use a direct method. 
 %
 If we consider a partition $\mathcal{P} = \{\tau_0,\tau_1,\dots,\tau_{T}\}$ of interval $[0,T]$ , we can represent a function $\{ u(\tau) \ | \ \tau \in [0,T]\}$ as a vector $\bm{u} \in \mathbb{R}^{T}$ where component $u_t = u(\tau_t)$. 
 %
-Then the optimal control problem (\ref{OCP1}) can be written as optimization problem with variable $\bm{u} \in \mathbb{R}^{T}$. This problem is a nonlinear programming, for this we use CasADi software to solve. 
+Then the optimal control problem (\ref{pb:OCP1}) can be written as optimization problem with variable $\bm{u} \in \mathbb{R}^{T}$. This problem is a nonlinear programming, for this we use CasADi software to solve. 
 %
-Hence, given a partition of the interval $[0,\pi)$, we can formulate the problem \ref{OCP2} as the following one in discrete time
+Hence, given a partition of the interval $[0,\pi)$, we can formulate the problem \ref{pb:OCP2} as the following one in discrete time
 \newline
 
-\begin{problem}[Numerical OCP]
+\begin{problem}[Numerical OCP]\label{pb:numOCP2}
 Given two sets of odd numbers $\mathcal{E}_a$ and $\mathcal{E}_b$ with cardinalities $|\mathcal{E}_a| = N_a$ and $|\mathcal{E}_b| = N_b$ respectively, given the target vectors $\bm{a}_T  \in \mathbb{R}^{N_a}$, so that $\bm{x}_0 = [\bm{a}_T,\bm{b}_T]^T$ and $\bm{b}_T \in \mathbb{R}^{N_b}$ and a partition $\mathcal{P}_\tau = \{\tau_0,\tau_1,\dots,\tau_{T}\}$ of the interval $[0,\pi)$, we search a vector $\bm{u} \in \mathbb{R}^{T}$ that minimizes the following function:
 \begin{gather}
         \min_{\bm{u} \in \mathbb{R}^{T} } 
@@ -52,9 +52,18 @@ Given two sets of odd numbers $\mathcal{E}_a$ and $\mathcal{E}_b$ with cardinali
             \bm{x}^0 = \bm{x}_0
         \end{cases} 
 \end{gather}
+\end{problem}
 
 \subsection{Examples}
 
+Todos los ejemplos que presentaremos a continuación tendrán en conmún los siguientes parámetros $\epsilon = 10^{-5}$, $\eta = 10^{-5}$ y una partición $\mathcal{P}_t = \{0.0 , 0.1, 0.2 ,\dots,\pi\}$.
+
+\subsubsection{Bang-Bang}
+Consideremos el Problema \ref{pb:numOCP2} con los siguientes parámetros $\mathcal{E}_a = \{1,5,7\}$ y  $\mathcal{E}_b = \{1,5,7\}$ y el control admisible en $\mathcal{U} = \{-1,1\}$. Además los vectores objetivos son: $\bm{a}_T = (i_d,0)^T$ y $\bm{b}_T = (i_d,0)^T$ para todo $i_d \in [-1,1]$. 
+
 \subsubsection{Bang-off-Bang}
-Consideremos el problema \ref{pb:OCP2} con los siguientes conjuntos $\mathcal{E}_a = \{1,5\}$ y  $\mathcal{E}_b = \{1,5\}$ y el control admisible en $\mathcal{U} = \{-1,0,1\}$.
-\end{problem}
+Consideremos el Problema \ref{pb:numOCP2} con los siguientes parámetros $\mathcal{E}_a = \{1,5\}$ y  $\mathcal{E}_b = \{1,5\}$ y el control admisible en $\mathcal{U} = \{-1,0,1\}$. Además los vectores objetivos son: $\bm{a}_T = (1/2,0)^T$ y $\bm{b}_T = (1/2,0)^T$  para todo $i_d \in [-1,1]$. 
+
+\subsubsection{Multi-nivel}
+
+Consideremos el Problema \ref{pb:numOCP2} con los siguientes parámetros $\mathcal{E}_a = \{1,5\}$ y  $\mathcal{E}_b = \{1,5\}$ y el control admisible en $\mathcal{U} = \{-1,-1/2,0,1/2,1\}$. Además los vectores objetivos son: $\bm{a}_T = (1/2,0,0)^T$ y $\bm{b}_T = (1/2,0,0)^T$  para todo $i_d \in [-1,1]$.  
