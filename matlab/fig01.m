@@ -1,7 +1,7 @@
-%%
+%%%
 fig = genfig();
 %fig = figure(1);
-clf
+%clf
 hold on 
 tspan = linspace(0,pi,800);
 fmt = {'Interpreter','latex','FontSize',28};
@@ -17,25 +17,30 @@ u = @(t) s(1)*(phi(1)<=t).*(t<phi(2)) + ...
 
 
 %% Grid 
+
+xlim([0,pi])
+ylim([-1.25 1.25])
+
 for i = -3:1:3
-   yline(i/3,'Color',0.8 + [0 0 0]) 
+   plot([-1000 1000],[i/3 i/3],'Color',0.8 + [0 0 0]) 
 end
 iter = 0;
 for iu = 2:(length(phi)-1)
    iter = iter + 1;
-   xline(phi(iu),'Color',0.8 + [0 0 0]) 
+  plot([phi(iu) phi(iu)],[-1000 1000],'Color',0.8 + [0 0 0]) 
+
+   %xline(phi(iu),'Color',0.8 + [0 0 0] )
    text(phi(iu),1.1,"$\phi_"+iter+"$",fmt{:})
 end
 %
 iter = 0;
 for iu = 2:(length(phi))
    iter = iter + 1;
-   xline(phi(iu),'Color',0.8 + [0 0 0]) 
    text(0.5*phi(iu-1) + 0.5*phi(iu) - 0.05,0.15 + s(iter),"$s_"+iter+"$",fmt{:})
 end
 
 %%
-ax = plot(tspan,u(tspan),'LineWidth',6,'Color',[0.8 0.4 0.4],'Marker','none');
+ax = plot(tspan,u(tspan),'LineWidth',4,'Color',[0.8 0.2 0.2],'Marker','none');
 
 ax.Parent.YAxis.TickLabelInterpreter = 'latex';
 ax.Parent.XAxis.TickLabelInterpreter = 'latex';
@@ -44,8 +49,7 @@ ax.Parent.YAxis.FontSize = 20;
 ax.Parent.XAxis.FontSize = 20;
 box
 
-xlim([0,pi])
-ylim([-1.25 1.25])
+
 
 title('$u(\tau)$',fmt{:})
 xlabel('$\tau$',fmt{:})

@@ -1,13 +1,21 @@
 \BOOKMARK [1][-]{section.1}{Introduction and motivations}{}% 1
 \BOOKMARK [1][-]{section.2}{Mathematical formulation of SHE}{}% 2
-\BOOKMARK [1][-]{section.3}{SHE as a dynamical system}{}% 3
-\BOOKMARK [1][-]{section.4}{Optimal control for SHE}{}% 4
-\BOOKMARK [2][-]{subsection.4.1}{Optimality conditions}{section.4}% 5
-\BOOKMARK [2][-]{subsection.4.2}{Caso Binivel \(Control Bang-Bang\)}{section.4}% 6
-\BOOKMARK [2][-]{subsection.4.3}{Caso Multi-nivel}{section.4}% 7
-\BOOKMARK [1][-]{section.5}{Numerical simulations}{}% 8
-\BOOKMARK [2][-]{subsection.5.1}{Smooth approximation of piece-wise linear penalization}{section.5}% 9
-\BOOKMARK [2][-]{subsection.5.2}{Direct method for OCP-SHE}{section.5}% 10
-\BOOKMARK [2][-]{subsection.5.3}{Examples}{section.5}% 11
-\BOOKMARK [1][-]{section.6}{Conclusiones}{}% 12
-\BOOKMARK [1][-]{section*.1}{Acknowledgements}{}% 13
+\BOOKMARK [1][-]{section.3}{Classical approach to the SHE problem}{}% 3
+\BOOKMARK [1][-]{section.4}{Our Contributions}{}% 4
+\BOOKMARK [2][-]{subsection.4.1}{Reformulation of SHE problem as optimal control problem}{section.4}% 5
+\BOOKMARK [2][-]{subsection.4.2}{SHE bi-nivel via OCP \(Bang-Bang Control\)}{section.4}% 6
+\BOOKMARK [2][-]{subsection.4.3}{SHE multi-nivel via Piecewise linear penalization}{section.4}% 7
+\BOOKMARK [2][-]{subsection.4.4}{General conditions for SHE multi-nivel}{section.4}% 8
+\BOOKMARK [1][-]{section.5}{Numerical simulations}{}% 9
+\BOOKMARK [2][-]{subsection.5.1}{Smooth approximation of piece-wise linear penalization}{section.5}% 10
+\BOOKMARK [2][-]{subsection.5.2}{Direct method for OCP-SHE}{section.5}% 11
+\BOOKMARK [2][-]{subsection.5.3}{Examples}{section.5}% 12
+\BOOKMARK [1][-]{section.6}{Proofs}{}% 13
+\BOOKMARK [2][-]{subsection.6.1}{SHE as a dynamical system}{section.6}% 14
+\BOOKMARK [2][-]{subsection.6.2}{Optimality conditions}{section.6}% 15
+\BOOKMARK [2][-]{subsection.6.3}{Caso Binivel \(Control Bang-Bang\)}{section.6}% 16
+\BOOKMARK [2][-]{subsection.6.4}{Piecewise linear penalization}{section.6}% 17
+\BOOKMARK [2][-]{subsection.6.5}{Caso Multi-nivel}{section.6}% 18
+\BOOKMARK [1][-]{section.7}{Conclusiones}{}% 19
+\BOOKMARK [1][-]{section*.1}{Acknowledgements}{}% 20
+\BOOKMARK [1][-]{section*.2}{References}{}% 21
