@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.11.9)  28 JAN 2021 18:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.11.9)  28 JAN 2021 22:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -472,11 +472,11 @@ Underfull \hbox (badness 1062) in paragraph at lines 54--55
  []
 
 Package epstopdf Info: Source file: <img/fig02.eps>
-(epstopdf)                    date: 2021-01-28 08:57:20
-(epstopdf)                    size: 134225 bytes
+(epstopdf)                    date: 2021-01-28 22:56:57
+(epstopdf)                    size: 134153 bytes
 (epstopdf)             Output file: <img/fig02-eps-converted-to.pdf>
-(epstopdf)                    date: 2021-01-28 08:57:21
-(epstopdf)                    size: 61062 bytes
+(epstopdf)                    date: 2021-01-28 22:56:59
+(epstopdf)                    size: 60980 bytes
 (epstopdf)             Command: <repstopdf --outfile=img/fig02-eps-converted-to.pdf img/fig02.eps>
 (epstopdf)             \includegraphics on input line 59.
 Package epstopdf Info: Output file is already uptodate.
@@ -502,7 +502,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 92--94
  []
 
 [4 </Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/fig02-eps-converted-to.pdf>]
-Overfull \hbox (3.13359pt too wide) detected at line 148
+Package epstopdf Info: Source file: <img/fig03.eps>
+(epstopdf)                    date: 2021-01-28 22:59:50
+(epstopdf)                    size: 268725 bytes
+(epstopdf)             Output file: <img/fig03-eps-converted-to.pdf>
+(epstopdf)                    date: 2021-01-28 22:59:52
+(epstopdf)                    size: 119324 bytes
+(epstopdf)             Command: <repstopdf --outfile=img/fig03-eps-converted-to.pdf img/fig03.eps>
+(epstopdf)             \includegraphics on input line 139.
+Package epstopdf Info: Output file is already uptodate.
+<img/fig03-eps-converted-to.pdf, id=213, 599.23875pt x 723.70375pt>
+File: img/fig03-eps-converted-to.pdf Graphic file (type pdf)
+<use img/fig03-eps-converted-to.pdf>
+Package pdftex.def Info: img/fig03-eps-converted-to.pdf  used on input line 139.
+(pdftex.def)             Requested size: 248.67944pt x 300.33145pt.
+
+Overfull \hbox (8.67944pt too wide) in paragraph at lines 139--140
+ [][] 
+ []
+
+
+Overfull \hbox (3.13359pt too wide) detected at line 152
 []
  []
 
@@ -526,7 +546,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 33--41
 
  []
 
-[5]
+[5 </Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/fig03-eps-converted-to.pdf>]
 Underfull \hbox (badness 2865) in paragraph at lines 62--63
 []\OT1/cmr/m/n/10 Consideremos el Prob-lema [][]5.1[][] con los sigu-ientes
  []
@@ -541,12 +561,11 @@ Underfull \hbox (badness 2865) in paragraph at lines 69--1
 []\OT1/cmr/m/n/10 Consideremos el Prob-lema [][]5.1[][] con los sigu-ientes
  []
 
-[6]
+[6] [7]
 Underfull \hbox (badness 10000) in paragraph at lines 151--156
 
  []
 
-[7]
 Package hyperref Info: bookmark level for unknown proof defaults to 0 on input line 173.
 
 Overfull \hbox (2.6115pt too wide) detected at line 188
@@ -587,18 +606,18 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 73.
  ) 
 Here is how much of TeX's memory you used:
- 8147 strings out of 480608
- 118020 string characters out of 5903630
- 396824 words of memory out of 5000000
- 23739 multiletter control sequences out of 15000+600000
+ 8154 strings out of 480608
+ 118213 string characters out of 5903630
+ 398824 words of memory out of 5000000
+ 23744 multiletter control sequences out of 15000+600000
  553131 words of font info for 106 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  39i,19n,39p,1127b,411s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib9.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl9.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on /Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/main.pdf (9 pages, 509410 bytes).
+Output written on /Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/main.pdf (9 pages, 626397 bytes).
 PDF statistics:
- 442 PDF objects out of 1000 (max. 8388607)
- 392 compressed objects within 4 object streams
- 104 named destinations out of 1000 (max. 500000)
- 179 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 448 PDF objects out of 1000 (max. 8388607)
+ 395 compressed objects within 4 object streams
+ 105 named destinations out of 1000 (max. 500000)
+ 184 words of extra memory for PDF output out of 10000 (max. 10000000)
 

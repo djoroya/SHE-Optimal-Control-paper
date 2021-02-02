@@ -22,8 +22,9 @@ fig = genfig();
 %clf
 %grid on
 hold on
+color = hsv(4);
 for i = 1:4
-ax = plot([tspan],[xt(:,i)],'-','LineWidth',3);
+ax = plot([tspan],[xt(:,i)],'-','LineWidth',3,'color',color(i,:));
 end
 
 %

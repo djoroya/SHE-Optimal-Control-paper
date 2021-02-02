@@ -128,13 +128,17 @@ In Problem \ref{pb:OCP2}, the penalization function $\mathcal L: \mathbb{R} \rig
 %Next we will study the optimality conditions of the problem, for a general $\mathcal L$, and then specify how $\mathcal L$ should be so that the optimal control $u^*$ only takes the allowed values in $\mathcal U$.
 
 
-\subsection{SHE bi-nivel via OCP (Bang-Bang Control)}
+\subsection{SHE bi-nivel via OCP (Bang-Bang Control)} 
 
 \begin{theorem}\label{th:bang-bang}
     Dado el Problema \ref{pb:OCP2} con el conjunto admisible de control $ \ \mathcal{U} = \{-1,1\}$. Si la función $\mathcal{L}$ es concava en el intervalo $[-1,1]$ del Problema \ref{pb:OCP2}, entonces la solución de problema es un control digital del conjunto $\mathcal{U} =  \{-1,1\}$.
 \end{theorem}
 
-
+\begin{figure} 
+    \centering
+    \includegraphics[scale=0.415]{img/fig03.eps}
+    \caption{SHE bi-nivel via OCP (Bang-Bang Control)}
+\end{figure}
 \subsection{SHE multi-nivel via Piecewise linear penalization}
 
 \begin{theorem}
