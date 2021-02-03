@@ -30,13 +30,13 @@ So that, when $\eta \rightarrow \infty$, then $\mathcal{L}^\eta \rightarrow \mat
 
 \subsection{Direct method  for  OCP-SHE}
 
-To solve the optimal control problem (\ref{pb:OCP2}), we use a direct method. 
+To solve the optimal control problem (\ref{pb:OCP_penalizado}), we use a direct method. 
 %
 If we consider a partition $\mathcal{P} = \{\tau_0,\tau_1,\dots,\tau_{T}\}$ of interval $[0,T]$ , we can represent a function $\{ u(\tau) \ | \ \tau \in [0,T]\}$ as a vector $\bm{u} \in \mathbb{R}^{T}$ where component $u_t = u(\tau_t)$. 
 %
 Then the optimal control problem (\ref{pb:OCP1}) can be written as optimization problem with variable $\bm{u} \in \mathbb{R}^{T}$. This problem is a nonlinear programming, for this we use CasADi software to solve. 
 %
-Hence, given a partition of the interval $[0,\pi)$, we can formulate the problem \ref{pb:OCP2} as the following one in discrete time
+Hence, given a partition of the interval $[0,\pi)$, we can formulate the problem \ref{pb:OCP_penalizado} as the following one in discrete time
 \newline
 
 \begin{problem}[Numerical OCP]\label{pb:numOCP2}

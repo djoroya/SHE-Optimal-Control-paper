@@ -1,12 +1,12 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.11.9)  28 JAN 2021 22:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.11.9)  3 FEB 2021 15:40
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/main.tex
-(/Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/main.tex
+**"/Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/main.tex"
+(/Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/main.tex
 LaTeX2e <2020-02-02> patch level 5
-L3 programming layer <2020-03-06> (/Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/autart.cls
+L3 programming layer <2020-03-06> (/Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/autart.cls
 Document Class: autart 2001/03/28, 2.18pl1: Automatica
 \@frontmatterwidth=\dimen134
 \@bls=\dimen135
@@ -101,7 +101,7 @@ File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 \@input{settings.aux}
 \openout2 = `settings.aux'.
 
-(/Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/settings.tex (/usr/local/texlive/2020/texmf-dist/tex/latex/tools/bm.sty
+(/Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/settings.tex (/usr/local/texlive/2020/texmf-dist/tex/latex/tools/bm.sty
 Package: bm 2019/07/24 v1.2d Bold Symbol Support (DPC/FMi)
 \symboldoperators=\mathgroup5
 \symboldletters=\mathgroup6
@@ -346,12 +346,12 @@ Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 File: l3backend-pdfmode.def 2020-03-12 L3 backend support: PDF mode
 \l__kernel_color_stack_int=\count290
 \l__pdf_internal_box=\box52
-) (/Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/main.aux
+) (/Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/main.aux
 
 LaTeX Warning: Label `eq:CauchyReversed' multiply defined.
 
 
-LaTeX Warning: Label `PLP' multiply defined.
+LaTeX Warning: Label `Hm' multiply defined.
 
 )
 \openout1 = `main.aux'.
@@ -410,7 +410,7 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 16.
 LaTeX Info: Redefining \pageref on input line 16.
 LaTeX Info: Redefining \nameref on input line 16.
- (/Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/main.out) (/Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/main.out)
+ (/Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/main.out) (/Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/main.out)
 \@outlinefile=\write3
 \openout3 = `main.out'.
 
@@ -431,7 +431,7 @@ LaTeX Font Info:    Font shape `U/lasy/b/n' in size <6> not available
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <5> not available
 (Font)              Font shape `U/lasy/m/n' tried instead on input line 33.
 \c@sv@footnote=\count298
- (/Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/contens/P010-Indroduction.tex) (/Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/contens/P020-General-Formulation.tex
+ (/Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/contens/P010-Indroduction.tex) (/Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/contens/P020-General-Formulation.tex
 Package epstopdf Info: Source file: <img/fig01.eps>
 (epstopdf)                    date: 2021-01-28 08:56:31
 (epstopdf)                    size: 58799 bytes
@@ -452,88 +452,110 @@ Package pdftex.def Info: img/fig01-eps-converted-to.pdf  used on input line 14.
 
 ]
 Package hyperref Info: bookmark level for unknown problem defaults to 0 on input line 36.
-) (/Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/contens/P030-Clasical-Formulation.tex
+) (/Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/contens/P030-Clasical-Formulation.tex
 Package hyperref Info: bookmark level for unknown definition defaults to 0 on input line 6.
 
 Underfull \hbox (badness 2205) in paragraph at lines 27--30
 \OT1/cmr/m/n/10 dis-tance be-tween the ob-tained Fourier co-ef-fi-cients
  []
 
-[2 </Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/fig01-eps-converted-to.pdf>]
+[2 </Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/fig01-eps-converted-to.pdf>]
 Underfull \hbox (badness 10000) in paragraph at lines 31--32
 []\OT1/cmr/m/it/10 Given a
  []
 
-) (/Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/contens/P040-Contributions.tex
-Package hyperref Info: bookmark level for unknown theorem defaults to 0 on input line 54.
+) (/Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/contens/P040-Contributions.tex
+Underfull \hbox (badness 5133) in paragraph at lines 28--29
+\OT1/cmr/m/n/10 con-troles con-siderando el con-junto ad-mis-i-ble
+ []
 
-Underfull \hbox (badness 1062) in paragraph at lines 54--55
+
+Underfull \vbox (badness 3019) has occurred while \output is active []
+
+ [3]
+Package hyperref Info: bookmark level for unknown theorem defaults to 0 on input line 70.
+
+Underfull \hbox (badness 1062) in paragraph at lines 71--73
 []\OT1/cmr/m/it/10 El con-trol ^^Soptimo $\OML/cmm/m/it/10 u\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ^^\\OT1/cmr/m/n/10 )$\OT1/cmr/m/it/10 , soluci^^Son del
  []
 
 Package epstopdf Info: Source file: <img/fig02.eps>
-(epstopdf)                    date: 2021-01-28 22:56:57
-(epstopdf)                    size: 134153 bytes
+(epstopdf)                    date: 2021-02-03 14:21:51
+(epstopdf)                    size: 134225 bytes
 (epstopdf)             Output file: <img/fig02-eps-converted-to.pdf>
-(epstopdf)                    date: 2021-01-28 22:56:59
-(epstopdf)                    size: 60980 bytes
+(epstopdf)                    date: 2021-02-03 14:22:01
+(epstopdf)                    size: 61062 bytes
 (epstopdf)             Command: <repstopdf --outfile=img/fig02-eps-converted-to.pdf img/fig02.eps>
-(epstopdf)             \includegraphics on input line 59.
+(epstopdf)             \includegraphics on input line 79.
 Package epstopdf Info: Output file is already uptodate.
-<img/fig02-eps-converted-to.pdf, id=172, 604.2575pt x 517.935pt>
+<img/fig02-eps-converted-to.pdf, id=191, 604.2575pt x 517.935pt>
 File: img/fig02-eps-converted-to.pdf Graphic file (type pdf)
 <use img/fig02-eps-converted-to.pdf>
-Package pdftex.def Info: img/fig02-eps-converted-to.pdf  used on input line 59.
+Package pdftex.def Info: img/fig02-eps-converted-to.pdf  used on input line 79.
 (pdftex.def)             Requested size: 211.49329pt x 181.27995pt.
-Package hyperref Info: bookmark level for unknown remark defaults to 0 on input line 64.
 
-Underfull \hbox (badness 6110) in paragraph at lines 65--66
-[]\OT1/cmr/m/it/10 We shall
- []
-
-[3]
-Underfull \hbox (badness 3907) in paragraph at lines 72--74
-\OT1/cmr/m/it/10 Entonces pode-mos in-tro-ducir el sigu-iente sis-tema
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 92--94
+Underfull \hbox (badness 10000) in paragraph at lines 86--88
 
  []
 
-[4 </Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/fig02-eps-converted-to.pdf>]
+
+Underfull \hbox (badness 4819) in paragraph at lines 122--123
+[]\OT1/cmr/m/it/10 Dado el prob-lema
+ []
+
+[4 </Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/fig02-eps-converted-to.pdf>]
+Package hyperref Info: bookmark level for unknown proposition defaults to 0 on input line 130.
 Package epstopdf Info: Source file: <img/fig03.eps>
-(epstopdf)                    date: 2021-01-28 22:59:50
-(epstopdf)                    size: 268725 bytes
+(epstopdf)                    date: 2021-02-03 14:34:25
+(epstopdf)                    size: 251625 bytes
 (epstopdf)             Output file: <img/fig03-eps-converted-to.pdf>
-(epstopdf)                    date: 2021-01-28 22:59:52
-(epstopdf)                    size: 119324 bytes
+(epstopdf)                    date: 2021-02-03 14:34:27
+(epstopdf)                    size: 111862 bytes
 (epstopdf)             Command: <repstopdf --outfile=img/fig03-eps-converted-to.pdf img/fig03.eps>
-(epstopdf)             \includegraphics on input line 139.
+(epstopdf)             \includegraphics on input line 152.
 Package epstopdf Info: Output file is already uptodate.
-<img/fig03-eps-converted-to.pdf, id=213, 599.23875pt x 723.70375pt>
+<img/fig03-eps-converted-to.pdf, id=224, 586.19pt x 723.70375pt>
 File: img/fig03-eps-converted-to.pdf Graphic file (type pdf)
 <use img/fig03-eps-converted-to.pdf>
-Package pdftex.def Info: img/fig03-eps-converted-to.pdf  used on input line 139.
-(pdftex.def)             Requested size: 248.67944pt x 300.33145pt.
+Package pdftex.def Info: img/fig03-eps-converted-to.pdf  used on input line 152.
+(pdftex.def)             Requested size: 243.26431pt x 300.33145pt.
 
-Overfull \hbox (8.67944pt too wide) in paragraph at lines 139--140
+Overfull \hbox (3.26431pt too wide) in paragraph at lines 152--153
  [][] 
  []
 
+Package hyperref Info: bookmark level for unknown remark defaults to 0 on input line 180.
+[5 </Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/fig03-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <img/fig04.eps>
+(epstopdf)                    date: 2021-02-03 14:33:40
+(epstopdf)                    size: 411837 bytes
+(epstopdf)             Output file: <img/fig04-eps-converted-to.pdf>
+(epstopdf)                    date: 2021-02-03 14:33:42
+(epstopdf)                    size: 185991 bytes
+(epstopdf)             Command: <repstopdf --outfile=img/fig04-eps-converted-to.pdf img/fig04.eps>
+(epstopdf)             \includegraphics on input line 224.
+Package epstopdf Info: Output file is already uptodate.
+<img/fig04-eps-converted-to.pdf, id=253, 586.19pt x 723.70375pt>
+File: img/fig04-eps-converted-to.pdf Graphic file (type pdf)
+<use img/fig04-eps-converted-to.pdf>
+Package pdftex.def Info: img/fig04-eps-converted-to.pdf  used on input line 224.
+(pdftex.def)             Requested size: 243.26431pt x 300.33145pt.
 
-Overfull \hbox (3.13359pt too wide) detected at line 152
-[]
+Overfull \hbox (3.26431pt too wide) in paragraph at lines 224--225
+[][] 
  []
 
-) (/Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/contens/P050-NumericalResults.tex
+) (/Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/contens/P050-NumericalResults.tex
 Overfull \hbox (3.81294pt too wide) detected at line 18
 []
  []
 
 
+Underfull \vbox (badness 5359) has occurred while \output is active []
+
+ [6 </Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/fig04-eps-converted-to.pdf>]
 Underfull \hbox (badness 3407) in paragraph at lines 33--41
-[]\OT1/cmr/m/n/10 To solve the op-ti-mal con-trol prob-lem ([][]4.4[][]), we
+[]\OT1/cmr/m/n/10 To solve the op-ti-mal con-trol prob-lem ([][]4.3[][]), we
  []
 
 
@@ -546,7 +568,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 33--41
 
  []
 
-[5 </Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/fig03-eps-converted-to.pdf>]
+
 Underfull \hbox (badness 2865) in paragraph at lines 62--63
 []\OT1/cmr/m/n/10 Consideremos el Prob-lema [][]5.1[][] con los sigu-ientes
  []
@@ -556,68 +578,71 @@ Underfull \hbox (badness 2865) in paragraph at lines 65--66
 []\OT1/cmr/m/n/10 Consideremos el Prob-lema [][]5.1[][] con los sigu-ientes
  []
 
-) (/Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/contens/P060-Proofs.tex
-Underfull \hbox (badness 2865) in paragraph at lines 69--1
+)
+Underfull \hbox (badness 2865) in paragraph at lines 69--57
 []\OT1/cmr/m/n/10 Consideremos el Prob-lema [][]5.1[][] con los sigu-ientes
  []
 
-[6] [7]
-Underfull \hbox (badness 10000) in paragraph at lines 151--156
+(/Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/contens/P060-Proof1.tex [7]) (/Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/contens/P060-Proof2.tex [8]
+Underfull \hbox (badness 10000) in paragraph at lines 62--67
 
  []
 
-Package hyperref Info: bookmark level for unknown proof defaults to 0 on input line 173.
-
-Overfull \hbox (2.6115pt too wide) detected at line 188
+) (/Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/contens/P060-Proof3.tex) (/Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/contens/P060-Proof4.tex
+Overfull \hbox (2.6115pt too wide) detected at line 14
 []
  []
 
 
-Overfull \hbox (1.9321pt too wide) detected at line 203
+Overfull \hbox (1.9321pt too wide) detected at line 29
 []
  []
 
-
-Underfull \hbox (badness 1052) in paragraph at lines 234--236
-\OML/cmm/m/it/10 H[]$ \OT1/cmr/m/n/10 tenga un m^^S^^Pnimo den-tro del in-ter-valo $[\OMS/cmsy/m/n/10 ^^@\OT1/cmr/m/n/10 1\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 1]$.
+) (/Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/contens/P060-Proof5.tex) (/Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/contens/P070-Conclusions.tex [9]
+Underfull \hbox (badness 6110) in paragraph at lines 12--13
+[]\OT1/cmr/m/it/10 We shall
  []
 
-Package hyperref Info: bookmark level for unknown proposition defaults to 0 on input line 237.
-[8]) (/Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/contens/P070-Conclusions.tex) (/Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/main.bbl
+
+Underfull \hbox (badness 3907) in paragraph at lines 19--21
+\OT1/cmr/m/it/10 Entonces pode-mos in-tro-ducir el sigu-iente sis-tema
+ []
+
+) (/Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/main.bbl
 Underfull \hbox (badness 5036) in paragraph at lines 28--33
 []\OT1/cmr/m/n/8 Konstantinou, G. S. and
  []
 
-) [9]
+) [10]
 \tf@thm=\write4
 \openout4 = `main.thm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 73.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 73.
- (/Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 73.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 73.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 79.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 79.
+ (/Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/main.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 79.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 79.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 7F6D82EAF978394ADE19F7844655E105;1491.
+(rerunfilecheck)             Checksum: 75D1ABFE22ED2D0A5E92B305FCF182D2;1522.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 73.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 79.
  ) 
 Here is how much of TeX's memory you used:
- 8154 strings out of 480608
- 118213 string characters out of 5903630
- 398824 words of memory out of 5000000
- 23744 multiletter control sequences out of 15000+600000
+ 8192 strings out of 480608
+ 121163 string characters out of 5903630
+ 398572 words of memory out of 5000000
+ 23762 multiletter control sequences out of 15000+600000
  553131 words of font info for 106 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 39i,19n,39p,1127b,411s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 39i,19n,39p,1200b,404s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib9.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl9.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on /Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/main.pdf (9 pages, 626397 bytes).
+Output written on "/Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/main.pdf" (10 pages, 809144 bytes).
 PDF statistics:
- 448 PDF objects out of 1000 (max. 8388607)
- 395 compressed objects within 4 object streams
- 105 named destinations out of 1000 (max. 500000)
- 184 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 483 PDF objects out of 1000 (max. 8388607)
+ 425 compressed objects within 5 object streams
+ 112 named destinations out of 1000 (max. 500000)
+ 189 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -6,14 +6,14 @@ L_plus  = @(u) +u;
 L_sq    = @(u) -u.^2;
 
 LL = {L_minus,L_plus,L_sq};
-Nm = 8;
+Nm = 7;
 mspan = 0.1*linspace(-1,1,Nm);
 color = jet(Nm);
 %
 fmt = {'Interpreter','latex','FontSize',24};
-fmt_line = {'LineWidth',3};
+fmt_line = {'LineWidth',2,'Color',[0.9 0.4 0.1]};
 %fig = genfig();
-fig = figure('unit','norm','pos',[0 0 0.415 0.8]);
+fig = figure('unit','norm','pos',[0 0 0.405 0.8]);
 
 clf
 %
@@ -25,8 +25,8 @@ str_title_H = {'$\mathcal{H}_m(u)=mu-\epsilon u$', ...
              '$\mathcal{H}_m(u)=mu+\epsilon u$'   , ...
              '$\mathcal{H}_m(u)=mu-\epsilon u^2$'};
 
-ui1 = uipanel('Parent',fig,'pos',[0 -0.05 0.4 1.075],'BackgroundColor','w');
-ui2 = uipanel('Parent',fig,'pos',[0.375 -0.05 0.625 1.075],'BackgroundColor','w');
+ui1 = uipanel('Parent',fig,'pos',[0     -0.05 0.425   1.075],'BackgroundColor','w');
+ui2 = uipanel('Parent',fig,'pos',[0.4 -0.05 0.625 1.075],'BackgroundColor','w');
 
 ui1.BorderWidth = 0
 ui2.BorderWidth = 0

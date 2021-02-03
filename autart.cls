@@ -556,7 +556,7 @@ $Header: /source/repository/eslatex/src/texmf/source/latex/elsevier/esl.dtx,v 1.
 \newtheorem{fact}[thm]{Fact}
 \newtheorem{hypo}[thm]{Hypothesis}
 \newtheorem{assum}[thm]{Assumption}
-\newtheorem{prop}[thm]{Proposition}
+\newtheorem{prop}[thm]{theorem}
 \newtheorem{crit}[thm]{Criterion}
 \theoremstyle{definition}
 \newtheorem{defn}[thm]{Definition}

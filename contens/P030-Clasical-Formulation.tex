@@ -4,7 +4,7 @@
 En esta sección presentaremos la aproximación actual que se utiliza para abordar el problema, y mencionaremos sus problemas asociado. As we anticipated in Section \ref{Section1}, the control signal $u$ is fully characterized by its waveform and the switching angles, to which we now give a precise definition.
 \newline
 \begin{definition}[Wave-form]\label{def:waveform}
-Given the finite set $\mathcal U$ defined in \eqref{eq:Udef} and $M\in\mathbb{N}$, we will call a waveform any possible $(M+1)$-tuple $\mathcal S = (s_m)_{m=0}^{M+1}$ with $s_m\in \mathcal U$ for all $m=0,\ldots,M+1$.
+Given the finite set $\mathcal U$ defined in \eqref{eq:Udef} and $M\in\mathbb{N}$, we will call a waveform any possible $(M+1)$-tuple $\mathcal S = (s_m)_{m=1}^{M+1}$ with $s_m\in \mathcal U$ for all $m=1,\ldots,M+1$.
 \end{definition}
 \vspace{1em}
 \begin{definition}[Switching angles]\label{def:switchingAngles}
@@ -13,9 +13,9 @@ Given the finite set $\mathcal U$ defined in \eqref{eq:Udef}, $M\in\mathbb{N}$ a
 
 In view of the above definitions, we can provide the following explicit expression for $u$:
 \begin{align}\label{eq:uExpl}
-	&u = \sum_{m=0}^{M+1} s_m\chi_{[\phi_m,\phi_{m+1}]}
+	&u = \sum_{m=1}^{M+1} s_m\chi_{[\phi_m,\phi_{m+1}]}
 	\\
-	&s_m\in\mathcal S, \;\phi_m\in{\bm{\phi}}, \quad \mbox{for all } m=0,\ldots,M+1, \notag 
+	&s_m\in\mathcal S, \;\phi_m\in{\bm{\phi}}, \quad \mbox{for all } m=1,\ldots,M+1, \notag 
 \end{align}
 where we denoted by $\chi_{[\phi_m,\phi_{m+1}]}$ the characteristic function of the interval $[\phi_m,\phi_{m+1}]$.
 
@@ -28,7 +28,7 @@ Besides, taking into account \eqref{eq:uExpl}, a direct computation yields that 
 Given a waveform $\mathcal S$, Problem \ref{pb:SHEp} then reduces to find the switching locations $\bm{\phi}$ (see \cite{Yang2015,Konstantinou2010,Sun1996}). This can be cast as a minimization problem in the variables $\{\phi_m\}_{m=0}^{M+1}$, where the cost functional is the Euclidean distance between the obtained Fourier coefficients $\{a_i(\bm{\phi}),b_j(\bm{\phi})\}$ and the targets $(\bm{a},\bm{b})\in \mathbb{R}^{N_a}\times \mathbb{R}^{N_b}$.
 \newline
 \begin{problem}[Optimization for SHE]
-Given a waveform $\mathcal S$ and a step function $u$ in the form \eqref{eq:uExpl}, we look for the switching angles $\bm{\phi}$ by means of the following minimization problem:
+Given a waveform $\mathcal S$ and a step function $u$ in the form \eqref{eq:uExpl}, we look for the switching angles locations $\bm{\phi}$ by means of the following minimization problem:
 \begin{align}
 	&\min_{\bm{\phi} \in [0,\pi]^{M}} \left(\sum_{i\in\mathcal{E}_a} \|a_T^i - a_i(\bm{\phi})\|^2 + \sum_{j\in \mathcal{E}_b} \|b_T^j - b_j(\bm{\phi})\|^2\right)\notag 
 	\\[10pt]
@@ -37,9 +37,9 @@ Given a waveform $\mathcal S$ and a step function $u$ in the form \eqref{eq:uExp
 \end{problem}
 A continuación mecionaremos algunos problemas de esta formulación:
 \begin{enumerate}
-    \item \textbf{Combinatory problem}: Since the cardinality of $\mathcal S$ is not known a priori, meaning that we do not know how many switches will be necessary to reach the desired values of the Fourier coefficients, a common approach to solve the SHE problem consists in fixing the number of changes and generating all the possible combinations of elements of $\mathcal S$, to later solve an optimization problem for each one of them. Nevertheless, taking into account that the number of possible tuples $\mathcal S$ is given by $|\mathcal{U}|^{|\mathcal S|}$, it is evident that the complexity of the above approach increases rapidly. This problem has been studied in \cite{Yang2015} where, through appropriate algebraic transformations, the authors are able to convert the SHE problem into a polynomial system whose solutions' set contains all the possible waveforms for a given set $\mathcal{U}$ and number of elements in the sequence $\mathcal S$ which, however, is predetermined. 
-	\item \textbf{Real-time problem}: On the other hand, we shall also mention that the SHE methodology has been developed to provide in real-time different target Fourier coefficients con with a $KHz$ latency. This makes impossible to find real-time solutions by optimization, making then necessary to pre-determine solutions that can later be interpolated.
-	\item \textbf{Continuity problem}: Nevertheless, it is well-known that, fixed a sequence $S$, the continuity of the switching locations with respect to a continuous variation of the target Fourier coefficients may be quite cumbersome. 
+    \item \textbf{Combinatory problem}: Since the cardinality of $\mathcal S$ is not known a priori, meaning that we do not know how many switches will be necessary to reach the desired values of the Fourier coefficients, a common approach to solve the SHE problem consists in fixing the number of changes and generating all the possible combinations of elements of $\mathcal S$, to later solve an optimization problem for each one of them. Nevertheless, taking into account that the number of possible tuples $\mathcal S$ is given by $|\mathcal{U}|^{|\mathcal S|}$, it is evident that the complexity of the above approach increases rapidly. This problem has been studied in \cite{Yang2015} where, through appropriate algebraic transformations, the authors are able to convert the SHE problem into a polynomial system whose solutions' set contains all the possible waveforms for a given set $\mathcal{U}$ and number of elements in the sequence $\mathcal S$.  Sin embargo, en este caso el número de cambios es prefijado.
+	%\item \textbf{Real-time problem}: We shall also mention that the SHE methodology has been developed to provide in real-time different target Fourier coefficients con with a $KHz$ latency. This makes impossible to find real-time solutions by optimization, making then necessary to pre-determine solutions that can later be interpolated. 
+	\item \textbf{Continuity problem}: It is well-known that, fixed a sequence $S$, the continuity of the switching locations with respect to a continuous variation of the target Fourier coefficients may be quite cumbersome. De manera que, encontrar solución donde el número de ángulos pueda cambiar con el vector objetivo, nos puede dar más libertad para obtener soluciones más predecibles. 
 \end{enumerate}
 %
 %

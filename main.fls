@@ -2,10 +2,10 @@ PWD /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/pap
 INPUT /usr/local/texlive/2020/texmf.cnf
 INPUT /usr/local/texlive/2020/texmf-dist/web2c/texmf.cnf
 INPUT /usr/local/texlive/2020/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT /Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/main.tex
-OUTPUT /Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/main.log
-INPUT /Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/autart.cls
-INPUT /Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/autart.cls
+INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/main.tex
+OUTPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/main.log
+INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/autart.cls
+INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/autart.cls
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/base/latexsym.sty
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/base/latexsym.sty
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/base/ulasy.fd
@@ -30,9 +30,9 @@ INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/graphics-def/pdftex.def
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/graphics-def/pdftex.def
-OUTPUT /Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/settings.aux
-INPUT /Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/settings.tex
-INPUT /Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/settings.tex
+OUTPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/settings.aux
+INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/settings.tex
+INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/settings.tex
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/tools/bm.sty
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/tools/bm.sty
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/amsmath/amsmath.sty
@@ -110,9 +110,9 @@ INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/graphics-cfg/color.cfg
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/graphics-cfg/color.cfg
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
-INPUT /Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/main.aux
-INPUT /Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/main.aux
-OUTPUT /Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/main.aux
+INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/main.aux
+INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/main.aux
+OUTPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/main.aux
 INPUT /usr/local/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 INPUT /usr/local/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
@@ -125,14 +125,14 @@ INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/refcount/refcount.sty
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/refcount/refcount.sty
 INPUT /usr/local/texlive/2020/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 INPUT /usr/local/texlive/2020/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
-INPUT /Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/main.out
-INPUT /Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/main.out
-INPUT /Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/main.out
-INPUT /Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/main.out
-OUTPUT /Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/main.pdf
-INPUT /Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/main.out
-INPUT /Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/main.out
-OUTPUT /Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/main.out
+INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/main.out
+INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/main.out
+INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/main.out
+INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/main.out
+OUTPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/main.pdf
+INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/main.out
+INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/main.out
+OUTPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/main.out
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmr17.tfm
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
@@ -203,62 +203,79 @@ INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm1
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmtt9.tfm
-INPUT /Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/contens/P010-Indroduction.tex
-INPUT /Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/contens/P010-Indroduction.tex
+INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/contens/P010-Indroduction.tex
+INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/contens/P010-Indroduction.tex
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmti10.tfm
-INPUT /Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/contens/P020-General-Formulation.tex
-INPUT /Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/contens/P020-General-Formulation.tex
-INPUT /Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/fig01.eps
-INPUT /Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/fig01.eps
-INPUT /Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/fig01.eps
-INPUT /Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/fig01-eps-converted-to.pdf
-INPUT /Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/fig01-eps-converted-to.pdf
-INPUT /Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/fig01.eps
-INPUT /Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/fig01-eps-converted-to.pdf
-INPUT /Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/fig01-eps-converted-to.pdf
-INPUT /Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/fig01-eps-converted-to.pdf
+INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/contens/P020-General-Formulation.tex
+INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/contens/P020-General-Formulation.tex
+INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/fig01.eps
+INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/fig01.eps
+INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/fig01.eps
+INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/fig01-eps-converted-to.pdf
+INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/fig01-eps-converted-to.pdf
+INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/fig01.eps
+INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/fig01-eps-converted-to.pdf
+INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/fig01-eps-converted-to.pdf
+INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/fig01-eps-converted-to.pdf
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmsl9.tfm
 INPUT /usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmti7.tfm
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmti7.tfm
-INPUT /Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/contens/P030-Clasical-Formulation.tex
-INPUT /Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/contens/P030-Clasical-Formulation.tex
-INPUT /Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/contens/P040-Contributions.tex
-INPUT /Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/contens/P040-Contributions.tex
-INPUT /Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/fig02.eps
-INPUT /Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/fig02.eps
-INPUT /Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/fig02.eps
-INPUT /Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/fig02-eps-converted-to.pdf
-INPUT /Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/fig02-eps-converted-to.pdf
-INPUT /Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/fig02.eps
-INPUT /Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/fig02-eps-converted-to.pdf
-INPUT /Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/fig02-eps-converted-to.pdf
-INPUT /Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/fig02-eps-converted-to.pdf
-INPUT /Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/fig03.eps
-INPUT /Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/fig03.eps
-INPUT /Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/fig03.eps
-INPUT /Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/fig03-eps-converted-to.pdf
-INPUT /Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/fig03-eps-converted-to.pdf
-INPUT /Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/fig03.eps
-INPUT /Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/fig03-eps-converted-to.pdf
-INPUT /Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/fig03-eps-converted-to.pdf
-INPUT /Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/fig03-eps-converted-to.pdf
-INPUT /Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/contens/P050-NumericalResults.tex
-INPUT /Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/contens/P050-NumericalResults.tex
-INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmtt10.tfm
-INPUT /Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/contens/P060-Proofs.tex
-INPUT /Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/contens/P060-Proofs.tex
+INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/contens/P030-Clasical-Formulation.tex
+INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/contens/P030-Clasical-Formulation.tex
+INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/contens/P040-Contributions.tex
+INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/contens/P040-Contributions.tex
+INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/fig02.eps
+INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/fig02.eps
+INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/fig02.eps
+INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/fig02-eps-converted-to.pdf
+INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/fig02-eps-converted-to.pdf
+INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/fig02.eps
+INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/fig02-eps-converted-to.pdf
+INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/fig02-eps-converted-to.pdf
+INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/fig02-eps-converted-to.pdf
+INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/fig03.eps
+INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/fig03.eps
+INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/fig03.eps
+INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/fig03-eps-converted-to.pdf
+INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/fig03-eps-converted-to.pdf
+INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/fig03.eps
+INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/fig03-eps-converted-to.pdf
+INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/fig03-eps-converted-to.pdf
+INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/fig03-eps-converted-to.pdf
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmbxti10.tfm
-INPUT /Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/contens/P070-Conclusions.tex
-INPUT /Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/contens/P070-Conclusions.tex
-INPUT /Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/main.bbl
-INPUT /Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/main.bbl
+INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/fig04.eps
+INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/fig04.eps
+INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/fig04.eps
+INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/fig04-eps-converted-to.pdf
+INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/fig04-eps-converted-to.pdf
+INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/fig04.eps
+INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/fig04-eps-converted-to.pdf
+INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/fig04-eps-converted-to.pdf
+INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/fig04-eps-converted-to.pdf
+INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/contens/P050-NumericalResults.tex
+INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/contens/P050-NumericalResults.tex
+INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmtt10.tfm
+INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/contens/P060-Proof1.tex
+INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/contens/P060-Proof1.tex
+INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/contens/P060-Proof2.tex
+INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/contens/P060-Proof2.tex
+INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/contens/P060-Proof3.tex
+INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/contens/P060-Proof3.tex
+INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/contens/P060-Proof4.tex
+INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/contens/P060-Proof4.tex
+INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/contens/P060-Proof5.tex
+INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/contens/P060-Proof5.tex
+INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/contens/P070-Conclusions.tex
+INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/contens/P070-Conclusions.tex
+INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/main.bbl
+INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/main.bbl
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmr8.tfm
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmti8.tfm
-OUTPUT /Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/main.thm
-INPUT /Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/main.aux
-INPUT /Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/main.out
-INPUT /Users/djoroya/Documents/GitHub/papers/SHE-Optimal-Control-paper/main.out
+OUTPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/main.thm
+INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/main.aux
+INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/main.out
+INPUT /Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/main.out
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
