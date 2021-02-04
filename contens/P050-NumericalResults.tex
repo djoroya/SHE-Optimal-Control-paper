@@ -26,13 +26,13 @@ In this way, we can define the smooth version of \eqref{PLP}:
 \begin{gather}
     \mathcal{L}^\eta(u) = \sum_{k = 1}^{N_u-1} \big[ (u_{k+1}+u_{k}) (u-u_k) + u_k^2 \big] \Pi^\eta_{[u_k,u_{k+1}]}(u)
 \end{gather}
-So that, when $\eta \rightarrow \infty$, then $\mathcal{L}^\eta \rightarrow \mathcal{L}$.
+So that, when $\eta \rightarrow \infty$, then $\mathcal{L}^\eta \rightarrow \mathcal{L}$. 
 
 \subsection{Direct method  for  OCP-SHE}
 
 To solve the optimal control problem (\ref{pb:OCP_penalizado}), we use a direct method. 
 %
-If we consider a partition $\mathcal{P} = \{\tau_0,\tau_1,\dots,\tau_{T}\}$ of interval $[0,T]$ , we can represent a function $\{ u(\tau) \ | \ \tau \in [0,T]\}$ as a vector $\bm{u} \in \mathbb{R}^{T}$ where component $u_t = u(\tau_t)$. 
+If we consider a partition $\mathcal{P} = \{\tau_0,\tau_1,\dots,\tau_{T}\}$ of interval $[0,T]$ , we can represent a function $\{ u(\tau) \ | \ \tau \in [0,T]\}$ as a vector $\bm{u} \in \mathbb{R}^{T}$ where component $u_t = u(\tau_t)$.  
 %
 Then the optimal control problem (\ref{pb:OCP1}) can be written as optimization problem with variable $\bm{u} \in \mathbb{R}^{T}$. This problem is a nonlinear programming, for this we use CasADi software to solve. 
 %
@@ -45,7 +45,9 @@ Given two sets of odd numbers $\mathcal{E}_a$ and $\mathcal{E}_b$ with cardinali
         \min_{\bm{u} \in \mathbb{R}^{T} } 
         \Bigg[ 
         || \bm{x}^{T}||^2
-        + \epsilon  \sum_{t=0}^{T-1} \mathcal{L}^\eta(u_{t}) \Delta\tau_t  \Bigg]  \\
+        + \epsilon  
+        \sum_{t=0}^{T-1} 
+            \bigg[ \frac{\mathcal{L}^\eta(u_{t}) + \mathcal{L}^\eta(u_{t+1})}{2}\Delta\tau_t \bigg]  \Bigg]  \\
         \notag \text{suject to: } \\
         \forall \tau \in \mathcal{P} \begin{cases}
             \bm{x}^{t+1} = \bm{x}^{t} - (2/\pi)\Delta \tau_t \bm{\mathcal{D}}(\tau_t)u_t \\
@@ -58,12 +60,45 @@ Given two sets of odd numbers $\mathcal{E}_a$ and $\mathcal{E}_b$ with cardinali
 
 Todos los ejemplos que presentaremos a continuación tendrán en conmún los siguientes parámetros $\epsilon = 10^{-5}$, $\eta = 10^{-5}$ y una partición $\mathcal{P}_t = \{0.0 , 0.1, 0.2 ,\dots,\pi\}$.
 
-\subsubsection{Bang-Bang}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\vspace{1em}
+\begin{simulation}[Bang-Bang]\label{simu1}
 Consideremos el Problema \ref{pb:numOCP2} con los siguientes parámetros $\mathcal{E}_a = \{1,5,7\}$ y  $\mathcal{E}_b = \{1,5,7\}$ y el control admisible en $\mathcal{U} = \{-1,1\}$. Además los vectores objetivos son: $\bm{a}_T = (i_d,0)^T$ y $\bm{b}_T = (i_d,0)^T$ para todo $i_d \in [-1,1]$. 
 
-\subsubsection{Bang-off-Bang}
-Consideremos el Problema \ref{pb:numOCP2} con los siguientes parámetros $\mathcal{E}_a = \{1,5\}$ y  $\mathcal{E}_b = \{1,5\}$ y el control admisible en $\mathcal{U} = \{-1,0,1\}$. Además los vectores objetivos son: $\bm{a}_T = (1/2,0)^T$ y $\bm{b}_T = (1/2,0)^T$  para todo $i_d \in [-1,1]$. 
+\begin{figure}[ht!]
+    \hspace{0.05em}
+    \includegraphics[scale=0.565]{img/fig05.eps}
+    \caption{Results of simulation of Simulation \ref{simu1}.}
+\end{figure} 
+\end{simulation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsubsection{Multi-nivel}
+\vspace{1em}
+\begin{simulation}[Bang-off-Bang]\label{simu2}
+
+Consideremos el Problema \ref{pb:numOCP2} con los siguientes parámetros $\mathcal{E}_a = \{1,5\}$ y  $\mathcal{E}_b = \{1,5\}$ y el control admisible en $\mathcal{U} = \{-1,0,1\}$. Además los vectores objetivos son: $\bm{a}_T = (1/2,0)^T$ y $\bm{b}_T = (1/2,0)^T$  para todo $i_d \in [-1,1]$.  
+\end{simulation}
+
+\begin{figure}[ht!]
+    \hspace{0.05em}
+    \includegraphics[scale=0.565]{img/fig06.eps}
+    \caption{Results of simulation of Simulation \ref{simu2}.}
+\end{figure} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\vspace{1em}
+\begin{simulation}[Multi-Nivel]\label{simu3}
 
 Consideremos el Problema \ref{pb:numOCP2} con los siguientes parámetros $\mathcal{E}_a = \{1,5\}$ y  $\mathcal{E}_b = \{1,5\}$ y el control admisible en $\mathcal{U} = \{-1,-1/2,0,1/2,1\}$. Además los vectores objetivos son: $\bm{a}_T = (1/2,0,0)^T$ y $\bm{b}_T = (1/2,0,0)^T$  para todo $i_d \in [-1,1]$.  
+\end{simulation}
+
+\begin{figure}[ht!]
+    \hspace{0.05em}
+    \includegraphics[scale=0.565]{img/fig07.eps}
+    \caption{Results of simulation of Simulation \ref{simu3}.}
+\end{figure} 
+ 
