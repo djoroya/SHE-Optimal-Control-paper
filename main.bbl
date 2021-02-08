@@ -43,6 +43,18 @@ Sun, J., Beineke, S., and Grotstollen, H. (1996).
   equations.
 \newblock {\em IEEE Trans. Power Electron.}, 11(4):612--621.
 
+\bibitem[Wang and Topputo, 2020]{Wang2020}
+Wang, Y. and Topputo, F. (2020).
+\newblock {Robust Bang-Off-Bang Low-Thrust Guidance Using Model Predictive
+  Static Programming}.
+\newblock {\em Acta Astronautica}, 176(May):357--370.
+
+\bibitem[Wu, 2009]{Wu2009}
+Wu, B. (2009).
+\newblock {A Generalized Formulation of Quarter-Wave Symmetry SHE-PWM Problems
+  for Multilevel Inverters}.
+\newblock {\em IEEE Transactions on Power Electronics}, 24(7):1758--1766.
+
 \bibitem[Yang et~al., 2015]{Yang2015}
 Yang, K., Yuan, Z., Yuan, R., Yu, W., Yuan, J., and Wang, J. (2015).
 \newblock A groebner bases theory-based method for selective harmonic

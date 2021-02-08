@@ -1,4 +1,4 @@
-\section{Mathematical formulation of SHE}\label{Section2}
+\section{Mathematical formulation of SHE}\label{sec:GeneralSHEproblem}
 
 This section is devoted to the mathematical formulation of the SHE problem. In what follows, with the notation $\mathcal U$ we will always refer to a finite set of real numbers, contained in the interval $[-1,1]$
 \begin{align}\label{eq:Udef}
@@ -7,18 +7,12 @@ This section is devoted to the mathematical formulation of the SHE problem. In w
 with cardinality $|\mathcal U| = L$. 
 
 In broad terms, our objective is to design a piece-wise constant function $u(\tau):[0,2\pi)\to\mathcal U$ such that some of its lower-order Fourier coefficients take specific values determined a priori. 
-
- 
-\begin{figure}
-	\centering
-	\includegraphics[scale=0.325]{img/fig01.eps} 
-	\caption{A Step function and possible solution of Problem \ref{pb:SHEp}, where we considered a possible finite set of control $\mathcal{U} = \{-1/3, -2/3, 0, 1/3, 2/3, 1\}$. We show the switching angles $\bm{\phi}$ and the waveform $\mathcal{S}$ (see Definitions \ref{def:waveform} and \ref{def:switchingAngles}). \textcolor{red}{tengo que darle la vuelta en el tiempo}}\label{fig:exampleSHE}
-\end{figure}
-
 Due to the application in power converters, we will focus here on functions with \textit{half-wave symmetry}, i.e. 
 \begin{align*}
 	u(\tau + \pi) = -u(\tau)\quad \mbox{for all}\; \tau \in [0,\pi).
 \end{align*}
+Because of this half-wave symmetry, in what follows, we will always work with the restriction $u|_{[0,\pi)}$ which, with some abuse of notation, we shall still denote by $u$. 
+
 In this way, $u$ is fully determined by its values in the interval $[0,\pi)$ and its Fourier series only involves the odd terms, thus taking the form
 \begin{equation}
 	u(\tau ) = \sum_{\underset{i\, odd}{i \in \mathbb{N}}} a_i \cos(i\tau)+ \sum_{\underset{j\, odd}{j \in \mathbb{N}}}  b_j \sin(j \tau), 
@@ -31,8 +25,8 @@ where the coefficients $a_i$ and $b_j$ are given by
 		b_j = \frac{2}{\pi} \int_0^\pi u(\tau)  \sin(j \tau)\,d\tau.
 	\end{aligned}
 \end{equation}
-Because of this half-wave symmetry, in what follows, we will always work with the restriction $u|_{[0,\pi)}$ which, with some abuse of notation, we shall still denote by $u$. We can then give a general formulation of the SHE problem as follows:
-\newline
+So considering this preliminaries, we can then give a general formulation of the SHE problem as follows:
+\vspace{1em}
 \begin{problem}[SHE]\label{pb:SHEp}
 Let $\mathcal{E} _a $ and $\mathcal{E} _b $ be two sets of odd numbers with cardinalities $|\mathcal{E}_a| = N_a $ and $ |\mathcal{E} _b| = N_b$, respectively, and $\mathcal{U}$ be defined as in \eqref{eq:Udef}. Given the vectors $\bm{a}_T \in \mathbb{R}^{N_a}$ and $\bm{b}_T \in \mathbb{R}^{N_b} $, we look for a piece-wise constant function $u: [0,\pi)\to\mathcal{U}$ such that 
 \begin{gather}
@@ -44,4 +38,11 @@ with $\{a_i\}_{i\in\mathcal E_a}$ and $\{b_j\}_{j\in\mathcal E_b}$ given by \eqr
 \end{problem} 
  
 Fig. \ref{fig:exampleSHE} shows an example of a function $u$ solution of the SHE problem. 
+
+\begin{figure}
+	\centering
+	\includegraphics[scale=0.325]{img/fig01.eps} 
+	\caption{A Step function and possible solution of Problem \ref{pb:SHEp}, where we considered a possible finite set of control $\mathcal{U} = \{-1/3, -2/3, 0, 1/3, 2/3, 1\}$. We show the switching angles $\bm{\phi}$ and the waveform $\mathcal{S}$ (see Definitions \ref{def:waveform} and \ref{def:switchingAngles}).}\label{fig:exampleSHE}
+\end{figure}
+%
 

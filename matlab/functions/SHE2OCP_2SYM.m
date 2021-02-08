@@ -1,4 +1,4 @@
-function [S,ftraj] = SHE2OCP_2SYM(Ea,Eb,Lterm,Nt)
+function [S,ftraj] = SHE2OCP_2SYM(Ea,Eb,Lterm,tspan)
 %
 import casadi.*
 %%
@@ -25,8 +25,7 @@ dbs = (2/pi)*fs*sin(Eb.*ts);
 dynfcn = Function('f',{ts,Xs,fs},{[das;dbs]});
 
 %%
-T = pi;
-tspan = linspace(0,T,Nt);
+Nt = length(tspan);
 %%
 fst = SX.sym('ft',[1 Nt]);
 %

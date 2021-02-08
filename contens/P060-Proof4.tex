@@ -2,18 +2,7 @@
 \subsection{Proof of Theorem \ref{th:PLP}}\label{proof:PLP}
 
 
-In this section, we discuss how to design the penalization term $\mathcal{L}(u)$ so that the optimal control is always contained in $\mathcal{U}$. 
-
-In more detail, we can choose the affine interpolation of a parabola $\mathcal{L}:[-1,1] \rightarrow \mathbb{R}$ as a penalization term. That is
-\begin{gather}\label{PLP}
-    \mathcal{L}(u) = \begin{cases}
-        \big[ (u_{k+1}+u_{k}) (u-u_k) + u_k^2 \big] & \text{if }  u \in [u_k,u_{k+1}[ \\
-        1 & \text{if } u = u_{N_u} 
-    \end{cases} \\
-    \notag \forall k \in \{1,\dots,N_u-1\}
-\end{gather}
-%
-Nevertheless, to compute the minimum of $\mathcal{H}_m(u)$, we shall take into account that this function is not differentiable and the optimality condition then requires to work with the subdifferential $\partial\mathcal{L}(u)$, which given by
+To compute the minimum of $\mathcal{H}_m(u)$, we shall take into account that this function is not differentiable and the optimality condition then requires to work with the subdifferential $\partial\mathcal{L}(u)$, which given by
 \begin{gather}
         \partial\mathcal{L}(u)= \begin{cases}
             \{u_1 + u_2  \}   & \text{if } \ u = u_1 \\

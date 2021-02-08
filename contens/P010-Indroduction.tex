@@ -1,22 +1,43 @@
 \section{Introduction and motivations}\label{Section1}
 
 Selective Harmonic Elimination (SHE) \cite{Rodriguez2002} is a well-known methodology in electrical engineering, employed to improve the performances of a converter by controlling the phase and amplitude of the harmonics in its output voltage. As a matter of fact, this technique allows to increase the power of the converter and, at the same time, to reduce its losses. 
-
-In broad terms, the process consists in generating a \textit{control signal} with a desired harmonic spectrum, by modulating or eliminating some specific lower order frequencies. This signal is in the shape of a step function and is fully characterized by two features (see Figure \ref{fig:exampleSHE}): 
-\begin{itemize}
-	\item[1.] The \textit{waveform}, i.e. the set of (constant) values the function may assume.
-	\item[2.] The \textit{switching angles}, defining the points in the domain where the function changes from one constant value to another. 
-\end{itemize}
-
-
+%
 
 Because of the growing complexity of modern electrical networks, consequence for instance of the high penetration of renewable energy sources, the demand in power of electronic converters is day by day increasing. For this and other reasons, SHE has been a preeminent research interest in the electrical engineering community, and a plethora of SHE-based techniques has been developed in recent years. An incomplete bibliography includes \cite{duranay2017selective,Janabi2020,Yang2017}.
 
-Nowadays, SHE is mostly based on offline computations to obtain the commutation patterns describing the control signal.  
+In broad terms, the process consists in generating a \textit{control signal} with a desired harmonic spectrum, by modulating or eliminating some specific lower order frequencies. This signal is piece-wise constant function and in this way is fully characterized by two features (see Figure \ref{fig:exampleSHE}): 
+\begin{itemize}
+	\item[1.] The \textit{waveform}, i.e. A secuence of values that the signal will take.
+	\item[2.] The \textit{switching angles}, defining the points in the domain where the function changes from one constant value to another. 
+\end{itemize}
+These two main features can be exploited to formulate a minimization problem. Let a waveform, we can use this information to reduce the formula of Fourier coefficients  and then define a cost function that depends on a locations of switching angles. However, this formulation have a some problems, asociated to assume a concrete waveform (Section \ref{sec:ClassicalSHEproblem}).  
 
-\textcolor{red}{Add references and mention real-time approaches.}
 
-\textcolor{red}{Estructura del documento}
 
-%The present document is organized as follows. In Section \ref{Section2}, we will present the mathematical formulation of the SHE problem and a classical resolution method based on an optimization process. In Section \ref{Section3}, we will formulate the SHE problem as a controlled dynamical system. In Section \ref{Section4}, we will present the optimal control problem allowing us to obtain the solutions to the SHE problem. In Section \ref{Section5}, we will present our numerical experiments. Finally, in Section \ref{Section6}, we will equation the conclusions of our study.
+In this document is show a new formulation of SHE problem, in terms of control theory. 
+%
+In this way, we search a signal without assume a concrete waveform and expect that the own control problem be able to find a optimal waveform and the optimal locations of switching angles. 
+%
+In the following sections we will explain how the SHE problem can be see as control problem, however that optimal control have to be a piece-wise constant function is problematic and atypically  in control problem. 
+%
+The classical control theory give a strategies to design problem whose only can take a two posible values.
+%
+This type of optimal control are named \emph{bang-bang} controls and they are well known in community of control thoery. 
+%
+Nevertheless, if we want obtain a optimal control as piece-wise constant function. we don't have a clear strategies to this objective. 
+%
+In this paper, we tackle this problem with goal solve the SHE problem, however this idea can be generalizated for other systems. 
 
+%%%%%%%%%%%%%%%%%%%%%%%
+
+In this document, we follow the next structure. In the Section \ref{sec:GeneralSHEproblem}, we introduce a mathematical formulation of a general SHE problem. 
+%
+In the Section \ref{sec:ClassicalSHEproblem}, we show the clasical formulation in SHE literature, and we show two main problems because of this aproach. 
+%
+In the Section \ref{sec:Contributions}, we show our contributions in this problem, where expalin the SHE problem as control problem and the strategies to obtain a piece-wise function as optimal control. 
+%
+In the Section \ref{sec:Simulations} we show a concrete examples solve by control theory. 
+%
+In the Section \ref{sec:Proof}, we summaries the proof associated to our contribution. 
+%
+By last, we finished with some conclusion and open problems. 

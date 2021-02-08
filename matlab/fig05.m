@@ -37,7 +37,7 @@ else
 end
 %%
 %fig = figure('Unit','norm','pos',[0 0 0.3 0.45],'Color','w');
-fig = figure('Unit','norm','pos',[0 0 0.3 0.35],'Color','w');
+fig = figure('Unit','norm','pos',[0 0 0.325 0.35],'Color','w');
 
 fig.Renderer = 'painters';
 pplot2(fopts{1},fig,Ea,Eb,Nv,tspan,values,amatrix,bmatrix)
