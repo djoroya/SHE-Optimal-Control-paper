@@ -1,14 +1,13 @@
 \usepackage{graphicx}
 
 \usepackage{bm}
-
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{ntheorem}
 
 \usepackage[colorlinks=true,citecolor=blue]{hyperref}
 \usepackage{breakcites}
-
+%\usepackage{refcheck}
 
 \edef\endfrontmatter{%
 	\unexpanded\expandafter{\endfrontmatter}% the current code
@@ -25,6 +24,11 @@
 
 \theoremstyle{plain}
 \newtheorem*{proof}{\textit{Proof:}}
+
+\newcommand{\UB}[1]{\color{cyan}{#1}\color{black}}
+\newcommand{\CE}[1]{\color{red}{#1}\color{black}}
+\newcommand{\JO}[1]{\color{green}{#1}\color{black}}
+
 
 \numberwithin{equation}{section}
 
