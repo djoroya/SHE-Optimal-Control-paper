@@ -1,0 +1,21 @@
+\BOOKMARK [1][-]{section.1}{Introduction and motivations}{}% 1
+\BOOKMARK [1][-]{section.2}{Preliminaries}{}% 2
+\BOOKMARK [1][-]{section.3}{SHE as a finite-dimensional optimization problem}{}% 3
+\BOOKMARK [1][-]{section.4}{SHE problem as an Optimal Control Problem}{}% 4
+\BOOKMARK [2][-]{subsection.4.1}{The SHE problem as a null-controllability problem}{section.4}% 5
+\BOOKMARK [2][-]{subsection.4.2}{Bilevel SHE problem via OCP \(Bang-Bang Control\)}{section.4}% 6
+\BOOKMARK [2][-]{subsection.4.3}{Multilevel SHE problem via OCP}{section.4}% 7
+\BOOKMARK [2][-]{subsection.4.4}{General conditions for SHE multi-nivel}{section.4}% 8
+\BOOKMARK [1][-]{section.5}{Numerical simulations}{}% 9
+\BOOKMARK [2][-]{subsection.5.1}{Smooth approximation of piece-wise linear penalization}{section.5}% 10
+\BOOKMARK [2][-]{subsection.5.2}{Direct method for OCP-SHE}{section.5}% 11
+\BOOKMARK [2][-]{subsection.5.3}{Examples}{section.5}% 12
+\BOOKMARK [1][-]{section.6}{Proofs of results in Section 4}{}% 13
+\BOOKMARK [2][-]{subsection.6.1}{Proofs of Theorems 4.1 and 4.2}{section.6}% 14
+\BOOKMARK [2][-]{subsection.6.2}{Proof of Theorem 4.1}{section.6}% 15
+\BOOKMARK [2][-]{subsection.6.3}{Proof of Theorem 4.2}{section.6}% 16
+\BOOKMARK [1][-]{section.7}{Conclusiones}{}% 17
+\BOOKMARK [2][-]{subsection.7.1}{Quarter wave symetry}{section.7}% 18
+\BOOKMARK [2][-]{subsection.7.2}{Generalizations}{section.7}% 19
+\BOOKMARK [1][-]{section*.1}{Acknowledgements}{}% 20
+\BOOKMARK [1][-]{section*.2}{References}{}% 21
