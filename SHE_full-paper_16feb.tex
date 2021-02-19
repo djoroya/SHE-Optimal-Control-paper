@@ -70,7 +70,10 @@ This kind of constraint on the control prevents one from applying the classical 
     \item[1.] We reformulate the SHM problem as an optimal control problem with a staircase constraint on the control.
     \item[2.] We introduce a penalization term for the control which implicitly induces the staircase property on the solution. Here we distinguish two cases: when the control set contains only two elements (\UB{bi-level or } bang-bang control) and when it contains more than two elements (multilevel control).
     \item[3.] Our approach allows one to compute solutions to the SHM problem with different waveforms.
-    \item[4.] {\color{red} Continuidad de solucion respecto al target, estimacion superior numero de switches???? }
+    \JO{ 
+    \item[4 ] Nuestra aproximación nos permite encontar soluciones de ángulos de conmutación continuas con respecto al target}
+    %\item[4.] {\color{red} Continuidad de solucion respecto al target, estimacion superior numero de switches???? }
+	% NO te metas alli, que es un verengenal!
 \end{enumerate}
 
 {\color{red} Revisar la estructura cuando el paper est\'e terminado.
@@ -107,7 +110,7 @@ with a finite number of switches, such that some of its lower-order Fourier coef
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.35]{img/fig01.eps} 
-	\caption{A possible solution to Problem \ref{pb:SHEp}, where we considered the finite set of control $\mathcal{U} = \{-1/3, -2/3, 0, 1/3, 2/3, 1\}$. We show the switching angles $\Phi$ and the waveform $\mathcal{S}$ (see Definition \ref{def: waveform and switching angles}).{\color{red} Esta funcion no satisface valores contiguos. También convendría dibujar el intervalo $[0,2\pi]$ para ver la half-wave symmetry. } }
+	\caption{A possible solution to Problem \ref{pb:SHEp}, where we considered the finite set of control $\mathcal{U} = \{-1, -1/2, 0, 1/2, 1\}$. We show the switching angles $\Phi$ and the waveform $\mathcal{S}$ (see Definition \ref{def: waveform and switching angles}).}
 	\label{fig:exampleSHE}
 \end{figure}
 Due to applications in power converters,  it is typical to only consider functions with \textit{half-wave symmetry}, i.e. satisfying
@@ -177,9 +180,9 @@ satisfy
 	\bm{a} = \bm{a}_T \qquad \text{and} \qquad \bm{b} = \bm{b}_T,
 \end{align*}
 where the coefficients $a_j$ and $b_j$ in \eqref{vectors a and b} are given by \eqref{eq:an}.
-\end{problem} 
+\end{problem}  
 
-\UB{Add a paragraph on SHM/SHE.}
+Hemos formulado el SHC de la manera más general posible, sin embargo en la literatura de electrónica de potencia el problema SHC tiene distintos nombres dependiendo de la forma del vector objetivo. Si el vector objetivo es tal que los coeficientes de Fourier $a_1$ y $b_1$ son no nulos y los demás coeficientes de Fourier objetivo son nulos, entonces el problema es llamado, Selective Harmonic Elimination \cite{Janabi2020}. En el caso, en el que se quisierán controlar más coefficientes que $a_1$ y $b_1$ entonces es llamado Selective Harmonic Elimination. Aun existiendo esta distinción en la literatura, podemos ver facilmente que las conclusiones de este artículo contienen ambos casos. 
 
 \section{SHM as a finite-dimensional optimization problem}\label{sec:SHE_finite-dim_pbm}
 
@@ -212,16 +215,53 @@ Let $\mathcal{E}_a$, $\mathcal{E}_b$ and the targets $\bm{a}_T$ and $\bm{b}_T$ b
 	&\mbox{subject to: } 0 = \phi_0 <\phi_1 < \ldots < \phi_{M} < \phi_{M+1} = \pi. \notag 
 \end{align}
 \end{problem}
+\JO{
+En la práctica es deseable obtener que contenga la información de las soluciones para diferentes targets. Para ello definiremos la función política. 
+
+\vspace{1em}
+\begin{definition}[Policy Function]
+Una función $\Pi_{\mathcal{S}}: \mathbb{R}^{N_a+N_b} \rightarrow [0,\pi]^M$ tal que $\Phi^* = \Pi_{\mathcal{S}}(\bm{a}_T,\bm{b}_T)$, siendo $\Phi^*$ los ángulos de conmutación óptimos solución del Problema \ref{pb:SHEp} para los targets $(\bm{a}_T,\bm{b}_T)$.
+\end{definition} 
+
+Es por ello que se calculan soluciones numéricas del Problema \ref{pb:SHE opt} en pocos puntos de $\mathbb{R}^{N_a+N_b}$, para luego interpolar la función $\Pi_{\mathcal{S}}$ en el conjunto convexo formado por los puntos considerados. 
+
+Es importante notar que el Problema \ref{pb:SHE opt} solo resuelve el Problema \ref{pb:SHEp} cuando el coste óptimo obtenido es igual a cero. De manera  que una forma de caracterizar el espacio de targets $(\bm{a}_T,\bm{b}_T) $ donde existe solución al Problema \ref{pb:SHEp}, es definiendo la función de coste óptimo.
+\vspace{1em}
+\begin{definition}[Optimal cost function]
+	We call optimal cost function $V_{\mathcal{S}}:\mathbb{R}^{N_a+N_b} \rightarrow \mathbb{R}$, the function that take as input variables the vector targets $\bm{a}_T$ and $\bm{b}_T$ and return the optimal cost of the Problem \ref{pb:SHE opt}.
+\end{definition}
+
+
+
+\vspace{1em}
+\begin{definition}[Solutionable set]
+	We define a solutionable set $\mathcal{R}_{\mathcal{S}}$ as:
+	\begin{gather}
+		\mathcal{R}_{\mathcal{S}} = \{ (\bm{a}_T,\bm{b}_T) \in \mathbb{R}^{N_a+N_b} | V_{\mathcal{S}}(\bm{a}_T,\bm{b}_T) = 0\}\
+	\end{gather}
+\end{definition}
+}
+
 
 Let us point out some of the main difficulties and drawback arising in this approach: 
 
 \begin{itemize}
 	\item[1.]\textbf{Combinatory problem}: in practice, one does not dispose of a suitable waveform $\mathcal{S}$ which yields a solution to the Problem \ref{pb:SHEp}, meaning that the minimum in Problem \ref{pb:SHE opt} is not zero. A common approach to solve the SHM problem consists in fixing the number of switches $M$, and then solve Problem \ref{pb:SHE opt} for  all the possible combinations of $M$ elements of $\mathcal{U}$. However, taking into account that the number of possible $M$-tuples  in $\mathcal U$ is of the order $(L-1)^M$, it is evident that the complexity of the above approach increases rapidly when $L>1$. This problem has been studied in \cite{Yang2015} where, through appropriate algebraic transformations, the authors are able to convert the SHM problem into a polynomial system whose solutions' set contains all the possible waveforms $\mathcal S$ of $M$ elements in $\mathcal{U}$. As a drawback of this approach, the number of switches $M$ needs to be prefixed. However, in some cases,  determining the number of switches which is necessary to reach the desired Fourier coefficients is not a straightforward task.
+	\JO{
 
-	\item[2.] \textbf{Continuity of the switching angles:} {\color{red} decir algo más} it is well-known that, fixed a waveform $\mathcal S$, the continuity of the switching locations with respect to small perturbations of the target Fourier coefficients may be quite cumbersome \cite{Yang2017}. This feature makes the  search very difficult, because if you take a some interval where you can solve the SHM problem, you need to assure that the solution exists in this interval. In this case, the SHM as control problem can change the waveform under small variation of the target Fourier coefficients.
+	\item[2.] \textbf{Conjunto solucionable en  intervalo compacto y convexo}:
+	Dado un forma de onda $\mathcal{S}$, el tamaño de su conjunto solucionable $\mathcal{R}_{\mathcal{S}}$ suele ser muy pequeño, dando políticas $\Pi_{\mathcal{S}}$ poco útiles. En la práctica se aborda esta problemática solucionando el problema \ref{pb:SHE opt} para un conjunto de formas de onda $\{\mathcal{S}_l\}_{l=1}^r$, obteniendo un conjunto de políticas $\{\Pi_{\mathcal{S}_l}\}_{l=1}^r$ dentro de sus respectivos conjuntos solucionables $\{\mathcal{R}_{\mathcal{S}_l}\}$. De esta manera, es posible abarcar un conjunto solucionable mayor. Sin embargo, dado que en general las distintas forma de onda puede tener conjuntos solucionables muy distintos. De manera que la unión de todas los conjuntos solucionables no tienen por que ser compacto, e incluso pudiendo carecer de unicidad de ángulos de conmutación para un target dado.
+	}
+
+	%\item[3.] \textbf{Continuity of the switching angles:} it is well-known that, fixed a waveform $\mathcal S$, the continuity of the switching locations with respect to small perturbations of the target Fourier coefficients may be quite cumbersome \cite{Yang2017}. This feature makes the  search very difficult, because if you take a some interval where you can solve the SHM problem, you need to assure that the solution exists in this interval. In this case, the SHM as control problem can change the waveform under small variation of the target Fourier coefficients.
+	\JO{
+	\item[3.] \textbf{Continuity of the switching angles:} Debido al conplejidad del conjunto solucionable ocasionado a la unión de conjuntos solucionables de distintas formas de onda, la continuidad de los ángulos de conmutación no se puede asegurar. Este comprotamiento lo informa \cite{Yang2017}, mostrando el caos la función $\Pi_{\mathcal{S}}$ ocasionado por el collage de formas de onda.
+	}
 \end{itemize}
 
-\UB{Add a conclusive paragraph.}
+\JO{
+A continuación presentaremos el problema de control óptimo y explicaremos como es capaz de resolver estos tres incovenientes.
+}
 
 \section{SHM problem as an Optimal Control Problem}\label{sec:Contributions}
 
@@ -329,6 +369,10 @@ where the set of admissible controls $\mathcal{U}_{ad}$ is defined as
 \end{problem}
 
 \UB{I think this remark has to be either rewritten or even eliminated}
+
+\JO{Esto viene a cuento, ya que de en el problema de optimización de SHE clasico \ref{pb:SHE opt} ocurre lo mismo.} \\
+
+
 \begin{remark}
 Note that, due to the coercivity of the cost functional, Problem \ref{pb:OCP1} admits at least one solution for any target $[\bm{a}_T;\bm{b}_T]^\top$. However, we say that the SHM problem admits a solution if and only if the minimum in Problem \ref{pb:OCP1} is equal to zero. Otherwise, we say that the target $[\bm{a}_T;\bm{b}_T]^\top$ is unreachable. In this work, we will not discuss the reachable set for the control problem \eqref{pb:OCP1}.
 \end{remark}
