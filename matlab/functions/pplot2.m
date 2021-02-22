@@ -31,7 +31,7 @@ ic.FontSize = 12;
 caxis([-1 1])
 colormap(jet(100))
 
-title('$u(\tau)$',fmt{:})
+title('$u(t)$',fmt{:})
 shading interp
 xlim([values(1) values(end)])
 ylim([tspan(1) tspan(end)])
@@ -40,8 +40,8 @@ yticks([0 pi/4 pi/2 3*pi/4 pi])
 yticklabels({'$0$','$\pi/4$','$\pi/2$','$3\pi/4$','$\pi$'})
 
 xticks([-0.8 -0.4 0 0.4 0.8])
-xlabel('$i_a$',fmt{:})
-ylabel('$\tau$',fmt{:})
+xlabel('$m$',fmt{:})
+ylabel('$t$',fmt{:})
 
 ax.XAxis.TickLabelInterpreter = 'latex';
 ax.YAxis.TickLabelInterpreter = 'latex';

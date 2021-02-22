@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.11.9)  19 FEB 2021 13:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.11.9)  22 FEB 2021 12:18
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -328,7 +328,7 @@ Package: soul 2003/11/17 v2.4 letterspacing/underlining (mf)
 \SOUL@ttwidth=\dimen167
 \SOUL@uldp=\dimen168
 \SOUL@ulht=\dimen169
-)) (/usr/local/texlive/2020/texmf-dist/tex/latex/xcolor/xcolor.sty
+) (/usr/local/texlive/2020/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
  (/usr/local/texlive/2020/texmf-dist/tex/latex/graphics-cfg/color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
@@ -343,7 +343,7 @@ Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
 Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
-) (/usr/local/texlive/2020/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
+)) (/usr/local/texlive/2020/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
 File: l3backend-pdfmode.def 2020-03-12 L3 backend support: PDF mode
 \l__kernel_color_stack_int=\count291
 \l__pdf_internal_box=\box52
@@ -430,6 +430,23 @@ Underfull \hbox (badness 2547) in paragraph at lines 52--53
 []\OT1/cmr/m/n/10 Selective Har-monic Mod-u-la-tion (SHM) [[][]Rodr^^S^^Pguez
  []
 
+Package epstopdf Info: Source file: <img/fig01.eps>
+(epstopdf)                    date: 2021-02-19 22:38:17
+(epstopdf)                    size: 68660 bytes
+(epstopdf)             Output file: <img/fig01-eps-converted-to.pdf>
+(epstopdf)                    date: 2021-02-19 22:38:19
+(epstopdf)                    size: 33143 bytes
+(epstopdf)             Command: <repstopdf --outfile=img/fig01-eps-converted-to.pdf img/fig01.eps>
+(epstopdf)             \includegraphics on input line 64.
+Package epstopdf Info: Output file is already uptodate.
+<img/fig01-eps-converted-to.pdf, id=101, 621.32124pt x 523.9575pt>
+File: img/fig01-eps-converted-to.pdf Graphic file (type pdf)
+<use img/fig01-eps-converted-to.pdf>
+Package pdftex.def Info: img/fig01-eps-converted-to.pdf  used on input line 64.
+(pdftex.def)             Requested size: 217.4657pt x 183.38786pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 [1{/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 pdfTeX warning: pdflatex: pop empty color page stack 0
@@ -442,249 +459,260 @@ pdfTeX warning: pdflatex: pop empty color page stack 0
 
 
 
-]
-Package epstopdf Info: Source file: <img/fig01.eps>
-(epstopdf)                    date: 2021-02-19 11:39:54
-(epstopdf)                    size: 70464 bytes
-(epstopdf)             Output file: <img/fig01-eps-converted-to.pdf>
-(epstopdf)                    date: 2021-02-19 11:39:56
-(epstopdf)                    size: 30602 bytes
-(epstopdf)             Command: <repstopdf --outfile=img/fig01-eps-converted-to.pdf img/fig01.eps>
-(epstopdf)             \includegraphics on input line 112.
-Package epstopdf Info: Output file is already uptodate.
-<img/fig01-eps-converted-to.pdf, id=122, 621.32124pt x 523.9575pt>
-File: img/fig01-eps-converted-to.pdf Graphic file (type pdf)
-<use img/fig01-eps-converted-to.pdf>
-Package pdftex.def Info: img/fig01-eps-converted-to.pdf  used on input line 112.
-(pdftex.def)             Requested size: 217.4657pt x 183.38786pt.
- [2 </Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/fig01-eps-converted-to.pdf>]
-Package hyperref Info: bookmark level for unknown definition defaults to 0 on input line 151.
-Package hyperref Info: bookmark level for unknown problem defaults to 0 on input line 172.
+] [2 </Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/fig01-eps-converted-to.pdf>]
+Package hyperref Info: bookmark level for unknown definition defaults to 0 on input line 156.
+Package hyperref Info: bookmark level for unknown problem defaults to 0 on input line 184.
+Package hyperref Info: bookmark level for unknown remark defaults to 0 on input line 199.
 
-Underfull \hbox (badness 1454) in paragraph at lines 187--187
+Underfull \hbox (badness 1454) in paragraph at lines 209--209
 []\OT1/cmr/bx/n/10 SHM as a finite-dimensional op-ti-miza-tion
  []
 
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 211--212
+Underfull \hbox (badness 10000) in paragraph at lines 233--234
 []
  []
 
 
-Underfull \vbox (badness 5924) has occurred while \output is active []
+Underfull \hbox (badness 10000) in paragraph at lines 247--248
+[]\OT1/cmr/m/it/10 We call
+ []
 
- [4]
-Overfull \hbox (16.91pt too wide) in paragraph at lines 338--339
+[4]
+Package epstopdf Info: Source file: <img/fig01a.eps>
+(epstopdf)                    date: 2021-02-22 09:39:05
+(epstopdf)                    size: 104791 bytes
+(epstopdf)             Output file: <img/fig01a-eps-converted-to.pdf>
+(epstopdf)                    date: 2021-02-22 10:04:49
+(epstopdf)                    size: 44444 bytes
+(epstopdf)             Command: <repstopdf --outfile=img/fig01a-eps-converted-to.pdf img/fig01a.eps>
+(epstopdf)             \includegraphics on input line 286.
+Package epstopdf Info: Output file is already uptodate.
+<img/fig01a-eps-converted-to.pdf, id=226, 599.23875pt x 518.93875pt>
+File: img/fig01a-eps-converted-to.pdf Graphic file (type pdf)
+<use img/fig01a-eps-converted-to.pdf>
+Package pdftex.def Info: img/fig01a-eps-converted-to.pdf  used on input line 286.
+(pdftex.def)             Requested size: 209.7367pt x 181.63129pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 287--287
+[]\OT1/cmr/m/n/9 Fig. 2. []En la figura su-pe-rior se mues-tra los
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 287--287
+\OT1/cmr/m/n/9 ^^Sangulos de con-mutaci^^Son ^^Soptimos $^^H[]$ para varias
+ []
+
+
+Underfull \hbox (badness 6978) in paragraph at lines 287--287
+\OT1/cmr/m/n/9 for-mas de onda $\OMS/cmsy/m/n/9 fS[]g[]$ \OT1/cmr/m/n/9 para un prob-lema SHE
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 287--287
+\OT1/cmr/m/n/9 (v^^Sease Re-mark [][]2.1[][]), con-siderando los con-jun-tos
+ []
+
+[5 </Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/fig01a-eps-converted-to.pdf>]
+Overfull \hbox (16.91pt too wide) in paragraph at lines 365--366
 []
  []
 
 Package epstopdf Info: Source file: <img/fig02.eps>
-(epstopdf)                    date: 2021-02-03 14:21:51
-(epstopdf)                    size: 134225 bytes
+(epstopdf)                    date: 2021-02-20 06:10:47
+(epstopdf)                    size: 124432 bytes
 (epstopdf)             Output file: <img/fig02-eps-converted-to.pdf>
-(epstopdf)                    date: 2021-02-03 14:22:01
-(epstopdf)                    size: 61062 bytes
+(epstopdf)                    date: 2021-02-20 06:10:49
+(epstopdf)                    size: 51237 bytes
 (epstopdf)             Command: <repstopdf --outfile=img/fig02-eps-converted-to.pdf img/fig02.eps>
-(epstopdf)             \includegraphics on input line 351.
+(epstopdf)             \includegraphics on input line 378.
 Package epstopdf Info: Output file is already uptodate.
-<img/fig02-eps-converted-to.pdf, id=220, 604.2575pt x 517.935pt>
+<img/fig02-eps-converted-to.pdf, id=257, 604.2575pt x 517.935pt>
 File: img/fig02-eps-converted-to.pdf Graphic file (type pdf)
 <use img/fig02-eps-converted-to.pdf>
-Package pdftex.def Info: img/fig02-eps-converted-to.pdf  used on input line 351.
+Package pdftex.def Info: img/fig02-eps-converted-to.pdf  used on input line 378.
 (pdftex.def)             Requested size: 196.38136pt x 168.32687pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 355--357
+Underfull \hbox (badness 10000) in paragraph at lines 386--388
 
  []
 
-[5]
-Underfull \hbox (badness 10000) in paragraph at lines 373--374
-
- []
-
-Package hyperref Info: bookmark level for unknown remark defaults to 0 on input line 377.
-Package hyperref Info: bookmark level for unknown proposition defaults to 0 on input line 403.
 [6 </Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/fig02-eps-converted-to.pdf>]
-Package hyperref Info: bookmark level for unknown theorem defaults to 0 on input line 420.
-
-Underfull \vbox (badness 1874) has occurred while \output is active []
-
+Package hyperref Info: bookmark level for unknown proposition defaults to 0 on input line 437.
+Package hyperref Info: bookmark level for unknown theorem defaults to 0 on input line 454.
  [7]
-Underfull \hbox (badness 10000) in paragraph at lines 502--502
-[][][][][]\OT1/cmr/m/n/9 https://github.com/djoroya/SHE-Optimal-Control-
- []
-
-
-Overfull \hbox (5.17928pt too wide) detected at line 515
+Overfull \hbox (15.37964pt too wide) detected at line 540
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 530--538
-
+Underfull \hbox (badness 3407) in paragraph at lines 555--563
+[]\OT1/cmr/m/n/10 To solve the op-ti-mal con-trol prob-lem ([][]4.3[][]), we
  []
 
-Package hyperref Info: bookmark level for unknown simulation defaults to 0 on input line 559.
-Package epstopdf Info: Source file: <img/fig05.eps>
-(epstopdf)                    date: 2021-02-05 13:10:18
-(epstopdf)                    size: 137294 bytes
-(epstopdf)             Output file: <img/fig05-eps-converted-to.pdf>
-(epstopdf)                    date: 2021-02-05 13:10:19
-(epstopdf)                    size: 72969 bytes
-(epstopdf)             Command: <repstopdf --outfile=img/fig05-eps-converted-to.pdf img/fig05.eps>
-(epstopdf)             \includegraphics on input line 569.
-Package epstopdf Info: Output file is already uptodate.
-<img/fig05-eps-converted-to.pdf, id=352, 470.75874pt x 317.185pt>
-File: img/fig05-eps-converted-to.pdf Graphic file (type pdf)
-<use img/fig05-eps-converted-to.pdf>
-Package pdftex.def Info: img/fig05-eps-converted-to.pdf  used on input line 569.
-(pdftex.def)             Requested size: 247.14485pt x 166.51976pt.
 
-Overfull \hbox (9.44496pt too wide) in paragraph at lines 568--570
-[]  [] 
+Underfull \hbox (badness 2376) in paragraph at lines 555--563
+\OT1/cmr/m/n/10 use a di-rect method. If we con-sider a par-ti-tion
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 555--563
+
  []
 
 [8]
-Package epstopdf Info: Source file: <img/fig06.eps>
-(epstopdf)                    date: 2021-02-05 13:09:56
-(epstopdf)                    size: 126471 bytes
-(epstopdf)             Output file: <img/fig06-eps-converted-to.pdf>
-(epstopdf)                    date: 2021-02-05 13:09:57
-(epstopdf)                    size: 70340 bytes
-(epstopdf)             Command: <repstopdf --outfile=img/fig06-eps-converted-to.pdf img/fig06.eps>
-(epstopdf)             \includegraphics on input line 584.
+Package hyperref Info: bookmark level for unknown simulation defaults to 0 on input line 593.
+Package epstopdf Info: Source file: <img/fig05.eps>
+(epstopdf)                    date: 2021-02-20 08:19:16
+(epstopdf)                    size: 235589 bytes
+(epstopdf)             Output file: <img/fig05-eps-converted-to.pdf>
+(epstopdf)                    date: 2021-02-20 08:19:17
+(epstopdf)                    size: 128379 bytes
+(epstopdf)             Command: <repstopdf --outfile=img/fig05-eps-converted-to.pdf img/fig05.eps>
+(epstopdf)             \includegraphics on input line 603.
 Package epstopdf Info: Output file is already uptodate.
-<img/fig06-eps-converted-to.pdf, id=369, 470.75874pt x 317.185pt>
-File: img/fig06-eps-converted-to.pdf Graphic file (type pdf)
-<use img/fig06-eps-converted-to.pdf>
-Package pdftex.def Info: img/fig06-eps-converted-to.pdf  used on input line 584.
+<img/fig05-eps-converted-to.pdf, id=392, 470.75874pt x 317.185pt>
+File: img/fig05-eps-converted-to.pdf Graphic file (type pdf)
+<use img/fig05-eps-converted-to.pdf>
+Package pdftex.def Info: img/fig05-eps-converted-to.pdf  used on input line 603.
 (pdftex.def)             Requested size: 247.14485pt x 166.51976pt.
 
-Overfull \hbox (9.44496pt too wide) in paragraph at lines 583--585
+Overfull \hbox (9.44496pt too wide) in paragraph at lines 602--604
+[]  [] 
+ []
+
+Package epstopdf Info: Source file: <img/fig06.eps>
+(epstopdf)                    date: 2021-02-20 08:21:08
+(epstopdf)                    size: 140089 bytes
+(epstopdf)             Output file: <img/fig06-eps-converted-to.pdf>
+(epstopdf)                    date: 2021-02-20 08:21:09
+(epstopdf)                    size: 73508 bytes
+(epstopdf)             Command: <repstopdf --outfile=img/fig06-eps-converted-to.pdf img/fig06.eps>
+(epstopdf)             \includegraphics on input line 618.
+Package epstopdf Info: Output file is already uptodate.
+<img/fig06-eps-converted-to.pdf, id=396, 470.75874pt x 317.185pt>
+File: img/fig06-eps-converted-to.pdf Graphic file (type pdf)
+<use img/fig06-eps-converted-to.pdf>
+Package pdftex.def Info: img/fig06-eps-converted-to.pdf  used on input line 618.
+(pdftex.def)             Requested size: 247.14485pt x 166.51976pt.
+
+Overfull \hbox (9.44496pt too wide) in paragraph at lines 617--619
 []  [] 
  []
 
 Package epstopdf Info: Source file: <img/fig08.eps>
-(epstopdf)                    date: 2021-02-05 13:09:35
-(epstopdf)                    size: 137086 bytes
+(epstopdf)                    date: 2021-02-22 12:00:15
+(epstopdf)                    size: 111727 bytes
 (epstopdf)             Output file: <img/fig08-eps-converted-to.pdf>
-(epstopdf)                    date: 2021-02-05 13:09:36
-(epstopdf)                    size: 80773 bytes
+(epstopdf)                    date: 2021-02-22 12:00:17
+(epstopdf)                    size: 93602 bytes
 (epstopdf)             Command: <repstopdf --outfile=img/fig08-eps-converted-to.pdf img/fig08.eps>
-(epstopdf)             \includegraphics on input line 598.
+(epstopdf)             \includegraphics on input line 632.
 Package epstopdf Info: Output file is already uptodate.
-<img/fig08-eps-converted-to.pdf, id=372, 470.75874pt x 317.185pt>
+<img/fig08-eps-converted-to.pdf, id=399, 434.62375pt x 317.185pt>
 File: img/fig08-eps-converted-to.pdf Graphic file (type pdf)
 <use img/fig08-eps-converted-to.pdf>
-Package pdftex.def Info: img/fig08-eps-converted-to.pdf  used on input line 598.
-(pdftex.def)             Requested size: 247.14485pt x 166.51976pt.
-
-Overfull \hbox (9.44496pt too wide) in paragraph at lines 597--599
-[]  [] 
- []
-
-Package hyperref Info: bookmark level for unknown proof defaults to 0 on input line 613.
-[9 </Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/fig05-eps-converted-to.pdf> </Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/fig06-eps-converted-to.pdf> </Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/fig08-eps-converted-to.pdf>]
+Package pdftex.def Info: img/fig08-eps-converted-to.pdf  used on input line 632.
+(pdftex.def)             Requested size: 228.17424pt x 166.51976pt.
+Package hyperref Info: bookmark level for unknown proof defaults to 0 on input line 647.
+[9 </Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/fig05-eps-converted-to.pdf> </Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/fig06-eps-converted-to.pdf> </Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/fig08-eps-converted-to.pdf>] [10]
 Package epstopdf Info: Source file: <img/fig03.eps>
-(epstopdf)                    date: 2021-02-03 14:34:25
-(epstopdf)                    size: 251625 bytes
+(epstopdf)                    date: 2021-02-20 06:59:51
+(epstopdf)                    size: 245562 bytes
 (epstopdf)             Output file: <img/fig03-eps-converted-to.pdf>
-(epstopdf)                    date: 2021-02-03 14:34:27
-(epstopdf)                    size: 111862 bytes
+(epstopdf)                    date: 2021-02-20 06:59:53
+(epstopdf)                    size: 106363 bytes
 (epstopdf)             Command: <repstopdf --outfile=img/fig03-eps-converted-to.pdf img/fig03.eps>
-(epstopdf)             \includegraphics on input line 695.
+(epstopdf)             \includegraphics on input line 729.
 Package epstopdf Info: Output file is already uptodate.
-<img/fig03-eps-converted-to.pdf, id=433, 586.19pt x 723.70375pt>
+<img/fig03-eps-converted-to.pdf, id=473, 586.19pt x 723.70375pt>
 File: img/fig03-eps-converted-to.pdf Graphic file (type pdf)
 <use img/fig03-eps-converted-to.pdf>
-Package pdftex.def Info: img/fig03-eps-converted-to.pdf  used on input line 695.
+Package pdftex.def Info: img/fig03-eps-converted-to.pdf  used on input line 729.
 (pdftex.def)             Requested size: 243.26431pt x 300.33145pt.
 
-Overfull \hbox (3.26431pt too wide) in paragraph at lines 695--696
+Overfull \hbox (3.26431pt too wide) in paragraph at lines 729--730
  [][] 
  []
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[10]
+[11 </Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/fig03-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <img/fig04.eps>
-(epstopdf)                    date: 2021-02-03 14:33:40
-(epstopdf)                    size: 411837 bytes
+(epstopdf)                    date: 2021-02-20 06:59:44
+(epstopdf)                    size: 405732 bytes
 (epstopdf)             Output file: <img/fig04-eps-converted-to.pdf>
-(epstopdf)                    date: 2021-02-03 14:33:42
-(epstopdf)                    size: 185991 bytes
+(epstopdf)                    date: 2021-02-20 06:59:47
+(epstopdf)                    size: 180163 bytes
 (epstopdf)             Command: <repstopdf --outfile=img/fig04-eps-converted-to.pdf img/fig04.eps>
-(epstopdf)             \includegraphics on input line 780.
+(epstopdf)             \includegraphics on input line 814.
 Package epstopdf Info: Output file is already uptodate.
-<img/fig04-eps-converted-to.pdf, id=459, 586.19pt x 723.70375pt>
+<img/fig04-eps-converted-to.pdf, id=498, 586.19pt x 723.70375pt>
 File: img/fig04-eps-converted-to.pdf Graphic file (type pdf)
 <use img/fig04-eps-converted-to.pdf>
-Package pdftex.def Info: img/fig04-eps-converted-to.pdf  used on input line 780.
+Package pdftex.def Info: img/fig04-eps-converted-to.pdf  used on input line 814.
 (pdftex.def)             Requested size: 243.26431pt x 300.33145pt.
 
-Overfull \hbox (3.26431pt too wide) in paragraph at lines 780--781
+Overfull \hbox (3.26431pt too wide) in paragraph at lines 814--815
 [][] 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[11 </Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/fig03-eps-converted-to.pdf>]
-Underfull \hbox (badness 2922) in paragraph at lines 831--833
+
+Underfull \hbox (badness 2922) in paragraph at lines 864--866
 \OT1/cmr/m/n/10 Entonces pode-mos in-tro-ducir el sigu-iente sis-tema
  []
 
-
-Overfull \hbox (9.45934pt too wide) detected at line 858
+[12 </Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/fig04-eps-converted-to.pdf>]
+Overfull \hbox (9.45934pt too wide) detected at line 891
 []
  []
 
 
-LaTeX Warning: Reference `th:GeneralP' on page 12 undefined on input line 860.
+LaTeX Warning: Reference `th:GeneralP' on page 13 undefined on input line 893.
 
-[12 </Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/img/fig04-eps-converted-to.pdf>] (/Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/SHE_full-paper_16feb.bbl
+(/Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/SHE_full-paper_16feb.bbl
 Underfull \hbox (badness 5036) in paragraph at lines 28--33
 []\OT1/cmr/m/n/8 Konstantinou, G. S. and
  []
 
+LaTeX Font Info:    Font shape `U/lasy/b/n' in size <8> not available
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 37.
 
-Underfull \hbox (badness 7308) in paragraph at lines 47--51
+Underfull \hbox (badness 7308) in paragraph at lines 59--63
 \OT1/cmr/m/n/8 Pre-dic-tive Static Pro-gram-ming.  \OT1/cmr/m/it/8 Acta As-tro-nau-tica\OT1/cmr/m/n/8 ,
  []
 
-) [13
-
-]
+) [13]
 \tf@thm=\write4
 \openout4 = `SHE_full-paper_16feb.thm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 876.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 876.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 909.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 909.
  (/Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/SHE_full-paper_16feb.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 876.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 876.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 909.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 909.
 Package rerunfilecheck Info: File `SHE_full-paper_16feb.out' has not changed.
-(rerunfilecheck)             Checksum: 0A85ACA3533A45F27A674904B2BA9F00;1406.
+(rerunfilecheck)             Checksum: 601B62A4A89093C70AF17AB778452CDF;1662.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 876.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 909.
  ) 
 Here is how much of TeX's memory you used:
- 8191 strings out of 480608
- 118989 string characters out of 5903630
- 398082 words of memory out of 5000000
- 23807 multiletter control sequences out of 15000+600000
- 553131 words of font info for 106 fonts, out of 8000000 for 9000
+ 8241 strings out of 480608
+ 119733 string characters out of 5903630
+ 399190 words of memory out of 5000000
+ 23839 multiletter control sequences out of 15000+600000
+ 555573 words of font info for 116 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 39i,23n,39p,1305b,457s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmitt10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib9.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl9.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on "/Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/SHE_full-paper_16feb.pdf" (13 pages, 1048737 bytes).
+ 39i,23n,41p,1305b,410s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib9.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl9.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
+Output written on "/Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/SHE_full-paper_16feb.pdf" (13 pages, 1168383 bytes).
 PDF statistics:
- 622 PDF objects out of 1000 (max. 8388607)
- 523 compressed objects within 6 object streams
- 98 named destinations out of 1000 (max. 500000)
- 196 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 662 PDF objects out of 1000 (max. 8388607)
+ 561 compressed objects within 6 object streams
+ 107 named destinations out of 1000 (max. 500000)
+ 225 words of extra memory for PDF output out of 10000 (max. 10000000)
 

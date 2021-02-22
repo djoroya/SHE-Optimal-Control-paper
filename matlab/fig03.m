@@ -49,7 +49,7 @@ ylim([-1.5 1.5])
 yline(0)
 xline(0)
 grid on
-xlabel('$u$',fmt{:})
+% xlabel('$u$',fmt{:})
 xticks([-1 0 1])
 yticks([-1 0 1])
 box
@@ -81,7 +81,7 @@ ic.Label.String = '$m$';
 ic.Label.Interpreter = 'latex';
 ic.Label.FontSize = 15;
 ic.TickLabels = num2str((ic.Ticks * 2 -1)');
-xlabel('$u$',fmt{:})
+% xlabel('$u$',fmt{:})
 xlim([-1.25 1.25]) 
 ylim([-0.15 0.15]) 
 xline(0)

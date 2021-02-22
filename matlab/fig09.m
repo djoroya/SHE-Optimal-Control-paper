@@ -2,14 +2,14 @@ clear
 
 compute = true;
 
-Ea = [1 5 7]';
-Eb = [1 5 7]';
+Ea = [1 5 7 ]';
+Eb = [1 5 7 ]';
 %
 Na = length(Ea);
 Nb = length(Eb);
 
 Nv = 200;
-Nv = 50;
+Nv = 100;
 values = linspace(-0.80,0.80,Nv);
 %%
 bmatrix = zeros(length(values),length(Ea));

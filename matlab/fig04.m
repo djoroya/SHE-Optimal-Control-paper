@@ -79,7 +79,7 @@ for iLeta = {Leta1,Leta2,Leta3}
        plot(iU,iLeta{:}(iU),'Marker','.','MarkerSize',20,'Color','k')
     end
 
-    xlabel('$u$',fmt{:})
+%     xlabel('$u$',fmt{:})
     title(str_title{iter},fmt{:})
     box
 end
@@ -139,7 +139,7 @@ for LL = {Leta1,Leta2,Leta3}
     ic.Label.FontSize = 15;
     ic.Ticks = [0 0.5 1];
     ic.TickLabels = num2str((ic.Ticks * 2 -1)');
-    xlabel('$u$',fmt{:})
+%     xlabel('$u$',fmt{:})
     xlim([-1.25 1.25]) 
     ylim([-0.11 0.13]) 
     xline(0)

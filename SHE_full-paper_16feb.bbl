@@ -31,11 +31,23 @@ Konstantinou, G.~S. and Agelidis, V.~G. (2010).
 \newblock {\em Proc. IEEE International Conference on Industrial Technology},
   pages 696--701.
 
+\bibitem[Oroya et~al., 2021]{simus}
+Oroya, J., Esteve, C., and Biccari, U. (2021).
+\newblock djoroya/she-optimal-control-paper, github repository.
+\newblock \url{https://github.com/djoroya/SHE-Optimal-Control-paper}.
+\newblock Accessed: 2021-02-22.
+
 \bibitem[Rodr{\'{i}}guez et~al., 2002]{Rodriguez2002}
 Rodr{\'{i}}guez, J., Lai, J.~S., and Peng, F.~Z. (2002).
 \newblock Multilevel inverters: a survey of topologies, controls, and
   applications.
 \newblock {\em IEEE Trans. Ind. Electron.}, 49(4):724--738.
+
+\bibitem[Sch{\"a}ttler and Ledzewicz, 2012]{schattler2012geometric}
+Sch{\"a}ttler, H. and Ledzewicz, U. (2012).
+\newblock {\em Geometric optimal control: theory, methods and examples},
+  volume~38.
+\newblock Springer Science \& Business Media.
 
 \bibitem[Sun et~al., 1996]{Sun1996}
 Sun, J., Beineke, S., and Grotstollen, H. (1996).
@@ -66,5 +78,10 @@ Yang, K., Zhang, Q., Zhang, J., Yuan, R., Guan, Q., Yu, W., and Wang, J.
   (2017).
 \newblock Unified selective harmonic elimination for multilevel converters.
 \newblock {\em IEEE Trans. Power Electron.}, 32(2):1579--1590.
+
+\bibitem[Zuazua, 2011]{Zuazua2011}
+Zuazua, E. (2011).
+\newblock {Switching control}.
+\newblock {\em Journal of the European Mathematical Society}, 13(1):85--117.
 
 \end{thebibliography}

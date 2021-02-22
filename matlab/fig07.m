@@ -2,14 +2,14 @@ clear
 
 compute = true;
 
-Ea = [1 5 7]';
-Eb = [1 5 7]';
+Ea = [1 5 7 11 13]';
+Eb = [1 5 7 11 13]';
 %
 Na = length(Ea);
 Nb = length(Eb);
 
 Nv = 200;
-Nv = 150;
+Nv = 100;
 values = linspace(-0.80,0.80,Nv);
 %%
 bmatrix = zeros(length(values),length(Ea));
@@ -19,7 +19,7 @@ amatrix = zeros(length(values),length(Eb));
 amatrix(:,1) = values;
 %%
 Nt = 200;
-Nt = 150;
+Nt = 300;
 tspan = linspace(0,pi,Nt);
 
 Ucal = linspace(-1,1,5)';
@@ -27,7 +27,7 @@ Ucal = linspace(-1,1,5)';
 Ucal(1) = Ucal(1) - 0.2;
 Ucal(end) = Ucal(end) + 0.2;
 
-eta = 5e2;
+eta = 1e1;
 %%%%%
 %win = @(u,a,b) 0.5*(tanh(eta*(u-a)) + tanh(eta*(b-u)));
 %Lk   = @(u) (Ucal(2:end) + Ucal(1:end-1)).*(u - Ucal(1:end-1)) + Ucal(1:end-1).^2;
@@ -43,7 +43,7 @@ fconstraints = [-1,1];
 if compute 
     for Lterm = Lterms
         iter = iter + 1;
-        [S,ftraj] = SHE2OCP_2SYM(Ea,Eb,Lterm{:},Nt);
+        [S,ftraj] = SHE2OCP_2SYM(Ea,Eb,Lterm{:},tspan);
         fopts{iter} = SolveOCP_2SYM_range(amatrix,bmatrix,S,ftraj,Nt,fconstraints);
     end
     save('data/fig07.mat')
@@ -57,6 +57,7 @@ pplot2(fopts{1},fig,Ea,Eb,Nv,tspan,values,amatrix,bmatrix)
 %%
 print(fig,'../img/fig07.eps','-depsc')
 
+print(fig,'../img/fig08.eps','-depsc')
 
 %%
 function result = Lk(u,Ucal)
