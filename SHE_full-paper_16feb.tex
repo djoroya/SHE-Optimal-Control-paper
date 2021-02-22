@@ -41,7 +41,7 @@ Selective Harmonic Modulation; Optimal Control Theory; Finite-Set Control; Pontr
 
 
 \begin{abstract}                          % Abstract of not more than 200 words.
-We consider the \emph{Selective Harmonic Modulation}(SHM) problem, consisting in the design of a staircase control signal with some prescribed frequency components. In this work, the SHE problem is addressed as an optimal control one in which the admissible controls are piece-wise constant functions, taking values only in a given finite set. In order to fulfill this constraint, we  introduce a cost functional \UB{with piece-wise linear penalization } which, by means of Pontryagin's maximum principle, makes the optimal control have the desired staircase form. An advantage of our approach, \UB{relevant in practical electrical engineering applications}, is that the number of commutations and the waveform need not be specified a priori. Indeed, our algorithm provides an admissible waveform as well as the location of the switches. Up to the best of our knowledge, this approach to the SHE problem via optimal control is new. Moreover, our methodology may be applicable to other optimal control problems with a finite-set constraint on the control. We also provide several numerical examples in which the SHM problem is solved by using our approach.
+We consider the \emph{Selective Harmonic Modulation} (SHM) problem, consisting in the design of a staircase control signal with some prescribed frequency components. In this work, the SHM problem is addressed as an optimal control one in which the admissible controls are piece-wise constant functions, taking values only in a given finite set. In order to fulfill this constraint, we  introduce a cost functional \UB{with piece-wise linear penalization } which, by means of Pontryagin's maximum principle, makes the optimal control have the desired staircase form. An advantage of our approach, \UB{relevant in practical electrical engineering applications}, is that the number of commutations and the waveform need not be specified a priori. Indeed, our algorithm provides an admissible waveform as well as the location of the switches. Up to the best of our knowledge, this approach to the SHM problem via optimal control is new. Moreover, our methodology may be applicable to other optimal control problems with a finite-set constraint on the control. We also provide several numerical examples in which the SHM problem is solved by using our approach.
 \end{abstract}
 
 \end{frontmatter}
@@ -53,25 +53,19 @@ Selective Harmonic Modulation (SHM) \cite{Rodriguez2002} is a well-known methodo
 
 Because of the growing complexity of modern electrical networks, consequence for instance of the high penetration of renewable energy sources, the demand in power of electronic converters is day by day increasing. For this and other reasons, SHM has been a preeminent research interest in the electrical engineering community, and a plethora of SHM-based techniques has been developed in recent years. An incomplete bibliography includes \cite{duranay2017selective,Janabi2020,Yang2017}.
 
-In broad terms, the technique consists in generating a \textit{control signal} with a desired harmonic spectrum by modulating or eliminating some specific lower-order frequencies. In practice, the signal is constructed as a step function with a finite number of switches, taking values only in a given finite set. Such a signal can be fully characterized by two features (see Figure \ref{fig:exampleSHE}): 
+In broad terms, the technique consists in generating a \textit{control signal} with a desired harmonic spectrum by modulating or eliminating some specific lower-order Fourier coefficients. In practice, the signal is constructed as a step function with a finite number of switches, taking values only in a given finite set. Such a signal can be fully characterized by two features (see Figure \ref{fig:exampleSHE}): 
 \begin{itemize}
-	\item[1.] The \textit{waveform}, i.e. the sequence of values that the function takes along the time interval.
-	\item[2.] The \textit{switching angles}, i.e. the sequence of times when the signal switches from one value to following one. 
+	\item[1.] The \textit{waveform}, i.e. the sequence of values that the function takes \UB{in its domain}.
+	\item[2.] The \textit{switching angles}, i.e. the sequence of \UB{points } where the signal switches from one value to following one. 
 \end{itemize}
 
-\begin{figure}[h]
-	\centering
-	\includegraphics[scale=0.35]{img/fig01.eps} 
-	\caption{A possible solution to Problem \ref{pb:SHEp}, where we considered the finite set of control $\mathcal{U} = \{-1, -1/2, 0, 1/2, 1\}$. We show the switching angles $\Phi$ and the waveform $\mS$ (see Definition \ref{def: waveform and switching angles}). Por último, dibujamos la función $u(t)$ en todo el intervalo $[0,2\pi)$, evindenciando la simetría de media onda presentada en la Ecuación \eqref{eq:half-wave symmetry}}
-	\label{fig:exampleSHE}
-\end{figure}
-Using this simple characterization of the signal, one can reduce, in some situations, the SHM problem to a finite-dimensional optimization problem.
-Given a suitable waveform, the SHM problem consists in finding the optimal location of the switching angles. However, this formulation carries some difficulties,  as for instance, the choice of a suitable waveform or the number of switching angles (see Section \ref{sec:SHE_finite-dim_pbm}).  
-\JOStart
-@Umberto: Igual aqui puedes meter el párrafo que me comentabas de literatura de switching control (\cite{Zuazua2011})
-\JOEnd
+Using this simple characterization of the signal, in many practical situations the SHM problem is reduced to a finite-dimensional optimization one in which, given a suitable waveform, the aim is to find the optimal location of the switching angles. This formulation is in analogy with what is known in the control literature as \textit{switching controls} (see \cite{Zuazua2011}), whose goal is to control the dynamics of a system by switching from an actuator to another in a systematic way so that, at each instant of time, only one actuator is active.
 
-In this work, we propose a new approach to SHM based on optimal control theory (see Section \ref{sec:Contributions}). The Fourier coefficients in the SHM problem are identified with the terminal state of a controlled dynamical system, where the control is actually the signal, solution to the SHM problem. The main difficulty in our approach arises from the fact that we look for piece-wise constant solutions, taking values only in a given finite set.
+One of the principal difficulties in addressing the SHM problem through finite-dimensional optimization is that the choice of a suitable waveform may not always be evident. In addition to that, also determining the optimal number of switching angles may be a quite cumbersome task (see Section \ref{sec:SHE_finite-dim_pbm}).  
+
+To overcome these difficulties, in this work we propose a new approach to SHM based on optimal control theory (see Section \ref{sec:Contributions}): the Fourier coefficients in the SHM problem are identified with the terminal state of a controlled dynamical system, where the control is actually the signal, solution to the SHM problem. 
+
+The main difficulty in our approach arises from the fact that we look for piece-wise constant solutions, taking values only in a given finite set.
 
 This kind of constraint on the control prevents one from applying the classical tools in optimal control theory, such as Pontryagin's maximum principle. In order to bypass this difficulty, we introduce a penalization term for the control, which guarantees that the optimal control will have the desired staircase structure. The optimization is then carried out over the controls in $L^\infty$, and then, standard computational algorithms in optimal control theory can be implemented to solve the SHM problem. 
 
@@ -104,7 +98,7 @@ By last, we finished with some conclusion and open problems.
 
 \section{Preliminaries}\label{sec:math_formulation}
 
-This section is devoted to the mathematical formulation of the SHM problem and to the introduction of the notation that will be used throughout the paper. Let 
+This section is devoted to the mathematical formulation of the SHM problem and to introduce the notation that will be used throughout the paper. Let 
 \begin{align}\label{eq:Udef}
 	\mathcal{U} = \{u_1, \ldots, u_L\}
 \end{align}
@@ -122,11 +116,11 @@ Due to applications in power converters,  it is typical to only consider functio
 \begin{align}\label{eq:half-wave symmetry}
 	u(t + \pi) = -u(t)\quad \mbox{for all}\; t \in [0,\pi).
 \end{align}
-In this way, we only need to determine $u$ in the interval $[0,\pi)$. Moreover, as a consequence of this symmetry, the Fourier series of $u$ only involves the odd terms, as the even terms just vanish, i.e.
+In this way, we only need to determine $u$ in the interval $[0,\pi)$. Moreover, as a consequence of this symmetry, the Fourier series of $u$ only involves the odd terms (as the even terms just vanish), i.e.
 \begin{align*}
 	u(t) = \sum_{\underset{j\, odd}{j \in \mathbb{N}}} a_j \cos(jt)+ \sum_{\underset{j\, odd}{j \in \mathbb{N}}}  b_j \sin(jt),
 \end{align*}
-where the coefficients $a_j$ and $b_j$ are given by
+with
 \begin{equation} \label{eq:an}
 	\begin{aligned}
 		a_j = \frac{2}{\pi} \int_0^\pi u(\tau ) \cos(j \tau)\,d\tau, 
@@ -136,53 +130,60 @@ where the coefficients $a_j$ and $b_j$ are given by
 \end{equation}
 In view of the half-wave symmetry \eqref{eq:half-wave symmetry}, in what follows, we will only work with the restriction $u|_{[0,\pi)}$, which, with some abuse of notation, we still denote by $u$. 
 
-As we anticipated,  we are only considering piece-wise constant functions, with a finite number of switches, taking values in $\mathcal{U}$.
-More precisely, we look for functions $u: [0,\pi)\to \mathcal{U}$ of the form
+As we anticipated,  we are only considering piece-wise constant functions with a finite number of switches and taking values in $\mathcal{U}$.
+More precisely, we look for $u: [0,\pi)\to \mathcal{U}$ of the form
 \begin{align}\label{eq:uExpl}
-	&u (t)= \sum_{m=0}^M s_m\chi_{[\phi_m,\phi_{m+1})} (t)
+	&u (t)= \sum_{m=0}^M s_m\chi_{[\phi_m,\phi_{m+1})} (t), \quad M\in\mathbb{N} 
 \end{align}
-for some $\mS = \{ s_m\}_{m=0}^M$,  with $M\in \mathbb{N}$, satisfying
+for some $\mS = \{ s_m\}_{m=0}^M$ satisfying
 \begin{align*}
 	s_m\in \mathcal{U} \; \text{ and } \; s_m\neq s_{m+1} \quad \forall m\in \{0,\ldots, M\}
 \end{align*}
-and $\Phi = \{ \phi_m\}_{m=1}^{M}$ satisfying
+and $\Phi = \{ \phi_m\}_{m=1}^{M}$ such that
 \begin{align*}
 	0= \phi_0 < \phi_1 <\ldots < \phi_M < \phi_{M+1} = \pi .
 \end{align*}
-In \eqref{eq:uExpl}, $\chi_{[\phi_m,\phi_{m+1})}$ denotes the characteristic function of the interval $[\phi_m,\phi_{m+1})$.
+In \eqref{eq:uExpl}, $\chi_{[\phi_m,\phi_{m+1})}$ denotes the characteristic function of the interval $[\phi_m,\phi_{m+1})$. \UB{With these notations we just introduced, we can now define the waveform and the switching angles as follows.}
 
-\medskip
+\bigskip
 
 \begin{definition}\label{def: waveform and switching angles}
 For a function $u: [0,\pi) \to \mathcal{U}$ of the form \eqref{eq:uExpl}, we refer to $\mS$ as the \emph{waveform}, and we refer to $\Phi$ as the \emph{switching angles}.
 \end{definition}
 
-Observe that any function $u$ of the form \eqref{eq:uExpl} is fully characterized by its waveform $\mS$ and its switching angles $\Phi$.
-Figure \ref{fig:exampleSHE} shows an example of a function $u$ satisfying \eqref{eq:uExpl}. 
+Observe that any $u$ of the form \eqref{eq:uExpl} is fully characterized by its waveform $\mS$ and switching angles $\Phi$. An example of such a function is displayed in Figure \ref{fig:exampleSHE}. 
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.35]{img/fig01.eps} 
+	\caption{A possible solution to the SHM Problem, where we considered the finite set of control $\mathcal{U} = \{-1, -1/2, 0, 1/2, 1\}$. We show the switching angles $\Phi$ and the waveform $\mS$ (see Definition \ref{def: waveform and switching angles}). The function $u(t)$ is displayed on the whole interval $[0,2\pi)$ to highlight the half-wave symmetry introduced in \eqref{eq:half-wave symmetry}.}
+	\label{fig:exampleSHE}
+\end{figure}
 
 \UB{ 
 In the practical engineering applications that motivated our study, due to technical limitations, it is preferable to employ signals taking consecutive values in $\mathcal{U}$. In the sequel, we will refer to this property of the waveform as the \emph{staircase property}.
 }
-We can rigorously formulate this property as follows: we say that a signal $u$ of the form \eqref{eq:uExpl} satisfies the staircase property if its waveform $\mS$ satisfies
+We can rigorously formulate this property as follows: we say that a signal $u$ of the form \eqref{eq:uExpl} fulfills the staircase property if its waveform $\mS$ satisfies
 \JOStart
 \begin{gather}\label{eq:staircase prop}
-	(s_m^{max},s_{m}^{min}) \cap \mathcal{U} = \emptyset, \quad \forall m\in \{ 0, \ldots, M-1 \},
+	(s_m^{min},s_{m}^{max}) \cap \mathcal{U} = \emptyset, \quad \forall m\in \{ 0, \ldots, M-1 \},
 \end{gather}
-Where 
-\begin{gather}
-	\notag s^{max}_m = \max\{s_m,s_{m+1}\} \\
-	\notag s^{min}_m = \min\{s_m,s_{m+1}\}.
-\end{gather}
+where 
+\begin{align*}
+	&s^{min}_m = \min\{s_m,s_{m+1}\} 
+	\\[5pt]
+	&s^{max}_m = \max\{s_m,s_{m+1}\}.
+\end{align*}
 \JOEnd
 
-%\UB{Defined in this way, it does not take into account that $s_{m+1}$ may be smaller than $s_m$.}
- 
 Note that when $\mathcal{U} = \{-1,1\}$ \UB{(the bi-level case)}, this property is satisfied for any $u$ of the form \eqref{eq:uExpl}.
 
 We can now formulate the SHM problem as follows:
-\newline
+
+\bigskip
+
 \begin{problem}[SHM]\label{pb:SHEp}
-Let $\mathcal{U}$ be a given set as in \eqref{eq:Udef}, and let $\mathcal{E} _a $ and $\mathcal{E} _b $ be two finite sets of odd numbers of cardinality $|\mathcal{E}_a| = N_a $ and $ |\mathcal{E} _b| = N_b$ respectively. For any two given vectors $\aT \in \mathbb{R}^{N_a}$ and $\bT \in \mathbb{R}^{N_b} $, construct a function $u: [0,\pi)\to\mathcal{U}$ of the form \eqref{eq:uExpl}, satisfying \eqref{eq:staircase prop}, such that the vectors $\bm{a} \in \mathbb{R}^{N_a}$ and $\bm{b} \in \mathbb{R}^{N_b}$, defined as
+Let $\mathcal{U}$ be given as in \eqref{eq:Udef}, and let $\mathcal{E} _a $ and $\mathcal{E} _b $ be two finite sets of odd numbers of cardinality $|\mathcal{E}_a| = N_a $ and $ |\mathcal{E} _b| = N_b$ respectively. For any two given vectors $\aT \in \mathbb{R}^{N_a}$ and $\bT \in \mathbb{R}^{N_b} $, construct a function $u: [0,\pi)\to\mathcal{U}$ of the form \eqref{eq:uExpl}, satisfying \eqref{eq:staircase prop}, such that the vectors $\bm{a} \in \mathbb{R}^{N_a}$ and $\bm{b} \in \mathbb{R}^{N_b}$, defined as
 \begin{align}\label{vectors a and b}
 	\bm{a} = \big( a_j \big)_{j\in \mathcal{E}_a} \qquad \text{and} \qquad
 	\bm{b} = \big( b_j \big)_{j\in \mathcal{E}_b}
@@ -197,19 +198,19 @@ where the coefficients $a_j$ and $b_j$ in \eqref{vectors a and b} are given by \
 
 \JOStart
 \begin{remark}[SHE]\label{remark:SHE}
-	Hemos formulado el SHC de  manera  general, sin embargo en la literatura de electrónica de potencia si el problema SHC tiene los vectores objetivo tal que: 
-	\begin{gather}
-		\notag (a_T)_1 \neq 0  \hspace{1em} (a_T)_{i\neq1} = 0 \hspace{1em} \forall i \in \mathcal{E}_a \\
-		\notag (b_T)_1 \neq 0  \hspace{1em} (b_T)_{j\neq1} = 0 \hspace{1em} \forall j \in \mathcal{E}_b 
-	\end{gather}
-	entonces el problema es llamado, Selective Harmonic Elimination (SHE) \cite{Sun1996}. El problema SHE tiene tiene como objetivo generar una señal con  amplitud $m_1 = \sqrt{a_1^2+b_1^2}$ y  fase $\varphi_1=\arctan(b_1/a_1)$, removiendo la amplitud de las frecuencias sucesivas. De esta manera SHE se puede entender como un generador de  modos de Fourier limpios mediante un señal escalonada.
+In Problem \ref{pb:SHEp}, we gave a very general formulation of SHM. This formulation contains also the so-called \emph{Selective Harmonic Elimination (SHE)} problem (see \cite{Sun1996}), in which the target vectors are such that 
+\begin{gather}
+	\notag (a_T)_1 \neq 0  \hspace{1em} (a_T)_{i\neq1} = 0 \hspace{1em} \forall i \in \mathcal{E}_a 
+	\\[3pt]
+	\notag (b_T)_1 \neq 0  \hspace{1em} (b_T)_{j\neq1} = 0 \hspace{1em} \forall j \in \mathcal{E}_b. 
+\end{gather}
+SHE is of great relevance in the electric engineering literature. Its objective is to generate a signal with amplitude $m_1 = \sqrt{a_1^2+b_1^2}$ and phase $\varphi_1=\arctan(b_1/a_1)$, removiendo la amplitud de las frecuencias sucesivas. De esta manera SHE se puede entender como un generador de  modos de Fourier limpios mediante un señal escalonada.
 \end{remark}
 \JOEnd
 
 \section{SHM as a finite-dimensional optimization problem}\label{sec:SHE_finite-dim_pbm}
 
-A typical approach to address the SHM problem \eqref{pb:SHEp} consists in looking for solutions having a specific waveform determined a priori (see \cite{Yang2015,Konstantinou2010,Sun1996}). This approach allows to reduce Problem \ref{pb:SHEp} to a finite-dimensional optimization problem.
-Indeed, if the waveform $\mathcal S$ of a solution to the SHM problem is known,  then it only remains to find suitable switching angles $\Phi$. This can be cast as an optimization \UB{problem}, consisting in minimizing, over the choice of $\Phi = \{\phi_m\}_{m=1}^{M}$, the euclidean distance between the  vectors $(\bm{a}, \bm{b})$ and $(\aT,\bT)$ as defined in Problem \ref{pb:SHEp}.
+A typical approach to address the SHM Problem \ref{pb:SHEp} (see \cite{Yang2015,Konstantinou2010,Sun1996}) consists in looking for solutions having a specific waveform determined a priori and looking for suitable switching angles $\Phi$ allowing to reach the desired target. 
 
 Note that, for a fixed waveform $\mS$, the Fourier coefficients of a function $u$ of the form \eqref{eq:uExpl} can be written in terms of the switching angles $\Phi$ in the following way:
 \begin{align*}
@@ -225,7 +226,8 @@ and
 \begin{align*}
 	\bm{b}_\mS (\Phi) := \big(b_j (\Phi)\big)_{j\in \mathcal{E}_b} \in \mathbb{R}^{N_b}.
 \end{align*}
-The SHM problem can therefore be reformulated as an $M$-dimensional optimization problem.
+
+In this framework, SHM can then be cast as a finite-dimensional optimization process consisting in minimizing, over the choice of $\Phi = \{\phi_m\}_{m=1}^{M}$, the euclidean distance between the vectors $(\bm{a}, \bm{b})$ and $(\aT,\bT)$ as defined in Problem \ref{pb:SHEp}.
 
 \bigskip
 
@@ -237,11 +239,11 @@ Let $\mathcal{E}_a$, $\mathcal{E}_b$ and the targets $\aT$ and $\bT$ be given as
 	&\mbox{subject to: } 0 = \phi_0 <\phi_1 < \ldots < \phi_{M} < \phi_{M+1} = \pi. \notag 
 \end{align}
 \end{problem}
-
 \JOStart
-\vspace{-1.0em}
+%\vspace{-1.0em}
+At this regard, it is important to notice that the optimization Problem \ref{pb:SHE opt} solves the original Problem \ref{pb:SHEp} only when the optimal cost is zero. 
 
-Es importante notar que el Problema de optimización \ref{pb:SHE opt} solo resuelve el Problema original \ref{pb:SHEp} cuando el coste óptimo es nulode manera que es necesario caracterizar el  espacio de targets $(\aT,\bT) $ donde existe solución. Con este objetivo definiremos la función de coste óptima y luego a partir de ella el conjunto solucionable\footnote{A continuación utilizaremos adrede definiciones con nombres utilizados ampliamente en los problemas de control óptimo, de manera que el lector pueda notar la gran anoalogía que existe entre el problema finito dimensional y el problema de control óptimo propuesto en la subsección \ref{subsec:SHE as CP}.}. 
+cuando el coste óptimo es nulode manera que es necesario caracterizar el  espacio de targets $(\aT,\bT) $ donde existe solución. Con este objetivo definiremos la función de coste óptima y luego a partir de ella el conjunto solucionable\footnote{A continuación utilizaremos adrede definiciones con nombres utilizados ampliamente en los problemas de control óptimo, de manera que el lector pueda notar la gran anoalogía que existe entre el problema finito dimensional y el problema de control óptimo propuesto en la subsección \ref{subsec:SHE as CP}.}. 
 \vspace{1em}
 \begin{definition}[Optimal Cost Function]
 	We call optimal cost function $V_{\mS}:\mathbb{R}^{N_a}\times \mathbb{R}^{N_b} \rightarrow \mathbb{R}$, the function that take as input variables the vector targets $\aT$ and $\bT$ and return the optimal cost of the Problem \ref{pb:SHE opt}.
@@ -292,29 +294,23 @@ Debido al conplejidad de un política formada por unión de  distintas formas de
 
 \section{SHM problem as an Optimal Control Problem}\label{sec:Contributions}
 
-Our main contribution consists in the formulation of the SHM problem as an optimal control problem. The Fourier coefficients of the signal $u(t)$ are identified with the terminal state of a controlled dynamical system of $N_a+N_b$ components defined in the time-interval $[0,\pi]$.  The control of the system is precisely the signal $u(t)$, defined as a function $[0,\pi]\to \mathcal{U}$, which has to steer the state from the origin to the desired values of the prescribed Fourier coefficients. A main feature of the SHM problem is that we are looking for signal functions $u$ of the form \eqref{eq:uExpl} satisfying \eqref{eq:staircase prop}. However, adding directly this constraint on the control makes the optimal control problem extremely difficult, and prevents us from applying standard arguments such as the Pontryagin maximum principle, and implementing all the computational techniques developed in the last decades to solve optimal control problems.
+Our main contribution in the present paper consists in formulating the SHM problem from the viewpoint of optimal control. In this formulation, the Fourier coefficients of the signal $u(t)$ are identified with the terminal state of a controlled dynamical system of $N_a+N_b$ components defined in the time-interval $[0,\pi]$.  The control of the system is precisely the signal $u(t)$, defined as a function $[0,\pi]\to \mathcal{U}$, which has to steer the state from the origin to the desired values of the prescribed Fourier coefficients. 
 
-In the next subsection, we describe how the Fourier coefficients of the function $u(t)$ can be seen as the final state of a dynamical system controlled by $u(t)$. This allows one to formulate the SHM problem as a control problem. For notation simplicity, we shall reverse the time on the dynamics in order to turn the control problem in a null-controllability one. Note that, since we look for solutions having the specific form \eqref{eq:uExpl}, we need to impose constraints on the set of admissible controls.
+The starting point of this approach is to rewrite the Fourier coefficients of the function $u(t)$ as the final state of a dynamical system controlled by $u(t)$. 
 
-%\vspace{1em}
-%\begin{definition}[Digital control]\label{def:digital control}
-%  Let $\mathcal{U}$ be a given set as in \eqref{eq:Udef}.  We say that the function  $u\in L^\infty ([0,\pi);\mathbb{R})$ is a \emph{digital control} if there exist $M\in \mathbb{N}$, $\mS=\{ s_m\}_{m=0}^M$ and $\Phi = \{ \phi_m\}_{m=1}^M$ satisfying \eqref{waveform def}  and \eqref{switching angles def} such that $u$ can be written as
-%  $$
-%  u (\tau)= \sum_{m=0}^M s_m\chi_{[\phi_m,\phi_{m+1})} (\tau)
-%  $$
-%\end{definition}
+%This allows one to formulate the SHM problem as a control problem. For notation simplicity, we shall reverse the time on the dynamics in order to turn the control problem in a null-controllability one. Note that, since we look for solutions having the specific form \eqref{eq:uExpl}, we need to impose constraints on the set of admissible controls.
 
-\subsection{The SHE problem as  a null-controllability problem}\label{subsec:SHE as CP}
+%\subsection{The SHE problem as  a null-controllability problem}\label{subsec:SHE as CP}
 
-First of all,  let us note that, for any function $u\in L^\infty ([0,\pi]; \mathbb{R})$, in view of \eqref{eq:an},  any Fourier coefficient $a_j$ satisfies
+To this end, let us first note that, in view of \eqref{eq:an}, for all $u\in L^\infty ([0,\pi];\mathbb{R})$ any Fourier coefficient $a_j$ satisfies
 \begin{align*}
 	a_j = y(\pi), 
 \end{align*}
-where $y\in C([0,\pi];\mathbb{R})$ is the function defined as
+with $y\in C([0,\pi];\mathbb{R})$ defined as
 \begin{align*}
-	y(t) = \dfrac{2}{\pi} \int_0^t u(\tau) \cos(j\, \tau) d\tau,	
+	y(t) = \dfrac{2}{\pi} \int_0^t u(\tau) \cos(j\, \tau) d\tau.
 \end{align*}
-and as a consequence of the fundamental theorem of calculus, $y(\cdot)$ is the unique solution to the differential equation
+Besides, as a consequence of the fundamental theorem of calculus, $y(\cdot)$ is the unique solution to the differential equation
 \begin{equation}\label{eq: ODE Fourier}
 	\begin{cases}
 		\dot{y} (t) = \dfrac{2}{\pi} \cos(j\, t) u(t), \qquad  t\in [0,\pi]
@@ -324,7 +320,7 @@ and as a consequence of the fundamental theorem of calculus, $y(\cdot)$ is the u
 \end{equation}
 Analogously, we can also write the Fourier coefficients $b_j$, defined in \eqref{eq:an}, as the solution at time $t=\pi$ of a differential equation similar to \eqref{eq: ODE Fourier}.
 
-Hence, for $\mathcal{E}_a$, $\mathcal{E}_b$, $\aT$ and $\bT$ given as in Problem \ref{pb:SHEp}, the SHM problem can be reduced to finding a control $u(\cdot)$ of the form \eqref{eq:uExpl}, satisfying \eqref{eq:staircase prop}, such that the solution $\bm{y} \in C([0,\pi]; \mathbb{R}^{N_a+N_b})$ to the dynamical system
+Hence, for $\mathcal{E}_a$, $\mathcal{E}_b$, $\aT$ and $\bT$ given, the SHM Problem \ref{pb:SHEp} can be reduced to finding a control $u(\cdot)$ of the form \eqref{eq:uExpl}, satisfying \eqref{eq:staircase prop}, such that the solution $\bm{y} \in C([0,\pi]; \mathbb{R}^{N_a+N_b})$ to the dynamical system
 \begin{equation}\label{eq:forward dyn syst}
 	\begin{cases}
 		\dot{\bm{y}}(t) = \dfrac{2}{\pi} \bm{\mathcal{D}}(t) u(t), \qquad  t\in [0,\pi]
@@ -357,7 +353,7 @@ Here, $e_a^i$ and $e_b^i$  denote the elements in $\mathcal{E}_a$ and  $\mathcal
 \begin{align*}
 	\mathcal{E}_a = \{e_a^1,e_a^2,e_a^3,\dots,e_a^{N_a}\}, \quad \mathcal{E}_b = \{e_b^1,e_b^2,e_b^3,\dots,e_b^{N_b}\}.
 \end{align*}
-For notation simplicity, we reverse the time in \eqref{eq:forward dyn syst}, using the transformation $\bm{x} (t) = \bm{y}(\pi - t)$, so that the SHM problem turns into the following null-controllability problem with initial condition $\bm{x}(0) = [\aT; \bT]^\top$ (see also Figure \ref{fig:evolution_x}):
+Moreover,for notation simplicity, we reverse the time in \eqref{eq:forward dyn syst} using the transformation $\bm{x} (t) = \bm{y}(\pi - t)$. In this way, the SHM problem converts into the following null-controllability one with initial condition $\bm{x}(0) = [\aT; \bT]^\top$ (see also Figure \ref{fig:evolution_x}):
 
 \medskip
 
@@ -399,19 +395,20 @@ where the set of admissible controls $\mathcal{U}_{ad}$ is defined as
 \end{align*}
 \end{problem}
 
-\UB{I think this remark has to be either rewritten or even eliminated}
-
 \begin{remark}
 Note that, due to the coercivity of the cost functional, Problem \ref{pb:OCP1} admits at least one solution for any target $[\aT;\bT]^\top$. However, we say that the SHM problem admits a solution if and only if the minimum in Problem \ref{pb:OCP1} is equal to zero. Otherwise, we say that the target $[\aT;\bT]^\top$ is unreachable. In this work, we will not discuss the reachable set for the control problem \eqref{pb:OCP1}.
 \end{remark}
 
+A main feature of the SHM problem is that we are looking for signal functions $u$ of the form \eqref{eq:uExpl} satisfying \eqref{eq:staircase prop}. In principle, this can be guaranteed by by adding directly this constraint on the set of admissible controls $\mathcal{U}_{ad}$. Notwithstanding that, the inclusion of such a constraint makes the optimal control problem extremely difficult, as it prevents us from applying standard arguments such as the Pontryagin maximum principle, and implementing all the computational techniques developed in the last decades to solve optimal control problems. As a matter of fact, the classical tools in optimal control theory seem not to be adapted to handle such constraints on the control. In order to bypass this difficulty, we propose a modification of Problem \ref{pb:OCP1} by adding to the cost functional a penalization term for the control. 
 
-
-\JOStart
-@Umberto,Carlos: Si que hay "classical tools" para obtener bang-bang control, una forma es minimizar el tiempo, cosa que este contexto no tiene sentido. Manteniendo el intervalo temporal fijo se se puede minimizar la norma $L^1$ para obtener bang-off-bang.
-\JOEnd
-
-Due to the constraints in the definition of the set of admissible controls $\mathcal{U}_{ad}$,  it is difficult to construct solutions to Problem \ref{pb:OCP1}. The classical tools in optimal control theory seem not to be adapted to handle such constraints on the control. In order to bypass this difficulty, we propose a modification of the optimal control problem by adding, to the cost functional, a penalization term for the control. As we shall prove, a suitable choice of this penalization term makes the optimal control have the desired staircase structure \eqref{eq:uExpl} with \eqref{eq:staircase prop}, even if we do not explicitly impose this structure as a constraint on the control. Moreover, by multiplying the penalization term by a (small) weighting parameter $\varepsilon$, we can control the precision of the optimal control for the perturbed problem, guaranteeing that the final state of the optimal trajectory is close enough to zero.
+In what follows, if not stated differently, we will always denote
+\begin{align*}
+	L^\infty:=L^\infty ([0,\pi]; [-1,1]).
+\end{align*}
+We can then give the following equivalent formulation of Problem \ref{pb:OCP1}.
+%\JOStart
+%@Umberto,Carlos: Si que hay "classical tools" para obtener bang-bang control, una forma es minimizar el tiempo, cosa que este contexto no tiene sentido. Manteniendo el intervalo temporal fijo se se puede minimizar la norma $L^1$ para obtener bang-off-bang.
+%\JOEnd
 
 \bigskip
 
@@ -420,17 +417,13 @@ Fix $\varepsilon>0$ and a function $\mathcal{L}\in C([-1,1];\mathbb{R})$.  Let $
 \begin{align*}
 	&\displaystyle\min_{u \in L^\infty}\;\dfrac{1}{2} \|\bm{x}(\pi)\|^2 + \varepsilon \displaystyle\int_0^\pi \mathcal{L}(u(t)) dt 
 	\\[5pt] 
-	&\text{subject to the dynamics \eqref{eq:CauchyReversed}},
-\end{align*}
-where, in this case, the set of admissible controls is just 
-\begin{align*}
-	L^\infty:=L^\infty ([0,\pi]; [-1,1]).
+	&\text{subject to the dynamics \eqref{eq:CauchyReversed}}.
 \end{align*}
 \end{problem}
 
-Observe that, in Problem \ref{pb:OCP_penalizado}, we do not impose the constraint that the control has to be the form \eqref{eq:uExpl} and satisfy the staircase property. However, for a given finite set $\mathcal{U}$ as in \eqref{eq:Udef}, we need to construct $\mathcal{L}$ in such a way that any optimal control $u^\ast$, solution to Problem \ref{pb:OCP_penalizado}, has the from \eqref{eq:uExpl}.
+Observe that, in Problem \ref{pb:OCP_penalizado}, we do not impose the constraint that the control has to be the form \eqref{eq:uExpl} and satisfy the staircase property. Nevertheless, as we shall see, these properties of $u$ will arise naturally from a suitable choice of the Lagrangian $\mathcal{L}$.
 
-Another important aspect that needs to be taken into account is that the penalization term for the control might prevent the optimal trajectory from reaching the target. In other words, even if there exists a control for which the optimal trajectory satisfies $\bm{x} (\pi) = 0$, the optimal control in Problem \ref{pb:OCP_penalizado} might not do so, and therefore, the solution to Problem \ref{pb:OCP_penalizado} would not be a solution to the SHM problem. Nevertheless, by taking $\varepsilon$ small enough, we can guarantee some accuracy for the solution of Problem \ref{pb:OCP_penalizado}. This is the content of the following Proposition.
+Another important aspect that needs to be taken into account is that the penalization term for the control might prevent the optimal trajectory from reaching the target. In other words, even if there exists a control for which the optimal trajectory satisfies $\bm{x} (\pi) = 0$, the optimal control in Problem \ref{pb:OCP_penalizado} might not do so, and therefore, the solution to Problem \ref{pb:OCP_penalizado} would not be a solution to the SHM problem. This issue may be prevented by a proper selection of the weighting parameter $\varepsilon$ which allows to tune the precision of the optimal control for the perturbed problem, guaranteeing that the final state of the optimal trajectory is close enough to zero. In more detail, we have the following result.
 
 \bigskip
 
@@ -439,32 +432,35 @@ Assume that $[\aT,\bT]^\top$ is such that Problem \ref{pb:SHEpControl} admits a 
 \begin{align*} 
 	\| \bm{x}^\ast (\pi)  \|^2 \leq  4 \varepsilon \pi \| \mathcal{L}\|_\infty,
 \end{align*}
-where $\| \mathcal{L}\|_\infty$ denotes the max-norm in $C([-1,1]; \mathbb{R})$.
+where $\| \cdot\|_\infty$ denotes the max-norm in $C([-1,1]; \mathbb{R})$.
 \end{proposition}
 
-The elementary proof is postponed to Section \ref{sec:Proof}. Let us now describe the construction of penalization functions $\mathcal{L}$ which guarantee that any solution to Problem \ref{pb:OCP_penalizado} has the form \eqref{eq:uExpl} and satisfies \eqref{eq:staircase prop}. We distinguish two cases, depending on the cardinality of $\mathcal{U}$.
+The proof of Proposition \ref{Prop:approx controllability} is postponed to Section \ref{sec:Proof}. Let us now describe the construction of penalization functions $\mathcal{L}$ which guarantee that any solution to Problem \ref{pb:OCP_penalizado} has the form \eqref{eq:uExpl} and satisfies \eqref{eq:staircase prop}. To this end, we will distinguish two cases, depending on the cardinality of $\mathcal{U}$.
 
 \subsection{Bilevel SHM problem via OCP (Bang-Bang Control)} 
 
 In this case, the control set $\mathcal{U}$ defined in \eqref{eq:Udef} has only two elements, i.e.  $\mathcal{U}=\{-1,1\}$.
-In the control theory literature, a control taking only two values is known as \emph{bang-bang control}. In the SHM literature, this kind of solution are called bi-level solutions. Note that in this case, any $u$ with the form \eqref{eq:uExpl}  trivially satisfies the staircase property \eqref{eq:staircase prop}.
+In the control theory literature, a control taking only two values is known as \emph{bang-bang control}. In the SHM literature, this kind of solution are called \textit{bi-level solutions}. Note that in this case, any $u$ with the form \eqref{eq:uExpl}  trivially satisfies the staircase property \eqref{eq:staircase prop}.
 
 \bigskip
 
+The first main result of the present paper is the following.
+
+\bigskip
 \begin{theorem}\label{th:bang-bang}
 Let $\mathcal{U}=\{ -1, 1\}$, and consider Problem \ref{pb:OCP_penalizado}. If the function $\mathcal{L}\in C([-1,1];\mathbb{R})$ is concave, then any optimal control $u^\ast$, solution to Problem \ref{pb:OCP_penalizado}, has a bang-bang structure, i.e. it has the form \eqref{eq:uExpl}.
 \end{theorem}
 
-The proof is postponed to Section \ref{sec:Proof}, and follows from the optimality conditions given by the Pontryagin's maximum principle. The fact that the control $u$ acts linearly in \eqref{eq:CauchyReversed}, together with the concavity of $\mathcal{L}$, implies that the Hamiltonian is also concave, and then, the minimum is always attained at the limits of the interval $[-1,1]$.
+The proof of Theorem \ref{th:bang-bang} is postponed to Section \ref{sec:Proof}, and follows from the optimality conditions given by the Pontryagin's maximum principle. The fact that the control $u$ acts linearly in \eqref{eq:CauchyReversed}, together with the concavity of $\mathcal{L}$, implies that the Hamiltonian is also concave, and then, the minimum is always attained at the limits of the interval $[-1,1]$.
 
 We point out that, by choosing different penalization functions $\mathcal{L}$, we can obtain solutions to the SHE problem with different waveforms.
-Typical choices of penalization functions $\mathcal{L}$, which give rise to bang-bang controls are 
+Typical choices which give rise to bang-bang controls are 
 \begin{align*}
 	\mathcal{L}(u) = u,  \quad \mathcal{L}(u) = -u,  \quad \mathcal{L}(u) = -u^2.
 \end{align*} 
 See Figure \ref{fig:Bang-Bang-penalization} for an illustration.
 
-\subsection{Multilevel SHE problem via OCP}
+\subsection{Multilevel SHM problem via OCP}
 
 Inspired by the ideas of the previous subsection, we can address the case when $\mathcal{U}$ contains more than two elements. \UB{This is known in the electrical engineering literature as the \textit{multilevel SHM problem}}. Now, the goal is to construct a function $\mathcal{L}$ such that the Hamiltonian associated to Problem \ref{pb:OCP_penalizado} always attains the minimum at points in $\mathcal{U}$.
 A way to construct such a function $\mathcal{L}$ is to interpolate a parabola in $[-1,1]$ by affine functions, considering the elements in $\mathcal{U}$ as the interpolating points.  Since, between any two points in $\mathcal{U}$,  the function $\mathcal{L}$ is a straight line,  the Hamiltonian is a concave function in these intervals, and hence, the minimum is always attained at points in $\mathcal{U}$.
@@ -476,7 +472,7 @@ For some $0<a\in\mathbb{R}$ and $b\in \mathbb{R}$, set the function
 \begin{align*}
 	\mathcal{P}(u) = a (u-b)^2.
 \end{align*}
-Consider the Problem \ref{pb:OCP_penalizado} with $\mathcal{L}$ given by
+Consider the Problem \ref{pb:OCP_penalizado} with 
 \begin{align}\label{eq:PLP}
 	&\mathcal{L}(u) = \begin{cases}
             \lambda_k(u) & \text{if }  u \in [u_k,u_{k+1}[ \\ \mathcal{P}(1) & \text{if } u = u_{L} 
@@ -494,28 +490,26 @@ Then any optimal control $u^\ast$, solution to Problem \ref{pb:OCP_penalizado}, 
 \bigskip
 
 \begin{remark}[\emph{Bang-off-bang control}]
-We note, as a special case, that when  $\mathcal{U}= \{-1,0,1\}$, we can just use the $L^1$-norm of the control as penalization function, i.e. $\mathcal{L}(u) = |u|$. This gives yields to the so-called \emph{bang-off-bang} controls, that are widely studied in the literature \cite{Wang2020}. By taking a different parabola $\mathcal{P}$, one can obtain different bang-off-bang solutions to the SHE problem.
+We note that when  $\mathcal{U}= \{-1,0,1\}$, as penalization function we can just use the $L^1$-norm of the control, i.e. $\mathcal{L}(u) = |u|$. This yields to the so-called \emph{bang-off-bang} controls, that are widely studied in the literature \cite{Wang2020}. By taking a different parabola $\mathcal{P}$, one can then obtain different bang-off-bang solutions to the SHM problem.
 \end{remark}
 
-We illustrate in Figure \ref{fig:SHE-multi} different examples of penalization functions $\mathcal{L}$ giving rise to multilevel solutions to the SHE problem. We point out that, by varying the values of $a$ and $b$ in Theorem \ref{th:PLP}, we an obtain solutions with different waveforms.
+We illustrate in Figure \ref{fig:SHE-multi} different examples of penalization functions $\mathcal{L}$ giving rise to multilevel solutions to the SHM problem. We point out that, by varying the values of $a$ and $b$ in Theorem \ref{th:PLP}, we can obtain solutions with different waveforms.
+
+\bigskip
 
 \begin{remark}
 
-We shall remark that in Theorem \ref{th:PLP} the Lagrangian $\mathcal L$ can actually have a more general form than \eqref{eq:PLP}, still yielding to an optimal control $u^\ast$, solution to Problem \ref{pb:OCP_penalizado}, with the has the form \eqref{eq:uExpl} and satisfying \eqref{eq:staircase prop}.
-
-\JOStart
-Dado una función $\mathcal{P}(u)$ estrictamente convexa podemos definir un lagrangiano $\mathcal{L}(u)$ de la misma forma que \eqref{eq:PLP}, pero con funciones $\lambda_k$ más generales. Then, a sufficient condition for having controls in the desired form for the SHM problem is that, for all $k \in \{1,\dots,N_u-1\}$, the functions $\lambda_k$ are concave.
-\JOEnd
+For completeness, we shall mention that in Theorem \ref{th:PLP} the Lagrangian $\mathcal L$ can actually have a more general form than \eqref{eq:PLP}, still yielding to an optimal control $u^\ast$ with the form \eqref{eq:uExpl} and satisfying \eqref{eq:staircase prop}. In more detail, given a strictly convex function $\mathcal{P}(u)$, we can define $\mathcal{L}(u)$ as in \eqref{eq:PLP} but with a more general selection of  $\lambda_k$. For having controls in the desired form for the SHM problem, we only have to take into account the sufficient condition that, for all $k \in \{1,\dots,N_u-1\}$, the functions $\lambda_k$ are concave.
 
 Examples of functions which are compatible with this situation are
 \begin{enumerate}
     \item[1.] A union of concave functions (see the second plot in Figure \ref{fig:SHE-multi}):
     \begin{align*}
-        \lambda_k(u) = -4u^2 + 2(u_k + u_{k+1}) - 2u_{k}
+        \lambda_k(u) = -4u^2 + 2(u_k + u_{k+1}) - 2u_{k}.
     \end{align*}
     \item[2.] Linear approximation of shifted parabola (see the third plot in Figure \ref{fig:SHE-multi})
     \begin{align*}
-        \lambda_k(u) = \frac 1 4[(u_{k+1}+u_{k}) (u-u_k-1) + u_k^2]
+        \lambda_k(u) = \frac 1 4\Big[(u_{k+1}+u_{k}) (u-u_k-1) + u_k^2\Big].
     \end{align*}
 \end{enumerate}
 \end{remark}
@@ -532,23 +526,23 @@ With the final aim of using an optimization software to solve our optimal contro
         1 & \text{ if } x > 0 \\
 		1/2 & \text{ if } x = 0\\
 		 0 & \text{ if } x < 0
-    \end{cases}    
-    \hspace{2em} 
+    \end{cases},    
+    \hspace{2.5em} 
     \begin{cases}
-        \displaystyle h^\eta(x) = \frac 12\big(1 + \tanh(\eta x)\big) \\[7pt] \displaystyle \lim_{\eta\to\infty} h^\eta = h.
+        \displaystyle h^\theta(x) = \frac{1 + \tanh(\theta x)}{2} \\[7pt] \displaystyle \lim_{\theta\to +\infty} h^\theta = h.
     \end{cases}
 \end{align*}
-Using $h$, we can define the (smooth) function $\Pi_{a,b}^\eta:\mathbb{R} \rightarrow \mathbb{R}$ as:
+Using $h^\theta$, for all $k \in \{1,\dots,N_u-1\}$ we can then define the (smooth) function $\Pi_{u_k,u_{k+1}}^\theta:\mathbb{R} \rightarrow \mathbb{R}$ as:
 \begin{align*}
-    \Pi_{[a,b]}^\eta(x) &= - 1 + h^\eta(x-a) + h^\eta(-x+b) 
+    \Pi_{u_k,u_{k+1}}^\theta(x) &= - 1 + h^\theta(x-u_k) + h^\theta(-x+u_{k+1}) 
     \\[5pt]
-    &= \frac{\tanh[\eta( x -a)] + \tanh[\eta (b-x)]}{2}.
+    &= \frac{\tanh[\theta(x-u_k)] + \tanh[\theta (u_{k+1}-x)]}{2}.
 \end{align*}
-In this way, we can define the smooth version of \eqref{eq:PLP}:
+and use it to build the smooth version of \eqref{eq:PLP}
 \begin{align*}
-    \mathcal{L}^\eta(u) = \sum_{k = 1}^{N_u-1} \big[ (u_{k+1}+u_{k}) (u-u_k) + u_k^2 \big] \Pi^\eta_{[u_k,u_{k+1}]}(u).
+    \mathcal{L}^\theta(u) = \sum_{k = 1}^{N_u-1} \Big[ (u_{k+1}+u_{k}) (u-u_k) + u_k^2 \Big] \Pi^\theta_{[u_k,u_{k+1}]}(u),
 \end{align*}
-So that, when $\eta \rightarrow \infty$, then $\mathcal{L}^\eta \rightarrow \mathcal{L}$. 
+so that $\mathcal{L}^\theta \rightarrow \mathcal{L}$ when $\theta \rightarrow +\infty$. 
 
 \subsection{Direct method  for  OCP-SHE}
 
@@ -640,12 +634,12 @@ This methodology allows obtaining a $10^{-4}-10^{-5}$ precision in the distance 
 
 \section{Proofs of results in Section \ref{sec:Contributions}}\label{sec:Proof}
 
-In this section, we give the proofs of the results presented in Section \ref{sec:Contributions}. We start with the proof of Proposition \ref{Prop:approx controllability}, which gives an upper estimate for the error in the solution to the optimal control problem with the penalization term for the control. 
+We give here the proofs of the results presented in Section \ref{sec:Contributions}. We start with the proof of Proposition \ref{Prop:approx controllability}, which gives an upper estimate for the error in the solution to the optimal control problem with the penalization term for the control. 
 
 \bigskip
 
 \begin{proof}[of Proposition \ref{Prop:approx controllability}]
-Since we are supposing that Problem \ref{pb:SHEpControl} has a solution, there exists a control $\tilde{u}\in L^\infty((0,\pi); [-1,1])$ such that its corresponding trajectory $\tilde{\bm{x}}$, solution to \eqref{eq:CauchyReversed}, satisfies $\tilde{\bm{x}}(\pi) = 0$. 
+Since we are supposing that Problem \ref{pb:SHEpControl} has a solution, there exists a control $\tilde{u}\in L^\infty$ such that its corresponding trajectory $\tilde{\bm{x}}$, solution to \eqref{eq:CauchyReversed}, satisfies $\tilde{\bm{x}}(\pi) = 0$. 
 
 Now, let $u^\ast$ be the solution to Problem \ref{pb:OCP_penalizado}, and let $\bm{x}^\ast$ be its corresponding trajectory. By the optimality of $u^\ast$ we have
 \begin{align*}
@@ -654,17 +648,17 @@ Now, let $u^\ast$ be the solution to Problem \ref{pb:OCP_penalizado}, and let $\
 and hence, we deduce that $\| \bm{x}^\ast (\pi)\|^2 \leq 4 \varepsilon \pi \| \mathcal{L}\|_\infty.$ \hfill $\square$
 \end{proof}
 
+\UB{Are we sure that here is $4\varepsilon$ and not $2\varepsilon$?}
+
 \subsection{Proofs of Theorems \ref{th:bang-bang} and \ref{th:PLP}}
 
 The proofs of Theorems \ref{th:bang-bang} and \ref{th:bang-bang} are based on the optimality conditions for the Optimal Control Problem \ref{pb:OCP_penalizado}, which can be deduced by means of Pontryagin's maximum principle \cite[Chapter~2.7]{bryson1975applied}.
 
-\subsubsection{Optimality conditions}
-
-First of all, let us introduce the Hamiltonian function associated to the Optimal Control Problem \ref{pb:OCP_penalizado}:
+To this end, let us first introduce the Hamiltonian function associated to the Optimal Control Problem \ref{pb:OCP_penalizado}:
 \begin{align}\label{eq:hamil}
     \mathcal{H}(u,\bm{p},t) = \varepsilon \mathcal{L}(u) - \frac 2\pi\big(\bm{p} \cdot \bm{\mathcal{D}}(t)\big)u(t),
 \end{align}
-where $\bm{p}\in \mathbb{R}^{N_a+N_b}$ is the so-called adjoint variable, which arises from the restriction imposed by the dynamical system \eqref{eq:CauchyReversed}. Note that the adjoint variable $\bm{p}$ has the same dimension of the state $\bm{x}$. In view of the definition of $\bm{\mathcal{D}}(t)$ in \eqref{eq:Dynamics}-\eqref{eq:DalphaDbeta}, we will sometimes write the state and the adjoint variables using the following notation:
+where $\bm{p}\in \mathbb{R}^{N_a+N_b}$ is the so-called adjoint variable, which arises from the restriction imposed by the dynamical system \eqref{eq:CauchyReversed}. In view of the definition of $\bm{\mathcal{D}}(t)$ in \eqref{eq:Dynamics}-\eqref{eq:DalphaDbeta}, we will sometimes write the state and the adjoint variables using the following notation:
 \begin{align*}
   \bm{x}(t) = \begin{bmatrix} \bm{a}(t) \\ \bm{b}(t) \end{bmatrix} \quad \text{and}\quad
   \bm{p}(t) = \begin{bmatrix} \bm{p}^a(t) \\ \bm{p}^b(t) \end{bmatrix}.
@@ -672,7 +666,7 @@ where $\bm{p}\in \mathbb{R}^{N_a+N_b}$ is the so-called adjoint variable, which 
 
 Now, let us derive the optimality conditions arising from Pontryagin's principle.
 \begin{itemize}
-	\item[1.] \textbf{The adjoint system}: for any optimal control $u^\ast \in L^\infty$, solution to the Problem \ref{pb:OCP_penalizado}, there exists a unique adjoint trajectory $\bm{p}^\ast\in C([0,\pi]; \mathbb{R}^{N_a+N_b})$ which satisfies the following terminal-value problem
+	\item[1.] \textbf{The adjoint system}: for any $u^\ast \in L^\infty$, solution to the Problem \ref{pb:OCP_penalizado}, there exists a unique adjoint trajectory $\bm{p}^\ast\in C([0,\pi]; \mathbb{R}^{N_a+N_b})$ which satisfies the following terminal-value problem
     \begin{equation*}
     	\begin{cases}
     		\dot{\bm{p}^\ast}(t) = -\nabla_x \mathcal{H}(u(t),\bm{p}^\ast(t),t), \qquad t \in [0,\pi] 
@@ -689,7 +683,7 @@ Now, let us derive the optimality conditions arising from Pontryagin's principle
     \begin{align}\label{eq:control design}
     	u^* (t) \in \argmin_{|u|\leq 1} \mathcal{H}(t,\bm{p}^*(t),u), \quad \forall t \in [0,\pi].
     \end{align}
-    As we will see, for penalization functions $\mathcal{L}$ as the ones we consider in Theorems \ref{th:bang-bang} and \ref{th:PLP}, this argmin is a singleton for almost every $t\in [0,\pi]$, and hence, given the adjoint $\bm{p}^\ast$,  condition \eqref{eq:control design} uniquely determines the control as a function in $L^\infty((0,\pi);[-1,1])$.
+    As we will see, for penalization functions $\mathcal{L}$ as the ones we consider in Theorems \ref{th:bang-bang} and \ref{th:PLP}, this argmin is a singleton for almost every $t\in [0,\pi]$. Hence, given the adjoint $\bm{p}^\ast$,  condition \eqref{eq:control design} uniquely determines the control as a function in $L^\infty$.
 \end{itemize}
     
 In view of \eqref{eq:hamil} and \eqref{eq:adjoint constant}, we can write the optimality condition \eqref{eq:control design} as
@@ -712,15 +706,15 @@ We need to prove that, if $\mathcal{L}$ is a concave function, then any optimal 
 
 Since $\mathcal{L}$ is a concave function, so is $\mathcal{H}_\mu(u,\mu)$ as a function of $u$. Hence, in view of \eqref{eq:control design2}, we have
 \begin{align*} 
-	u^\ast (t)= -1  \quad \text{whenever} \; \mathcal{H}_\mu(-1,\mu^\ast(t)) <  \mathcal{H}_\mu(1,\mu^\ast(t)) 
+	u^\ast (t)= -1  \quad \text{whenever } \; \mathcal{H}_\mu(-1,\mu^\ast(t)) <  \mathcal{H}_\mu(1,\mu^\ast(t)) 
 \end{align*} 
 and
 \begin{align*}
-	u^\ast (t)= 1  \quad \text{whenever} \; \mathcal{H}_\mu(1,\mu^\ast(t)) <  \mathcal{H}_\mu(-1,\mu^\ast(t)) .
+	u^\ast (t)= 1  \quad \text{whenever } \; \mathcal{H}_\mu(1,\mu^\ast(t)) <  \mathcal{H}_\mu(-1,\mu^\ast(t)) .
 \end{align*}
 Now, in view of the definition of $\mathcal{H}_\mu$ in \eqref{eq:control design2}, we see that $u^\ast(t)$ is uniquely determined, and belongs to $\mathcal{U}$, for all $t\in [0,\pi]$ except when
 \begin{align*}
-	\mu^\ast (t) = \varepsilon \frac{\mathcal{L}(1) - \mathcal{L}(-1)}{2}.
+	\mu^\ast (t) = \frac{\varepsilon}{2} \Big[\mathcal{L}(1) - \mathcal{L}(-1)\Big].
 \end{align*}
 Finally, in view of the form of $\mu^\ast$ in \eqref{eq:m ast}, it is clear that the above equality can only hold a finite number of times in $[0,\pi]$. Indeed, the times $t\in [0,\pi]$ such that it holds are precisely the switching angles. \hfill $\square$
 
@@ -732,17 +726,15 @@ Finally, in view of the form of $\mu^\ast$ in \eqref{eq:m ast}, it is clear that
   
 \subsection{Proof of Theorem \ref{th:PLP}}\label{proof:PLP}
 
-In this case, we suppose that the control set $\mathcal{U} = \{ u_i\}_{i=1}^L$ is a finite set of real numbers in $[-1,1]$ satisfying
+In this case, we suppose that $\mathcal{U} = \{ u_i\}_{i=1}^L$ is a finite set of real numbers in $[-1,1]$ satisfying
 \begin{align*} 
 	-1 = u_1 < u_2 <\ldots <u_L = 1, \quad \text{with} \ L> 2.
 \end{align*} 
-The case $L=2$ is just the bi-level case. As in the previous proof, we only need to prove that the argmin in \eqref{eq:control design2} is a singleton and belongs to $\mathcal{U}$ for every $t\in [0,\pi]$ except for a finite number of times $t\in [0,\pi]$.
+The case $L=2$ is just the bi-level case. As in the previous proof, we only need to show that the argmin in \eqref{eq:control design2} is a singleton and belongs to $\mathcal{U}$ for every $t\in [0,\pi]$ except for a finite number of times $t\in [0,\pi]$.
 
-In this case, the study of the minimizers of $\mathcal{H}_\mu$ is a bit more involved since the penalization function $\mathcal{L}$ defined in \eqref{eq:PLP}-\eqref{eq:lambda k} is not differentiable. However, $\mathcal{L}$ is an affine interpolation of a convex function, so it is Lipschitz and convex.  Hence, $\mathcal{H}_\mu$ is also Lipschitz and convex as a function of $u$. We can therefore use the following necessary and sufficient condition for $u$ to be a minimizer of  the function 
-\begin{align*}
-	u\mapsto \mathcal{H}_\mu (u,\mu)
-\end{align*}
-if and only if
+In this case, the study of the minimizers of $\mathcal{H}_\mu$ is slightly more involved since the penalization function $\mathcal{L}$ defined in \eqref{eq:PLP}-\eqref{eq:lambda k} is not differentiable. However, $\mathcal{L}$ is an affine interpolation of a convex function, so it is Lipschitz and convex.  Hence, $\mathcal{H}_\mu$ is also Lipschitz and convex as a function of $u$. 
+
+In view of this, we know that $u$ is a minimizer of $\mathcal{H}_\mu (u,\mu)$ if and only if
 \begin{equation}\label{opti cond subdiff}
 	0\in \partial_u \mathcal{H}_\mu (u,\mu),
 \end{equation}
