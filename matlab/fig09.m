@@ -9,7 +9,7 @@ Na = length(Ea);
 Nb = length(Eb);
 
 Nv = 200;
-Nv = 100;
+Nv = 50;
 values = linspace(-0.80,0.80,Nv);
 %%
 bmatrix = zeros(length(values),length(Ea));
@@ -19,7 +19,7 @@ amatrix = zeros(length(values),length(Eb));
 amatrix(:,1) = values;
 %%
 Nt = 200;
-Nt = 100;
+Nt = 50;
 tspan = linspace(0,pi,Nt);
 
 Ucal = linspace(-1,1,5)';
@@ -55,7 +55,7 @@ fig = figure('Unit','norm','pos',[0 0 0.325 0.35],'Color','w');
 %fig.Renderer = 'painters';
 pplot2(fopts{1},fig,Ea,Eb,Nv,tspan,values,amatrix,bmatrix)
 %%
-print(fig,'../img/fig09.eps','-depsc')
+%print(fig,'../img/fig09.eps','-depsc')
 
 %%
 % uspan = linspace(-2,2,200)

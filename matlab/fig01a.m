@@ -12,11 +12,11 @@ hold on
 grid on
 nsol = length(st(6).solutions());
 iter = 0;
-N =7;
+N =5;
 ind_sol  = randsample(nsol,N);
 take_sol = st(1).solutions(ind_sol);
-colors = hsv(N);
-
+colors = jet(N);
+colors(4,:) = [0.8 0.5 0.5];
 for is=take_sol
     iter = iter + 1;
     lns = plot(is.mi_span,is.angles','color',colors(iter,:),'LineWidth',2.0);

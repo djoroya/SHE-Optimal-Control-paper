@@ -43,9 +43,9 @@ ui2 = uipanel('Parent',fig,'pos',[0.4 -0.05 0.625 1.075],'BackgroundColor','w');
 ui1.BorderWidth = 0
 ui2.BorderWidth = 0
 
-str_title = {'$\mathcal{L}^{p_1}(u)$', ...
-             '$\mathcal{L}^{p_2}(u)$',  ...
-             '$\mathcal{L}^{p_3}(u)$'};
+str_title = {'$\mathcal{L}(u)$', ...
+             '$\mathcal{L}(u)$',  ...
+             '$\mathcal{L}(u)$'};
          
       
 fmt_line = {'LineWidth',2,'Color',[0.9 0.4 0.1]};
@@ -88,16 +88,20 @@ end
 %%
 
 
-str_title_H = {'$\mathcal{H}_m(u)=mu-\epsilon \mathcal{L}^{p_1}(u)$', ...
-             '$\mathcal{H}_m(u)=mu+\epsilon \mathcal{L}^{p_2}(u)$'   , ...
-             '$\mathcal{H}_m(u)=mu-\epsilon \mathcal{L}^{p_3}(u)$'};
+str_title_H = {'$\mathcal{J}(u,\mu)=\mu u-\epsilon \mathcal{L}(u)$', ...
+             '$\mathcal{J}(u,\mu)=\mu u+\epsilon \mathcal{L}(u)$'   , ...
+             '$\mathcal{J}(u,\mu)=\mu u-\epsilon \mathcal{L}(u)$'};
          
 subplot(2,1,1,'Parent',ui2)
 
 Nm = 8;
-mspan = 0.08*linspace(-1,1,Nm);
+mspan1 = 0.08*linspace(-1,1,Nm);
+mspan2 = 0.07*linspace(-1,1,Nm);
+
+ms = {mspan1,mspan1,mspan2};
 color = jet(Nm);
 
+color(5,:) = 0.9*color(5,:);
 iter = 0;
 
 for LL = {Leta1,Leta2,Leta3}
@@ -116,13 +120,13 @@ for LL = {Leta1,Leta2,Leta3}
 
     
     for i = 1:Nm
-        Hm = eps*LL{:}(uspan)+mspan(i)*uspan;
+        Hm = eps*LL{:}(uspan)+ms{iter}(i)*uspan;
         [minH,min_ind] = min(Hm  + 1e3*(abs(uspan)>1));
         plot(uspan,Hm,fmt_line{:},'color',color(i,:));
     end
         
     for i = 1:Nm
-        Hm = eps*LL{:}(uspan)+mspan(i)*uspan;
+        Hm = eps*LL{:}(uspan)+ms{iter}(i)*uspan;
         [minH,min_ind] = min(Hm  + 1e3*(abs(uspan)>1));
         ax = plot(uspan(min_ind),minH,'MarkerFaceColor',color(i,:),'Marker','o','MarkerSize',8,'MarkerEdgeColor','k');
     end
@@ -134,7 +138,7 @@ for LL = {Leta1,Leta2,Leta3}
     ic = colorbar;
     ic.TickLabelInterpreter = 'latex';
 
-    ic.Label.String = '$m$';
+    ic.Label.String = '$\mu$';
     ic.Label.Interpreter = 'latex';
     ic.Label.FontSize = 15;
     ic.Ticks = [0 0.5 1];

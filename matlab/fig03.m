@@ -9,6 +9,8 @@ LL = {L_minus,L_plus,L_sq};
 Nm = 7;
 mspan = 0.1*linspace(-1,1,Nm);
 color = jet(Nm);
+color(5,:) = 0.9*color(5,:);
+
 %
 fmt = {'Interpreter','latex','FontSize',24};
 fmt_line = {'LineWidth',2,'Color',[0.9 0.4 0.1]};
@@ -21,9 +23,9 @@ str_title = {'$\mathcal{L}(u)=-u$', ...
              '$\mathcal{L}(u)=u$',  ...
              '$\mathcal{L}(u)=-u^2$'};
          
-str_title_H = {'$\mathcal{H}_m(u)=mu-\epsilon u$', ...
-             '$\mathcal{H}_m(u)=mu+\epsilon u$'   , ...
-             '$\mathcal{H}_m(u)=mu-\epsilon u^2$'};
+str_title_H = {'$\mathcal{J}(u,\mu)=\mu u-\epsilon u$', ...
+             '$\mathcal{J}(u,\mu)=\mu u+\epsilon u$'   , ...
+             '$\mathcal{J}(u,\mu)=\mu u-\epsilon u^2$'};
 
 ui1 = uipanel('Parent',fig,'pos',[0     -0.05 0.425   1.075],'BackgroundColor','w');
 ui2 = uipanel('Parent',fig,'pos',[0.4 -0.05 0.625 1.075],'BackgroundColor','w');
@@ -77,7 +79,7 @@ colormap(jet(Nm))
 ic = colorbar;
 ic.TickLabelInterpreter = 'latex';
 
-ic.Label.String = '$m$';
+ic.Label.String = '$\mu$';
 ic.Label.Interpreter = 'latex';
 ic.Label.FontSize = 15;
 ic.TickLabels = num2str((ic.Ticks * 2 -1)');

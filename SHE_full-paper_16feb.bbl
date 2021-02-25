@@ -1,5 +1,11 @@
 \begin{thebibliography}{}
 
+\bibitem[Agelidis et~al., 2008]{Agelidis2008}
+Agelidis, V.~G., Balouktsis, A.~I., and Cossar, C. (2008).
+\newblock {On attaining the multiple solutions of selective harmonic
+  elimination PWM three-level waveforms through function minimization}.
+\newblock {\em IEEE Transactions on Industrial Electronics}, 55(3):996--1004.
+
 \bibitem[Andersson et~al., 2019]{Andersson2019}
 Andersson, J. A.~E., Gillis, J., Horn, G., Rawlings, J.~B., and Diehl, M.
   (2019).
@@ -12,11 +18,29 @@ Bryson, A.~E. (1975).
 \newblock {\em Applied optimal control: optimization, estimation and control}.
 \newblock CRC Press.
 
+\bibitem[Dahidah et~al., 2015]{Dahidah2015}
+Dahidah, M.~S., Konstantinou, G., and Agelidis, V.~G. (2015).
+\newblock {A Review of Multilevel Selective Harmonic Elimination PWM:
+  Formulations, Solving Algorithms, Implementation and Applications}.
+\newblock {\em IEEE Transactions on Power Electronics}, 30(8):4091--4106.
+
+\bibitem[Dahidah and Agelidis, 2008]{Dahidah2008}
+Dahidah, M. S.~A. and Agelidis, V.~G. (2008).
+\newblock {Selective harmonic elimination PWM control for cascaded multilevel
+  voltage source converters: A generalized formula}.
+\newblock {\em IEEE Transactions on Power Electronics}, 23(4):1620--1630.
+
 \bibitem[Duranay and Guldemir, 2017]{duranay2017selective}
 Duranay, Z.~B. and Guldemir, H. (2017).
 \newblock Selective harmonic eliminated v/f speed control of single-phase
   induction motor.
 \newblock {\em IET Power Electron.}, 11(3):477--483.
+
+\bibitem[Ikeda and Nagahara, 2016]{ikeda2016maximum}
+Ikeda, T. and Nagahara, M. (2016).
+\newblock Maximum hands-off control without normality assumption.
+\newblock In {\em 2016 American Control Conference (ACC)}, pages 209--214.
+  IEEE.
 
 \bibitem[Janabi et~al., 2020]{Janabi2020}
 Janabi, A., Wang, B., and Czarkowski, D. (2020).
@@ -31,11 +55,39 @@ Konstantinou, G.~S. and Agelidis, V.~G. (2010).
 \newblock {\em Proc. IEEE International Conference on Industrial Technology},
   pages 696--701.
 
-\bibitem[Oroya et~al., 2021]{simus}
-Oroya, J., Esteve, C., and Biccari, U. (2021).
+\bibitem[Liberzon, 2003]{liberzon2003switching}
+Liberzon, D. (2003).
+\newblock Switching in systems and control birkha{\"a}user boston.
+\newblock {\em Systems \& Control: Foundations \& Applications}.
+
+\bibitem[Liu and Gong, 2014]{liu2014optimal}
+Liu, C. and Gong, Z. (2014).
+\newblock Optimal control of switched autonomous systems.
+\newblock In {\em Optimal control of switched systems arising in fermentation
+  processes}, pages 77--87. Springer.
+
+\bibitem[Nagahara et~al., 2013]{nagahara2013maximum}
+Nagahara, M., Quevedo, D.~E., and Ne{\v{s}}i{\'c}, D. (2013).
+\newblock Maximum hands-off control and l 1 optimality.
+\newblock In {\em 52nd IEEE Conference on Decision and Control}, pages
+  3825--3830. IEEE.
+
+\bibitem[Oroya, 2021]{simus}
+Oroya, J. (2021).
 \newblock djoroya/she-optimal-control-paper, github repository.
 \newblock \url{https://github.com/djoroya/SHE-Optimal-Control-paper}.
 \newblock Accessed: 2021-02-22.
+
+\bibitem[Quevedo et~al., 2004]{Quevedo2004}
+Quevedo, D.~E., Goodwin, G.~C., and {De Don{\'{a}}}, J.~A. (2004).
+\newblock {Finite constraint set receding horizon quadratic control}.
+\newblock {\em International Journal of Robust and Nonlinear Control},
+  14(4):355--377.
+
+\bibitem[Rao, 2009]{rao2009survey}
+Rao, A.~V. (2009).
+\newblock A survey of numerical methods for optimal control.
+\newblock {\em Advances in the Astronautical Sciences}, 135(1):497--528.
 
 \bibitem[Rodr{\'{i}}guez et~al., 2002]{Rodriguez2002}
 Rodr{\'{i}}guez, J., Lai, J.~S., and Peng, F.~Z. (2002).
@@ -43,29 +95,23 @@ Rodr{\'{i}}guez, J., Lai, J.~S., and Peng, F.~Z. (2002).
   applications.
 \newblock {\em IEEE Trans. Ind. Electron.}, 49(4):724--738.
 
-\bibitem[Sch{\"a}ttler and Ledzewicz, 2012]{schattler2012geometric}
-Sch{\"a}ttler, H. and Ledzewicz, U. (2012).
-\newblock {\em Geometric optimal control: theory, methods and examples},
-  volume~38.
-\newblock Springer Science \& Business Media.
-
 \bibitem[Sun et~al., 1996]{Sun1996}
 Sun, J., Beineke, S., and Grotstollen, H. (1996).
 \newblock Optimal pwm based on real-time solution of harmonic elimination
   equations.
 \newblock {\em IEEE Trans. Power Electron.}, 11(4):612--621.
 
-\bibitem[Wang and Topputo, 2020]{Wang2020}
-Wang, Y. and Topputo, F. (2020).
-\newblock {Robust Bang-Off-Bang Low-Thrust Guidance Using Model Predictive
-  Static Programming}.
-\newblock {\em Acta Astronautica}, 176(May):357--370.
-
 \bibitem[Wu, 2009]{Wu2009}
 Wu, B. (2009).
 \newblock {A Generalized Formulation of Quarter-Wave Symmetry SHE-PWM Problems
   for Multilevel Inverters}.
 \newblock {\em IEEE Transactions on Power Electronics}, 24(7):1758--1766.
+
+\bibitem[Xu and Antsaklis, 2002]{Xu2002}
+Xu, X. and Antsaklis, P.~J. (2002).
+\newblock {An approach to switched systems optimal control based on
+  parameterization of the switching instants}.
+\newblock {\em IFAC Proceedings Volumes (IFAC-PapersOnline)}, 15(1):365--370.
 
 \bibitem[Yang et~al., 2015]{Yang2015}
 Yang, K., Yuan, Z., Yuan, R., Yu, W., Yuan, J., and Wang, J. (2015).

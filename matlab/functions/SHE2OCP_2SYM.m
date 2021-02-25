@@ -50,7 +50,7 @@ for it = 2:Nt
 end
 
 %%
-epsilon = 1e-4;
+epsilon = 1e-3;
 %alpha = 1;
 
 aTs = casadi.SX.sym('aT',size(bT));
