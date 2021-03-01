@@ -42,7 +42,7 @@ Selective Harmonic Modulation; Optimal Control Theory; Finite-Set Control; Pontr
 
 
 \begin{abstract}                          % Abstract of not more than 200 words.
-We consider the \emph{Selective Harmonic Modulation} (SHM) problem, consisting in the design of a staircase control signal with some prescribed frequency components. In this work, the SHM problem is addressed as an optimal control one in which the admissible controls are piece-wise constant functions, taking values only in a given finite set. In order to fulfill this constraint, we  introduce a cost functional \UB{with piece-wise linear penalization } which, by means of Pontryagin's maximum principle, makes the optimal control have the desired staircase form. An advantage of our approach, \UB{relevant in practical power electronics engineering applications}, is that the number of commutations and the waveform need not be specified a priori. Indeed, our algorithm provides an admissible waveform as well as the location of the switches. Up to the best of our knowledge, this approach to the SHM problem via optimal control is new. Moreover, our methodology may be applicable to other optimal control problems with a finite-set constraint on the control. We also provide several numerical examples in which the SHM problem is solved by using our approach.
+We consider the \emph{Selective Harmonic Modulation} (SHM) problem, consisting in the design of a staircase control signal with some prescribed frequency components. In this work, the SHM problem is addressed as an optimal control one in which the admissible controls are piece-wise constant functions, taking values only in a given finite set. In order to fulfill this constraint, we  introduce a cost functional with piece-wise linear penalization which, by means of Pontryagin's maximum principle, makes the optimal control have the desired staircase form. An advantage of our approach, relevant in practical power electronics engineering applications, is that the number of commutations and the waveform need not be specified a priori. Indeed, our algorithm provides an admissible waveform as well as the location of the switches. Up to the best of our knowledge, this approach to the SHM problem via optimal control is new. Moreover, our methodology may be applicable to other optimal control problems with a finite-set constraint on the control. We also provide several numerical examples in which the SHM problem is solved by using our approach.
 \end{abstract}
 
 \end{frontmatter}
@@ -50,14 +50,14 @@ We consider the \emph{Selective Harmonic Modulation} (SHM) problem, consisting i
 
 \section{Introduction and motivations}\label{Section1}
 
-Selective Harmonic Modulation (SHM) \cite{Rodriguez2002} is a well-known methodology in \JO{power electronics engineering}, employed to improve the performances of a converter by controlling the phase and amplitude of the harmonics in its output voltage. As a matter of fact, this technique allows to increase the power of the converter and, at the same time, to reduce its losses. 
+Selective Harmonic Modulation (SHM) \cite{Rodriguez2002} is a well-known methodology in power electronics engineering, employed to improve the performances of a converter by controlling the phase and amplitude of the harmonics in its output voltage. As a matter of fact, this technique allows to increase the power of the converter and, at the same time, to reduce its losses. 
 
-Because of the growing complexity of modern electrical networks, consequence for instance of the high penetration of renewable energy sources, the demand in power of electronic converters is day by day increasing. For this and other reasons, SHM has been a preeminent research interest in the \JO{power electronics \ } community, and a plethora of SHM-based techniques has been developed in recent years. An incomplete bibliography includes \cite{duranay2017selective,Janabi2020,Yang2017}.
+Because of the growing complexity of modern electrical networks, consequence for instance of the high penetration of renewable energy sources, the demand in power of electronic converters is day by day increasing. For this and other reasons, SHM has been a preeminent research interest in the power electronics community, and a plethora of SHM-based techniques has been developed in recent years. An incomplete bibliography includes \cite{duranay2017selective,Janabi2020,Yang2017}.
 
 In broad terms, the technique consists in generating a \textit{control signal} with a desired harmonic spectrum by modulating or eliminating some specific lower-order Fourier coefficients. In practice, the signal is constructed as a step function with a finite number of switches, taking values only in a given finite set. Such a signal can be fully characterized by two features (see Figure \ref{fig:exampleSHE}): 
 \begin{itemize}
-	\item[1.] The \textit{waveform}, i.e. the sequence of values that the function takes \UB{in its domain}.
-	\item[2.] The \textit{switching angles}, i.e. the sequence of \UB{points } where the signal switches from one value to following one. 
+	\item[1.] The \textit{waveform}, i.e. the sequence of values that the function takes in its domain.
+	\item[2.] The \textit{switching angles}, i.e. the sequence of points where the signal switches from one value to following one. 
 \end{itemize}
 
 Using this simple characterization of the signal, in many practical situations the SHM problem is reduced to a finite-dimensional optimization one in which, given a suitable waveform, the aim is to find the optimal location of the switching angles. 
@@ -69,41 +69,32 @@ To overcome these difficulties, in this work we propose a new approach to SHM ba
 
 The main difficulty in our approach arises from the fact that we look for piece-wise constant control signals, taking values only in a given finite set. This formulation is in analogy with what is known in the control literature as \textit{switching controls} or \textit{switching systems} (see \cite{liberzon2003switching,Zuazua2011, liu2014optimal}), whose goal is to control the dynamics of a system by switching from an actuator to another in a systematic way so that, at each instant of time, only one actuator is active.
 
-En la literatura de teoría de control existe aproximaciones para la obtención de este tipo de controles, las clasificaremos en dos tipos:
+In the control theory literature, there exist different methods to obtain this type of control, which can be classified as follows:
 \begin{enumerate}
-	\item [1.]Los métodos con  número de cambios prefijados. en el tiempo y luego se optimiza sus localizaciones \cite{Xu2002}.
-	\item [3.]Los métodos sin  número de cambios prefijados. Los métodos que obtienen un control con  Finite  constraint  set en el problema en horizonte temporal infinito \cite{Quevedo2004}.
+	\item [1.] Methods with a predetermined number of switches, whose locations have to be optimized \cite{Xu2002}.
+	\item [2.] Methods without a predetermined number of switches. These methods provide a control with finite constraint set in a infinite time-horizon \cite{Quevedo2004}.
 \end{enumerate} 
-\JO{Sin embargo, el problema SHM se traduce en un problema de control óptimo con horizonte temporal finito, por lo que estas metodologías no son aplicables.} This kind of constraint on the control prevents one from applying the classical tools in optimal control theory, such as Pontryagin's maximum principle.
+
+Nevertheless, as we shall see, the SHM problem we are going to consider translates in an optimal control problem with finite time horizon, for which the above methodologies are not applicable. This kind of constraint on the control prevents one from applying the classical tools in optimal control theory, such as Pontryagin's maximum principle.
 
 In order to bypass this difficulty, we introduce a penalization term for the control, which guarantees that the optimal control will have the desired staircase structure. The optimization is then carried out over the controls in $L^\infty$, and then, standard computational algorithms in optimal control theory can be implemented to solve the SHM problem. 
 
-\UB{The main contributions of the present paper are as follows:}
+The main contributions of the present paper are as follows:
 \begin{enumerate}
     \item[1.] We reformulate the SHM problem as an optimal control problem with a staircase constraint on the control.
 	\item[2.] We do not need to determine a priori the waveform of the solution nor the number of switching angles.  
-    \item[3.] We introduce a penalization term for the control which implicitly induces the staircase property on the solution. Here we distinguish two cases: when the control set contains only two elements (\UB{bi-level or } bang-bang control) and when it contains more than two elements (multilevel control).
+    \item[3.] We introduce a penalization term for the control which implicitly induces the staircase property on the solution. Here we distinguish two cases: when the control set contains only two elements (bi-level or bang-bang control) and when it contains more than two elements (multilevel control).
     \item[4.] Our approach allows one to compute solutions to the SHM problem with different waveforms.
-    \JOStart
-    \item[5 ] Nuestra aproximación nos permite encontrar soluciones en una región amplia en el espacio de los target.
+    %\JOStart
+    %\item[5 ] Nuestra aproximación nos permite encontrar soluciones en una región amplia en el espacio de los target.
     %\item[4.] {\color{red} Continuidad de solucion respecto al target, estimacion superior numero de switches???? }
 	% NO te metas alli, que es un verengenal!
 \end{enumerate}
 
-{\color{red} Revisar la estructura cuando el paper est\'e terminado.
+%{\color{red} Revisar la estructura cuando el paper est\'e terminado.
 
-In this document, we follow the next structure. In the Section \ref{sec:math_formulation}, we introduce a mathematical formulation of a general SHE problem. 
-%
-In the Section \ref{sec:SHE_finite-dim_pbm}, we show the classical formulation in SHE literature, and we show two main problems because of this aproach. 
-%
-In the Section \ref{sec:Contributions}, we show our contributions in this problem, where explain the SHE problem as control problem and the strategies to obtain a piece-wise function as optimal control. 
-%
-In the Section \ref{sec:Simulations} we show a concrete examples solve by control theory. 
-%
-In the Section \ref{sec:Proof}, we summaries the proof associated to our contribution. 
-%
-By last, we finished with some conclusion and open problems. 
-}
+This document is structured as follows. In Section \ref{sec:math_formulation}, we introduce a mathematical formulation of a general SHM problem. 
+In Section \ref{sec:SHE_finite-dim_pbm}, we show the classical formulation in SHM literature, and we show the main problems related to this approach. In Section \ref{sec:Contributions}, we present our main contributions. In particular, where explain how the SHM can be cast as an optimal control one and we show the strategies to obtain a piece-wise function as optimal control. In Section \ref{sec:Simulations}, we show several numerical examples of concrete SHM problems solved with our methodology. In Section \ref{sec:Proof}, we present the proofs of our theoretical results. Finally, in Section \ref{sec:conclusions}, we summarize and comment our results, and present some open problems. 
 
 \section{Preliminaries}\label{sec:math_formulation}
 
@@ -152,7 +143,7 @@ and $\Phi = \{ \phi_m\}_{m=1}^{M}$ such that
 \begin{align*}
 	0= \phi_0 < \phi_1 <\ldots < \phi_M < \phi_{M+1} = \pi .
 \end{align*}
-In \eqref{eq:uExpl}, $\chi_{[\phi_m,\phi_{m+1})}$ denotes the characteristic function of the interval $[\phi_m,\phi_{m+1})$. \UB{With these notations we just introduced, we can now define the waveform and the switching angles as follows.}
+In \eqref{eq:uExpl}, $\chi_{[\phi_m,\phi_{m+1})}$ denotes the characteristic function of the interval $[\phi_m,\phi_{m+1})$. With these notations we just introduced, we can now define the waveform and the switching angles as follows.
 
 \bigskip
 
@@ -169,11 +160,9 @@ Observe that any $u$ of the form \eqref{eq:uExpl} is fully characterized by its 
 	\label{fig:exampleSHE}
 \end{figure}
 
-\UB{ 
 In the practical engineering applications that motivated our study, due to technical limitations, it is preferable to employ signals taking consecutive values in $\mathcal{U}$. In the sequel, we will refer to this property of the waveform as the \emph{staircase property}.
-}
+
 We can rigorously formulate this property as follows: we say that a signal $u$ of the form \eqref{eq:uExpl} fulfills the staircase property if its waveform $\mS$ satisfies
-\JOStart
 \begin{gather}\label{eq:staircase prop}
 	(s_m^{min},s_{m}^{max}) \cap \mathcal{U} = \emptyset, \quad \forall m\in \{ 0, \ldots, M-1 \},
 \end{gather}
@@ -183,9 +172,8 @@ where
 	\\[5pt]
 	&s^{max}_m = \max\{s_m,s_{m+1}\}.
 \end{align*}
-\JOEnd
-%
-Note that when $\mathcal{U} = \{-1,1\}$ \UB{(the bi-level case)}, this property is satisfied for any $u$ of the form \eqref{eq:uExpl}.
+
+Note that when $\mathcal{U} = \{-1,1\}$ (the bi-level case), this property is satisfied for any $u$ of the form \eqref{eq:uExpl}.
 
 We can now formulate the SHM problem as follows:
 
@@ -205,7 +193,6 @@ where the coefficients $a_j$ and $b_j$ in \eqref{vectors a and b} are given by \
 \end{problem}  
 \vspace{1em}
 
-\JOStart
 \begin{remark}[SHE]\label{remark:SHE}
 In Problem \ref{pb:SHEp}, we gave a very general formulation of SHM. This formulation contains also the so-called \emph{Selective Harmonic Elimination (SHE)} problem (see \cite{Sun1996}), in which the target vectors are such that 
 \begin{gather}
@@ -213,9 +200,8 @@ In Problem \ref{pb:SHEp}, we gave a very general formulation of SHM. This formul
 	\\[3pt]
 	\notag (b_T)_1 \neq 0  \hspace{1em} (b_T)_{j\neq1} = 0 \hspace{1em} \forall j \in \mathcal{E}_b. 
 \end{gather}
-SHE is of great relevance in the electric engineering literature. Its objective is to generate a signal with amplitude $m_1 = \sqrt{a_1^2+b_1^2}$ and phase $\varphi_1=\arctan(b_1/a_1)$, removiendo la amplitud de las frecuencias sucesivas. De esta manera SHE se puede entender como un generador de  modos de Fourier limpios mediante un señal escalonada.
+SHE is of great relevance in the electric engineering literature. Its objective is to generate a signal with amplitude $m_1 = \sqrt{a_1^2+b_1^2}$ and phase $\varphi_1=\arctan(b_1/a_1)$, removing the high-frequency components. In this way, SHE may be understood as a generator of clean Fourier modes through a staircase signal.
 \end{remark}
-\JOEnd
 
 \section{SHM as a finite-dimensional optimization problem}\label{sec:SHE_finite-dim_pbm}
 
@@ -248,58 +234,47 @@ Let $\mathcal{E}_a$, $\mathcal{E}_b$ and the targets $\aT$ and $\bT$ be given as
 	&\mbox{subject to: } 0 = \phi_0 <\phi_1 < \ldots < \phi_{M} < \phi_{M+1} = \pi. \notag 
 \end{align}
 \end{problem}
-\JOStart
-%\vspace{-1.0em}
-At this regard, it is important to notice that the optimization Problem \ref{pb:SHE opt} solves the original Problem \ref{pb:SHEp} only when the optimal cost is zero. 
-
-cuando el coste óptimo es nulode manera que es necesario caracterizar el  espacio de targets $(\aT,\bT) $ donde existe solución. Con este objetivo definiremos la función de coste óptima y luego a partir de ella el conjunto solucionable.
+At this regard, it is important to notice that the optimization Problem \ref{pb:SHE opt} solves the original Problem \ref{pb:SHEp} only when the optimal cost is zero. This makes necessary to fully characterize the space of targets $(\aT,\bT)$ for which it exists a solution. With this aim, we will define the the \textit{optimal cost function} and the \textit{solvable set} as follows:
 \vspace{1em}
-\begin{definition}[Optimal Cost Function]
-	We call optimal cost function $V_{\mS}:\mathbb{R}^{N_a}\times \mathbb{R}^{N_b} \rightarrow \mathbb{R}$, the function that take as input variables the vector targets $\aT$ and $\bT$ and return the optimal cost of the Problem \ref{pb:SHE opt}.
+\begin{definition}[optimal cost function]
+We call \textit{optimal cost function} $V_{\mS}:\mathbb{R}^{N_a}\times \mathbb{R}^{N_b} \rightarrow \mathbb{R}$, the function that take as input variables the vector targets $\aT$ and $\bT$ and return the optimal cost of the Problem \ref{pb:SHE opt}.
 \end{definition}
 
 \vspace{1em}
-\begin{definition}[Solvable set]
-	We define a solvable set $\mathcal{R}_{\mS}$ as:
-	\begin{gather}
-		\mathcal{R}_{\mS} = \{ (\aT,\bT) \in \mathbb{R}^{N_a+N_b} | V_{\mS}(\aT,\bT) = 0\}\
-	\end{gather}
+\begin{definition}[solvable set]
+We define a \textit{solvable set} $\mathcal{R}_{\mS}$ as:
+\begin{gather}
+	\mathcal{R}_{\mS} = \{ (\aT,\bT) \in \mathbb{R}^{N_a+N_b} | V_{\mS}(\aT,\bT) = 0\}\
+\end{gather}
 \end{definition}
-En la práctica solo son relevantes las soluciones del Problema \ref{pb:SHE opt} para los targets $(\aT,\bT) \in \mathcal{R}_\mS$, de manera que es ideal obtener una función que contenga  los ángulos de conmutación óptimos $\Phi^*_\mS$ en todo el conjunto $\mathcal{R}_\mS$. Definiremos  esta función llamandola Política con la forma de onda $\mS$
+In practical applications, one is only interested in solutions of Problem \ref{pb:SHE opt} corresponding to targets $(\aT,\bT) \in \mathcal{R}_\mS$, so that it would be desirable to obtain a control function containing the switching angles $\Phi^*_\mS$ for the whole set $\mathcal{R}_\mS$. We will refer to this function as the \textit{policy} with waveform $\mS$
 
 \vspace{1em}
-\begin{definition}[Policy Function]
-Una función $\Pi_{\mS}: \mathcal{R}_\mS \rightarrow [0,\pi]^M$ tal que $\Phi^* = \Pi_{\mS}(\aT,\bT)$, siendo $\Phi^*$ los ángulos de conmutación óptimos solución del Problema \ref{pb:SHEp} para los targets $(\aT,\bT)$.
+\begin{definition}[policy]
+We will call \textit{policy} a function $\Pi_{\mS}: \mathcal{R}_\mS \rightarrow [0,\pi]^M$ such that $\Phi^* = \Pi_{\mS}(\aT,\bT)$, with $\Phi^*$ the optimal switching angles solutions of Problem \ref{pb:SHEp} for the targets $(\aT,\bT)$.
 \end{definition} 
 
-Con el fin de reconstruir la función política $\Pi_{\mS}$ se calculan soluciones numéricas del Problema \ref{pb:SHE opt} en pocos puntos de $\mathbb{R}^{N_a+N_b}$, luego se comprueba que el coste óptimo sea nulo y por último se interpolar la función $\Pi_{\mS}$ en el conjunto convexo formado por los puntos obtenidos. 
+With the aim of reconstructing the policy $\Pi_{\mS}$, a typical approach is to solve numerically Problem \ref{pb:SHE opt} for a limited number of points in $\mathbb{R}^{N_a+N_b}$ and check that the optimal cost is zero. Secondly, one interpolate the function $\Pi_{\mS}$ in the convex set generated by the points previously obtained. 
 
-\JOEnd
-
-Let us point out some of the main difficulties and drawback arising in this approach.
+Let us now point out some of the main difficulties and drawback arising in this approach.
 
 \subsection{Combinatory problem}\label{subsec:Combinatory Problem}
 In practice, one does not dispose of a suitable waveform $\mS$ which yields a solution to the Problem \ref{pb:SHEp}. A common approach to solve the SHM problem consists in fixing the number of switches $M$, and then solve Problem \ref{pb:SHE opt} for  all the possible combinations of $M$ elements of $\mathcal{U}$. However, taking into account that the number of possible $M$-tuples  in $\mathcal U$ is of the order $(L-1)^M$, it is evident that the complexity of the above approach increases rapidly when $L>1$. This problem has been studied in \cite{Yang2015} where, through appropriate algebraic transformations, the authors are able to convert the SHM problem into a polynomial system whose solutions' set contains all the possible waveforms $\mathcal S$ of $M$ elements in $\mathcal{U}$. As a drawback of this approach, the number of switches $M$ needs to be prefixed. However, in some cases,  determining the number of switches which is necessary to reach the desired Fourier coefficients is not a straightforward task.
 
-\JOStart
-\subsection{Solvable Set Problem}\label{subsec: resolvable set probem }
+\subsection{Solvable set problem}\label{subsec: resolvable set probem }
 
-Dado una forma de onda $\mS$, el tamaño de su conjunto solucionable $\mathcal{R}_{\mS}$ suele ser  pequeño dando políticas $\Pi_{\mS}$ poco útiles. Esta problemática se aborda solucionando el Problema \ref{pb:SHE opt} para un conjunto de formas de onda $\{\mS_l\}_{l=1}^r$, obteniendo políticas $\{\Pi_{\mS_l}\}_{l=1}^r$ y  conjuntos solucionables $\{\mathcal{R}_{\mS_l}\}_{l=1}^r$ para cada uno de ellas. Entonces mediante la unión de políticas es posible obtener un política en un conjunto más ámplio. Sin embargo, dado que en general las distintas forma de onda puede tener conjuntos solucionables disjuntos o solapados, esta unión es cáotica, obteniendo varias soluciones para un mismo vector target $(\aT,\bT)$ o incluso regiones sin solución (véase Figura \ref{fig:chaos_policy}).
+Given a waveform $\mS$, the corresponding solvable set $\mathcal{R}_{\mS}$ is usually very small, yielding to policies $\Pi_{\mS}$ which are not very effective. This issue is typically addressed by solving Problem \ref{pb:SHE opt} for a set of waveforms $\{\mS_l\}_{l=1}^r$ and obtaining different policies $\{\Pi_{\mS_l}\}_{l=1}^r$ and solvable sets $\{\mathcal{R}_{\mS_l}\}_{l=1}^r$ for each one of them. By gathering them, on then creates a new policy which is applicable in a larger set. Nevertheless, due to the fact that in general to different waveforms may correspond disjoint or even overlapping solvable sets, this union of policies is chaotic, providing different solutions for the same target vector $(\aT,\bT)$, or even generating regions with no solution (see Figure \ref{fig:chaos_policy}).
 
-\subsection{Policy Problem} \label{subsec:Non-continuous policy}
+\subsection{Policy problem} \label{subsec:Non-continuous policy}
  
-
-Debido al conplejidad de un política formada por unión de  distintas formas de onda, la continuidad de los ángulos de conmutación no se puede asegurar. Este comprotamiento en la comunidad de SHM \cite{Agelidis2008,Dahidah2008,Dahidah2015,Yang2017} mostrando la dificultada de la representación de la política $\Pi_{\mS}$ (véase Figura \ref{fig:chaos_policy}).
+Due to the complexity of a policy generated by the union of different waveforms, the continuity of the switching angles cannot be guaranteed. This is a well known problem ion the SHM community \cite{Agelidis2008,Dahidah2008,Dahidah2015,Yang2017} (see Figure \ref{fig:chaos_policy}).
 	
-
-\begin{figure}
+\begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.35]{img/fig01a.eps}
-	\caption{En la figura superior se muestra los ángulos de conmutación óptimos $\Phi^*_{\mS}$ para varias formas de onda $\{\mS_l\}_{l=1}^7$ para un problema SHE (véase Remark \ref{remark:SHE}), considerando los conjuntos   $\mathcal{E}_b = \{1,     5,     7,    11 ,   13  ,  17  ,  19   , 23 ,   25  ,  29  ,  31\}$ y $\mathcal{E}_a = \{1\}$. Se ha tomado el  target $(a_1,b_1) = (m,0) \hspace{0.5em} \forall m \in [0,1.2]$. En la Figura inferior muestra los espacios solucionables para cada forma de onda.}
+	\caption{In the first picture, we display the optimal switching angles $\Phi^*_{\mS}$ associated to different waveforms $\{\mS_l\}_{l=1}^7$ for a SHE problem (see Remark \ref{remark:SHE}), considering the sets $\mathcal{E}_a = \{1\}$ and $\mathcal{E}_b = \{1,5,7,11,13,17,19,23,25,29,31\}$. We chose the target $(a_1,b_1) = (m,0) \hspace{0.5em} \forall m \in [0,1.2]$. The second figure shows the solvable sets for each waveform we considered.}
 	\label{fig:chaos_policy}
 \end{figure}
-
-\JOEnd
 
 \section{SHM problem as an Optimal Control Problem}\label{sec:Contributions}
 
@@ -466,7 +441,7 @@ See Figure \ref{fig:Bang-Bang-penalization} for an illustration.
 
 \subsection{Multilevel SHM problem via OCP}
 
-Inspired by the ideas of the previous subsection, we can address the case when $\mathcal{U}$ contains more than two elements. \UB{This is known in the power electronics literature as the \textit{multilevel SHM problem}}. Now, the goal is to construct a function $\mathcal{L}$ such that the Hamiltonian associated to Problem \ref{pb:OCP_penalizado} always attains the minimum at points in $\mathcal{U}$.
+Inspired by the ideas of the previous subsection, we can address the case when $\mathcal{U}$ contains more than two elements. This is known in the power electronics literature as the \textit{multilevel SHM problem}. Now, the goal is to construct a function $\mathcal{L}$ such that the Hamiltonian associated to Problem \ref{pb:OCP_penalizado} always attains the minimum at points in $\mathcal{U}$.
 A way to construct such a function $\mathcal{L}$ is to interpolate a parabola in $[-1,1]$ by affine functions, considering the elements in $\mathcal{U}$ as the interpolating points.  Since, between any two points in $\mathcal{U}$,  the function $\mathcal{L}$ is a straight line,  the Hamiltonian is a concave function in these intervals, and hence, the minimum is always attained at points in $\mathcal{U}$.
 
 \vspace{1em}
@@ -522,10 +497,8 @@ Examples of functions which are compatible with this situation are
 In this section, we present several examples in which we solve our optimal control problem through the direct method \cite{rao2009survey} and the non-linear constrained optimization tool \texttt{CasADi} \cite{Andersson2019}. All the simulations we are going to present can be found also in \cite{simus}. Our Experiments were conducted on a personal MacBook Pro laptop (1,4 GHz Quad-Core Intel Core i5, 8GB RAM, Intel Iris Plus
 Graphics 1536 MB). 
 
-\JOStart
-En esta sección continuaremos  presentando una aproximación numérica para las funciones de penalización $\mathcal{L}$ presentado en la Sección \ref{sec:Contributions}, luego mencionando el método para la resolución numérica del control óptimo, y por último mostrando tres ejemplos del problema SHM como problema de control óptimo.
-\JOEnd
-%
+We will start by presenting a suitable numerical approximation for the penalization functions $\mathcal{L}$ introduced in Section \ref{sec:Contributions}. Secondly, we will briefly mention the methodology we shall employ to solve the optimal control problem. Finally, we will show three examples of SHM problem solved via the optimal control approach.
+
 \subsection{Smooth approximation of piece-wise linear penalization}
 
 With the final aim of using an optimization software to solve our optimal control problem, we will approximate our piece-wise linear penalization with the help of the Heaviside function $h:\mathbb{R} \rightarrow \mathbb{R}$ and its smooth approximation defined as follows: 
@@ -556,9 +529,8 @@ where
 \end{gather}
 so that $\mathcal{L}^\theta \rightarrow \mathcal{L}$ when $\theta \rightarrow +\infty$. 
 
-\JOStart
-De esta manera, podemos aproximar de manera suave nuestras funciónes de penalización de manera numérica. 
-\JOEnd
+In this way, we can obtain a smooth numerical approximation of our penalization function.
+
 \subsection{Direct method  for  OCP-SHE}
 
 To solve the optimal control problem (\ref{pb:OCP_penalizado}), we use a direct method. 
@@ -655,8 +627,6 @@ Now, let $u^\ast$ be the solution to Problem \ref{pb:OCP_penalizado}, and let $\
 \end{align*}
 and hence, we deduce that $\| \bm{x}^\ast (\pi)\|^2 \leq 4 \varepsilon \pi \| \mathcal{L}\|_\infty.$ \hfill $\square$
 \end{proof}
-
-\UB{Are we sure that here is $4\varepsilon$ and not $2\varepsilon$?}
 
 \subsection{Proofs of Theorems \ref{th:bang-bang} and \ref{th:PLP}}
 
@@ -840,27 +810,21 @@ Due to the continuity of $\mu^\ast(t)$, along with \eqref{eq:subdiff}, it is cle
 %
 %In other words, only when $m = \varepsilon(u_{k+1}+u_k)$ the minima of the Hamiltonian belong to an interval. For all the other values of $m\in\mathbb{R}$, these minima are contained in $\mathcal{U}$. So that under a continuous variation of $m$, Case 2 can only occur pointwise. Recalling the optimal control problem $m(\tau) = [\bm{p}(\tau) \cdot \bm{\mathcal{D}}(\tau)]$, we can notice that Case 2 corresponds to the instants $\tau$ of change of value.
 
+\section{Conclusions}\label{sec:conclusions}
 
-
-
-
-
-\section{Conclusiones}\label{Section6}
-
-
-We presented the SHE problem from the point of view of control theory. 
-
-This methodology for the SHE problem connects control theory with harmonic elimination. In this way, the SHE problem can be solved through classical tools.
-
-
-We shall mention that, in the SHE literature \cite{Wu2009}, it is usual to distinguish among the half-wave symmetry problem (addressed in the present paper) and the quarter-wave symmetry one in which
-    \begin{align*}
-        u\left(\tau + \frac \pi2\right) = -u(\tau)\quad \mbox{for all}\; \tau \in \left[0,\frac \pi2\right).
-    \end{align*}
-In quarter-wave symmetry, the SHE problem simplifies, as the Fourier coefficients $\{a_i\}_{i\in\mathcal E_a}$ turn out to be all zero. Hence, only the phases of the converter's signal can be controlled, while the half-wave SHE allows to deal with the amplitudes as well. It is worth to remark nonetheless that our optimal control formulation can be easily adapted to the quarter-wave symmetry problem.
-
-
-Nevertheless, comparing with methodologies where the commutation number is fixed a priori, our approximation is computationally more expensive. Notwithstanding that, the optimal control provides solutions in the entire range of the modulation index, although the number of solutions or their locations change dramatically.
+%We presented the SHE problem from the point of view of control theory. 
+%
+%This methodology for the SHE problem connects control theory with harmonic elimination. In this way, the SHE problem can be solved through classical tools.
+%
+%
+%We shall mention that, in the SHE literature \cite{Wu2009}, it is usual to distinguish among the half-wave symmetry problem (addressed in the present paper) and the quarter-wave symmetry one in which
+%    \begin{align*}
+%        u\left(\tau + \frac \pi2\right) = -u(\tau)\quad \mbox{for all}\; \tau \in \left[0,\frac \pi2\right).
+%    \end{align*}
+%In quarter-wave symmetry, the SHE problem simplifies, as the Fourier coefficients $\{a_i\}_{i\in\mathcal E_a}$ turn out to be all zero. Hence, only the phases of the converter's signal can be controlled, while the half-wave SHE allows to deal with the amplitudes as well. It is worth to remark nonetheless that our optimal control formulation can be easily adapted to the quarter-wave symmetry problem.
+%
+%
+%Nevertheless, comparing with methodologies where the commutation number is fixed a priori, our approximation is computationally more expensive. Notwithstanding that, the optimal control provides solutions in the entire range of the modulation index, although the number of solutions or their locations change dramatically.
 
 
 \begin{ack}            

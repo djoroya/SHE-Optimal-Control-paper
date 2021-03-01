@@ -2,8 +2,8 @@
 \BOOKMARK [1][-]{section.2}{Preliminaries}{}% 2
 \BOOKMARK [1][-]{section.3}{SHM as a finite-dimensional optimization problem}{}% 3
 \BOOKMARK [2][-]{subsection.3.1}{Combinatory problem}{section.3}% 4
-\BOOKMARK [2][-]{subsection.3.2}{Solvable Set Problem}{section.3}% 5
-\BOOKMARK [2][-]{subsection.3.3}{Policy Problem}{section.3}% 6
+\BOOKMARK [2][-]{subsection.3.2}{Solvable set problem}{section.3}% 5
+\BOOKMARK [2][-]{subsection.3.3}{Policy problem}{section.3}% 6
 \BOOKMARK [1][-]{section.4}{SHM problem as an Optimal Control Problem}{}% 7
 \BOOKMARK [2][-]{subsection.4.1}{Bilevel SHM problem via OCP \(Bang-Bang Control\)}{section.4}% 8
 \BOOKMARK [2][-]{subsection.4.2}{Multilevel SHM problem via OCP}{section.4}% 9
@@ -15,6 +15,6 @@
 \BOOKMARK [2][-]{subsection.6.1}{Proofs of Theorems 4.1 and 4.2}{section.6}% 15
 \BOOKMARK [2][-]{subsection.6.2}{Proof of Theorem 4.1}{section.6}% 16
 \BOOKMARK [2][-]{subsection.6.3}{Proof of Theorem 4.2}{section.6}% 17
-\BOOKMARK [1][-]{section.7}{Conclusiones}{}% 18
+\BOOKMARK [1][-]{section.7}{Conclusions}{}% 18
 \BOOKMARK [1][-]{section*.1}{Acknowledgements}{}% 19
 \BOOKMARK [1][-]{section*.2}{References}{}% 20
