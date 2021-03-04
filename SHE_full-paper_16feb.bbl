@@ -4,7 +4,7 @@
 Agelidis, V.~G., Balouktsis, A.~I., and Cossar, C. (2008).
 \newblock {On attaining the multiple solutions of selective harmonic
   elimination PWM three-level waveforms through function minimization}.
-\newblock {\em IEEE Transactions on Industrial Electronics}, 55(3):996--1004.
+\newblock {\em IEEE Trans. Ind. Electron.}, 55(3):996--1004.
 
 \bibitem[Andersson et~al., 2019]{Andersson2019}
 Andersson, J. A.~E., Gillis, J., Horn, G., Rawlings, J.~B., and Diehl, M.
@@ -22,19 +22,19 @@ Bryson, A.~E. (1975).
 Dahidah, M.~S., Konstantinou, G., and Agelidis, V.~G. (2015).
 \newblock {A Review of Multilevel Selective Harmonic Elimination PWM:
   Formulations, Solving Algorithms, Implementation and Applications}.
-\newblock {\em IEEE Transactions on Power Electronics}, 30(8):4091--4106.
+\newblock {\em IEEE Trans. Power Electron.}, 30(8):4091--4106.
 
 \bibitem[Dahidah and Agelidis, 2008]{Dahidah2008}
 Dahidah, M. S.~A. and Agelidis, V.~G. (2008).
-\newblock {Selective harmonic elimination PWM control for cascaded multilevel
-  voltage source converters: A generalized formula}.
-\newblock {\em IEEE Transactions on Power Electronics}, 23(4):1620--1630.
+\newblock Selective harmonic elimination {PWM} control for cascaded multilevel
+  voltage source converters: a generalized formula.
+\newblock {\em IEEE Trans. Power Electron.}, 23(4):1620--1630.
 
 \bibitem[Duranay and Guldemir, 2017]{duranay2017selective}
 Duranay, Z.~B. and Guldemir, H. (2017).
 \newblock Selective harmonic eliminated v/f speed control of single-phase
   induction motor.
-\newblock {\em IET Power Electron.}, 11(3):477--483.
+\newblock {\em IEEE Trans. Power Electron.}, 11(3):477--483.
 
 \bibitem[Ikeda and Nagahara, 2016]{ikeda2016maximum}
 Ikeda, T. and Nagahara, M. (2016).
@@ -57,8 +57,8 @@ Konstantinou, G.~S. and Agelidis, V.~G. (2010).
 
 \bibitem[Liberzon, 2003]{liberzon2003switching}
 Liberzon, D. (2003).
-\newblock Switching in systems and control birkha{\"a}user boston.
-\newblock {\em Systems \& Control: Foundations \& Applications}.
+\newblock {\em Switching in systems and control}.
+\newblock Springer Science \& Business Media.
 
 \bibitem[Liu and Gong, 2014]{liu2014optimal}
 Liu, C. and Gong, Z. (2014).
@@ -68,7 +68,7 @@ Liu, C. and Gong, Z. (2014).
 
 \bibitem[Nagahara et~al., 2013]{nagahara2013maximum}
 Nagahara, M., Quevedo, D.~E., and Ne{\v{s}}i{\'c}, D. (2013).
-\newblock Maximum hands-off control and l 1 optimality.
+\newblock Maximum hands-off control and ${L}^1$ optimality.
 \newblock In {\em 52nd IEEE Conference on Decision and Control}, pages
   3825--3830. IEEE.
 
@@ -80,14 +80,13 @@ Oroya, J. (2021).
 
 \bibitem[Quevedo et~al., 2004]{Quevedo2004}
 Quevedo, D.~E., Goodwin, G.~C., and {De Don{\'{a}}}, J.~A. (2004).
-\newblock {Finite constraint set receding horizon quadratic control}.
-\newblock {\em International Journal of Robust and Nonlinear Control},
-  14(4):355--377.
+\newblock Finite constraint set receding horizon quadratic control.
+\newblock {\em Int. J. Robust Nonlin. Control}, 14(4):355--377.
 
 \bibitem[Rao, 2009]{rao2009survey}
 Rao, A.~V. (2009).
 \newblock A survey of numerical methods for optimal control.
-\newblock {\em Advances in the Astronautical Sciences}, 135(1):497--528.
+\newblock {\em Adv. Astronaut. Sci.}, 135(1):497--528.
 
 \bibitem[Rodr{\'{i}}guez et~al., 2002]{Rodriguez2002}
 Rodr{\'{i}}guez, J., Lai, J.~S., and Peng, F.~Z. (2002).
@@ -101,16 +100,10 @@ Sun, J., Beineke, S., and Grotstollen, H. (1996).
   equations.
 \newblock {\em IEEE Trans. Power Electron.}, 11(4):612--621.
 
-\bibitem[Wu, 2009]{Wu2009}
-Wu, B. (2009).
-\newblock {A Generalized Formulation of Quarter-Wave Symmetry SHE-PWM Problems
-  for Multilevel Inverters}.
-\newblock {\em IEEE Transactions on Power Electronics}, 24(7):1758--1766.
-
 \bibitem[Xu and Antsaklis, 2002]{Xu2002}
 Xu, X. and Antsaklis, P.~J. (2002).
-\newblock {An approach to switched systems optimal control based on
-  parameterization of the switching instants}.
+\newblock An approach to switched systems optimal control based on
+  parameterization of the switching instants.
 \newblock {\em IFAC Proceedings Volumes (IFAC-PapersOnline)}, 15(1):365--370.
 
 \bibitem[Yang et~al., 2015]{Yang2015}
@@ -127,7 +120,7 @@ Yang, K., Zhang, Q., Zhang, J., Yuan, R., Guan, Q., Yu, W., and Wang, J.
 
 \bibitem[Zuazua, 2011]{Zuazua2011}
 Zuazua, E. (2011).
-\newblock {Switching control}.
-\newblock {\em Journal of the European Mathematical Society}, 13(1):85--117.
+\newblock Switching control.
+\newblock {\em J. Eur. Math. Soc.}, 13(1):85--117.
 
 \end{thebibliography}

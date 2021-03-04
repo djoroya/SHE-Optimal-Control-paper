@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.18)  1 MAR 2021 14:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.18)  4 MAR 2021 17:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -475,7 +475,7 @@ LaTeX Font Info:    Font shape `U/lasy/b/n' in size <5> not available
 Missing character: There is no Ã in font cmr9!
 Missing character: There is no ¼ in font cmr9!
 
-Underfull \hbox (badness 2547) in paragraph at lines 53--54
+Underfull \hbox (badness 2547) in paragraph at lines 52--53
 []\OT1/cmr/m/n/10 Selective Har-monic Mod-u-la-tion (SHM) [[][]Rodr^^S^^Pguez
  []
 
@@ -484,18 +484,18 @@ Underfull \hbox (badness 2547) in paragraph at lines 53--54
 
 
 ]
-Underfull \hbox (badness 2027) in paragraph at lines 75--76
+Underfull \hbox (badness 2027) in paragraph at lines 69--70
 []\OT1/cmr/m/n/10 Methods with-out a pre-de-ter-mined num-ber of
  []
 
 
-Underfull \hbox (badness 1264) in paragraph at lines 75--76
+Underfull \hbox (badness 1264) in paragraph at lines 69--70
 \OT1/cmr/m/n/10 fi-nite con-straint set in a in-fi-nite time-horizon
  []
 
 [2]
 Package hyperref Info: bookmark level for unknown definition defaults to 0 on i
-nput line 150.
+nput line 136.
 Package epstopdf Info: Source file: <img/fig01.eps>
 (epstopdf)                    date: 2021-02-22 12:35:29
 (epstopdf)                    size: 68660 bytes
@@ -504,12 +504,12 @@ Package epstopdf Info: Source file: <img/fig01.eps>
 (epstopdf)                    size: 33143 bytes
 (epstopdf)             Command: <repstopdf --outfile=img/fig01-eps-converted-to
 .pdf img/fig01.eps>
-(epstopdf)             \includegraphics on input line 158.
+(epstopdf)             \includegraphics on input line 144.
 Package epstopdf Info: Output file is already uptodate.
-<img/fig01-eps-converted-to.pdf, id=150, 621.32124pt x 523.9575pt>
+<img/fig01-eps-converted-to.pdf, id=136, 621.32124pt x 523.9575pt>
 File: img/fig01-eps-converted-to.pdf Graphic file (type pdf)
 <use img/fig01-eps-converted-to.pdf>
-Package pdftex.def Info: img/fig01-eps-converted-to.pdf  used on input line 158
+Package pdftex.def Info: img/fig01-eps-converted-to.pdf  used on input line 144
 .
 (pdftex.def)             Requested size: 217.4657pt x 183.38786pt.
 
@@ -517,16 +517,16 @@ Package pdftex.def Info: img/fig01-eps-converted-to.pdf  used on input line 158
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 Package hyperref Info: bookmark level for unknown problem defaults to 0 on inpu
-t line 182.
+t line 166.
 Package hyperref Info: bookmark level for unknown remark defaults to 0 on input
- line 196.
+ line 180.
 [3 <./img/fig01-eps-converted-to.pdf>]
-Underfull \hbox (badness 1454) in paragraph at lines 206--206
+Underfull \hbox (badness 1454) in paragraph at lines 190--190
 []\OT1/cmr/bx/n/10 SHM as a finite-dimensional op-ti-miza-tion
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 230--231
+Underfull \hbox (badness 10000) in paragraph at lines 211--212
 []
  []
 
@@ -539,21 +539,17 @@ Package epstopdf Info: Source file: <img/fig01a.eps>
 (epstopdf)                    size: 40262 bytes
 (epstopdf)             Command: <repstopdf --outfile=img/fig01a-eps-converted-t
 o.pdf img/fig01a.eps>
-(epstopdf)             \includegraphics on input line 274.
+(epstopdf)             \includegraphics on input line 248.
 Package epstopdf Info: Output file is already uptodate.
-<img/fig01a-eps-converted-to.pdf, id=221, 599.23875pt x 518.93875pt>
+<img/fig01a-eps-converted-to.pdf, id=202, 599.23875pt x 518.93875pt>
 File: img/fig01a-eps-converted-to.pdf Graphic file (type pdf)
 <use img/fig01a-eps-converted-to.pdf>
-Package pdftex.def Info: img/fig01a-eps-converted-to.pdf  used on input line 27
-4.
-(pdftex.def)             Requested size: 209.7367pt x 181.63129pt.
+Package pdftex.def Info: img/fig01a-eps-converted-to.pdf  used on input line 24
+8.
+(pdftex.def)             Requested size: 203.73848pt x 176.43684pt.
 Missing character: There is no Â in font cmr9!
 Missing character: There is no   in font cmr9!
  [5 <./img/fig01a-eps-converted-to.pdf>]
-Overfull \hbox (16.91pt too wide) in paragraph at lines 345--346
-[]
- []
-
 Package epstopdf Info: Source file: <img/fig02.eps>
 (epstopdf)                    date: 2021-02-22 12:35:29
 (epstopdf)                    size: 124432 bytes
@@ -562,71 +558,38 @@ Package epstopdf Info: Source file: <img/fig02.eps>
 (epstopdf)                    size: 51237 bytes
 (epstopdf)             Command: <repstopdf --outfile=img/fig02-eps-converted-to
 .pdf img/fig02.eps>
-(epstopdf)             \includegraphics on input line 358.
+(epstopdf)             \includegraphics on input line 348.
 Package epstopdf Info: Output file is already uptodate.
-<img/fig02-eps-converted-to.pdf, id=255, 604.2575pt x 517.935pt>
+<img/fig02-eps-converted-to.pdf, id=240, 604.2575pt x 517.935pt>
 File: img/fig02-eps-converted-to.pdf Graphic file (type pdf)
 <use img/fig02-eps-converted-to.pdf>
-Package pdftex.def Info: img/fig02-eps-converted-to.pdf  used on input line 358
+Package pdftex.def Info: img/fig02-eps-converted-to.pdf  used on input line 348
 .
 (pdftex.def)             Requested size: 196.38136pt x 168.32687pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 362--364
-
- []
-
-[6 <./img/fig02-eps-converted-to.pdf>]
+ [6 <./img/fig02-eps-converted-to.pdf>]
 Package hyperref Info: bookmark level for unknown proposition defaults to 0 on 
-input line 409.
+input line 392.
 Package hyperref Info: bookmark level for unknown theorem defaults to 0 on inpu
-t line 429.
+t line 410.
  [7]
-Overfull \hbox (9.9584pt too wide) detected at line 515
-[]
- []
-
-
-Underfull \hbox (badness 3407) in paragraph at lines 536--544
+Underfull \hbox (badness 3407) in paragraph at lines 509--517
 []\OT1/cmr/m/n/10 To solve the op-ti-mal con-trol prob-lem ([][]4.3[][]), we
  []
 
 
-Underfull \hbox (badness 2376) in paragraph at lines 536--544
+Underfull \hbox (badness 2376) in paragraph at lines 509--517
 \OT1/cmr/m/n/10 use a di-rect method. If we con-sider a par-ti-tion
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 536--544
+Underfull \hbox (badness 10000) in paragraph at lines 509--517
 
  []
 
 
-Underfull \vbox (badness 3168) has occurred while \output is active []
+Underfull \vbox (badness 4995) has occurred while \output is active []
 
  [8]
-Underfull \hbox (badness 1237) in paragraph at lines 566--567
-\OML/cmm/m/it/10 ^^Q \OT1/cmr/m/n/10 = 10[]$ and $\OMS/cmsy/m/n/10 P[] \OT1/cmr
-/m/n/10 = \OMS/cmsy/m/n/10 f\OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 
-0\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 1\OML/cm
-m/m/it/10 ; \OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 2\OML/cmm/m/it/1
-0 ; [] ; ^^Y\OMS/cmsy/m/n/10 g$\OT1/cmr/m/n/10 . More-
- []
-
-
-Underfull \hbox (badness 3039) in paragraph at lines 566--567
-\OMS/cmsy/m/n/10 E[] \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 f\OT1/cmr/m/n/10 1\OML/
-cmm/m/it/10 ; \OT1/cmr/m/n/10 5\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 7\OML/cmm/m/i
-t/10 ; \OT1/cmr/m/n/10 11\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 13\OML/cmm/m/it/10 
-; \OT1/cmr/m/n/10 15\OMS/cmsy/m/n/10 g$\OT1/cmr/m/n/10 , and the tar-get vec-to
-rs
- []
-
-Package hyperref Info: bookmark level for unknown simulation defaults to 0 on i
-nput line 569.
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¡ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ­ in font cmr10!
 Package epstopdf Info: Source file: <img/fig05.eps>
 (epstopdf)                    date: 2021-02-22 12:35:29
 (epstopdf)                    size: 235589 bytes
@@ -635,18 +598,21 @@ Package epstopdf Info: Source file: <img/fig05.eps>
 (epstopdf)                    size: 128379 bytes
 (epstopdf)             Command: <repstopdf --outfile=img/fig05-eps-converted-to
 .pdf img/fig05.eps>
-(epstopdf)             \includegraphics on input line 578.
+(epstopdf)             \includegraphics on input line 554.
 Package epstopdf Info: Output file is already uptodate.
-<img/fig05-eps-converted-to.pdf, id=387, 470.75874pt x 317.185pt>
+<img/fig05-eps-converted-to.pdf, id=380, 470.75874pt x 317.185pt>
 File: img/fig05-eps-converted-to.pdf Graphic file (type pdf)
 <use img/fig05-eps-converted-to.pdf>
-Package pdftex.def Info: img/fig05-eps-converted-to.pdf  used on input line 578
+Package pdftex.def Info: img/fig05-eps-converted-to.pdf  used on input line 554
 .
 (pdftex.def)             Requested size: 247.14485pt x 166.51976pt.
 
-Overfull \hbox (9.44496pt too wide) in paragraph at lines 577--579
+Overfull \hbox (9.44496pt too wide) in paragraph at lines 553--555
 []  [] 
  []
+
+
+LaTeX Warning: Reference `simu1' on page 9 undefined on input line 555.
 
 Package epstopdf Info: Source file: <img/fig06.eps>
 (epstopdf)                    date: 2021-02-22 12:35:29
@@ -656,18 +622,21 @@ Package epstopdf Info: Source file: <img/fig06.eps>
 (epstopdf)                    size: 73508 bytes
 (epstopdf)             Command: <repstopdf --outfile=img/fig06-eps-converted-to
 .pdf img/fig06.eps>
-(epstopdf)             \includegraphics on input line 593.
+(epstopdf)             \includegraphics on input line 560.
 Package epstopdf Info: Output file is already uptodate.
-<img/fig06-eps-converted-to.pdf, id=391, 470.75874pt x 317.185pt>
+<img/fig06-eps-converted-to.pdf, id=381, 470.75874pt x 317.185pt>
 File: img/fig06-eps-converted-to.pdf Graphic file (type pdf)
 <use img/fig06-eps-converted-to.pdf>
-Package pdftex.def Info: img/fig06-eps-converted-to.pdf  used on input line 593
+Package pdftex.def Info: img/fig06-eps-converted-to.pdf  used on input line 560
 .
 (pdftex.def)             Requested size: 247.14485pt x 166.51976pt.
 
-Overfull \hbox (9.44496pt too wide) in paragraph at lines 592--594
+Overfull \hbox (9.44496pt too wide) in paragraph at lines 559--561
 []  [] 
  []
+
+
+LaTeX Warning: Reference `simu2' on page 9 undefined on input line 561.
 
 Package epstopdf Info: Source file: <img/fig08.eps>
 (epstopdf)                    date: 2021-02-22 12:35:29
@@ -677,19 +646,31 @@ Package epstopdf Info: Source file: <img/fig08.eps>
 (epstopdf)                    size: 93602 bytes
 (epstopdf)             Command: <repstopdf --outfile=img/fig08-eps-converted-to
 .pdf img/fig08.eps>
-(epstopdf)             \includegraphics on input line 607.
+(epstopdf)             \includegraphics on input line 566.
 Package epstopdf Info: Output file is already uptodate.
-<img/fig08-eps-converted-to.pdf, id=394, 434.62375pt x 317.185pt>
+<img/fig08-eps-converted-to.pdf, id=382, 434.62375pt x 317.185pt>
 File: img/fig08-eps-converted-to.pdf Graphic file (type pdf)
 <use img/fig08-eps-converted-to.pdf>
-Package pdftex.def Info: img/fig08-eps-converted-to.pdf  used on input line 607
+Package pdftex.def Info: img/fig08-eps-converted-to.pdf  used on input line 566
 .
 (pdftex.def)             Requested size: 228.17424pt x 166.51976pt.
+
+LaTeX Warning: Reference `simu3' on page 9 undefined on input line 567.
+
+Missing character: There is no Ã in font cmr10!
+Missing character: There is no ¡ in font cmr10!
+Missing character: There is no Ã in font cmr10!
+Missing character: There is no ­ in font cmr10!
+Package hyperref Info: bookmark level for unknown proof defaults to 0 on input 
+line 582.
 [9 <./img/fig05-eps-converted-to.pdf> <./img/fig06-eps-converted-to.pdf> <./img
 /fig08-eps-converted-to.pdf>]
-Package hyperref Info: bookmark level for unknown proof defaults to 0 on input 
-line 621.
- [10]
+Underfull \hbox (badness 1342) in paragraph at lines 660--662
+\OT1/cmr/m/n/10 then the argmin of $\OMS/cmsy/m/n/10 J\OT1/cmr/m/n/10 (\OML/cmm
+/m/it/10 u; ^^V[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 t\OT1/cmr/m/n/10 ))$ re-main
+s the set
+ []
+
 Package epstopdf Info: Source file: <img/fig03.eps>
 (epstopdf)                    date: 2021-03-01 13:14:16
 (epstopdf)                    size: 242305 bytes
@@ -698,20 +679,29 @@ Package epstopdf Info: Source file: <img/fig03.eps>
 (epstopdf)                    size: 102863 bytes
 (epstopdf)             Command: <repstopdf --outfile=img/fig03-eps-converted-to
 .pdf img/fig03.eps>
-(epstopdf)             \includegraphics on input line 701.
+(epstopdf)             \includegraphics on input line 667.
 Package epstopdf Info: Output file is already uptodate.
-<img/fig03-eps-converted-to.pdf, id=468, 586.19pt x 723.70375pt>
+<img/fig03-eps-converted-to.pdf, id=444, 586.19pt x 723.70375pt>
 File: img/fig03-eps-converted-to.pdf Graphic file (type pdf)
 <use img/fig03-eps-converted-to.pdf>
-Package pdftex.def Info: img/fig03-eps-converted-to.pdf  used on input line 701
+Package pdftex.def Info: img/fig03-eps-converted-to.pdf  used on input line 667
 .
 (pdftex.def)             Requested size: 243.26431pt x 300.33145pt.
 
-Overfull \hbox (3.26431pt too wide) in paragraph at lines 701--702
+Overfull \hbox (3.26431pt too wide) in paragraph at lines 667--668
  [][] 
  []
 
-[11 <./img/fig03-eps-converted-to.pdf>]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[10] [11 <./img/fig03-eps-converted-to.pdf>]
+Underfull \hbox (badness 1342) in paragraph at lines 754--756
+\OT1/cmr/m/n/10 then the argmin of $\OMS/cmsy/m/n/10 J\OT1/cmr/m/n/10 (\OML/cmm
+/m/it/10 u; ^^V[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 t\OT1/cmr/m/n/10 ))$ re-main
+s the set
+ []
+
 Package epstopdf Info: Source file: <img/fig04.eps>
 (epstopdf)                    date: 2021-03-01 13:14:16
 (epstopdf)                    size: 391743 bytes
@@ -720,16 +710,16 @@ Package epstopdf Info: Source file: <img/fig04.eps>
 (epstopdf)                    size: 165675 bytes
 (epstopdf)             Command: <repstopdf --outfile=img/fig04-eps-converted-to
 .pdf img/fig04.eps>
-(epstopdf)             \includegraphics on input line 784.
+(epstopdf)             \includegraphics on input line 763.
 Package epstopdf Info: Output file is already uptodate.
-<img/fig04-eps-converted-to.pdf, id=493, 586.19pt x 723.70375pt>
+<img/fig04-eps-converted-to.pdf, id=486, 586.19pt x 723.70375pt>
 File: img/fig04-eps-converted-to.pdf Graphic file (type pdf)
 <use img/fig04-eps-converted-to.pdf>
-Package pdftex.def Info: img/fig04-eps-converted-to.pdf  used on input line 784
+Package pdftex.def Info: img/fig04-eps-converted-to.pdf  used on input line 763
 .
 (pdftex.def)             Requested size: 243.26431pt x 300.33145pt.
 
-Overfull \hbox (3.26431pt too wide) in paragraph at lines 784--785
+Overfull \hbox (3.26431pt too wide) in paragraph at lines 763--764
 [][] 
  []
 
@@ -751,30 +741,34 @@ Underfull \hbox (badness 5036) in paragraph at lines 52--57
 
 [12 <./img/fig04-eps-converted-to.pdf>]
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <8> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 78.
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 71.
 ) [13
 
 ]
 \tf@thm=\write4
 \openout4 = `SHE_full-paper_16feb.thm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 843.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 843.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 822.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 822.
  (./SHE_full-paper_16feb.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 843.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 843.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 822.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 822.
 Package rerunfilecheck Info: File `SHE_full-paper_16feb.out' has not changed.
-(rerunfilecheck)             Checksum: CAF136CD96FCC7EF174F64C857C1AEF2;1374.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 843.
+(rerunfilecheck)             Checksum: D1572CFB105B3EA8C564DD6AF39B483B;1176.
+
+
+LaTeX Warning: There were undefined references.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 822.
  ) 
 Here is how much of TeX's memory you used:
- 7845 strings out of 492982
- 109077 string characters out of 6134895
- 213424 words of memory out of 5000000
- 11176 multiletter control sequences out of 15000+600000
+ 7840 strings out of 492982
+ 108947 string characters out of 6134895
+ 214438 words of memory out of 5000000
+ 11172 multiletter control sequences out of 15000+600000
  26875 words of font info for 106 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 32i,23n,37p,1194b,432s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 32i,23n,37p,1229b,434s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb></u
 sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/sha
 re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/tex
@@ -785,34 +779,35 @@ onts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
 blic/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
 sfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi
-b10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmi
-b7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib
-9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><
-/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/sh
-are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmsl9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.
-pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></u
-sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmtt8.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmtt9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
-amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
-msfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
-sfonts/symbols/msbm7.pfb>
-Output written on SHE_full-paper_16feb.pdf (13 pages, 1141530 bytes).
+cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi
+9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib9.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmsl9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmtt8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmtt9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
+/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+symbols/msbm7.pfb>
+Output written on SHE_full-paper_16feb.pdf (13 pages, 1149614 bytes).
 PDF statistics:
- 650 PDF objects out of 1000 (max. 8388607)
- 549 compressed objects within 6 object streams
- 108 named destinations out of 1000 (max. 500000)
- 201 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 647 PDF objects out of 1000 (max. 8388607)
+ 545 compressed objects within 6 object streams
+ 107 named destinations out of 1000 (max. 500000)
+ 177 words of extra memory for PDF output out of 10000 (max. 10000000)
 
