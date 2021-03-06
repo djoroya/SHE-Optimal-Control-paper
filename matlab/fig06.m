@@ -3,13 +3,13 @@ clear
 compute = true;
 
 
-Ea = [1 5 7 11 13 15]';
-Eb = [1 5 7 11 13 15]';
+Ea = [1 5 7 11 13]';
+Eb = [1 5 7 11 13]';
 %
 Na = length(Ea);
 Nb = length(Eb);
 
-Nv = 50;
+Nv = 200;
 values = linspace(-0.80,0.80,Nv);
 %%
 bmatrix = zeros(length(values),length(Ea));
@@ -18,9 +18,9 @@ bmatrix(:,1) = values;
 amatrix = zeros(length(values),length(Eb));
 amatrix(:,1) = values;
 %%
-Nt = 100;
+Nt = 300;
 tspan = linspace(0,pi,Nt);
-Lterms = {@(f) sqrt(f.^2 + 1e-4)};
+Lterms = {@(f) sqrt(f.^2 + 1e-6)};
 
 names = {'SurfaceFs_plus','SurfaceFs_minus','SurfaceFs_sq'};
 iter = 0;

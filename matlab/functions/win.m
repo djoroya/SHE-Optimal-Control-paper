@@ -1,5 +1,5 @@
 function result = win(u,eta,a,b)
-    result = zeros(length(a),length(u),'casadi.SX');
+    result = zeros(length(a),length(u),class(u));
     %result = zeros(length(a),length(u));
 
     iter = 0;

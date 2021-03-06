@@ -1,6 +1,6 @@
 function result = Lk(u,Ucal,u0)
-    result = zeros(length(Ucal)-1,length(u),'casadi.SX');
-    %result = zeros(length(Ucal)-1,length(u));
+    result = zeros(length(Ucal)-1,length(u),class(u));
+%     result = zeros(length(Ucal)-1,length(u));
 
     iter = 0;
     

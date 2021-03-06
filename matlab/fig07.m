@@ -9,7 +9,7 @@ Na = length(Ea);
 Nb = length(Eb);
 
 Nv = 200;
-Nv = 100;
+Nv = 50;
 values = linspace(-0.80,0.80,Nv);
 %%
 bmatrix = zeros(length(values),length(Ea));
@@ -19,20 +19,15 @@ amatrix = zeros(length(values),length(Eb));
 amatrix(:,1) = values;
 %%
 Nt = 200;
-Nt = 300;
+Nt = 100;
 tspan = linspace(0,pi,Nt);
 
 Ucal = linspace(-1,1,5)';
 
-Ucal(1) = Ucal(1) - 0.2;
-Ucal(end) = Ucal(end) + 0.2;
+Ucal(1) = Ucal(1);
+Ucal(end) = Ucal(end) ;
 
-eta = 1e1;
-%%%%%
-%win = @(u,a,b) 0.5*(tanh(eta*(u-a)) + tanh(eta*(b-u)));
-%Lk   = @(u) (Ucal(2:end) + Ucal(1:end-1)).*(u - Ucal(1:end-1)) + Ucal(1:end-1).^2;
-%PI_k = @(u) win(u,eta,Ucal(1:end-1),Ucal(2:end));
-%Leta1 = @(u) (u==-1) + sum(Lk(u).*PI_k(u));
+eta = 1e5;
 
 Lterms = {@(u) Leta1(u,eta,Ucal)};
 
@@ -51,7 +46,8 @@ else
     load('data/fig07.mat')
 end
 %%
-fig = figure('Unit','norm','pos',[0 0 0.3 0.35],'Color','w');
+%fig = figure('Unit','norm','pos',[0 0 0.3 0.35],'Color','w');
+fig = figure(8);
 %fig.Renderer = 'painters';
 pplot2(fopts{1},fig,Ea,Eb,Nv,tspan,values,amatrix,bmatrix)
 %%

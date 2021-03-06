@@ -1,65 +1,58 @@
 clear 
 
-compute = true;
+xspan = linspace(-2,2,500);
 
-Ea = [1 5 7 ]';
-Eb = [1 5 7 ]';
-%
-Na = length(Ea);
-Nb = length(Eb);
+f = @(x) sin(2*pi*x);
 
-Nv = 200;
-Nv = 50;
-values = linspace(-0.80,0.80,Nv);
+roots = @(xspan,f) xspan(abs(diff(sign(f(xspan)))) == 2);
+
+ir = roots(xspan,f);
+
+% clf
+% plot(xspan,f(xspan))
+% hold on 
+% plot(ir,0*ir,'r','LineStyle','none','Marker','.')
 %%
-bmatrix = zeros(length(values),length(Ea));
-bmatrix(:,1) = values;
-%
-amatrix = zeros(length(values),length(Eb));
-amatrix(:,1) = values;
+Ucal = linspace(-1,1,7);
+
+
 %%
-Nt = 200;
-Nt = 50;
+Ea = [1 5 7]';
+Eb = [1 5 7]';
+
+Nt = 500;
 tspan = linspace(0,pi,Nt);
-
-Ucal = linspace(-1,1,5)';
-
-Ucal(1) = Ucal(1) - 0.5;
-Ucal(end) = Ucal(end) + 0.5;
-
-eta = 5e2;
-%%%%%
-%win = @(u,a,b) 0.5*(tanh(eta*(u-a)) + tanh(eta*(b-u)));
-%Lk   = @(u) (Ucal(2:end) + Ucal(1:end-1)).*(u - Ucal(1:end-1)) + Ucal(1:end-1).^2;
-%PI_k = @(u) win(u,eta,Ucal(1:end-1),Ucal(2:end));
-%Leta1 = @(u) (u==-1) + sum(Lk(u).*PI_k(u));
-
-Lterms = {@(u) Leta1(u,eta,Ucal,-1)};
-
-names = {'SurfaceFs_plus','SurfaceFs_minus','SurfaceFs_sq'};
-iter = 0;
-fconstraints = [-1,1];
-
-if compute 
-    for Lterm = Lterms
-        iter = iter + 1;
-        [S,ftraj] = SHE2OCP_2SYM(Ea,Eb,Lterm{:},Nt);
-        fopts{iter} = SolveOCP_2SYM_range(amatrix,bmatrix,S,ftraj,Nt,fconstraints);
-    end
-    save('data/fig09.mat')
-else
-    load('data/fig09.mat')
-end
+x0 = [1 0 0 1 0 0]';
+u0 = zeros(1,Nt);
+u0 = sign(sin(4*tspan));
+xend = u2xend(x0,u0,Ea,Eb,tspan);
 %%
-fig = figure('Unit','norm','pos',[0 0 0.325 0.35],'Color','w');
-%fig.Renderer = 'painters';
-pplot2(fopts{1},fig,Ea,Eb,Nv,tspan,values,amatrix,bmatrix)
-%%
-%print(fig,'../img/fig09.eps','-depsc')
+eta = 1e5;
 
-%%
-% uspan = linspace(-2,2,200)
-% figure(1)
-% plot(uspan,Leta1(uspan,eta,Ucal))
-% xlim([-1 1])
+theta = @(x)0.5 + 0.5*tanh(eta*x);
+eps = 1e-1;
 %
+P = @(u) u.^2;
+pk = (P(Ucal(2:end))- P(Ucal(1:end-1)))./(Ucal(2:end) - Ucal(1:end-1));
+pk = pk';
+
+%%
+mustar= @(xend) sum((2/pi)*[cos(Ea.*tspan);sin(Eb.*tspan)].*xend);
+
+Lcal = @(u) Leta1(u,eta,Ucal,0);
+%%
+
+dt = tspan(2) - tspan(1);
+J = @(xend) xend'*xend + eps*sum(Lcal(ustar(mustar(xend),pk,Ucal,eps)));
+
+%%
+mu_span = linspace(-3*eps,3*eps,100);
+plot(mu_span,ustar(mu_span,pk,Ucal,eps))
+%%
+xend_sym = casadi.SX.sym('x0',6);
+
+nlp = struct('x',xend_sym, 'f',J(xend_sym));
+S = casadi.nlpsol('S', 'ipopt', nlp);
+disp(S)
+%%
+sol = S('x0',zeros(6,1))
