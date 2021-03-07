@@ -1,6 +1,6 @@
 clear 
 
-compute = true;
+compute = false;
 
 Ea = [1 5 7 11 13]';
 Eb = [1 5 7 11 13]';

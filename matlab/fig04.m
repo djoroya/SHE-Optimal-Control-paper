@@ -12,14 +12,26 @@ PI_k = @(u) win(u,Ucal(1:end-1),Ucal(2:end));
 
 Leta1 = @(u) (u==-1) + sum(Lk(u).*PI_k(u));
 %%%%%
+%%
+% a = 4;
+% b = (1+a)*(Ucal(1:end-1) + Ucal(2:end));
+% c = -(1+a)*Ucal(1:end-1).*Ucal(2:end);
+% 
+% Lk2 = @(u) -a*u.^2 + b.*u + c;
+% 
+% Leta2 = @(u)  (u==-1) + sum(Lk2(u).*PI_k(u));
 
-a = 4;
-b = (1+a)*(Ucal(1:end-1) + Ucal(2:end));
-c = -(1+a)*Ucal(1:end-1).*Ucal(2:end);
+x1 = Ucal(1:end-1);
+x2 = Ucal(2:end);
+%
+y1 = (x1+1).^2;
+y2 = (x2+1).^2;
 
-Lk2 = @(u) -a*u.^2 + b.*u + c;
+Lk3 = @(u) (y2 - y1)./(x2-x1).*(u-x1) + y1;
 
-Leta2 = @(u)  (u==-1) + sum(Lk2(u).*PI_k(u));
+Leta2 = @(u)     0.25*sum(Lk3(u).*PI_k(u));
+
+%%
 eps = 0.05;
 %%%%%%
 
@@ -98,7 +110,7 @@ Nm = 8;
 mspan1 = 0.08*linspace(-1,1,Nm);
 mspan2 = 0.07*linspace(-1,1,Nm);
 
-ms = {mspan1,mspan1,mspan2};
+ms = {mspan1,mspan2,mspan2};
 color = jet(Nm);
 
 color(5,:) = 0.9*color(5,:);

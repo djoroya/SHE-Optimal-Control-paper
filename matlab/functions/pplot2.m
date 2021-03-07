@@ -31,7 +31,7 @@ ic.FontSize = 12;
 caxis([-1 1])
 colormap(jet(100))
 
-title('$u(t)$',fmt{:})
+title('$u^*(t) = \Pi(m)$',fmt{:})
 shading interp
 xlim([values(1) values(end)])
 ylim([tspan(1) tspan(end)])

@@ -30,23 +30,11 @@ Dahidah, M. S.~A. and Agelidis, V.~G. (2008).
   voltage source converters: a generalized formula.
 \newblock {\em IEEE Trans. Power Electron.}, 23(4):1620--1630.
 
-\bibitem[Duranay and Guldemir, 2017]{duranay2017selective}
-Duranay, Z.~B. and Guldemir, H. (2017).
-\newblock Selective harmonic eliminated v/f speed control of single-phase
-  induction motor.
-\newblock {\em IEEE Trans. Power Electron.}, 11(3):477--483.
-
 \bibitem[Ikeda and Nagahara, 2016]{ikeda2016maximum}
 Ikeda, T. and Nagahara, M. (2016).
 \newblock Maximum hands-off control without normality assumption.
 \newblock In {\em 2016 American Control Conference (ACC)}, pages 209--214.
   IEEE.
-
-\bibitem[Janabi et~al., 2020]{Janabi2020}
-Janabi, A., Wang, B., and Czarkowski, D. (2020).
-\newblock Generalized chudnovsky algorithm for real-time pwm selective harmonic
-  elimination/modulation: two-level vsi example.
-\newblock {\em IEEE Trans. Power Electron.}, 35(5):5437--5446.
 
 \bibitem[Konstantinou and Agelidis, 2010]{Konstantinou2010}
 Konstantinou, G.~S. and Agelidis, V.~G. (2010).
@@ -88,17 +76,25 @@ Rao, A.~V. (2009).
 \newblock A survey of numerical methods for optimal control.
 \newblock {\em Adv. Astronaut. Sci.}, 135(1):497--528.
 
-\bibitem[Rodr{\'{i}}guez et~al., 2002]{Rodriguez2002}
-Rodr{\'{i}}guez, J., Lai, J.~S., and Peng, F.~Z. (2002).
-\newblock Multilevel inverters: a survey of topologies, controls, and
-  applications.
-\newblock {\em IEEE Trans. Ind. Electron.}, 49(4):724--738.
-
 \bibitem[Sun et~al., 1996]{Sun1996}
 Sun, J., Beineke, S., and Grotstollen, H. (1996).
 \newblock Optimal pwm based on real-time solution of harmonic elimination
   equations.
 \newblock {\em IEEE Trans. Power Electron.}, 11(4):612--621.
+
+\bibitem[{Sun} and {Grotstollen}, 1992]{Sun1992}
+{Sun}, J. and {Grotstollen}, H. (1992).
+\newblock Solving nonlinear equations for selective harmonic eliminated pwm
+  using predicted initial values.
+\newblock In {\em Proceedings of the 1992 International Conference on
+  Industrial Electronics, Control, Instrumentation, and Automation}, pages
+  259--264 vol.1.
+
+\bibitem[W{\"a}chter and Biegler, 2006]{wachter2006implementation}
+W{\"a}chter, A. and Biegler, L.~T. (2006).
+\newblock On the implementation of an interior-point filter line-search
+  algorithm for large-scale nonlinear programming.
+\newblock {\em Mathematical programming}, 106(1):25--57.
 
 \bibitem[Xu and Antsaklis, 2002]{Xu2002}
 Xu, X. and Antsaklis, P.~J. (2002).

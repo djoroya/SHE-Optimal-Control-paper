@@ -19,13 +19,11 @@ fig = genfig();
 %clf
 %grid on
 hold on
-for i = 1:4
-ax = plot([tspan],[xt(:,i)],'-','LineWidth',3);
-end
+
 
 %
 for i = -3:1:3
-   yline(i/3,'Color',0.8 + [0 0 0]) 
+   plot([-1e3 1e3],[i/3 i/3],'Color',0.8 + [0 0 0]) 
 end
 
 fmt = {'Interpreter','latex','FontSize',26};
@@ -34,12 +32,14 @@ iter = 0;
 phi = flipud(phi)
 for iu = 2:(length(phi)-1)
    iter = iter + 1;
-   xline(phi(iu),'Color',0.8 + [0 0 0]) 
+   plot([phi(iu) phi(iu)],[-1e2 1e2],'Color',0.8 + [0 0 0]) 
    text(phi(iu),-0.1,"$\phi_"+(length(phi)-1-iter)+"$",fmt{:})
 end
 %
-ylim([-0.3 1])
+ax2 = plot(tspan,xt,'-','LineWidth',3);
 
+ylim([-0.3 1])
+ax = ax2(1);
 ax.Parent.YAxis.TickLabelInterpreter = 'latex';
 ax.Parent.XAxis.TickLabelInterpreter = 'latex';
 %
@@ -51,7 +51,7 @@ box
 xlim([0 pi])
 xticks([0  pi/2 pi])
 xticklabels({'$0$','$\pi/2$','$\pi$'})
-legend('$\alpha_1$','$\alpha_2$','$\beta_1$','$\beta_2$','Interpreter','latex','FontSize',19)
+legend(ax2,'$\alpha_1$','$\alpha_2$','$\beta_1$','$\beta_2$','Interpreter','latex','FontSize',19)
 xlabel('$t$','Interpreter','latex','FontSize',28)
 title('{\boldmath$x(t)$} = ({\boldmath$\alpha(t)$}, {\boldmath$\beta(t)$})','Interpreter','latex','FontSize',20)
 

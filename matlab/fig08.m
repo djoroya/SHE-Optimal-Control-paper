@@ -1,6 +1,6 @@
 clear 
 
-compute = true;
+compute = false;
 
 Ea = [1 5 7 11 13]';
 Eb = [1 5 7 11 13]';
@@ -50,7 +50,7 @@ if compute
     end
     save('data/fig08_a.mat')
 else
-    load('data/fig08.mat')
+    load('data/fig08_a.mat')
 end
 %%
 fig = figure('Unit','norm','pos',[0 0 0.325 0.35],'Color','w');

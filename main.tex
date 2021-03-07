@@ -49,11 +49,12 @@ We consider the \emph{Selective Harmonic Modulation} (SHM) problem, consisting i
 
 \section{Introduction and motivations}\label{Section1}
 
-Selective Harmonic Modulation (SHM) \cite{Rodriguez2002} is a well-known methodology in power electronics engineering, employed to improve the performances of a converter by controlling the phase and amplitude of the harmonics in its output voltage. As a matter of fact, this technique allows to increase the power of the converter and, at the same time, to reduce its losses. 
+Selective Harmonic Modulation (SHM) \cite{Sun1992,Sun1996} is a well-known methodology in power electronics engineering, employed to improve the performances of a converter by controlling the phase and amplitude of the harmonics in its output voltage. As a matter of fact, this technique allows to increase the power of the converter and, at the same time, to reduce its losses. 
 
-Because of the growing complexity of modern electrical networks, consequence for instance of the high penetration of renewable energy sources, the demand in power of electronic converters is day by day increasing. For this and other reasons, SHM has been a preeminent research interest in the power electronics community, and a plethora of SHM-based techniques has been developed in recent years. An incomplete bibliography includes \cite{duranay2017selective,Janabi2020,Yang2017}.
+Because of the growing complexity of modern electrical networks, consequence for instance of the high penetration of renewable energy sources, the demand in power of electronic converters is day by day increasing. For this and other reasons, SHM has been a preeminent research interest in the power electronics community, and a plethora of SHM-based techniques has been developed in recent years. 
+% sobra! An incomplete bibliography includes \cite{duranay2017selective,Janabi2020,Yang2017}.
 
-In broad terms, SHM consists in generating a \textit{control signal} with a desired harmonic spectrum by modulating or eliminating some specific lower-order Fourier coefficients. In practice, the signal is constructed as a step function with a finite number of switches, taking values only in a given finite set. Such a signal can be fully characterized by two features (see Fig. \ref{fig:exampleSHE}): 
+In broad terms, SHM consists in generating a \textit{control signal} with a desired harmonic spectrum by modulating some specific lower-order Fourier coefficients. In practice, the signal is constructed as a step function with a finite number of switches, taking values only in a given finite set. Such a signal can be fully characterized by two features (see Fig. \ref{fig:exampleSHE}): 
 \begin{itemize}
 	\item[1.] The \textit{waveform}, i.e. the sequence of values that the function takes in its domain.
 	\item[2.] The \textit{switching angles}, i.e. the sequence of points where the signal switches from one value to following one. 
@@ -61,9 +62,9 @@ In broad terms, SHM consists in generating a \textit{control signal} with a desi
 
 Using this simple characterization of the signal, in many practical situations the SHM problem is reduced to a finite-dimensional optimization one in which, given a suitable waveform, the aim is to find the optimal location of the switching angles. Nevertheless, one of the principal difficulties of this approach is that the choice of a suitable waveform may not always be evident. In addition to that, also determining the optimal number of switching angles may be a quite cumbersome task. 
  
-To overcome these difficulties, in this work we propose a new approach in which the Fourier coefficients of the desired staircase function are identified with the terminal state of a controlled dynamical system, where the control is actually the signal, solution to the SHM problem. We then look for piece-wise constant control signals, taking values only in a given finite set, as the solution of a suitable optimal control problem with constraints. 
+To overcome these difficulties, in this work we propose a new approach in which the Fourier coefficients of the desired staircase function are identified with the terminal state of a controlled dynamical system, where the control is actually the signal, solution to the SHM problem. We then look for piece-wise constant control signals, taking values only in a given finite set, as the solution of a suitable optimal control problem. 
 
-This formulation is in analogy with what is known in the control literature as \textit{switching controls} or \textit{switching systems} (see \cite{liberzon2003switching,Zuazua2011, liu2014optimal}), whose goal is to control the dynamics of a system by switching from an actuator to another in a systematic way so that, at each instant of time, only one actuator is active. In the control theory literature, there exist different methods to obtain this type of control, which can be classified as follows:
+This formulation is in analogy with what is known in the control literature as \textit{switching controls} or \textit{switching systems} (see \cite{liberzon2003switching,Zuazua2011, liu2014optimal}), whose goal is to control the dynamics of a system by switching from an actuator to another in a systematic way. In the control theory literature, there exist different methods to obtain this type of control, which can be classified as follows:
 \begin{enumerate}
 	\item [1.] Methods with a predetermined number of switches, whose locations have to be optimized \cite{Xu2002}.
 	\item [2.] Methods without a predetermined number of switches. These methods provide a control with finite constraint set in a infinite time-horizon \cite{Quevedo2004}.
@@ -71,12 +72,14 @@ This formulation is in analogy with what is known in the control literature as \
 
 Nevertheless, as we shall see, the SHM problem we are going to consider translates into an optimal control problem with finite time horizon, for which the techniques of the aforementioned papers are not applicable. 
 
-One of the main difficulties in the approach we are proposing is that the constraints we have to impose in order to have a staircase control do not allow us to apply classical tools in optimal control theory, such as Pontryagin's maximum principle. In order to bypass this obstruction, we define a second optimal control problem without constraints, in which the desired staircase structure is obtained by introducing a suitable penalization term for the control. As we shall see, by selecting properly this penalization, the solution of this second optimization problem is close enough to the original optimal control. At the same time, the penalized optimal control problem does not requires the aforementioned restrictions on the admissible controls' set and standard theoretical and computational tools can be employed. 
+One of the main difficulties in the approach we are proposing is that the finite set constraints we have to impose in order to have a staircase control do not allow us to apply classical tools in optimal control theory, such as Pontryagin's maximum principle. In order to bypass this obstruction, we define a second optimal control problem without these type of constraints, in which the desired staircase structure is obtained by introducing a suitable penalization term for the control. As we shall see, by selecting properly this penalization, the solution of this second optimization problem is close enough to the original optimal control. At the same time, the penalized optimal control problem does not requires the aforementioned restrictions on the admissible controls' set and standard theoretical and computational tools can be employed. 
 
 The main contributions of the present paper are as follows:
 \begin{enumerate}
     \item[1.] We reformulate the SHM problem as an optimal control one with a staircase constraint on the control, in which we do not need to determine a priori the waveform of the solution nor the number of switching angles.  
-    \item[2.] We introduce a penalization term for the control which implicitly induces the staircase property on the solution. Here we distinguish two cases: when the control set contains only two elements (bi-level or bang-bang control) and when it contains more than two elements (multilevel control). This approach allows us to compute solutions to the SHM problem with different waveforms.
+    \item[2.] We introduce a penalization term for the control which implicitly induces the staircase property on the solution. 
+	% sobra! %Here we distinguish two cases: when the control set contains only two elements (bi-level or bang-bang control) and when it contains more than two elements (multilevel control). 
+	This approach allows us to compute solutions to the SHM problem the waveforms as a degree of freedom.
 \end{enumerate}
 
 This document is structured as follows. In Section \ref{sec:math_formulation}, we introduce a mathematical formulation of a general SHM problem. 
@@ -102,7 +105,10 @@ Due to applications in power converters,  it is typical to only consider functio
 \begin{align}\label{eq:half-wave symmetry}
 	u(t + \pi) = -u(t)\quad \mbox{for all}\; t \in [0,\pi).
 \end{align}
-In this way, we only need to determine $u$ in the interval $[0,\pi)$. Moreover, as a consequence of this symmetry, the Fourier series of $u$ only involves the odd terms (as the even terms just vanish), i.e.
+In view of \eqref{eq:half-wave symmetry}, in what follows, we will only work with the restriction $u|_{[0,\pi)}$, which, with some abuse of notation, we still denote by $u$. 
+
+% sobra %In this way, we only need to determine $u$ in the interval $[0,\pi)$. 
+Moreover, as a consequence of this symmetry, the Fourier series of $u$ only involves the odd terms (as the even terms just vanish), i.e.
 \begin{align*}
 	u(t) = \sum_{\underset{j\, odd}{j \in \mathbb{N}}} a_j \cos(jt)+ \sum_{\underset{j\, odd}{j \in \mathbb{N}}}  b_j \sin(jt),
 \end{align*}
@@ -114,7 +120,7 @@ with
 		b_j = \frac{2}{\pi} \int_0^\pi u(\tau)  \sin(j \tau)\,d\tau.
 	\end{aligned}
 \end{equation}
-In view of the half-wave symmetry \eqref{eq:half-wave symmetry}, in what follows, we will only work with the restriction $u|_{[0,\pi)}$, which, with some abuse of notation, we still denote by $u$. 
+
 
 As we anticipated,  we are only considering piece-wise constant functions with a finite number of switches and taking values in $\mathcal{U}$.
 More precisely, we look for $u: [0,\pi)\to \mathcal{U}$ of the form
@@ -189,7 +195,7 @@ SHE is of great relevance in the electric engineering literature. Its objective 
 
 \section{SHM as a finite-dimensional optimization problem}\label{sec:SHE_finite-dim_pbm}
 
-A typical approach to address the SHM Problem \ref{pb:SHEp} (\cite{Yang2015,Konstantinou2010,Sun1996}) consists in looking for solutions having a specific waveform determined a priori and finding the suitable switching angles $\Phi$ allowing to reach the desired target. 
+A typical approach to address the SHM Problem \ref{pb:SHEp} (\cite{Sun1996,Konstantinou2010,Yang2015}) consists in looking for solutions having a specific waveform determined a priori and finding the suitable switching angles $\Phi$ allowing to reach the desired target. 
 
 Note that, for a fixed waveform $\mS$, the Fourier coefficients of a function $u$ of the form \eqref{eq:uExpl} can be written in terms of the switching angles $\Phi$ in the following way:
 \begin{align*}
@@ -201,7 +207,7 @@ Hence, for two sets of odd numbers $\mathcal{E}_a$ and $\mathcal{E}_b$ as in Pro
 \begin{align*}
 	&\bm{a}_\mS (\Phi) := \big(a_j (\Phi)\big)_{j\in \mathcal{E}_a} \in \mathbb{R}^{N_a}
 	\\
-	&\bm{b}_\mS (\Phi) := \big(b_j (\Phi)\big)_{j\in \mathcal{E}_b} \in \mathbb{R}^{N_b}
+	&\bm{b}_\mS (\Phi) \hspace{0.1em}:= \big(b_j (\Phi)\big)_{j\in \mathcal{E}_b} \in \mathbb{R}^{N_b}
 \end{align*}
 and SHM can be cast as a finite-dimensional optimization process consisting in minimizing, over the choice of $\Phi = \{\phi_m\}_{m=1}^{M}$, the euclidean distance between the vectors $(\bm{a},\bm{b})$ and $(\aT,\bT)$ as defined in Problem \ref{pb:SHEp}.
 
@@ -215,25 +221,27 @@ Let $\mathcal{E}_a$, $\mathcal{E}_b$ and the targets $\aT$ and $\bT$ be given as
 	&\mbox{subject to: } 0 = \phi_0 <\phi_1 < \ldots < \phi_{M} < \phi_{M+1} = \pi. \notag 
 \end{align}
 \end{problem}
-At this regard, it is important to notice that the optimization Problem \ref{pb:SHE opt} solves the original Problem \ref{pb:SHEp} only when the optimal cost is zero. This makes necessary to fully characterize the space of targets $(\aT,\bT)$ for which it exists a solution. With this aim, we will define the the \textit{optimal cost} and the \textit{solvable set} as follows:
+At this regard, it is important to notice that the optimization Problem \ref{pb:SHE opt} solves the original Problem \ref{pb:SHEp} only when the optimal cost is zero. This makes necessary to fully characterize the space of targets $(\aT,\bT)$ for which the solution of Problem \ref{pb:SHE opt} is a solution of Problem \ref{pb:SHEp}. With this aim, we will define the the \textit{optimal cost} and the \textit{solvable set} as follows:
 \vspace{1em}
-\begin{definition}[optimal cost]
+\begin{definition}[Optimal cost]
 We call \textit{optimal cost} $V_{\mS}:\mathbb{R}^{N_a}\times \mathbb{R}^{N_b} \rightarrow \mathbb{R}$, the function that takes as input variables the target vectors $\aT$ and $\bT$ and returns the optimal cost of the Problem \ref{pb:SHE opt}.
 \end{definition}
 
 \vspace{1em}
-\begin{definition}[solvable set]
+\begin{definition}[Solvable set]
 We define a \textit{solvable set} $\mathcal{R}_{\mS}$ as:
 \begin{gather}
 	\mathcal{R}_{\mS} = \Big\{ (\aT,\bT) \in \mathbb{R}^{N_a+N_b}\;\big|\; V_{\mS}(\aT,\bT) = 0\Big\}
 \end{gather}
 \end{definition}
-In practical applications, one is only interested in solutions of Problem \ref{pb:SHE opt} corresponding to $(\aT,\bT) \in \mathcal{R}_\mS$, so that it would be desirable to obtain a control function providing the switching angles $\Phi^*_\mS$ for the whole set $\mathcal{R}_\mS$. We will refer to this function as the \textit{policy} with waveform $\mS$.
-\UB{Although I understand it, I don't like very much the way in which this last paragraph is written. But I don't know how to change it}.
+\JO{Con el fin de mapear las soluciones del Problema \ref{pb:SHE opt} dentro del conjunto $\mathcal{R}_{\mS}$, definimos la función Política de la siguiente manera.}
+%In practical applications, one is only interested in solutions of Problem \ref{pb:SHE opt} corresponding to $(\aT,\bT) \in \mathcal{R}_\mS$. 
+% , so that it would be desirable to obtain a control function providing the switching angles $\Phi^*_\mS$ for the whole set $\mathcal{R}_\mS$. We will refer to this function as the \textit{policy} with waveform $\mS$.
+% \UB{Although I understand it, I don't like very much the way in which this last paragraph is written. But I don't know how to change it}.
 
 \vspace{1em}
-\begin{definition}[policy]
-We will call \textit{policy} a function $\Pi_{\mS}: \mathcal{R}_\mS \rightarrow [0,\pi]^M$ such that $\Phi^* = \Pi_{\mS}(\aT,\bT)$, with $\Phi^*$ the optimal switching angles solutions of Problem \ref{pb:SHEp} for the targets $(\aT,\bT)$.
+\begin{definition}[Policy]
+We will call \textit{Policy} a function $\Pi_{\mS}: \mathcal{R}_\mS \rightarrow [0,\pi]^M$ such that $\Phi^* = \Pi_{\mS}(\aT,\bT)$, with $\Phi^*$ the optimal switching angles solutions of Problem \ref{pb:SHEp} for the targets $(\aT,\bT)$.
 \end{definition} 
 
 With the aim of reconstructing the policy $\Pi_{\mS}$, a typical approach is to solve numerically Problem \ref{pb:SHE opt} for a limited number of points in $\mathbb{R}^{N_a+N_b}$ and check that the optimal cost is zero. Secondly, one interpolates the function $\Pi_{\mS}$ in the convex set generated by the points previously obtained. Nevertheless, this approach has several difficulties and drawbacks.
@@ -327,12 +335,12 @@ Here, $e_a^i$ and $e_b^i$  denote the elements in $\mathcal{E}_a$ and  $\mathcal
 \begin{align*}
 	\mathcal{E}_a = \{e_a^1,e_a^2,e_a^3,\dots,e_a^{N_a}\}, \quad \mathcal{E}_b = \{e_b^1,e_b^2,e_b^3,\dots,e_b^{N_b}\}.
 \end{align*}
-Moreover,for notation simplicity, we reverse the time in \eqref{eq:forward dyn syst} using the transformation $\bm{x} (t) = \bm{y}(\pi - t)$. In this way, the SHM problem converts into the following null controllability one for a dynamical system with initial condition $\bm{x}(0) = [\aT; \bT]^\top$ (see also Fig. \ref{fig:evolution_x}).
+Moreover, for notation simplicity, we reverse the time in \eqref{eq:forward dyn syst} using the transformation $\bm{x} (t) = \bm{y}(\pi - t)$. In this way, the SHM problem converts into the following null controllability one for a dynamical system with initial condition $\bm{x}(0) = [\aT; \bT]^\top$ (see also Fig. \ref{fig:evolution_x}).
 
 \medskip
 
 \begin{problem}[SHM via null controllability]\label{pb:SHEpControl}
-Let $\mathcal{U}$ be given as in \eqref{eq:Udef}, and let $\mathcal{E}_a $ and $\mathcal{E}_b $ be two finite sets of odd numbers of cardinality $|\mathcal{E}_a| = N_a $ and $ |\mathcal{E}_b| = N_b$, respectively. For any two given vectors $\aT \in \mathbb{R}^{N_a}$ and $\bT \in \mathbb{R}^{N_b} $,  we look for a function $u: [0,\pi]\to [-1,1]$ of the form \eqref{eq:uExpl}, satisfying \eqref{eq:staircase prop}, such that the solution to the initial-value problem
+Let $\mathcal{U}$ be given as in \eqref{eq:Udef}. Let $\mathcal{E}_a$, $\mathcal{E}_b$ and the targets $\aT$ and $\bT$ be given as in Problem \ref{pb:SHEp},  we look for a function $u: [0,\pi]\to [-1,1]$ of the form \eqref{eq:uExpl}, satisfying \eqref{eq:staircase prop}, such that the solution to the initial-value problem
 \begin{equation}\label{eq:CauchyReversed}
 	\begin{cases}
         \displaystyle\dot{\bm{x}}(t) = -\frac 2\pi\bm{\mathcal{D}}(t)u(t),  & t \in [0,\pi]
@@ -349,9 +357,9 @@ satisfies $\bm{x} (\pi) = 0$, where $\bm{\mathcal{D}}$ is given by \eqref{eq:Dyn
     \caption{Evolution of the dynamical system \eqref{eq:CauchyReversed} with $\mathcal{E}_a = \{1,2\}$ and $\mathcal{E}_b = \{1,2\}$ corresponding to the control $u$ in Figure \ref{fig:exampleSHE}. The positions of the switching angles $\bm{\phi}$ are displayed as well.}\label{fig:evolution_x}
 \end{figure}
 
-\UB{The grid in Figure \ref{fig:evolution_x} should be below the four plots}.
+%\UB{The grid in Figure \ref{fig:evolution_x} should be below the four plots}.
 
-A natural approach for controllability problems such as Problem \ref{pb:SHEpControl} is to formulate them as an optimal control one, where the cost functional to be minimized is the euclidean distance from the final state $\bm{x}(\pi)$ to the target, in this case, the origin. In what follows, for a given vector $\bm{v}\in\mathbb{R}^d$, we shall always denote by $\|\bm{v}\|$ the euclidean norm $\|\bm{v}\|_{\mathbb{R}^d}$. Moreover, we will denote
+A natural approach for null controllability problems such as Problem \ref{pb:SHEpControl} is to formulate them as an optimal control one, where the cost functional to be minimized is the euclidean distance from the final state $\bm{x}(\pi)$ to the the origin. In what follows, for a given vector $\bm{v}\in\mathbb{R}^d$, we shall always denote by $\|\bm{v}\|$ the euclidean norm $\|\bm{v}\|_{\mathbb{R}^d}$. Moreover, we will denote
 \begin{align*}
 	&\mathcal A:= \Big\{u:[0,\pi)\to [-1,1]\; \text{ measurable}\Big\}
 	\\
@@ -360,7 +368,7 @@ A natural approach for controllability problems such as Problem \ref{pb:SHEpCont
 
 
 \begin{problem}[OCP for SHM]\label{pb:OCP1}
-Let $\mathcal{U}$ be a given set as in \eqref{eq:Udef} and let $\mathcal{E}_a $ and $\mathcal{E} _b $ be two finite sets of odd numbers of cardinality $|\mathcal{E}_a| = N_a $ and $ |\mathcal{E} _b| = N_b$ respectively. For any two given vectors $\aT \in \mathbb{R}^{N_a}$ and $\bT \in \mathbb{R}^{N_b} $, we look for an admissible control $u\in \mathcal{A}_{ad}$ solution to the following optimal control problem:
+Let $\mathcal{U}$ be a given set as in \eqref{eq:Udef}. Let $\mathcal{E}_a$, $\mathcal{E}_b$ and the targets $\aT$ and $\bT$ be given as in Problem \ref{pb:SHEp}, we look for an admissible control $u\in \mathcal{A}_{ad}$ solution to the following optimal control problem:
 \begin{equation*}
 	\min_{u \in \mathcal{A}_{ad}}\;\frac 12 \|\bm{x}(\pi)\|^2 \quad \text{subject to the dynamics \eqref{eq:CauchyReversed}}.
 \end{equation*}
@@ -377,13 +385,14 @@ In order to bypass this difficulty, we propose a modification of Problem \ref{pb
 \bigskip
 
 \begin{problem}[Penalized OCP for SHM]\label{pb:OCP_penalizado}
-Fix $\varepsilon>0$ and a function $\mathcal{L}\in C([-1,1];\mathbb{R})$.  Let $\mathcal{E} _a $ and $\mathcal{E} _b $ be two finite sets of odd numbers of cardinality $|\mathcal{E}_a| = N_a $ and $ |\mathcal{E} _b| = N_b$, respectively. For any two given target vectors $\aT \in \mathbb{R}^{N_a}$ and $\bT \in \mathbb{R}^{N_b} $, we look for a control $u\in \mathcal A$ solution to the following optimal control problem:
+Fix $\varepsilon>0$ and a function $\mathcal{L}\in C([-1,1];\mathbb{R})$.  Let $\mathcal{E}_a$, $\mathcal{E}_b$ and the targets $\aT$ and $\bT$ be given as in Problem \ref{pb:SHEp}, we look for a control $u\in \mathcal A$ solution to the following optimal control problem:
 \begin{align*}
 	&\displaystyle\min_{u \in \mathcal A}\;\left(\dfrac{1}{2} \|\bm{x}(\pi)\|^2 + \varepsilon \displaystyle\int_0^\pi \mathcal{L}(u(t)) dt\right) 
 	\\[5pt] 
 	&\text{subject to the dynamics \eqref{eq:CauchyReversed}}.
 \end{align*}
 \end{problem}
+\vspace{-1em}
 Observe that, in Problem \ref{pb:OCP_penalizado}, we do not impose the constraint that the control has to be the form \eqref{eq:uExpl} and satisfy the staircase property \eqref{eq:staircase prop}. Nevertheless, as we shall see, these features of $u$ will arise naturally from a suitable choice of the Lagrangian $\mathcal{L}$.
 
 Another important aspect that needs to be taken into account is that the penalization term for the control might prevent the optimal trajectory from reaching the target. In other words, even if there exists a control for which the optimal trajectory satisfies $\bm{x} (\pi) = 0$, the optimal control in Problem \ref{pb:OCP_penalizado} might not do so, and therefore, the solution to Problem \ref{pb:OCP_penalizado} would not be a solution to the SHM problem. This issue may be prevented by a proper selection of the weighting parameter $\varepsilon$ which allows to tune the precision of the optimal control for the perturbed problem, guaranteeing that the final state of the optimal trajectory is close enough to zero. In more detail, we have the following result.
@@ -423,7 +432,7 @@ See Fig. \ref{fig:Bang-Bang-penalization} for an illustration.
 
 \subsection{Multilevel SHM problem via OCP}
 
-Inspired by the ideas of the previous subsection, we can address the case when $\mathcal{U}$ contains more than two elements. This is known in the power electronics literature as the \textit{multilevel SHM problem}. Now, the goal is to construct a function $\mathcal{L}$ such that the Hamiltonian associated to Problem \ref{pb:OCP_penalizado} always attains the minimum at points in $\mathcal{U}$.
+Inspired by the ideas of the previous subsection, we can address the case when $\mathcal{U}$ contains more than two elements. This is known in the power electronics literature as the \textit{multilevel SHM problem}. Now, the goal is to construct a function $\mathcal{L}$ such that the Hamiltonian associated to Problem \ref{pb:OCP_penalizado} always attains the minimum at points in $\mathcal{U}$. 
 A way to construct such a function $\mathcal{L}$ is to interpolate a parabola in $[-1,1]$ by affine functions, considering the elements in $\mathcal{U}$ as the interpolating points.  Since, between any two points in $\mathcal{U}$,  the function $\mathcal{L}$ is a straight line,  the Hamiltonian is a concave function in these intervals, and hence, the minimum is always attained at points in $\mathcal{U}$.
 
 \vspace{1em}
@@ -469,7 +478,7 @@ In this section, we present several examples in which we implement the optimal c
 
 To solve our optimal control Problem \ref{pb:OCP_penalizado}, we will employ the direct method \cite{rao2009survey} which, in broad terms, consists in discretizing the cost functional and the dynamics, and then apply some optimization algorithm. 
 
-The dynamics will be approximated with the \UB{Runge-Kutta 6} method, while for solving the discrete minimization problem we will employ the non-linear constrained optimization tool \texttt{CasADi} \cite{Andersson2019}. \texttt{CasADi} is an open-source tool for nonlinear optimization and algorithmic differentiation which implements the interior point method. To be efficiently applied to solve an optimal control problem, we then need the functional we aim to minimize to be smooth. This is not the case of the functional in Problem \ref{pb:OCP_penalizado} which, due to the piece-wise linear penalization, is not differentiable at the points $u_k\in\mathcal U$. For this reason, we will first need to build a smooth approximation of the Lagrangian function $\mathcal L$ we introduced in \eqref{eq:PLP}. Once we have this approximation, we will employ the optimal control approach we presented in Section \ref{sec:Contributions} to solve some specific examples of SHM problem.
+The dynamics will be approximated with the Euler method, while for solving the discrete minimization problem we will employ the non-linear constrained optimization tool \texttt{CasADi} \cite{Andersson2019}. \texttt{CasADi} is an open-source tool for nonlinear optimization and algorithmic differentiation which implements the interior point method via the optimization software \texttt{IPOPT} \cite{wachter2006implementation}. To be efficiently applied to solve an optimal control problem, we then need the functional we aim to minimize to be smooth. This is not the case of the functional in Problem \ref{pb:OCP_penalizado} which, due to the piece-wise linear penalization, is not differentiable at the points $u_k\in\mathcal U$. For this reason, we will first need to build a smooth approximation of the Lagrangian function $\mathcal L$ we introduced in \eqref{eq:PLP}. Once we have this approximation, we will employ the optimal control approach we presented in Section \ref{sec:Contributions} to solve some specific examples of SHM problem.
 
 \subsection{Smooth approximation of piece-wise linear penalization}
 
@@ -487,17 +496,17 @@ and observe that, as $\theta\to +\infty$, $h^\theta$ converges in $L^\infty(\mat
 		0 & \text{ if } x \leq 0
     \end{cases}.
 \end{align*}
-Secondly, for all $k \in \{1,\dots,N_u-1\}$ we define the (smooth) function $\Pi_{[u_k,u_{k+1})}^\theta:\mathbb{R} \rightarrow \mathbb{R}$ given by
+Secondly, for all $k \in \{1,\dots,N_u-1\}$ we define the (smooth) function $\chi_{[u_k,u_{k+1})}^\theta:\mathbb{R} \rightarrow \mathbb{R}$ given by
 \begin{align*}
-	\Pi_{[u_k,u_{k+1})}^\theta(x) :&= - 1 + h^\theta(x-u_k) + h^\theta(-x+u_{k+1}) 
+	\chi_{[u_k,u_{k+1})}^\theta(x) :&= - 1 + h^\theta(x-u_k) + h^\theta(-x+u_{k+1}) 
 	\\[5pt]
 	&= \frac{\tanh[\theta(x-u_k)] + \tanh[\theta (u_{k+1}-x)]}{2}
 \end{align*}
 which, as $\theta\to +\infty$, converges in $L^\infty(\mathbb{R})$ to the characteristic function $\chi_{[u_k,u_{k+1})}$.
 
-Finally, we employ $\Pi_{[u_k,u_{k+1})}^\theta$ to define
+Finally, we employ $\chi_{[u_k,u_{k+1})}^\theta$ to define
 \begin{align}\label{eq:Lsmooth}
-	\mathcal{L}^\theta(u) = \sum_{k = 1}^{N_u-1} \lambda_k \Pi^\theta_{[u_k,u_{k+1})}(u),
+	\mathcal{L}^\theta(u) = \sum_{k = 1}^{N_u-1} \lambda_k \chi^\theta_{[u_k,u_{k+1})}(u),
 \end{align}
 with $\lambda_k$ given by \eqref{eq:lambda k}, which, as $\theta\to +\infty$, converges in $L^\infty(\mathbb{R})$ to the penalization function $\mathcal L$ defined in \eqref{eq:PLP}.
 
@@ -543,7 +552,7 @@ where
 
 \subsection{Numerical experiments}
 
-We now present several numerical experiments to show the effectiveness of our optimal control approach to solve SHM problems. All the examples that we are going to present will share the following common parameter: $\varepsilon = 10^{-5}$, $\theta = 10^5$ and $\mathcal{P}_t = \{0,0.1,0.2,\dots,\pi\}$. Moreover, we will consider $\mathcal{E}_a = \mathcal{E}_b = \{1,5,7,11,13,15\}$, and the target vectors $\aT = \bT = (m,0,0,0,0,0)^\top$ for all values of $m \in [-0.8,0.8]$. 
+We now present several numerical experiments to show the effectiveness of our optimal control approach to solve SHM problems. All the examples that we are going to present will share the following common parameter: $\varepsilon = 10^{-5}$, $\theta = 10^5$ and $\mathcal{P}_t = \{0,0.1,0.2,\dots,\pi\}$. Moreover, we will consider $\mathcal{E}_a = \mathcal{E}_b = \{1,5,7,11,13\}$, and the target vectors $\aT = \bT = (m,0,0,0,0,0)^\top$ for all values of $m \in [-0.8,0.8]$. 
 
 We will treat all the specific types of controls we mentioned before, that is
 \begin{itemize}
@@ -556,31 +565,31 @@ We will treat all the specific types of controls we mentioned before, that is
 
 The results of our simulations are displayed in Fig. \ref{fig:sim-bang-bang}, \ref{fig:sim-bang-off-bang} and \ref{fig:sim-multi-level}.
 
-\UB{Replace $\tau$ with $t$ in Figures \ref{fig:sim-bang-bang} and \ref{fig:sim-bang-off-bang}.}
+%\UB{Replace $\tau$ with $t$ in Figures \ref{fig:sim-bang-bang} and \ref{fig:sim-bang-off-bang}.}
 
 \begin{figure}[ht!]
     \hspace{0.05em}
     \includegraphics[scale=0.525]{img/fig05.eps}
-    \caption{Results of simulation of Simulation \ref{simu1}.}\label{fig:sim-bang-bang}
+    \caption{Policy with $\mathcal{U}=\{-1,1\}$}\label{fig:sim-bang-bang}
 \end{figure} 
 
 \begin{figure}[ht!]
     \hspace{0.05em}
     \includegraphics[scale=0.525]{img/fig06.eps}
-    \caption{Results of simulation of Simulation \ref{simu2}.}\label{fig:sim-bang-off-bang}
+    \caption{Policy with $\mathcal{U}=\{-1,0,1\}$}\label{fig:sim-bang-off-bang}
 \end{figure} 
 
 \begin{figure}[ht!]
     \hspace{0.05em}
     \includegraphics[scale=0.525]{img/fig08.eps}
-    \caption{Results of simulation of Simulation \ref{simu3}.}
+    \caption{Policy with $\mathcal{U}=\{-1,-1/2,0,1/2,1\}$}
     \label{fig:sim-multi-level}
 \end{figure} 
 
-In accordance with Theorem \ref{th:bang-bang}, we can see in Fig. \ref{fig:sim-bang-bang} how for all $m \in [-0.8,0.8]$ the optimal control only takes the values $\{-1,1\}$ displayed in the plot in blue and red, respectively. \JO{Además de esto, la política}
+In accordance with Theorem \ref{th:bang-bang}, we can see in Fig. \ref{fig:sim-bang-bang} how for all $m \in [-0.8,0.8]$ the optimal control only takes the values $\{-1,1\}$ displayed in the plot in blue and red, respectively. \JO{Del mismo modo las Figuras \ref{fig:sim-bang-off-bang} y \ref{fig:sim-multi-level} son el consecuencia de Teorema \ref{th:PLP} en ellas se puede ver que para un valor de $m$ fijo se obtiene un control óptimo que solo toma valores discretos y dentro del conjunto $\mathcal{U}$.
 
-Finally, we can see in Fig. \ref{fig:sim-multi-level} the same behavior when considering  $\mathcal{U} = \{-1,1\}$.
- 
+Por otra parte, si comparamos estas políticas $\Pi(m)$ con las políticas $\Pi_{\mS}$ presentada en la Figura \ref{fig:chaos_policy} podemos las solución obtenida mediante control óptimo es capaz de encontrar solución en un rango amplio de $m$. Además en la Figura \ref{fig:sim-multi-level} se puede ver claramente que la forma de onda y el número de ángulos de conmutación son un grado de libertad más para el problema de control, es decir que la forma de onda puede cambiar con el valor de $m$.
+}
 
 \section{Proofs of results in Section \ref{sec:Contributions}}\label{sec:Proof}
 
@@ -600,7 +609,7 @@ and hence, we deduce that $\| \bm{x}^\ast (\pi)\|^2 \leq 4 \varepsilon \pi \| \m
 
 \subsection{Proofs of Theorems \ref{th:bang-bang} and \ref{th:PLP}}
 
-The proofs of Theorems \ref{th:bang-bang} and \ref{th:bang-bang} are based on the optimality conditions for the Optimal Control Problem \ref{pb:OCP_penalizado}, which can be deduced by means of Pontryagin's maximum principle \cite[Chapter~2.7]{bryson1975applied}.
+The proofs of Theorems \ref{th:bang-bang} and \ref{th:PLP} are based on the optimality conditions for the Optimal Control Problem \ref{pb:OCP_penalizado}, which can be deduced by means of Pontryagin's maximum principle \cite[Chapter~2.7]{bryson1975applied}.
 
 To this end, let us first introduce the Hamiltonian function associated to the Optimal Control Problem \ref{pb:OCP_penalizado}:
 \begin{align}\label{eq:hamil}
@@ -611,7 +620,6 @@ where $\bm{p}\in \mathbb{R}^{N_a+N_b}$ is the so-called adjoint variable, which 
   \bm{x}(t) = \begin{bmatrix} \bm{a}(t) \\ \bm{b}(t) \end{bmatrix} \quad \text{and}\quad
   \bm{p}(t) = \begin{bmatrix} \bm{p}^a(t) \\ \bm{p}^b(t) \end{bmatrix}.
 \end{align*}
-
 Now, let us derive the optimality conditions arising from Pontryagin's principle.
 \begin{itemize}
 	\item[1.] \textbf{The adjoint system}: for any $u^\ast \in L^\infty$, solution to the Problem \ref{pb:OCP_penalizado}, there exists a unique adjoint trajectory $\bm{p}^\ast\in C([0,\pi]; \mathbb{R}^{N_a+N_b})$ which satisfies the following terminal-value problem
@@ -677,7 +685,7 @@ Hence $u^\ast(t)$ is uniquely determined, and belongs to $\mathcal{U}$, for all 
 	\caption{Bi-level SHE: in the left column we show three types of concave penalization compatibles with Theorem \ref{th:bang-bang}. In the right columns we display the behavior of the corresponding Hamiltonian for different values of $\mu$.}\label{fig:Bang-Bang-penalization} 
 \end{figure}
 
-\UB{The green and yellow lines in Figures \ref{fig:Bang-Bang-penalization} and \ref{fig:SHE-multi} are not very visible.}
+%\UB{The green and yellow lines in Figures \ref{fig:Bang-Bang-penalization} and \ref{fig:SHE-multi} are not very visible.}
   
 \subsection{Proof of Theorem \ref{th:PLP}}\label{proof:PLP}
 
@@ -775,7 +783,6 @@ Finally, Due to the continuity of $\mu^\ast(t)$, along with \eqref{eq:subdiff}, 
 	\caption{Multilevel SHM: in the left column we show three types of penalizations which are compatible with our theoretical results. In the right column we show the behavior of the corresponding Hamiltonian for different values of $\mu$.}\label{fig:SHE-multi}
 \end{figure} 
 
-\UB{The second plot in Figure \ref{fig:SHE-multi} has to be removed.}
 
 
 
@@ -808,6 +815,20 @@ In this paper, we have considered the Selective Harmonic Modulation problem cons
 
 One of the main advantages of our methodology with respect to the previously existing ones is that, tackling SHM under the perspective of optimal control, we are able to solve several critical issues (described in detail in Section \ref{sec:SHE_finite-dim_pbm}) arising in practical applications. Therefore, our approach yields important advantages for the SHM community and settles solid basis for future innovative developments in this field.
 
+\JO{
+Conclusiones
+\begin{enumerate}
+	\item SHE as Control system
+	\item Formulation of Finite Horizon control with Finite Set of Controls for SHE problem
+	\item Obtenemos una política ordenada y capaz de variar la forma de onda y el número de angulos de conmutación con respecto al target 
+\end{enumerate}
+Perspectives
+\begin{enumerate}
+	\item Feedback Control 
+	\item Reinforment Learning - Value Iteration
+	\item Caraterization of Reachable Set
+\end{enumerate}
+}
 \begin{ack}            
 This project has received funding from the European Research Council (ERC) under the European Union’s Horizon 2020 research and innovation programme (grant agreement NO: 694126-DyCon). The work of U.B. and J.O. is partially supported by the Elkartek grant KK-2020/00091 CONVADP of the Basque government. The work of U.B. is partially supported by the Air Force Office of Scientific Research (AFOSR) under Award NO: FA9550-18-1-0242 and by the Grant MTM2017-92996-C2-1-R COSNET of MINECO (Spain).
 \end{ack}
