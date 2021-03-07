@@ -586,9 +586,9 @@ The results of our simulations are displayed in Fig. \ref{fig:sim-bang-bang}, \r
     \label{fig:sim-multi-level}
 \end{figure} 
 
-In accordance with Theorem \ref{th:bang-bang}, we can see in Fig. \ref{fig:sim-bang-bang} how for all $m \in [-0.8,0.8]$ the optimal control only takes the values $\{-1,1\}$ displayed in the plot in blue and red, respectively. \JO{Del mismo modo las Figuras \ref{fig:sim-bang-off-bang} y \ref{fig:sim-multi-level} son el consecuencia de Teorema \ref{th:PLP} en ellas se puede ver que para un valor de $m$ fijo se obtiene un control óptimo que solo toma valores discretos y dentro del conjunto $\mathcal{U}$.
+In accordance with Theorem \ref{th:bang-bang}, we can see in Fig. \ref{fig:sim-bang-bang} how for all $m \in [-0.8,0.8]$ the optimal control only takes the values $\{-1,1\}$ displayed in the plot in blue and red, respectively. \JO{Del mismo modo las Figuras \ref{fig:sim-bang-off-bang} y \ref{fig:sim-multi-level} son el consecuencia de Teorema \ref{th:PLP}. En ellas se puede ver que para un valor de $m$ fijo se obtiene un control óptimo que solo toma valores discretos y dentro del conjunto $\mathcal{U}$.
 
-Por otra parte, si comparamos estas políticas $\Pi(m)$ con las políticas $\Pi_{\mS}$ presentada en la Figura \ref{fig:chaos_policy} podemos las solución obtenida mediante control óptimo es capaz de encontrar solución en un rango amplio de $m$. Además en la Figura \ref{fig:sim-multi-level} se puede ver claramente que la forma de onda y el número de ángulos de conmutación son un grado de libertad más para el problema de control, es decir que la forma de onda puede cambiar con el valor de $m$.
+Por otra parte, si comparamos estas políticas $\Pi(m)$ con las políticas $\Pi_{\mS}$ presentada en la Figura \ref{fig:chaos_policy} podemos ver que la solución obtenida mediante control óptimo es capaz de encontrar solución en un rango amplio de $m$. Además en la Figura \ref{fig:sim-multi-level} se puede ver claramente que la forma de onda y el número de ángulos de conmutación son un grado de libertad adicional para el problema de control, es decir que la forma de onda puede cambiar con el valor de $m$.
 }
 
 \section{Proofs of results in Section \ref{sec:Contributions}}\label{sec:Proof}
@@ -811,17 +811,20 @@ Finally, Due to the continuity of $\mu^\ast(t)$, along with \eqref{eq:subdiff}, 
 
 \section{Conclusions}\label{sec:conclusions}
 
-In this paper, we have considered the Selective Harmonic Modulation problem consisting in generating a staircase control signal $u$ with a desired harmonic spectrum, and we have proposed a novel optimal control-based approach to solve it. In more detail, we have shown how the SHM Problem \eqref{pb:SHEp} can be cast as a null-controllability one for a dynamical system describing the evolution in the interval $[0,\pi)$ of the Fourier coefficients of $u$, which plays the role of a control for this dynamics. In this framework, $u$ can then be obtained through the minimization of a suitable penalized cost functional. Moreover, by choosing properly the penalization term, the staircase form of $u$ can be guaranteed without imposing further restrictions in the optimization process.
+In this paper, we have considered the Selective Harmonic Modulation problem consisting in generating a staircase control signal $u$ with a desired harmonic spectrum, and we have proposed a novel optimal control-based approach to solve it. In more detail, we have shown how the SHM Problem \eqref{pb:SHEp} can be cast as a null-controllability one for a dynamical system describing the evolution in the interval $[0,\pi)$ of the Fourier coefficients of $u$, which plays the role of a control for this dynamics. In this framework, $u$ can then be obtained through the minimization of a suitable penalized cost functional. Moreover, by choosing properly the penalization term, the staircase form of $u$ can be guaranteed without imposing further restrictions in the optimization process. \JO{De esta manera, somos capaces de resolver un problema de control óptimo con un control digital en horizonte temporal finito ampliando la literatura de control en este sentido.}
 
-One of the main advantages of our methodology with respect to the previously existing ones is that, tackling SHM under the perspective of optimal control, we are able to solve several critical issues (described in detail in Section \ref{sec:SHE_finite-dim_pbm}) arising in practical applications. Therefore, our approach yields important advantages for the SHM community and settles solid basis for future innovative developments in this field.
+One of the main advantages of our methodology with respect to the previously existing ones is that, tackling SHM under the perspective of optimal control, we are able to solve several critical issues (described in detail in Section \ref{sec:SHE_finite-dim_pbm}) arising in practical applications. 
+\JO{
+\begin{enumerate}
+	\item Combinatory Problem
+	\item Solvable set Problem
+	\item Policy Problem 
+\end{enumerate}
+}
+
+Therefore, our approach yields important advantages for the SHM community and settles solid basis for future innovative developments in this field.
 
 \JO{
-Conclusiones
-\begin{enumerate}
-	\item SHE as Control system
-	\item Formulation of Finite Horizon control with Finite Set of Controls for SHE problem
-	\item Obtenemos una política ordenada y capaz de variar la forma de onda y el número de angulos de conmutación con respecto al target 
-\end{enumerate}
 Perspectives
 \begin{enumerate}
 	\item Feedback Control 

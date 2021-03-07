@@ -1,14 +1,14 @@
 # Fdb version 3
-["bibtex main"] 1615093745 "main.aux" "main.bbl" "main" 1615093769
+["bibtex main"] 1615115922 "main.aux" "main.bbl" "main" 1615115944
   "/usr/local/texlive/2020/texmf-dist/bibtex/bst/base/apalike.bst" 1292289607 24635 604dafcc79f521a11ea73e506e1fbd98 ""
   "bib.bib" 1615088934 9871 caf3f1ffc618367a30bc530ef3d7420c ""
-  "main.aux" 1615093769 15709 95b6cf4dade24f9f688db587491f4852 "pdflatex"
+  "main.aux" 1615115939 15710 7567d377bb3ed9edc51b47ecf24f8de8 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
-["pdflatex"] 1615093768 "/Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/main.tex" "/Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/main.pdf" "main" 1615093769
-  "/Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/main.aux" 1615093769 15709 95b6cf4dade24f9f688db587491f4852 ""
-  "/Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/main.tex" 1615093768 66532 42d305d0548e4b24d902349cbb522649 ""
+["pdflatex"] 1615115938 "/Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/main.tex" "/Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/main.pdf" "main" 1615115944
+  "/Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/main.aux" 1615115939 15710 7567d377bb3ed9edc51b47ecf24f8de8 ""
+  "/Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/main.tex" 1615115944 66544 963aa9514f13a6b853c014f55c7a00f7 ""
   "/usr/local/texlive/2020/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2020/texmf-dist/fonts/tfm/jknappen/ec/ectt1000.tfm" 1136768653 1536 06717a2b50de47d4087ac0e6cd759455 ""
   "/usr/local/texlive/2020/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy5.tfm" 1246382020 1120 1e8878807317373affa7f7bba4cf2f6a ""
@@ -173,17 +173,17 @@
   "img/fig05.eps" 1615089124 211932 59dd8a427d2cb92399a28b132ecb1a9d ""
   "img/fig06.eps" 1615091138 165854 8eb7ef5d473c33acf39e205284a1e1d3 ""
   "img/fig08.eps" 1615091312 135296 7c7ffbb0d67a4b38482e56ecd56b2aec ""
-  "main.aux" 1615093769 15709 95b6cf4dade24f9f688db587491f4852 "pdflatex"
-  "main.bbl" 1615093745 5076 0f163162bef7bc02aac7767fb3e6a6fe "bibtex main"
-  "main.out" 1615093769 1176 d1572cfb105b3ea8c564dd6af39b483b "pdflatex"
-  "main.tex" 1615093768 66532 42d305d0548e4b24d902349cbb522649 ""
+  "main.aux" 1615115939 15710 7567d377bb3ed9edc51b47ecf24f8de8 "pdflatex"
+  "main.bbl" 1615115922 5076 0f163162bef7bc02aac7767fb3e6a6fe "bibtex main"
+  "main.out" 1615115939 1176 d1572cfb105b3ea8c564dd6af39b483b "pdflatex"
+  "main.tex" 1615115944 66544 963aa9514f13a6b853c014f55c7a00f7 ""
   "settings.tex" 1615049298 1142 c71f04a0a420230f0ee10326ce4ac341 ""
   (generated)
-  "main.pdf"
+  "/Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/main.pdf"
+  "main.out"
   "main.log"
+  "settings.aux"
+  "/Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/main.log"
+  "main.pdf"
   "main.aux"
   "main.thm"
-  "main.out"
-  "/Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/main.log"
-  "/Users/djoroya/Dropbox/My Mac (Deyviss’s MacBook Pro)/Documents/GitHub/papers/SHE-Optimal-Control-paper/main.pdf"
-  "settings.aux"
