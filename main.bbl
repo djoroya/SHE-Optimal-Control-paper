@@ -1,122 +1,86 @@
-\begin{thebibliography}{}
+\begin{thebibliography}{10}
 
-\bibitem[Agelidis et~al., 2008]{Agelidis2008}
-Agelidis, V.~G., Balouktsis, A.~I., and Cossar, C. (2008).
-\newblock {On attaining the multiple solutions of selective harmonic
-  elimination PWM three-level waveforms through function minimization}.
-\newblock {\em IEEE Trans. Ind. Electron.}, 55(3):996--1004.
+\bibitem{Sun1992}
+J.~{Sun} and H.~{Grotstollen}, ``Solving nonlinear equations for selective
+  harmonic eliminated pwm using predicted initial values,'' in {\em Proceedings
+  of the 1992 International Conference on Industrial Electronics, Control,
+  Instrumentation, and Automation}, pp.~259--264 vol.1, 1992.
 
-\bibitem[Andersson et~al., 2019]{Andersson2019}
-Andersson, J. A.~E., Gillis, J., Horn, G., Rawlings, J.~B., and Diehl, M.
-  (2019).
-\newblock {CasADi} -- {A} software framework for nonlinear optimization and
-  optimal control.
-\newblock {\em Math. Program. Comput.}, 11(1):1--36.
+\bibitem{Sun1996}
+J.~Sun, S.~Beineke, and H.~Grotstollen, ``Optimal pwm based on real-time
+  solution of harmonic elimination equations,'' {\em IEEE Trans. Power
+  Electron.}, vol.~11, no.~4, pp.~612--621, 1996.
 
-\bibitem[Bryson, 1975]{bryson1975applied}
-Bryson, A.~E. (1975).
-\newblock {\em Applied optimal control: optimization, estimation and control}.
-\newblock CRC Press.
+\bibitem{Konstantinou2010}
+G.~S. Konstantinou and V.~G. Agelidis, ``Bipolar switching waveform: novel
+  solution sets to the selective harmonic elimination problem,'' {\em Proc.
+  IEEE International Conference on Industrial Technology}, pp.~696--701, 2010.
 
-\bibitem[Dahidah et~al., 2015]{Dahidah2015}
-Dahidah, M.~S., Konstantinou, G., and Agelidis, V.~G. (2015).
-\newblock {A Review of Multilevel Selective Harmonic Elimination PWM:
-  Formulations, Solving Algorithms, Implementation and Applications}.
-\newblock {\em IEEE Trans. Power Electron.}, 30(8):4091--4106.
+\bibitem{Yang2015}
+K.~Yang, Z.~Yuan, R.~Yuan, W.~Yu, J.~Yuan, and J.~Wang, ``A groebner bases
+  theory-based method for selective harmonic elimination,'' {\em IEEE Trans.
+  Power Electron.}, vol.~30, no.~12, pp.~6581--6592, 2015.
 
-\bibitem[Dahidah and Agelidis, 2008]{Dahidah2008}
-Dahidah, M. S.~A. and Agelidis, V.~G. (2008).
-\newblock Selective harmonic elimination {PWM} control for cascaded multilevel
-  voltage source converters: a generalized formula.
-\newblock {\em IEEE Trans. Power Electron.}, 23(4):1620--1630.
+\bibitem{Agelidis2008}
+V.~G. Agelidis, A.~I. Balouktsis, and C.~Cossar, ``{On attaining the multiple
+  solutions of selective harmonic elimination PWM three-level waveforms through
+  function minimization},'' {\em IEEE Trans. Ind. Electron.}, vol.~55, no.~3,
+  pp.~996--1004, 2008.
 
-\bibitem[Ikeda and Nagahara, 2016]{ikeda2016maximum}
-Ikeda, T. and Nagahara, M. (2016).
-\newblock Maximum hands-off control without normality assumption.
-\newblock In {\em 2016 American Control Conference (ACC)}, pages 209--214.
-  IEEE.
+\bibitem{Dahidah2008}
+M.~S.~A. Dahidah and V.~G. Agelidis, ``Selective harmonic elimination {PWM}
+  control for cascaded multilevel voltage source converters: a generalized
+  formula,'' {\em IEEE Trans. Power Electron.}, vol.~23, no.~4, pp.~1620--1630,
+  2008.
 
-\bibitem[Konstantinou and Agelidis, 2010]{Konstantinou2010}
-Konstantinou, G.~S. and Agelidis, V.~G. (2010).
-\newblock Bipolar switching waveform: novel solution sets to the selective
-  harmonic elimination problem.
-\newblock {\em Proc. IEEE International Conference on Industrial Technology},
-  pages 696--701.
+\bibitem{Dahidah2015}
+M.~S. Dahidah, G.~Konstantinou, and V.~G. Agelidis, ``{A Review of Multilevel
+  Selective Harmonic Elimination PWM: Formulations, Solving Algorithms,
+  Implementation and Applications},'' {\em IEEE Trans. Power Electron.},
+  vol.~30, no.~8, pp.~4091--4106, 2015.
 
-\bibitem[Liberzon, 2003]{liberzon2003switching}
-Liberzon, D. (2003).
-\newblock {\em Switching in systems and control}.
-\newblock Springer Science \& Business Media.
+\bibitem{Yang2017}
+K.~Yang, Q.~Zhang, J.~Zhang, R.~Yuan, Q.~Guan, W.~Yu, and J.~Wang, ``Unified
+  selective harmonic elimination for multilevel converters,'' {\em IEEE Trans.
+  Power Electron.}, vol.~32, no.~2, pp.~1579--1590, 2017.
 
-\bibitem[Liu and Gong, 2014]{liu2014optimal}
-Liu, C. and Gong, Z. (2014).
-\newblock Optimal control of switched autonomous systems.
-\newblock In {\em Optimal control of switched systems arising in fermentation
-  processes}, pages 77--87. Springer.
+\bibitem{nagahara2013maximum}
+M.~Nagahara, D.~E. Quevedo, and D.~Ne{\v{s}}i{\'c}, ``Maximum hands-off control
+  and ${L}^1$ optimality,'' in {\em 52nd IEEE Conference on Decision and
+  Control}, pp.~3825--3830, IEEE, 2013.
 
-\bibitem[Nagahara et~al., 2013]{nagahara2013maximum}
-Nagahara, M., Quevedo, D.~E., and Ne{\v{s}}i{\'c}, D. (2013).
-\newblock Maximum hands-off control and ${L}^1$ optimality.
-\newblock In {\em 52nd IEEE Conference on Decision and Control}, pages
-  3825--3830. IEEE.
+\bibitem{ikeda2016maximum}
+T.~Ikeda and M.~Nagahara, ``Maximum hands-off control without normality
+  assumption,'' in {\em 2016 American Control Conference (ACC)}, pp.~209--214,
+  IEEE, 2016.
 
-\bibitem[Oroya, 2021]{simus}
-Oroya, J. (2021).
-\newblock djoroya/she-optimal-control-paper, github repository.
-\newblock \url{https://github.com/djoroya/SHE-Optimal-Control-paper}.
+\bibitem{simus}
+J.~Oroya, ``djoroya/she-optimal-control-paper, github repository.''
+  \url{https://github.com/djoroya/SHE-Optimal-Control-paper}, 2021.
 \newblock Accessed: 2021-02-22.
 
-\bibitem[Quevedo et~al., 2004]{Quevedo2004}
-Quevedo, D.~E., Goodwin, G.~C., and {De Don{\'{a}}}, J.~A. (2004).
-\newblock Finite constraint set receding horizon quadratic control.
-\newblock {\em Int. J. Robust Nonlin. Control}, 14(4):355--377.
+\bibitem{rao2009survey}
+A.~V. Rao, ``A survey of numerical methods for optimal control,'' {\em Adv.
+  Astronaut. Sci.}, vol.~135, no.~1, pp.~497--528, 2009.
 
-\bibitem[Rao, 2009]{rao2009survey}
-Rao, A.~V. (2009).
-\newblock A survey of numerical methods for optimal control.
-\newblock {\em Adv. Astronaut. Sci.}, 135(1):497--528.
+\bibitem{Andersson2019}
+J.~A.~E. Andersson, J.~Gillis, G.~Horn, J.~B. Rawlings, and M.~Diehl,
+  ``{CasADi} -- {A} software framework for nonlinear optimization and optimal
+  control,'' {\em Math. Program. Comput.}, vol.~11, no.~1, pp.~1--36, 2019.
 
-\bibitem[Sun et~al., 1996]{Sun1996}
-Sun, J., Beineke, S., and Grotstollen, H. (1996).
-\newblock Optimal pwm based on real-time solution of harmonic elimination
-  equations.
-\newblock {\em IEEE Trans. Power Electron.}, 11(4):612--621.
+\bibitem{wachter2006implementation}
+A.~W{\"a}chter and L.~T. Biegler, ``On the implementation of an interior-point
+  filter line-search algorithm for large-scale nonlinear programming,'' {\em
+  Mathematical programming}, vol.~106, no.~1, pp.~25--57, 2006.
 
-\bibitem[{Sun} and {Grotstollen}, 1992]{Sun1992}
-{Sun}, J. and {Grotstollen}, H. (1992).
-\newblock Solving nonlinear equations for selective harmonic eliminated pwm
-  using predicted initial values.
-\newblock In {\em Proceedings of the 1992 International Conference on
-  Industrial Electronics, Control, Instrumentation, and Automation}, pages
-  259--264 vol.1.
+\bibitem{bryson1975applied}
+A.~E. Bryson, {\em Applied optimal control: optimization, estimation and
+  control}.
+\newblock CRC Press, 1975.
 
-\bibitem[W{\"a}chter and Biegler, 2006]{wachter2006implementation}
-W{\"a}chter, A. and Biegler, L.~T. (2006).
-\newblock On the implementation of an interior-point filter line-search
-  algorithm for large-scale nonlinear programming.
-\newblock {\em Mathematical programming}, 106(1):25--57.
-
-\bibitem[Xu and Antsaklis, 2002]{Xu2002}
-Xu, X. and Antsaklis, P.~J. (2002).
-\newblock An approach to switched systems optimal control based on
-  parameterization of the switching instants.
-\newblock {\em IFAC Proceedings Volumes (IFAC-PapersOnline)}, 15(1):365--370.
-
-\bibitem[Yang et~al., 2015]{Yang2015}
-Yang, K., Yuan, Z., Yuan, R., Yu, W., Yuan, J., and Wang, J. (2015).
-\newblock A groebner bases theory-based method for selective harmonic
-  elimination.
-\newblock {\em IEEE Trans. Power Electron.}, 30(12):6581--6592.
-
-\bibitem[Yang et~al., 2017]{Yang2017}
-Yang, K., Zhang, Q., Zhang, J., Yuan, R., Guan, Q., Yu, W., and Wang, J.
-  (2017).
-\newblock Unified selective harmonic elimination for multilevel converters.
-\newblock {\em IEEE Trans. Power Electron.}, 32(2):1579--1590.
-
-\bibitem[Zuazua, 2011]{Zuazua2011}
-Zuazua, E. (2011).
-\newblock Switching control.
-\newblock {\em J. Eur. Math. Soc.}, 13(1):85--117.
+\bibitem{ambrosio2000functions}
+L.~Ambrosio, N.~Fusco, and D.~Pallara, {\em Functions of bounded variation and
+  free discontinuity problems}.
+\newblock Courier Corporation, 2000.
 
 \end{thebibliography}

@@ -1,46 +1,48 @@
-This is BibTeX, Version 0.99d (TeX Live 2020)
+This is BibTeX, Version 0.99d
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: main.aux
-The style file: apalike.bst
+Reallocating 'name_of_file' (item size: 1) to 7 items.
+The style file: ieeetr.bst
+Reallocating 'name_of_file' (item size: 1) to 4 items.
 Database file #1: bib.bib
-You've used 20 entries,
-            1935 wiz_defined-function locations,
-            610 strings with 7396 characters,
-and the built_in function-call counts, 8767 in all, are:
-= -- 893
-> -- 315
-< -- 17
-+ -- 110
-- -- 104
-* -- 734
-:= -- 1455
-add.period$ -- 64
-call.type$ -- 20
-change.case$ -- 150
-chr.to.int$ -- 20
-cite$ -- 20
-duplicate$ -- 337
-empty$ -- 636
-format.name$ -- 138
-if$ -- 1762
-int.to.chr$ -- 1
-int.to.str$ -- 0
-missing$ -- 21
-newline$ -- 104
-num.names$ -- 60
-pop$ -- 132
+You've used 16 entries,
+            1876 wiz_defined-function locations,
+            586 strings with 6590 characters,
+and the built_in function-call counts, 5167 in all, are:
+= -- 545
+> -- 167
+< -- 0
++ -- 62
+- -- 46
+* -- 358
+:= -- 692
+add.period$ -- 19
+call.type$ -- 16
+change.case$ -- 14
+chr.to.int$ -- 0
+cite$ -- 16
+duplicate$ -- 259
+empty$ -- 484
+format.name$ -- 46
+if$ -- 1276
+int.to.chr$ -- 0
+int.to.str$ -- 16
+missing$ -- 17
+newline$ -- 54
+num.names$ -- 16
+pop$ -- 49
 preamble$ -- 1
-purify$ -- 152
+purify$ -- 0
 quote$ -- 0
-skip$ -- 265
+skip$ -- 200
 stack$ -- 0
-substring$ -- 729
-swap$ -- 64
-text.length$ -- 5
+substring$ -- 452
+swap$ -- 123
+text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 116
+type$ -- 0
 warning$ -- 0
-while$ -- 78
-width$ -- 0
-write$ -- 264
+while$ -- 54
+width$ -- 18
+write$ -- 167
