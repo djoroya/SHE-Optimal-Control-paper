@@ -44,6 +44,20 @@ K.~Yang, Q.~Zhang, J.~Zhang, R.~Yuan, Q.~Guan, W.~Yu, and J.~Wang, ``Unified
   selective harmonic elimination for multilevel converters,'' {\em IEEE Trans.
   Power Electron.}, vol.~32, no.~2, pp.~1579--1590, 2017.
 
+\bibitem{helmberg1996interior}
+C.~Helmberg, F.~Rendl, R.~J. Vanderbei, and H.~Wolkowicz, ``An interior-point
+  method for semidefinite programming,'' {\em SIAM Journal on Optimization},
+  vol.~6, no.~2, pp.~342--361, 1996.
+
+\bibitem{calamai1987projected}
+P.~H. Calamai and J.~J. Mor{\'e}, ``Projected gradient methods for linearly
+  constrained problems,'' {\em Mathematical programming}, vol.~39, no.~1,
+  pp.~93--116, 1987.
+
+\bibitem{eremin1967penalty}
+I.~Eremin, ``The penalty method in convex programming,'' {\em Cybernetics},
+  vol.~3, no.~4, pp.~53--56, 1967.
+
 \bibitem{nagahara2013maximum}
 M.~Nagahara, D.~E. Quevedo, and D.~Ne{\v{s}}i{\'c}, ``Maximum hands-off control
   and ${L}^1$ optimality,'' in {\em 52nd IEEE Conference on Decision and

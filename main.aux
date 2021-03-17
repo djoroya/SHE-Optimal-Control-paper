@@ -60,6 +60,9 @@
 \newlabel{fig:chaos_policy}{{2}{3}{In the first picture, we display the optimal switching angles $\Phi ^*_{\mS }$ associated to different waveforms $\{\mS _l\}_{l=1}^7$ for a SHM problem (see Remark \ref {remark:SHE}), considering the sets $\mathcal {E}_a = \{1\}$ and $\mathcal {E}_b = \{1,5,7,11,13,17,19,23,25,29,31\}$. We chose the target $(a_1,b_1) = (m,0) \hspace {0.5em} \forall m \in [0,1.2]$. The second figure shows the solvable sets for each waveform we considered}{figure.2}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {IV}SHM as an optimal control problem}{3}{section.4}\protected@file@percent }
 \newlabel{sec:Contributions}{{IV}{3}{SHM as an optimal control problem}{section.4}{}}
+\citation{helmberg1996interior}
+\citation{calamai1987projected}
+\citation{eremin1967penalty}
 \newlabel{eq: ODE Fourier}{{IV.1}{4}{SHM as an optimal control problem}{equation.4.1}{}}
 \newlabel{eq:forward dyn syst}{{IV.2}{4}{SHM as an optimal control problem}{equation.4.2}{}}
 \newlabel{eq:Dynamics}{{IV.3}{4}{SHM as an optimal control problem}{equation.4.3}{}}
@@ -95,26 +98,30 @@
 \@writefile{thm}{\contentsline {remark}{{Remark}{IV.{3}}{\emph {Bang-off-bang control}}}{5}{remark.4.3}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {V}Numerical simulations}{5}{section.5}\protected@file@percent }
 \newlabel{sec:Simulations}{{V}{5}{Numerical simulations}{section.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces \color  {magenta}{The some penalization functions. The $ \mathcal  {L}_1 $, $ \mathcal  {L}_2$ and $ \mathcal  {L}_3 $ functions produce a control on $ \mathcal  {A}_{ad} $. As we will see in the \ ref {sec: proof: PLP} section, $ \mathcal  {L}_4 $, as it does not have a unique minimum, is not capable of generating an admissible control.}\color  {black} }}{6}{figure.4}\protected@file@percent }
+\newlabel{fig:examples_penalizations}{{4}{6}{\JO {The some penalization functions. The $ \mathcal {L}_1 $, $ \mathcal {L}_2$ and $ \mathcal {L}_3 $ functions produce a control on $ \mathcal {A}_{ad} $. As we will see in the \ ref {sec: proof: PLP} section, $ \mathcal {L}_4 $, as it does not have a unique minimum, is not capable of generating an admissible control.}}{figure.4}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {V-A}Smooth approximation of $\mathcal  L$ for multilevel control}{6}{subsection.5.1}\protected@file@percent }
 \newlabel{eq:Lsmooth}{{V.1}{6}{Smooth approximation of $\mathcal L$ for multilevel control}{equation.5.1}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {V-B}Direct method for OCP-SHE}{6}{subsection.5.2}\protected@file@percent }
 \@writefile{thm}{\contentsline {problem}{{Problem}{V.{1}}{Numerical OCP}}{6}{problem.5.1}\protected@file@percent }
 \newlabel{pb:numOCP2}{{V.{1}}{6}{Direct method for OCP-SHE}{problem.5.1}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {V-C}Numerical experiments}{6}{subsection.5.3}\protected@file@percent }
-\citation{bryson1975applied}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Bang-bang control for the SHM problem.}}{7}{figure.4}\protected@file@percent }
-\newlabel{fig:sim-bang-bang}{{4}{7}{Bang-bang control for the SHM problem}{figure.4}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Bang-off-bang control for the SHM problem.}}{7}{figure.5}\protected@file@percent }
-\newlabel{fig:sim-bang-off-bang}{{5}{7}{Bang-off-bang control for the SHM problem}{figure.5}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Multilevel control for the SHM problem.}}{7}{figure.6}\protected@file@percent }
-\newlabel{fig:sim-multi-level}{{6}{7}{Multilevel control for the SHM problem}{figure.6}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Bang-bang control for the SHM problem.}}{7}{figure.5}\protected@file@percent }
+\newlabel{fig:sim-bang-bang}{{5}{7}{Bang-bang control for the SHM problem}{figure.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Bang-off-bang control for the SHM problem.}}{7}{figure.6}\protected@file@percent }
+\newlabel{fig:sim-bang-off-bang}{{6}{7}{Bang-off-bang control for the SHM problem}{figure.6}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Odd multilevel control for the SHM problem.}}{7}{figure.7}\protected@file@percent }
+\newlabel{fig:sim-multi-level}{{7}{7}{Odd multilevel control for the SHM problem}{figure.7}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Even multilevel control for the SHM problem.}}{7}{figure.8}\protected@file@percent }
+\newlabel{fig:sim-multi-level-par}{{8}{7}{Even multilevel control for the SHM problem}{figure.8}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {VI}Proofs of results in Section \ref  {sec:Contributions}}{7}{section.6}\protected@file@percent }
 \newlabel{sec:Proof}{{VI}{7}{Proofs of results in Section \ref {sec:Contributions}}{section.6}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {VI-A}Existence of minimizers}{7}{subsection.6.1}\protected@file@percent }
 \newlabel{sec: exist mini}{{VI-A}{7}{Existence of minimizers}{subsection.6.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {VI-B}Optimality conditions}{7}{subsection.6.2}\protected@file@percent }
-\newlabel{sec:opti cond}{{VI-B}{7}{Optimality conditions}{subsection.6.2}{}}
-\newlabel{eq:hamil}{{VI.1}{7}{Optimality conditions}{equation.6.1}{}}
+\citation{bryson1975applied}
+\@writefile{toc}{\contentsline {subsection}{\numberline {VI-B}Optimality conditions}{8}{subsection.6.2}\protected@file@percent }
+\newlabel{sec:opti cond}{{VI-B}{8}{Optimality conditions}{subsection.6.2}{}}
+\newlabel{eq:hamil}{{VI.1}{8}{Optimality conditions}{equation.6.1}{}}
 \newlabel{eq:adjoint constant}{{VI.2}{8}{Optimality conditions}{equation.6.2}{}}
 \newlabel{eq:control design}{{VI.3}{8}{Optimality conditions}{equation.6.3}{}}
 \newlabel{eq:m ast}{{VI.4}{8}{Optimality conditions}{equation.6.4}{}}
@@ -122,24 +129,21 @@
 \newlabel{eq:functionalJ}{{VI.6}{8}{Optimality conditions}{equation.6.6}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {VI-C}Proof of Theorem \ref  {th:bang-bang} (bang-bang control)}{8}{subsection.6.3}\protected@file@percent }
 \newlabel{sec: proof:bang-bang}{{VI-C}{8}{Proof of Theorem \ref {th:bang-bang} (bang-bang control)}{subsection.6.3}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Bi-level SHE: in the left column we show two examples of functions $\mathcal  {L}$ compatible with Theorem \ref  {th:bang-bang}. In the right columns we display the behavior of the corresponding Hamiltonian for different values of $\mu $.}}{8}{figure.7}\protected@file@percent }
-\newlabel{fig:Bang-Bang-penalization}{{7}{8}{Bi-level SHE: in the left column we show two examples of functions $\mathcal {L}$ compatible with Theorem \ref {th:bang-bang}. In the right columns we display the behavior of the corresponding Hamiltonian for different values of $\mu $}{figure.7}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {VI-D}Proof of Theorem \ref  {th:PLP} (multilevel control)}{8}{subsection.6.4}\protected@file@percent }
 \newlabel{sec: proof:PLP}{{VI-D}{8}{Proof of Theorem \ref {th:PLP} (multilevel control)}{subsection.6.4}{}}
 \newlabel{eq:order}{{VI.7}{8}{Proof of Theorem \ref {th:PLP} (multilevel control)}{equation.6.7}{}}
 \newlabel{opti cond subdiff}{{VI.8}{8}{Proof of Theorem \ref {th:PLP} (multilevel control)}{equation.6.8}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Bi-level SHE: in the left column we show two examples of functions $\mathcal  {L}$ compatible with Theorem \ref  {th:bang-bang}. In the right columns we display the behavior of the corresponding Hamiltonian for different values of $\mu $.\color  {magenta}{We draw the minumun as a point for every $\mu $, and we can see how only take the value in $\mathcal  {U}$.}\color  {black}}}{9}{figure.9}\protected@file@percent }
+\newlabel{fig:Bang-Bang-penalization}{{9}{9}{Bi-level SHE: in the left column we show two examples of functions $\mathcal {L}$ compatible with Theorem \ref {th:bang-bang}. In the right columns we display the behavior of the corresponding Hamiltonian for different values of $\mu $.\JO {We draw the minumun as a point for every $\mu $, and we can see how only take the value in $\mathcal {U}$.}}{figure.9}{}}
 \newlabel{eq:subdiff}{{VI.9}{9}{Proof of Theorem \ref {th:PLP} (multilevel control)}{equation.6.9}{}}
 \newlabel{eq:subdiff2}{{VI.10}{9}{Proof of Theorem \ref {th:PLP} (multilevel control)}{equation.6.10}{}}
 \newlabel{eq:argmin singleton}{{VI.11}{9}{Proof of Theorem \ref {th:PLP} (multilevel control)}{equation.6.11}{}}
 \newlabel{eq:argmin non singleton}{{VI.12}{9}{Proof of Theorem \ref {th:PLP} (multilevel control)}{equation.6.12}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Multilevel SHM: in the left column we show three types of penalizations which are compatible with our theoretical results. In the right column we show the behavior of the corresponding Hamiltonian for different values of $\mu $.}}{9}{figure.8}\protected@file@percent }
-\newlabel{fig:SHE-multi}{{8}{9}{Multilevel SHM: in the left column we show three types of penalizations which are compatible with our theoretical results. In the right column we show the behavior of the corresponding Hamiltonian for different values of $\mu $}{figure.8}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {VI-E}Uniqueness and continuity of solutions}{9}{subsection.6.5}\protected@file@percent }
 \newlabel{sec: uniqueness continuity}{{VI-E}{9}{Uniqueness and continuity of solutions}{subsection.6.5}{}}
 \newlabel{eq:functional F}{{VI.13}{9}{Uniqueness and continuity of solutions}{equation.6.13}{}}
-\citation{ambrosio2000functions}
-\citation{ambrosio2000functions}
-\citation{ambrosio2000functions}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Multilevel SHM: in the left column we show three types of penalizations which are compatible with our theoretical results. In the right column we show the behavior of the corresponding Hamiltonian for different values of $\mu $. \color  {magenta}{We draw the minumun as a point for every $\mu $, and we can see how only take the value in $\mathcal  {U}$.}\color  {black}}}{10}{figure.10}\protected@file@percent }
+\newlabel{fig:several_hamiltonian}{{10}{10}{Multilevel SHM: in the left column we show three types of penalizations which are compatible with our theoretical results. In the right column we show the behavior of the corresponding Hamiltonian for different values of $\mu $. \JO {We draw the minumun as a point for every $\mu $, and we can see how only take the value in $\mathcal {U}$.}}{figure.10}{}}
 \newlabel{eq:low est boundary}{{VI.14}{10}{Uniqueness and continuity of solutions}{equation.6.14}{}}
 \newlabel{eq:low est outside}{{VI.15}{10}{Uniqueness and continuity of solutions}{equation.6.15}{}}
 \newlabel{eq:F Lipschitz}{{VI.16}{10}{Uniqueness and continuity of solutions}{equation.6.16}{}}
@@ -147,7 +151,9 @@
 \@writefile{thm}{\contentsline {lemma}{{Lemma}{VI.{1}}{}}{10}{lemma.6.1}\protected@file@percent }
 \newlabel{lem: compactness}{{VI.{1}}{10}{Uniqueness and continuity of solutions}{lemma.6.1}{}}
 \newlabel{A star K}{{VI.18}{10}{Uniqueness and continuity of solutions}{equation.6.18}{}}
-\newlabel{BV norm}{{VI.19}{10}{Uniqueness and continuity of solutions}{equation.6.19}{}}
+\citation{ambrosio2000functions}
+\citation{ambrosio2000functions}
+\citation{ambrosio2000functions}
 \bibstyle{ieeetr}
 \bibdata{bib}
 \bibcite{Sun1992}{1}
@@ -158,15 +164,18 @@
 \bibcite{Dahidah2008}{6}
 \bibcite{Dahidah2015}{7}
 \bibcite{Yang2017}{8}
-\bibcite{nagahara2013maximum}{9}
-\bibcite{ikeda2016maximum}{10}
-\bibcite{simus}{11}
-\bibcite{rao2009survey}{12}
-\bibcite{Andersson2019}{13}
-\bibcite{wachter2006implementation}{14}
-\bibcite{bryson1975applied}{15}
-\bibcite{ambrosio2000functions}{16}
+\bibcite{helmberg1996interior}{9}
+\bibcite{calamai1987projected}{10}
+\bibcite{eremin1967penalty}{11}
+\bibcite{nagahara2013maximum}{12}
+\newlabel{BV norm}{{VI.19}{11}{Uniqueness and continuity of solutions}{equation.6.19}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {VII}Conclusions}{11}{section.7}\protected@file@percent }
 \newlabel{sec:conclusions}{{VII}{11}{Conclusions}{section.7}{}}
 \@writefile{toc}{\contentsline {section}{References}{11}{section*.1}\protected@file@percent }
-\gdef \@abspage@last{11}
+\bibcite{ikeda2016maximum}{13}
+\bibcite{simus}{14}
+\bibcite{rao2009survey}{15}
+\bibcite{Andersson2019}{16}
+\bibcite{wachter2006implementation}{17}
+\bibcite{bryson1975applied}{18}
+\bibcite{ambrosio2000functions}{19}

@@ -11,17 +11,17 @@
 {Author \MakeLowercase{\textit{et al.}}: Preparation of Brief Papers for IEEE TRANSACTIONS and JOURNALS (February 2017)}
 
 \include{settings}
-
+ 
 \begin{document}
 	
 \title{Multilevel Selective Harmonic Modulation via Optimal Control} 
 
-\author{Jes\'us Oroya, Carlos Esteve-Yag\"ue, and Umberto Biccari
-\thanks{Manuscript submitted March xx, 2021. This project has received funding from the European Research Council (ERC) under the European Union’s Horizon 2020 research and innovation programme (grant agreement NO: 694126-DyCon). The work of U.B. and J.O. is partially supported by the Elkartek grant KK-2020/00091 CONVADP of the Basque government. The work of U.B. is partially supported by the Air Force Office of Scientific Research (AFOSR) under Award NO: FA9550-18-1-0242 and by the Grant MTM2017-92996-C2-1-R COSNET of MINECO (Spain).}
-\thanks{J. O. is with Universidad de Deusto, Avenida de las Universidades 24, 48007 Bilbao, Basque Country, Spain (e-mail: djoroya@deusto.es).}
+\author{Deyviss Jes\'us Oroya-Villalta, Carlos Esteve-Yag\"ue, and Umberto Biccari
+\thanks{Manuscript submitted March xx, 2021. This project has received funding from the European Research Council (ERC) under the European Union’s Horizon 2020 research and innovation programme (grant agreement NO: 694126-DyCon). The work of U.B. and D.O. is partially supported by the Elkartek grant KK-2020/00091 CONVADP of the Basque government. The work of U.B. is partially supported by the Air Force Office of Scientific Research (AFOSR) under Award NO: FA9550-18-1-0242 and by the Grant MTM2017-92996-C2-1-R COSNET of MINECO (Spain).}
+\thanks{D. O. is with Universidad de Deusto, Avenida de las Universidades 24, 48007 Bilbao, Basque Country, Spain (e-mail: djoroya@deusto.es).}
 \thanks{C. E. is with Departamento de Matem\'aticas, Universidad Aut\'onoma de Madrid, 28049 Madrid, Spain (email: carlos.esteve@uam.es).}
 \thanks{U. B. is with Chair of Computational Mathematics, Fundaci\'on Deusto, Avenida de las Universidades 24, 48007 Bilbao, Basque Country, Spain and with Universidad de Deusto, Avenida de las Universidades 24, 48007 Bilbao, Basque Country, Spain (email: umberto.biccari@deusto.es).}
-}
+} 
 \maketitle
 
 \begin{abstract}
@@ -51,7 +51,7 @@ To overcome these difficulties, in this work we propose a new approach to SHM ba
 %This formulation is in analogy with what is known in the control literature as \textit{switching controls} or \textit{switching systems} (see \cite{liberzon2003switching,Zuazua2011, liu2014optimal}), whose goal is to control the dynamics of a system by switching from an actuator to another in a systematic way. In the control theory literature, there exist different methods to obtain this type of control, which can be classified as follows:
 %
 
-One of the main difficulties in our approach is  that the constraints on the admissible controls, which must have staircase form,  prevent us from applying the classical tools in optimal control theory, such as Pontryagin's maximum principle. {\color{red} para Jesus: decir algo de cómo las restricciones dificultan la utilización de métodos numéricos como casadi/ipopt. }
+One of the main difficulties in our approach is  that the constraints on the admissible controls, which must have staircase form,  prevent us from applying the classical tools in optimal control theory. \JO{Specifically, one of the most popular methodology is the combination of automatic differentiation with non-linear convex optimization, achieving an algorithm good performance. However, for the use of these optimizers it is necessary to consider a convex admissible solution space, not being directly applicable in our problem.}
 
 In order to bypass this obstruction, we consider a different optimal control problem, without these type of constraints, in which the desired staircase structure is obtained by introducing a suitable penalization term for the control. 
 
@@ -329,14 +329,16 @@ Let us introduce the set of admissible controls.
 	\begin{equation*}
 		\min_{u \in \mathcal{A}_{ad}}\;\frac 12 \|\bm{x}(\pi)\|^2 \quad \text{subject to the dynamics \eqref{eq:CauchyReversed}}.
 	\end{equation*}
-\end{problem}
+\end{problem} 
 
 \begin{remark}
 	Note that the cost functional in Problem \ref{pb:OCP1} is quadratic and, therefore, it always admits at least one minimizer for any target $[\aT;\bT]^\top$. However, this minimizer is a solution to the SHM problem if and only if the minimum is equal to zero. Otherwise, we say that the target $[\aT;\bT]^\top$ is unreachable and the SHM problem \ref{pb:SHEp} has no solution.  In this work, we will not discuss the reachable set for the control problem \eqref{pb:OCP1}.
 \end{remark}
 
-A main feature of the SHM problem is that we are looking for signal functions $u$ of the form \eqref{eq:uExpl} satisfying \eqref{eq:staircase prop}. In principle, this can be guaranteed by by adding directly this constraint on the set of admissible controls $\mathcal{A}_{ad}$, as we did in Problem \ref{pb:OCP1}. Notwithstanding that, the inclusion of such a constraint makes the optimal control problem extremely difficult, as it prevents us from applying standard arguments such as the Pontryagin's maximum principle, and implementing all the computational techniques developed in the last decades to solve optimal control problems, {\color{red} for instance ???}. %As a matter of fact, the standard techniques in optimal control theory seem not to be adapted to handle such constraints on the control. 
-
+A main feature of the SHM problem is that we are looking for signal functions $u$ of the form \eqref{eq:uExpl} satisfying \eqref{eq:staircase prop}. In principle, this can be guaranteed by by adding directly this constraint on the set of admissible controls $\mathcal{A}_{ad}$, as we did in Problem \ref{pb:OCP1}.
+%Notwithstanding that, the inclusion of such a constraint makes the optimal control problem extremely difficult, as it prevents us from applying standard arguments such as the Pontryagin's maximum principle, and implementing all the computational techniques developed in the last decades to solve optimal control problems, {\color{red} for instance ???}. %As a matter of fact, the standard techniques in optimal control theory seem not to be adapted to handle such constraints on the control. 
+\JO{However, considering an optimization problem in a non-convex, null-measure set is strange. It is known that mathematical optimization in general is an NP-hard problem, while for the concrete case of convex optimization, algorithms in polynomial time are known, such as: Interior point method \cite{helmberg1996interior}, projected gradient descent \cite{ calamai1987projected}, Penalty method \cite{eremin1967penalty}, etc. }
+ 
 In order to bypass this difficulty, we propose a modification of Problem \ref{pb:OCP1} by adding to the cost functional, a penalization term for the control. 
 
 \begin{problem}[Penalized OCP for SHM]\label{pb:OCP_penalizado}
@@ -347,7 +349,7 @@ In order to bypass this difficulty, we propose a modification of Problem \ref{pb
 		&\text{subject to the dynamics \eqref{eq:CauchyReversed}}.
 	\end{align*}
 \end{problem}
-
+ 
 Observe that, in Problem \ref{pb:OCP_penalizado}, we do not impose the constraint that the control has to be of the form \eqref{eq:uExpl}, satisfying the staircase property \eqref{eq:staircase prop}. Nevertheless, as we shall see, these features of $u$ will arise naturally in the solution to Problem \ref{pb:OCP_penalizado}, from a suitable choice of the penalization term $\mathcal{L}$.
 Another important advantage of adding a penalization term for the control is that, as we shall prove in Theorems \ref{th:bang-bang} and \ref{th:PLP}, it ensures the uniqueness for the solution, and the continuity of this one with respect to the targets $\bm{a}_T$ and $\bm{b}_T$.
 
@@ -411,7 +413,15 @@ Nevertheless, the assumption of $\mathcal{L}$ having a unique minimizer can be e
 	We note that when  $\mathcal{U}= \{-1,0,1\}$, we can just use the $L^1$-norm of the control as penalization, i.e. $\mathcal{L}(u) = |u|$. This yields to the so-called \emph{bang-off-bang} controls, that are widely studied in the literature \cite{nagahara2013maximum,ikeda2016maximum}. By taking a different parabola $\mathcal{P}$, one can then obtain different bang-off-bang solutions to the SHM problem.
 \end{remark}
 
-We illustrate in Fig. \ref{fig:SHE-multi} different examples of penalization functions $\mathcal{L}$ giving rise to multilevel solutions to the SHM problem. We point out that, by varying the values of $\alpha$ and $\beta$ in Theorem \ref{th:PLP}, we can obtain solutions with different waveforms.
+We illustrate in Fig. \ref{fig:examples_penalizations} different examples of penalization functions $\mathcal{L}$ giving rise to multilevel solutions to the SHM problem. We point out that, by varying the values of $\alpha$ and $\beta$ in Theorem \ref{th:PLP}, we can obtain solutions with different waveforms.
+
+
+\begin{figure}
+	\centering
+	\includegraphics[scale=0.45]{img/fig11.eps}
+	\caption{\JO{The some penalization functions. The $ \mathcal {L}_1 $, $ \mathcal{L}_2$ and $ \mathcal{L}_3 $ functions produce a control on $ \mathcal{A}_{ad} $. As we will see in the \ ref {sec: proof: PLP} section, $ \mathcal{L}_4 $, as it does not have a unique minimum, is not capable of generating an admissible control.} }
+	\label{fig:examples_penalizations}
+\end{figure}
 
 \section{Numerical simulations}\label{sec:Simulations}
 
@@ -454,13 +464,14 @@ Notice that this regularization procedure is independent of the function $\lambd
 \begin{gather}
 	\lambda_k = (u_{k+1}+u_{k}) (u-u_k) + u_k^2, 
 \end{gather}
-which corresponds to taking $\alpha=1$ and $\beta=0$ in \eqref{eq:parabola}, with the following choices for the set $\mathcal U$:
-\begin{itemize}
-	\item[1.] $\mathcal U=\{-1,0,1\}$ (bang-off-bang control, see Fig. \ref{fig:sim-bang-off-bang})
-	\item[2.] $\mathcal U=\{-1,-1/2,0,1/2,1\}$ (multilevel control, see Fig. \ref{fig:sim-multi-level}).
-\end{itemize}
+which corresponds to taking $\alpha=1$ and $\beta=0$ in \eqref{eq:parabola}.
+% with the following choices for the set $\mathcal U$:
+% \begin{itemize}
+% 	\item[1.] $\mathcal U=\{-1,0,1\}$ (bang-off-bang control, see Fig. \ref{fig:sim-bang-off-bang})
+% 	\item[2.] $\mathcal U=\{-1,-1/2,0,1/2,1\}$ (multilevel control, see Fig. \ref{fig:sim-multi-level}).
+% \end{itemize}
 
-Notice that, in this way, it is guaranteed that $\mathcal L$ has a unique minimizer at zero.
+%Notice that, in this way, it is guaranteed that $\mathcal L$ has a unique minimizer at zero.
 
 \subsection{Direct method  for OCP-SHE}
 
@@ -497,34 +508,45 @@ We now present several numerical experiments to show the effectiveness of our op
 	\vspace{0.05cm}
 	\item[2.] \emph{bang-off-bang}, with $\mathcal{U} = \{-1,0,1\}$. 
 	\vspace{0.05cm}
-	\item[3.] \textit{multilevel}, $\mathcal{U} = \{-1,-1/2,0,1/2,1\}$.
+	\item[3.] \textit{odd multilevel}, $\mathcal{U} = \{-1,-1/2,0,1/2,1\}$.
+ 	\item[4.] \textit{even multilevel}, $\mathcal{U} = \{-1,-3/5,-1/5,1/5,3/5,1\}$.
+
 \end{itemize}
 
-The results of our simulations are displayed in Fig. \ref{fig:sim-bang-bang}, \ref{fig:sim-bang-off-bang} and \ref{fig:sim-multi-level} where, for all $m \in [-0.8,0.8]$, we show the \textit{policy} $\Pi(m)$ giving us the optimal control signal $u^\ast$. Here the terminology \textit{policy} and the notation $\Pi(m)$ are consistent with the ones of Definition \ref{def:policy}.
+The results of our simulations are displayed in Fig. \ref{fig:sim-bang-bang}, \ref{fig:sim-bang-off-bang} and \ref{fig:sim-multi-level} where, for all $m \in [-0.8,0.8]$, we show the \textit{policy} $\Pi(m)$ giving us the optimal control signal $u^\ast$. \JO{Here the terminology \textit {policy} refers to the function $ \Pi: \mathbb{R}^{N_a + N_b} \rightarrow \mathbb{R}^{N_t} $, which takes as the input value the initial condition $ \bm{x}_0 $ and returns the solution $\bm{u}$ of the Problem \ref{pb:numOCP2}. This function is analogous to the function defined in \ref{def:policy} for the finite dimensional Problem \ref{pb:SHE opt}, however this function does not depend on any specific waveform.}
 
 \begin{figure}[ht!]
-	\hspace{0.05em}
-	\includegraphics[scale=0.525]{img/fig05.eps}
+	\hspace{0.25em}
+	\includegraphics[scale=0.5]{img/fig05.eps}
 	\caption{Bang-bang control for the SHM problem.}\label{fig:sim-bang-bang}
 \end{figure} 
 
 \begin{figure}[ht!]
-	\hspace{0.05em}
-	\includegraphics[scale=0.525]{img/fig06.eps}
+	\hspace{0.25em}
+	\includegraphics[scale=0.5]{img/fig06.eps}
 	\caption{Bang-off-bang control for the SHM problem.}\label{fig:sim-bang-off-bang}
 \end{figure} 
 
 \begin{figure}[ht!]
-	\hspace{0.05em}
-	\includegraphics[scale=0.525]{img/fig08.eps}
-	\caption{Multilevel control for the SHM problem.}\label{fig:sim-multi-level}
+	\hspace{0.25em}
+	\includegraphics[scale=0.5]{img/fig08.eps}
+	\caption{Odd multilevel control for the SHM problem.}\label{fig:sim-multi-level}
 \end{figure} 
+
 
 In these plots, to each value of the parameter $m$ in the horizontal line, it corresponds an optimal control having a staircase structure and changing value in $\mathcal U$ in the correspondence of the change of color. For instance, in Fig. \ref{fig:sim-bang-bang}, the control will be $u=-1$ in the blue region and $u=1$ in the red one. This, of course, is in accordance with Theorems \ref{th:bang-bang} and \ref{th:PLP}.
 
 In addition to that, if we compare the policies $\Pi(m)$ displayed in Fig. \ref{fig:sim-bang-bang}, \ref{fig:sim-bang-off-bang} and \ref{fig:sim-multi-level} with the policies $\Pi_{\mS}$ of Fig. \ref{fig:chaos_policy}, we can see that the issues we mentioned in Section \ref{sec:SHE_finite-dim_pbm} concerning the solvable set and the continuity of the policy have been overcome by our approach. In particular, formulating the SHM problem via optimal control we are capable of finding solutions in an ample range of the parameter $m$. This is because, while solving Problem \ref{pb:numOCP2}, we are not restricted to have a specific waveform, as it is Problem \ref{pb:SHE opt}. Instead, for any value of $m$ the best waveform and switching angles to reach the desired targets are automatically obtained through the minimization process to compute the optimal control. In other words, the possibility of changing the waveform during the optimization process can be seen as an extra degree of freedom allowing to have a large solvable set and a continuous policy. Furthermore, also the \textit{combinatory problem} we introduced in Section \ref{sec:SHE_finite-dim_pbm} is solved by our approach, as we do not need anymore to launch the same optimization process for all the possible waveforms of a given set $\mathcal U$. 
 
-All these considerations show that the methodology introduced in this paper is theoretically and computationally competitive to solve the SHM problem.
+% sobra All these considerations show that the methodology introduced in this paper is theoretically and computationally competitive to solve the SHM problem.
+\JO{Agregar comentario de la figura \ref{fig:sim-multi-level-par}}
+
+
+\begin{figure}[ht!]
+	\hspace{0.25em}
+	\includegraphics[scale=0.5]{img/fig10.eps}
+	\caption{Even multilevel control for the SHM problem.}\label{fig:sim-multi-level-par}
+\end{figure} 
 
 \section{Proofs of results in Section \ref{sec:Contributions}}\label{sec:Proof}
 
@@ -632,15 +654,14 @@ Let $u^\ast\in \mathcal{A}$ be a solution to Problem \ref{pb:OCP_penalizado}, an
 
 Observe that, in the case when $\mu^\ast(t) = 0$, which corresponds only to the cases when $\bm{x}^\ast(\pi) = 0$, the optimal control is constant and is just given by  $u^\ast (t) =  -\text{sgn} (\alpha)$.
 
-In all the other cases, when $\bm{x}^\ast(\pi)\neq 0$, the function $\mu^\ast(t)$ is a linear combination of sines and cosines, and therefore, the equality $\mu^\ast (t) = \varepsilon\alpha$ can only hold for a finite number of times $t\in [0,\pi)$, which are the discontinuity points of $u^\ast$ (the switching angles). Note that the choice of $u^\ast$ at these points is irrelevant as it represents a set of zero measure.
+In all the other cases, when $\bm{x}^\ast(\pi)\neq 0$, the function $\mu^\ast(t)$ is a linear combination of sines and cosines, and therefore, the equality $\mu^\ast (t) = \varepsilon\alpha$ can only hold for a finite number of times $t\in [0,\pi)$, which are the discontinuity points of $u^\ast$ (the switching angles). Note that the choice of $u^\ast$ at these points is irrelevant as it represents a set of zero measure. \JO{We can see a graphical interpretation of this result in Figure \ref{fig:Bang-Bang-penalization}}.
 
 \begin{figure}[h] 
 	\centering
 	\includegraphics[scale=0.415]{img/fig03.eps}
-	\caption{Bi-level SHE: in the left column we show two examples of functions $\mathcal{L}$ compatible with Theorem \ref{th:bang-bang}. In the right columns we display the behavior of the corresponding Hamiltonian for different values of $\mu$.}\label{fig:Bang-Bang-penalization} 
+	\caption{Bi-level SHE: in the left column we show two examples of functions $\mathcal{L}$ compatible with Theorem \ref{th:bang-bang}. In the right columns we display the behavior of the corresponding Hamiltonian for different values of $\mu$.\JO{We draw the minumun as a point for every $\mu$, and we can see how only take the value in $\mathcal{U}$.}}\label{fig:Bang-Bang-penalization} 
 \end{figure}
 
-\UB{Remove the last plot in Fig. \ref{fig:Bang-Bang-penalization} and correct the title into $\mathcal J(u,\mu) = \pm\varepsilon u-\mu u$.}
 \subsection{Proof of Theorem \ref{th:PLP} (multilevel control)}\label{sec: proof:PLP}
 
 In this case, we suppose that $\mathcal{U} = \{ u_k\}_{k=1}^L$ is a finite set of real numbers in $[-1,1]$ satisfying
@@ -721,11 +742,12 @@ In all the other cases,  i.e. when $\bm{x}^\ast(\pi)\neq 0$, the function $\mu^\
 
 We have proved that, for all $t\in [0,\pi)$ except for a finite number of discontinuity points, which are precisely the switching angles $\{\phi_m\}_{m=0}^M$, we have $u^\ast(t)\equiv u_k$ for some $u_k\in\mathcal U$. Observe that, due to the continuity of $\mu^\ast(t)$, along with \eqref{eq:subdiff}, it is clear that $u^\ast(t)$ does not change value between two consecutive switching angles. Therefore, $u^\ast$ is piecewise constant, with a finite number of switches. The choice of $u^\ast$ at the discontinuity points is irrelevant as it represents a set of zero measure.
 
-Finally, the staircase property of the waveform \eqref{eq:staircase prop} can be deduced from \eqref{eq:control design2} and \eqref{eq:subdiff}, along with the continuity of the function $\mu^\ast(t)$.
+Finally, the staircase property of the waveform \eqref{eq:staircase prop} can be deduced from \eqref{eq:control design2} and \eqref{eq:subdiff}, along with the continuity of the function $\mu^\ast(t)$. \JO{Also, we the same philosophy of Figure \ref{fig:Bang-Bang-penalization} in Bang-Bang case, we can see a graphical interpretation of this results in Figure \ref{fig:several_hamiltonian}.}
 
 \begin{figure}[h]
 	\includegraphics[scale=0.415]{img/fig04.eps}
-	\caption{Multilevel SHM: in the left column we show three types of penalizations which are compatible with our theoretical results. In the right column we show the behavior of the corresponding Hamiltonian for different values of $\mu$.}\label{fig:SHE-multi}
+	\caption{Multilevel SHM: in the left column we show three types of penalizations which are compatible with our theoretical results. In the right column we show the behavior of the corresponding Hamiltonian for different values of $\mu$. \JO{We draw the minumun as a point for every $\mu$, and we can see how only take the value in $\mathcal{U}$.}} 
+	\label{fig:several_hamiltonian}
 \end{figure} 
 
 \subsection{Uniqueness and continuity of solutions}\label{sec: uniqueness continuity}

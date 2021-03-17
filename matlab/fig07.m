@@ -51,9 +51,9 @@ fig = figure(8);
 %fig.Renderer = 'painters';
 pplot2(fopts{1},fig,Ea,Eb,Nv,tspan,values,amatrix,bmatrix)
 %%
-print(fig,'../img/fig07.eps','-depsc')
-
-print(fig,'../img/fig08.eps','-depsc')
+% print(fig,'../img/fig07.eps','-depsc')
+% 
+% print(fig,'../img/fig08.eps','-depsc')
 
 %%
 function result = Lk(u,Ucal)

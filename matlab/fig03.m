@@ -15,7 +15,7 @@ color(5,:) = 0.9*color(5,:);
 fmt = {'Interpreter','latex','FontSize',24};
 fmt_line = {'LineWidth',2,'Color',[0.9 0.4 0.1]};
 %fig = genfig();
-fig = figure('unit','norm','pos',[0 0 0.405 0.8]);
+fig = figure('unit','norm','pos',[0 0 0.405 0.51]);
 
 clf
 %
@@ -23,17 +23,17 @@ str_title = {'$\mathcal{L}(u)=-u$', ...
              '$\mathcal{L}(u)=u$',  ...
              '$\mathcal{L}(u)=-u^2$'};
          
-str_title_H = {'$\mathcal{J}(u,\mu)=\mu u-\epsilon u$', ...
-             '$\mathcal{J}(u,\mu)=\mu u+\epsilon u$'   , ...
-             '$\mathcal{J}(u,\mu)=\mu u-\epsilon u^2$'};
+str_title_H = {'$\mathcal{J}(u,\mu)-\varepsilon u - \mu u$', ...
+             '$\mathcal{J}(u,\mu)=\varepsilon u - \mu u$'   , ...
+             '$\mathcal{J}(u,\mu)=-\varepsilon u^2 $'};
 
 ui1 = uipanel('Parent',fig,'pos',[0     -0.05 0.425   1.075],'BackgroundColor','w');
 ui2 = uipanel('Parent',fig,'pos',[0.4 -0.05 0.625 1.075],'BackgroundColor','w');
 
-ui1.BorderWidth = 0
-ui2.BorderWidth = 0
-for ii = 1:3
-subplot(3,1,ii,'Parent',ui1)
+ui1.BorderWidth = 0;
+ui2.BorderWidth = 0;
+for ii = 1:2
+subplot(2,1,ii,'Parent',ui1)
 hold on
 
 plot([1 1],[-1e2 1e2],'LineWidth',1.,'Color',0.7*[1 1 1])
@@ -56,7 +56,7 @@ xticks([-1 0 1])
 yticks([-1 0 1])
 box
 %
-subplot(3,1,ii,'Parent',ui2)
+subplot(2,1,ii,'Parent',ui2)
 hold on
 grid on
 plot([1 1],[-1e2 1e2],'LineWidth',1.,'Color',0.7*[1 1 1])
