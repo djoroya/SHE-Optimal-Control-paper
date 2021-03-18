@@ -1,6 +1,6 @@
 clear
 
-uspan = linspace(-2,2,1000);
+uspan = linspace(-1,1,1000);
 Ucal = linspace(-1,1,5)';
 
 eta = 1e5;

@@ -1,4 +1,4 @@
-uspan = linspace(-2,2,500);
+uspan = linspace(-1,1,500);
 
 eps = 0.05;
 L_minus = @(u) -u;
