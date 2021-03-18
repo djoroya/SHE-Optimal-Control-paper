@@ -22,30 +22,10 @@ tspan_fn = linspace(tspan(1),tspan(end),200);
 
 Vq = interp2(v_ms,t_ms,fopts',v_ms_2,t_ms_2,'linear');
 
-surf(v_ms_2,t_ms_2,Vq)
-xline(0,'Color','w','LineWidth',2)
-ic = colorbar;
-ic.Ticks = [-1 0 1];
-ic.TickLabelInterpreter = 'latex';
-ic.FontSize = 12;
-caxis([-1 1])
-colormap(jet(100))
 
-title('$u^*_m(t) = \Phi(m,t)$',fmt{:})
-shading interp
-xlim([values(1) values(end)])
-ylim([tspan(1) tspan(end)])
-
-yticks([0 pi/4 pi/2 3*pi/4 pi])
-yticklabels({'$0$','$\pi/4$','$\pi/2$','$3\pi/4$','$\pi$'})
-
-xticks([-0.8 -0.4 0 0.4 0.8])
-xlabel('$m$',fmt{:})
-ylabel('$t$',fmt{:})
-
+plot(values,sum(([an_values;bn_values] - [amatrix';bmatrix']).^2));grid on;
 ax.XAxis.TickLabelInterpreter = 'latex';
 ax.YAxis.TickLabelInterpreter = 'latex';
-view(0,90)
 
 ax.YAxis.FontSize = fonts;
 ax.XAxis.FontSize = fonts;
