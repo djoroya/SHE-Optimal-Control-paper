@@ -50,7 +50,7 @@ Leta4 = @(u)     sum(Lk4(u).*PI_k(u));
 points{4} = {[[x1 ;1],[y1; 1]]};
 
 %%
-uspan = linspace(-2,2,500);
+uspan = linspace(-0.999,1,500);
 
 eps = 0.05;
 L_minus = @(u) -u;
